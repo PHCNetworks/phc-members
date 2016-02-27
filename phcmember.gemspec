@@ -5,18 +5,40 @@ require "phcmember/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "phcmember"
-  s.version     = Phcmember::VERSION
-  s.authors     = ["Brad Potts"]
-  s.email       = ["bradley.j.potts@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Phcmember."
-  s.description = "TODO: Description of Phcmember."
-  s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+	s.name        = "phcmember"
+	s.version     = Phcmember::VERSION
+	s.authors     = ["Brad Potts"]
+	s.email       = ["bradley.j.potts@gmail.com"]
+	s.homepage    = "phcmembers.com"
+	s.summary     = "Membership & Directory Manager"
+	s.description = "Manage your organization's members and website's membership directory."
+	s.license     = "MIT"
 
-  s.add_dependency "rails", "~> 4.2.5"
+	s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_development_dependency "sqlite3"
+	# Main Dependencies
+	s.add_dependency "rails", "~> 4.2.5"
+	
+	#Security Dependencies
+	s.add_dependency "devise", '~> 3.5', '>= 3.5.6'
+
+	# UI & Frontend Elements
+	s.add_dependency 'jquery-rails', '~> 4.0', '>= 4.0.5'
+	s.add_dependency 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+	s.add_dependency 'font-awesome-rails', '~> 4.5'
+	s.add_dependency 'sass-rails', '~> 5.0', '>= 5.0.4'
+	s.add_dependency 'gravtastic', '~> 3.2', '>= 3.2.6'
+	
+	# Development & Testing Dependencies
+	s.add_development_dependency 'sqlite3', '~> 1.3'
+	s.add_development_dependency 'database_cleaner', '~> 1.5'
+
+	s.add_development_dependency 'factory_girl_rails', '~> 4.4', '>= 4.4.1'
+	s.add_development_dependency 'rspec-rails', '~> 3.4'
+	s.add_development_dependency 'capybara', '~> 2.6'
+
+	s.add_development_dependency 'faker', '~> 1.6'
+	s.add_development_dependency 'selenium-webdriver', '~> 2.52'
+
 end
