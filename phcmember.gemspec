@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
 	s.version     = Phcmember::VERSION
 	s.authors     = ["BradPotts"]
 	s.email       = ["bradley.j.potts@gmail.com"]
-	s.homepage    = "http://phcmembers.com"
+	s.homepage    = "http:/phcmembers.com"
 	s.summary     = "Membership & Directory Manager"
 	s.description = "Manage your organization's members and website's membership directory."
-	s.license     = "MIT"
+	s.license     = "Proprietary Non-Commercial"
 
 	s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
