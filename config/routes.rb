@@ -1,17 +1,28 @@
 Phcmember::Engine.routes.draw do
-  namespace :directory do
-    resources :catlists
-  end
-  namespace :directory do
-    resources :categories
-  end
-  namespace :members do
-    resources :contacts
-  end
-  namespace :members do
-    resources :listings
-  end
-  namespace :members do
-    resources :mains
-  end
+
+	# Application Client Backend
+	namespace :members do
+
+		# Members Main Index
+		root 'mains#index'
+
+		# Member Routes
+		resources :mains do 
+			resources :listings
+			resources :contacts
+		end
+
+	end
+
+	namespace :directory do
+
+		# Directory Main Index
+		root 'categories#index'
+
+		# Directory Routes
+		resources :categories
+		resources :catlists
+
+	end
+
 end
