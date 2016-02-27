@@ -8,14 +8,14 @@ Gem::Specification.new do |s|
 
 	s.name        = "phcmember"
 	s.version     = Phcmember::VERSION
-	s.authors     = ["Brad Potts"]
+	s.authors     = ["BradPotts"]
 	s.email       = ["bradley.j.potts@gmail.com"]
-	s.homepage    = "phcmembers.com"
+	s.homepage    = "http://phcmembers.com"
 	s.summary     = "Membership & Directory Manager"
 	s.description = "Manage your organization's members and website's membership directory."
 	s.license     = "MIT"
 
-	s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+	s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
 	# Main Dependencies
 	s.add_dependency "rails", "~> 4.2.5"

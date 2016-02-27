@@ -1,0 +1,68 @@
+<!-- Bread Crumbs -->
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>Member's Information</h2>
+		<ol class="breadcrumb">
+			<li>
+				<%= link_to mtdevise.account_root_path, class: "nav-link" do %>
+					Home
+				<% end %>
+			</li>
+			<li class="active">
+				<%= link_to main_app.members_mains_path, class: "nav-link" do %>
+					Members List
+				<% end %>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div>
+
+<!-- Main Content -->
+<div class="wrapper wrapper-content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h2><i class="fa fa-lightbulb-o"></i> Member's Index</h2> <p>- A complete index of all your organization's members.</p>
+		</div>
+		<div class="panel-body">
+			<table class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @members_mains.each do |members_main| %>
+						<tr>
+							<td><%= members_main.mfirstname %></td>
+							<td><%= members_main.mlastname %></td>
+							<td><%= members_main.memail %></td>
+							<td><%= members_main.mphone %></td>
+							<td><%= members_main.mnotes %></td>
+							<td><%= members_main.account_id %></td>
+							<td>
+								<div class="btn-group" role="group" aria-label="Member Main Group">
+									<%= link_to 'Profile', members_main, class: "btn btn-primary" %>
+									<%= link_to 'Edit', edit_members_main_path(members_main), class: "btn btn-primary" %>
+									<%= link_to 'Delete', members_main, method: :delete, data: { confirm: 'Are you sure? Removing a member will delete all records including all listing information from the directory.' }, class: "btn btn-danger" %>
+								</div>
+							</td>
+							<td>
+								<div class="btn-group" role="group" aria-label="Member Main Listings Address Group">
+									<%= link_to 'Private Address', backend_membercontact_memberaddresses_path(membercontact), class: "btn btn-warning" %>
+									<%= link_to 'Public Listings', backend_membercontact_memberlistings_path(membercontact), class: "btn btn-primary" %>
+								</div>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= link_to 'Add a New Member', new_backend_membercontact_path, class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
