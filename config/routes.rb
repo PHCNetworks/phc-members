@@ -1,4 +1,7 @@
 Phcmember::Engine.routes.draw do
+  namespace :directory do
+    resources :categories
+  end
   namespace :members do
     resources :contacts
   end

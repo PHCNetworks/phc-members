@@ -1,0 +1,11 @@
+<%= form_for(@directory_category) do |f| %>
+
+	<div class="form-group">
+		<label><%= f.label :catname %></label>
+		<%= f.text_field :catname, class: "form-control", placeholder: "Directory Category" %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Submit", class: "btn btn-primary" %>
+	</div>
+
+<% end %>
