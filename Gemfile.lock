@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmember (0.2.0)
+    phcmember (0.3.0)
       bootstrap-sass (~> 3.3, >= 3.3.6)
       devise (~> 3.5, >= 3.5.6)
       font-awesome-rails (~> 4.5)
