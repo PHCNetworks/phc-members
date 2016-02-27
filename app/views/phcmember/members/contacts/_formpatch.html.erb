@@ -1,0 +1,47 @@
+<%= form_for([@members_contact.main, @members_contact], url: members_main_contact_path, method: :patch ) do |f| %>
+
+	<div class="form-group">
+		<label><%= f.label :mccontactname, "Contact Name*" %></label>
+		<%= f.text_form-group :mccontactname, class: "form-control", placeholder: "Mailing Contact Name" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mccompanyname, "Company Name" %></label>
+		<%= f.text_form-group :mccompanyname, class: "form-control", placeholder: "Company Name" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mcaddressl1, "Mailing Address Line1" %></label>
+		<%= f.text_form-group :mcaddressl1, class: "form-control", placeholder: "Mailing Street Address" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mcaddressl2, "Mailing Address Line2" %></label>
+		<%= f.text_form-group :mcaddressl2, class: "form-control", placeholder: "Mailing Address POBox" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mccity, "City" %></label>
+		<%= f.text_form-group :mccity, class: "form-control", placeholder: "Mailing City" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mlprovince, "Province or State" %></label>
+		<%= f.text_form-group :mcprovince, class: "form-control", placeholder: "Mailing Province or State" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mccountry, "Country" %></label>
+		<%= f.text_form-group :mccountry, class: "form-control", placeholder: "Mailing Country" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mcpostalcode, "PostalCode" %></label>
+		<%= f.text_form-group :mcpostalcode, class: "form-control", placeholder: "Mailing PostalCode" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mcphone, "Contact Phone" %></label>
+		<%= f.text_form-group :mcphone, class: "form-control", placeholder: "Contact Phone Number" %>
+	</div>
+	<div class="form-group">
+		<label><%= f.label :mlemail, "Contact Email" %></label>
+		<%= f.text_form-group :mcemail, class: "form-control", placeholder: "Contact Email" %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Submit", class: "btn btn-primary" %>
+	</div>
+
+<% end %>

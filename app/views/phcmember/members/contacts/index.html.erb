@@ -1,0 +1,71 @@
+<!-- Bread Crumbs -->
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>Private Address Index - <%= @membercontact.mcfirstname + ' ' + @membercontact.mclastname %></h2>
+		<ol class="breadcrumb">
+			<li> 
+				<a>Home</a>
+			</li>
+			<li>
+				<%= link_to main_app.backend_membercontacts_path, class: "nav-link" do %>
+					Members List
+				<% end %>
+			</li>
+			<li class="active">
+				<%= link_to main_app.backend_membercontact_memberaddresses_path, class: "nav-link" do %>
+					<%= @membercontact.mcfirstname + ' ' + @membercontact.mclastname %> Private Address List
+				<% end %>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div>
+
+<!-- Main Content -->
+<div class="wrapper wrapper-content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h2><i class="fa fa-lightbulb-o"></i> Member's Address Index</h2> <p>- A complete index of <%= @membercontact.mcfirstname + ' ' + @membercontact.mclastname %> private addresses.</p>
+		</div>
+		<div class="panel-body">
+			<table class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Full Name</th>
+						<th>Company Name</th>
+						<th>Address Line 1</th>
+						<th>Address Line 2</th>
+						<th>City</th>
+						<th>Province</th>
+						<th>PostalCode</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @memberaddresses.each do |memberaddress| %>
+						<tr>
+							<td><%= members_contact.mccontactname %></td>
+							<td><%= members_contact.mccompanyname %></td>
+							<td><%= members_contact.mcaddressl1 %></td>
+							<td><%= members_contact.mcaddressl2 %></td>
+							<td><%= members_contact.mccity %></td>
+							<td><%= members_contact.mcprovince %></td>
+							<td><%= members_contact.mccountry %></td>
+							<td><%= members_contact.mcpostalcode %></td>
+							<td><%= members_contact.mcphone %></td>
+							<td><%= members_contact.mcemail %></td>
+							<td><div class="btn-group" role="group" aria-label="Member Adresses Group">
+									<%= link_to 'Show', members_main_memberaddress_path(contact.main, contact), class: "btn btn-primary" %>
+									<%= link_to 'Edit', edit_members_main_memberaddress_path(contact.main, contact), class: "btn btn-primary" %>
+									<%= link_to 'Delete', members_main_memberaddress_path(contact.main, contact), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+								</div>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= link_to 'Add a Private Address', new_members_main_contact_path, class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>

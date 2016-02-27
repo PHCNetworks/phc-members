@@ -5,7 +5,7 @@ module Phcmember
 	
 	# Security & Action Filters
 	before_filter :authenticate_user!
-	layout '/backend/application.html.erb'
+	layout 'layouts/phcmember/members/members_all.html.erb'
 	before_action :set_members_main, only: [:show, :edit, :update, :destroy]
 
 	# Member Profile List
