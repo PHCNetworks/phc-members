@@ -1,0 +1,69 @@
+<!-- Bread Crumbs -->
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>Public Member Listings - <%= @members_main.mcfirstname + ' ' + @members_main.mclastname %></h2>
+		<ol class="breadcrumb">
+			<li>
+				<%= link_to mtdevise.account_root_path, class: "nav-link" do %>
+					Home
+				<% end %>
+			</li>
+			<li>
+				<%= link_to main_app.backend_membercontacts_path, class: "nav-link" do %>
+					Members List
+				<% end %>
+			</li>
+			<li class="active">
+				<%= link_to main_app.backend_membercontact_memberaddresses_path, class: "nav-link" do %>
+					<%= @members_main.mcfirstname + ' ' + @members_main.mclastname %> Directory Listings
+				<% end %>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div>
+
+<!-- Main Information -->
+<div class="wrapper wrapper-content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h2><i class="fa fa-lightbulb-o"></i> Member's Listing Index</h2> <p>- A complete index of <%= @members_main.mcfirstname + ' ' + @members_main.mclastname %> active listings.</p>
+		</div>
+		<div class="panel-body">
+			<table class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Contact Name</th>
+						<th>Company Name</th>
+						<th>City</th>
+						<th>Country</th>
+						<th>Phone Number</th>
+						<th>Email</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @memberlistings.each do |memberlisting| %>
+						<tr>
+							<td><%= members_listing.mlcontactname %></td>
+							<td><%= members_listing.mlcompanyname %></td>
+							<td><%= members_listing.mlcity %></td>
+							<td><%= members_listing.mlcountry %></td>
+							<td><%= members_listing.mlphone %></td>
+							<td><%= members_listing.mlemail %></td>
+							<td>
+								<div class="btn-group" role="group" aria-label="Member Listings Group">
+									<%= link_to 'Details', members_main_listing_path(listing.main, listing), class: "btn btn-primary" %>
+									<%= link_to 'Edit', edit_members_main_listing_path(listing.main, listing), class: "btn btn-primary" %>
+									<%= link_to 'Delete', members_main_listing_path(listing.main, listing), method: :delete, data: { confirm: 'Are you sure? This will also remove this listing from the online directories.' }, class: "btn btn-danger" %>
+								</div>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= link_to 'New Member Listing', new_backend_membercontact_memberlisting_path, class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
