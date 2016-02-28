@@ -1,5 +1,16 @@
 <%= form_for([@members_listing.main, @members_listing], url: members_main_listing_path, method: :patch) do |f| %>
 
+	<% if @members_listing.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@members_listing.errors.count, "error") %> prohibited this directorylisting from being saved:</h2>
+			<ul>
+				<% @members_listing.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 	<div class="form-group">
 		<label><%= f.label :mlcontactname, "Company Contact" %></label>
 		<%= f.text_form-group :mlcontactname, class: 'form-control', placeholder: 'Contact Name for Company' %>

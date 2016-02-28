@@ -1,5 +1,16 @@
 <%= form_for(@members_main) do |f| %>
 
+	<% if @members_main.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@members_main.errors.count, "error") %> prohibited this directorylisting from being saved:</h2>
+			<ul>
+				<% @members_main.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 	<div class="form-group">
 		<label><%= f.label :mfirstname, "First Name*" %></label>
 		<%= f.text_field :mfirstname, class: 'form-control', placeholder: 'Members First Name' %>

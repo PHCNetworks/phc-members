@@ -1,5 +1,16 @@
 <%= form_for([@members_contact.main, @members_contact], url: members_main_contacts_path) do |f| %>
-
+	
+	<% if @members_contact.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@members_contact.errors.count, "error") %> prohibited this directorylisting from being saved:</h2>
+			<ul>
+				<% @members_contact.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
 	<div class="form-group">
 		<label><%= f.label :mccontactname, "Contact Name*" %></label>
 		<%= f.text_field :mccontactname, class: "form-control", placeholder: "Mailing Contact Name" %>
