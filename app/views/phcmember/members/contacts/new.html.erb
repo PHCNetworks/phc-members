@@ -1,7 +1,7 @@
 <!-- Bread Crumbs -->
 <div class="row wrapper border-bottom white-bg page-heading">
 	<div class="col-lg-12">
-		<h2>Member's Information</h2>
+		<h2>Member's Contact Information</h2>
 		<ol class="breadcrumb">
 			<li><%= link_to "Home", members_root_path %></li>
 			<li><%= link_to "Members List", members_mains_path %></li>
@@ -11,15 +11,16 @@
 	</div>
 </div>
 
-
 <!-- Main Content -->
-<div class="wrapper wrapper-content">
-	<div class="panel">
-		<div class="panel-heading">
-			Create a New Address
-		</div>
-		<div class="panel-body">
-			<%= render 'form' %>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Create a New Contact Entry
+			</div>
+			<div class="panel-body">
+				<%= render 'form' %>
+			</div>
 		</div>
 	</div>
 </div>

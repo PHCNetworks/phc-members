@@ -10,23 +10,27 @@ module Phcmember
 		belongs_to :main
 
 		# Validation for Form Fields
-		validates :mafullname,
+		validates :mccontactname,
 			presence: true,
 			length: { minimum: 3 }
 
-		validates :macompanyname,
+		validates :mccompanyname,
 			presence: true,
 			length: { minimum: 2 }
 
-		validates :macity,
+		validates :mccity,
 			presence: true,
 			length: { minimum: 3 }
 
-		validates :maprovince,
+		validates :mcprovince,
+			presence: true,
+			length: { minimum: 2 }
+			
+		validates :mccountry,
 			presence: true,
 			length: { minimum: 2 }
 
-		validates :mapostalcode,
+		validates :mcpostalcode,
 			presence: true,
 			length: { minimum: 6 }
 

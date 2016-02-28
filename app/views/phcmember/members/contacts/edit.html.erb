@@ -1,24 +1,26 @@
 <!-- Bread Crumbs -->
 <div class="row wrapper border-bottom white-bg page-heading">
 	<div class="col-lg-12">
-		<h2>Member's Information</h2>
+		<h2>Member's Contact Information</h2>
 		<ol class="breadcrumb">
 			<li><%= link_to "Home", members_root_path %></li>
 			<li><%= link_to "Members List", members_mains_path %></li>
 			<li><%= link_to "Members Contact", members_main_contacts_path %></li>
-			<li class="active">Member's Updates</li>
+			<li class="active">Member Contact Updates</li>
 		</ol>
 	</div>
 </div>
 
 <!-- Main Content -->
-<div class="wrapper wrapper-content">
-	<div class="panel">
-		<div class="panel-heading">
-			Update Members Information
-		</div>
-		<div class="panel-body">
-			<%= render 'formpatch' %>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Update Member Contact Information
+			</div>
+			<div class="panel-body">
+				<%= render 'formpatch' %>
+			</div>
 		</div>
 	</div>
 </div>
