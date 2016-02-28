@@ -1,35 +1,25 @@
 <!-- Bread Crumbs -->
 <div class="row wrapper border-bottom white-bg page-heading">
-	<div class="col-lg-10">
+	<div class="col-lg-12">
 		<h2>Directory Category Information</h2>
 		<ol class="breadcrumb">
-		<li>
-			<%= link_to mtdevise.account_root_path, class: "nav-link" do %>
-				Home
-			<% end %>
-		</li>
-		<li>
-			<%= link_to main_app.directory_categories_path, class: "nav-link" do %>
-				Directory Categories
-			<% end %>
-		</li>
-		<li class="active">
-			<a>Update Directory Category</a>
-		</li>
+			<li><%= link_to "Home", directory_root_path %></li>
+			<li><%= link_to "Directory Categories", directory_categories_path %></li>
+			<li class="active">Directory Category Update</li>
 		</ol>
-	</div>
-  	<div class="col-lg-2">
 	</div>
 </div>
 
 <!-- Main Content -->
-<div class="wrapper wrapper-content">
-	<div class="panel">
-		<div class="panel-heading">
-			<h2><i class="fa fa-lightbulb-o"></i> Update Category</h2> <p>- Update the category name for your member's directory. Changes will be saved instantly.</p>
-		</div>
-		<div class="panel-body">
-			<%= render 'form' %>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel">
+			<div class="panel-heading">
+				Update Category
+			</div>
+			<div class="panel-body">
+				<%= render 'form' %>
+			</div>
 		</div>
 	</div>
 </div>

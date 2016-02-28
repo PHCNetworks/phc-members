@@ -2,27 +2,27 @@
 
 	<div class="form-group">
 		<label><%= f.label :mfirstname, "First Name*" %></label>
-		<%= f.text_form-group :mfirstname, class: 'form-control', placeholder: 'Members First Name' %>
+		<%= f.text_field :mfirstname, class: 'form-control', placeholder: 'Members First Name' %>
 	</div>
 	<div class="form-group">
 		<label><%= f.label :mlastname, "Last Name*" %></label>
-		<%= f.text_form-group :mlastname, class: 'form-control', placeholder: 'Members Last Name' %>
+		<%= f.text_field :mlastname, class: 'form-control', placeholder: 'Members Last Name' %>
 	</div>
 	<div class="form-group">
 		<label><%= f.label :mtitle, "Title" %></label>
-		<%= f.text_form-group :mtitle, class: 'form-control', placeholder: 'Members Title' %>
+		<%= f.text_field :mtitle, class: 'form-control', placeholder: 'Members Title' %>
 	</div>
 	<div class="form-group">
 		<label><%= f.label :memail, "Email*" %></label>
-		<%= f.text_form-group :memail, class: 'form-control', placeholder: 'Members Email' %>
+		<%= f.text_field :memail, class: 'form-control', placeholder: 'Members Email' %>
 	</div>
 	<div class="form-group">
 		<label><%= f.label :mphone, "Phone*" %></label>
-		<%= f.text_form-group :mphone, class: 'form-control', placeholder: 'Members Phone' %>
+		<%= f.text_field :mphone, class: 'form-control', placeholder: 'Members Phone' %>
 	</div>
 	<div class="form-group">
 		<label><%= f.label :mnotes, "Member Notes (Private)" %></label>
-		<%= f.text_form-group :mnotes, class: 'form-control', placeholder: 'Member Notes' %>
+		<%= f.text_area :mnotes, class: 'form-control', placeholder: 'Member Notes' %>
 	</div>
 	<div class="actions">
 		<%= f.submit "Submit", class: "btn btn-primary" %>

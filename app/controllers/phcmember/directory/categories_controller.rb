@@ -4,13 +4,13 @@ module Phcmember
 	class Directory::CategoriesController < ApplicationController
 
 		# Security & Action Filters
-		before_filter :authenticate_user!
-		layout '/backend/application.html.erb'
-		before_action :set_directory_category, only: [:show, :edit, :update, :destroy]
+		# before_filter :authenticate_user!
+		layout 'layouts/phcmember/directory/directory_all.html.erb'
+		before_action :set_directory_category, only: [:edit, :update, :destroy]
 
 		# Directory Category Index
 		def index
-			@directory_categories = Directory::Category.scoped_to(current_account).order('catname ASC')
+			@directory_categories = Directory::Category.all.order('catname ASC')
 		end
 
 		# Directory Category Details
@@ -19,7 +19,7 @@ module Phcmember
 
 		# New Directory Category
 		def new
-			@directory_category = Directory::Category.scoped_to(current_account).new
+			@directory_category = Directory::Category.new
 		end
 
 		# Edit Directory Category
@@ -28,9 +28,9 @@ module Phcmember
 
 		# Create Action
 		def create
-			@directory_category = Directory::Category.scoped_to(current_account).new(directorycategory_params)
+			@directory_category = Directory::Category.new(directory_category_params)
 			if @directory_category.save
-				redirect_to @directory_category, notice: 'Category was successfully created.'
+				redirect_to directory_categories_path, notice: 'Category was successfully created.'
 				else
 					render :new
 			end
@@ -39,7 +39,7 @@ module Phcmember
 		# Update Action
 		def update
 			if @directory_category.update(directory_category_params)
-				redirect_to @directory_category, notice: 'Category was successfully updated.'
+				redirect_to directory_categories_path, notice: 'Category was successfully updated.'
 				else
 					render :edit
 			end
@@ -48,7 +48,7 @@ module Phcmember
 		# Delete Action
 		def destroy
 			@directory_category.destroy
-			redirect_to directory_categories_url, notice: 'Category was successfully destroyed.'
+			redirect_to directory_categories_path, notice: 'Category was successfully destroyed.'
 		end
 
 		private
