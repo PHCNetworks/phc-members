@@ -4,7 +4,7 @@ module Phcmember
 	class Members::ListingsController < ApplicationController
 
 		# Security & Action Filters
-		before_filter :authenticate_user!
+		# before_filter :authenticate_user!
 		layout 'layouts/phcmember/members/members_all.html.erb'
 		before_action :set_members_listing, only: [:show, :edit, :update, :destroy]
 
@@ -12,25 +12,25 @@ module Phcmember
 		before_action :phc_member_mains_info
 
 		def phc_member_mains_info  
-			@membercontact = Members::Main.scoped_to(current_account).find(params[:main_id])
+			@membercontact = Members::Main.find(params[:main_id])
 		end
 
 		# Member Listing Index
 		def index
 			main = Members::Main.find(params[:main_id])
-			@members_listings = main.listings.scoped_to(current_account).order('mlcontactname ASC')
+			@members_listings = main.listings.order('mlcontactname ASC')
 		end
 
 		# Detailed Member Listing
 		def show
 			main = Members::Main.find(params[:main_id])
-			@members_listing = main.listings.scoped_to(current_account).find(params[:id])
+			@members_listing = main.listings.find(params[:id])
 		end
 
 		# New Member Listing
 		def new
 			main = Members::Main.find(params[:main_id])
-			@members_listing = main.listings.scoped_to(current_account).build
+			@members_listing = main.listings.build
 			respond_to do |format|
 				format.html # new.html.erb
 				format.xml  { render :xml => @membercontact }
@@ -40,13 +40,13 @@ module Phcmember
 		# Edit Member Listing
 		def edit
 			main = Members::Main.find(params[:main_id])
-			@members_listing = main.listings.scoped_to(current_account).find(params[:id])
+			@members_listing = main.listings.find(params[:id])
 		end
 
 		# Create Action
 		def create
 			@main = Members::Main.find(params[:main_id])
-			@members_listing = @main.memberlistings.scoped_to(current_account).create(members_listing_params)
+			@members_listing = @main.listings.create(members_listing_params)
 			if @members_listing.save
 				redirect_to @members_listing, notice: 'Listing was successfully created.'
 				else

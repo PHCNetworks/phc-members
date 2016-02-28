@@ -1,29 +1,12 @@
 <!-- Bread Crumbs -->
-<div class="row wrapper border-bottom white-bg page-heading">
-	<div class="col-lg-10">
-		<h2>Public Listing Information - <%= @members_main.mcfirstname + ' ' + @members_main.mclastname %></h2>
+<div class="row">
+	<div class="col-lg-12">
+		<h2>Member's Information</h2>
 		<ol class="breadcrumb">
-			<li>
-				<%= link_to mtdevise.account_root_path, class: "nav-link" do %>
-					Home
-				<% end %>
-			</li>
-			<li>
-				<%= link_to main_app.members_mains_path, class: "nav-link" do %>
-					Members List
-				<% end %>
-			</li>
-			<li>
-				<%= link_to main_app.members_main_listings_path, class: "nav-link" do %>
-					Member Listings
-				<% end %>
-			</li>
-			<li class="active">
-				<a>Create a New Directory Listing for <%= @members_main.mcfirstname %></a>
-			</li>
+			<li><%= link_to "Home", members_root_path %></li>
+			<li><%= link_to "Members List", members_mains_path %></li>
+			<li><%= link_to "Members Listings", members_main_contacts_path %></li>
 		</ol>
-	</div>
-	<div class="col-lg-2">
 	</div>
 </div>
 
@@ -31,7 +14,7 @@
 <div class="wrapper wrapper-content">
 	<div class="panel">
 		<div class="panel-heading">
-			<h2><i class="fa fa-lightbulb-o"></i> Create a New Listing</h2> <p>- Create a new member listing for <%= @members_main.mcfirstname + ' ' + @members_main.mclastname %>.</p>
+			Create a New Listing
 		</div>
 		<div class="panel-body">
 			<%= render 'form' %>
