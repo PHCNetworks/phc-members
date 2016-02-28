@@ -27,7 +27,7 @@
 
 <p>
   <strong>Mlprovince:</strong>
-  <%= @members_contact.mlprovince %>
+  <%= @members_contact.mcprovince %>
 </p>
 
 <p>
@@ -46,13 +46,8 @@
 </p>
 
 <p>
-  <strong>Mlwebsite:</strong>
-  <%= @members_contact.mlwebsite %>
-</p>
-
-<p>
   <strong>Mlemail:</strong>
-  <%= @members_contact.mlemail %>
+  <%= @members_contact.mcemail %>
 </p>
 
 <p>
@@ -64,6 +59,3 @@
   <strong>Account:</strong>
   <%= @members_contact.account_id %>
 </p>
-
-<%= link_to 'Edit', edit_members_contact_path(@members_contact) %> |
-<%= link_to 'Back', members_contacts_path %>

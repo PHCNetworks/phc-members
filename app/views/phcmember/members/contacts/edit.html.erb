@@ -1,29 +1,13 @@
 <!-- Bread Crumbs -->
 <div class="row wrapper border-bottom white-bg page-heading">
-	<div class="col-lg-10">
-		<h2>Edit Private Address Information - <%= @members_main.mcfirstname + ' ' + @members_main.mclastname %></h2>
+	<div class="col-lg-12">
+		<h2>Member's Information</h2>
 		<ol class="breadcrumb">
-			<li>
-				<%= link_to mtdevise.account_root_path, class: "nav-link" do %>
-					Home
-				<% end %>
-			</li>
-			<li>
-				<%= link_to main_app.members_mains_path, class: "nav-link" do %>
-					Members List
-				<% end %>
-			</li>
-			<li>
-				<%= link_to main_app.members_mains_contacts_path, class: "nav-link" do %>
-					Private Address List for <%= @members_main.mcfirstname + ' ' + @members_main.mclastname %> 
-				<% end %>
-			</li>
-			<li class="active">
-				<a>Edit <%= @members_main.mcfirstname %> Private Address</a>
-			</li>
+			<li><%= link_to "Home", members_root_path %></li>
+			<li><%= link_to "Members List", members_mains_path %></li>
+			<li><%= link_to "Members Contact", members_main_contacts_path %></li>
+			<li class="active">Member's Updates</li>
 		</ol>
-	</div>
-	<div class="col-lg-2">
 	</div>
 </div>
 
@@ -31,7 +15,7 @@
 <div class="wrapper wrapper-content">
 	<div class="panel">
 		<div class="panel-heading">
-			<h2><i class="fa fa-lightbulb-o"></i> Update Member's Address</h2> <p>- Update <%= @members_main.mcfirstname + ' ' + @members_main.mclastname %> member listing for <%= @members_main.macompanyname %>.</p>
+			Update Members Information
 		</div>
 		<div class="panel-body">
 			<%= render 'formpatch' %>
