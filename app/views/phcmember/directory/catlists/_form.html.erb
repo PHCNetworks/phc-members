@@ -1,4 +1,15 @@
-<%= form_for(@directory_catlist) do |f| %>
+<%= form_for([@directory_catlist.category, @directory_catlist], url: directory_category_catlists_path) do |f| %>
+
+	<% if @directory_catlist.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@directory_catlist.errors.count, "error") %> prohibited this directorylisting from being saved:</h2>
+			<ul>
+				<% @directory_catlist.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 
 	<div class="form-group">
 		<label><%= f.label :listing_id, "Select a Listing" %></label>
@@ -6,8 +17,8 @@
 	</div>
 
 	<div class="form-group">
-		<label><%= f.label :cateegory_id "Select a Category" %></label>
-		<%= f.text_field :cateegory_id, class: "form-control", placeholder: "Directory Category" %>
+		<label><%= f.label :category_id, "Select a Category" %></label>
+		<%= f.text_field :category_id, class: "form-control", placeholder: "Directory Category" %>
 	</div>
 
 	<div class="actions">

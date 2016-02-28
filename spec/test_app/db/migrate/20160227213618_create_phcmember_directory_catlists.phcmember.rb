@@ -3,7 +3,7 @@ class CreatePhcmemberDirectoryCatlists < ActiveRecord::Migration
 	def change
 		create_table :phcmember_directory_catlists do |t|
 
-		  t.integer :category_id
+		  t.references :category_id
 		  t.integer :subcategory_id
 		  t.integer :listing_id
 

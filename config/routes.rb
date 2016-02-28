@@ -20,9 +20,9 @@ Phcmember::Engine.routes.draw do
 		root 'categories#index'
 
 		# Directory Routes
-		resources :categories
-		resources :catlists
-
+		resources :categories do
+			resources :catlists
+		end
 	end
 
 end

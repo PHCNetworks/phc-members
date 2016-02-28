@@ -1,5 +1,25 @@
-<h1>New Directory Catlist</h1>
+<!-- Bread Crumbs -->
+<div class="row">
+	<div class="col-lg-12">
+		<h2>Directory Listings</h2>
+		<ol class="breadcrumb">
+			<li><%= link_to "Home", directory_root_path %></li>
+			<li><%= link_to "Directory Categories", directory_categories_path %></li>
+			<li class="active">Create a Directory Category</li>
+		</ol>
+	</div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', directory_catlists_path %>
+<!-- Main Content -->
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Connect an Existing Listing
+			</div>
+			<div class="panel-body">
+				<%= render 'form' %>
+			</div>
+		</div>
+	</div>
+</div>
