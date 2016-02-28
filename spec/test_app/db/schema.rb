@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227213618) do
+ActiveRecord::Schema.define(version: 20160228220349) do
 
   create_table "phcmember_directory_categories", force: :cascade do |t|
     t.string   "catname"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160227213618) do
     t.integer  "category_id"
     t.integer  "subcategory_id"
     t.integer  "listing_id"
+    t.integer  "account_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
