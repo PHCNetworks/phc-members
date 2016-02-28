@@ -6,7 +6,7 @@ require "phcmember/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
 
-	s.name        = "phcmember"
+	s.name        = "phcmembers"
 	s.version     = Phcmember::VERSION
 	s.authors     = ["BradPotts"]
 	s.email       = ["bradley.j.potts@gmail.com"]
