@@ -1,1 +1,1 @@
-[![security](https://hakiri.io/github/PHCNetworks/phc-membership-directory/master.svg)](https://hakiri.io/github/PHCNetworks/phc-membership-directory/master)
+[![security](https://hakiri.io/github/PHCNetworks/phc-members/master.svg)](https://hakiri.io/github/PHCNetworks/phc-members/master)
