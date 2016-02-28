@@ -1,6 +1,6 @@
-class CreatePhcmemberMembersContacts < ActiveRecord::Migration
+class CreatePhcmembersMembersContacts < ActiveRecord::Migration
 	def change
-		create_table :phcmember_members_contacts do |t|
+		create_table :phcmembers_members_contacts do |t|
 
 			t.string :mccontactname
 			t.string :mccompanyname

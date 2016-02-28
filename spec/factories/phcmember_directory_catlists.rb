@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :phcmember_directory_catlist, class: 'Phcmember::Directory::Catlist' do
+  factory :phcmembers_directory_catlist, class: 'Phcmembers::Directory::Catlist' do
     listing nil
     cateegory ""
   end

@@ -1,4 +1,4 @@
-module Phcmember
+module Phcmembers
 	class Members::Contact < ActiveRecord::Base
 
 		# Mtdevise Scope

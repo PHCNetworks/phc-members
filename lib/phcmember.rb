@@ -1,4 +1,4 @@
-require "phcmember/engine"
+require "phcmembers/engine"
 
-module Phcmember
+module Phcmembers
 end

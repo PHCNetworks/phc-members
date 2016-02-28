@@ -1,4 +1,4 @@
-module Phcmember
+module Phcmembers
 	class Directory::Category < ActiveRecord::Base
 
 		# Model Relationship

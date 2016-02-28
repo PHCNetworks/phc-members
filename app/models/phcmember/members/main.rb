@@ -1,4 +1,4 @@
-module Phcmember
+module Phcmembers
 	class Members::Main < ActiveRecord::Base
 
 		# Mtdevise Scope

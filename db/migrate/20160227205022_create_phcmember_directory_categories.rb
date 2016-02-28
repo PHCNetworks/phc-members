@@ -1,6 +1,6 @@
-class CreatePhcmemberDirectoryCategories < ActiveRecord::Migration
+class CreatePhcmembersDirectoryCategories < ActiveRecord::Migration
 	def change
-		create_table :phcmember_directory_categories do |t|
+		create_table :phcmembers_directory_categories do |t|
 
 			t.string :catname
 			

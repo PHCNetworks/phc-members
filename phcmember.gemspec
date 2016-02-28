@@ -1,16 +1,16 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "phcmember/version"
+require "phcmembers/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
 
-	s.name        = "phcmembers"
-	s.version     = Phcmember::VERSION
+	s.name        = "phcmemberss"
+	s.version     = Phcmembers::VERSION
 	s.authors     = ["BradPotts"]
 	s.email       = ["bradley.j.potts@gmail.com"]
-	s.homepage    = "http:/phcmembers.com"
+	s.homepage    = "http:/phcmemberss.com"
 	s.summary     = "Membership & Directory Manager"
 	s.description = "Manage your organization's members and website's membership directory."
 	s.license     = "Proprietary Non-Commercial"

@@ -13,14 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20160228220349) do
 
-  create_table "phcmember_directory_categories", force: :cascade do |t|
+  create_table "phcmembers_directory_categories", force: :cascade do |t|
     t.string   "catname"
     t.integer  "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "phcmember_directory_catlists", force: :cascade do |t|
+  create_table "phcmembers_directory_catlists", force: :cascade do |t|
     t.integer  "category_id"
     t.integer  "subcategory_id"
     t.integer  "listing_id"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160228220349) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "phcmember_members_contacts", force: :cascade do |t|
+  create_table "phcmembers_members_contacts", force: :cascade do |t|
     t.string   "mccontactname"
     t.string   "mccompanyname"
     t.string   "mcaddressl1"
@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20160228220349) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "phcmember_members_contacts", ["main_id"], name: "index_phcmember_members_contacts_on_main_id"
+  add_index "phcmembers_members_contacts", ["main_id"], name: "index_phcmembers_members_contacts_on_main_id"
 
-  create_table "phcmember_members_listings", force: :cascade do |t|
+  create_table "phcmembers_members_listings", force: :cascade do |t|
     t.string   "mlcontactname"
     t.string   "mlcompanyname"
     t.string   "mladdressl1"
@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 20160228220349) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "phcmember_members_listings", ["main_id"], name: "index_phcmember_members_listings_on_main_id"
+  add_index "phcmembers_members_listings", ["main_id"], name: "index_phcmembers_members_listings_on_main_id"
 
-  create_table "phcmember_members_mains", force: :cascade do |t|
+  create_table "phcmembers_members_mains", force: :cascade do |t|
     t.string   "mfirstname"
     t.string   "mlastname"
     t.string   "mtitle"

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :phcmember_members_main, class: 'Phcmember::Members::Main' do
+  factory :phcmembers_members_main, class: 'Phcmembers::Members::Main' do
     mfirstname "MyString"
     mlastname "MyString"
     mtitle "MyString"

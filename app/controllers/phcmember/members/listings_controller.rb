@@ -1,11 +1,11 @@
-require_dependency "phcmember/application_controller"
+require_dependency "phcmembers/application_controller"
 
-module Phcmember
+module Phcmembers
 	class Members::ListingsController < ApplicationController
 
 		# Security & Action Filters
 		# before_filter :authenticate_user!
-		layout 'layouts/phcmember/members/members_all.html.erb'
+		layout 'layouts/phcmembers/members/members_all.html.erb'
 		before_action :set_members_listing, only: [:show, :edit, :update, :destroy]
 
 		# Add Member Contact Information 

@@ -1,6 +1,6 @@
-class CreatePhcmemberDirectoryCatlists < ActiveRecord::Migration
+class CreatePhcmembersDirectoryCatlists < ActiveRecord::Migration
 	def change
-		create_table :phcmember_directory_catlists do |t|
+		create_table :phcmembers_directory_catlists do |t|
 
 			t.integer :category_id
 			t.integer :subcategory_id

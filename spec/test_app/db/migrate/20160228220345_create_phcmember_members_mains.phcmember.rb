@@ -1,7 +1,7 @@
-# This migration comes from phcmember (originally 20160227150117)
-class CreatePhcmemberMembersMains < ActiveRecord::Migration
+# This migration comes from phcmembers (originally 20160227150117)
+class CreatePhcmembersMembersMains < ActiveRecord::Migration
 	def change
-		create_table :phcmember_members_mains do |t|
+		create_table :phcmembers_members_mains do |t|
 
 			t.string :mfirstname
 			t.string :mlastname

@@ -1,4 +1,4 @@
-Phcmember::Engine.routes.draw do
+Phcmembers::Engine.routes.draw do
 
 	# Application Client Backend
 	namespace :members do

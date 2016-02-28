@@ -1,4 +1,4 @@
-module Phcmember
+module Phcmembers
 	module ApplicationHelper
 
 		# Bootstrap Notification System

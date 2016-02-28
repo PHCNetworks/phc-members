@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :phcmember do
+# task :phcmembers do
 #   # Task goes here
 # end

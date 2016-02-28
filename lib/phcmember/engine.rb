@@ -1,4 +1,4 @@
-module Phcmember
+module Phcmembers
 	class Engine < ::Rails::Engine
 		# Required Dependencies
 		require 'jquery-rails'
@@ -8,7 +8,7 @@ module Phcmember
 		require 'gravtastic'
 
 		# Isolate Namespace for PHC Members
-		isolate_namespace Phcmember
+		isolate_namespace Phcmembers
 		
 		# Testing Generator
 		config.generators do |g|

@@ -1,4 +1,4 @@
-module Phcmember
+module Phcmembers
 	class Directory::Catlist < ActiveRecord::Base
 
 		# Model Relationship

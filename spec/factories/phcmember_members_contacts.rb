@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :phcmember_members_contact, class: 'Phcmember::Members::Contact' do
+  factory :phcmembers_members_contact, class: 'Phcmembers::Members::Contact' do
     mccontactname "MyString"
     mccompanyname "MyString"
     mcaddressl1 "MyString"
