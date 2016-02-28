@@ -41,9 +41,9 @@
 								<td><%= members_listing.mlemail %></td>
 								<td>
 									<div class="btn-group" role="group" aria-label="Member Listings Group">
-										<%= link_to 'Details', members_main_listing_path(listing.main, listing), class: "btn btn-primary" %>
-										<%= link_to 'Edit', edit_members_main_listing_path(listing.main, listing), class: "btn btn-primary" %>
-										<%= link_to 'Delete', members_main_listing_path(listing.main, listing), method: :delete, data: { confirm: 'Are you sure? This will also remove this listing from the online directories.' }, class: "btn btn-danger" %>
+										<%= link_to 'Details', members_main_listing_path(members_listing.main, members_listing), class: "btn btn-primary" %>
+										<%= link_to 'Edit', edit_members_main_listing_path(members_listing.main, members_listing), class: "btn btn-primary" %>
+										<%= link_to 'Delete', members_main_listing_path(members_listing.main, members_listing), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure? This will also remove this listing from the online directories.' } %>
 									</div>
 								</td>
 							</tr>

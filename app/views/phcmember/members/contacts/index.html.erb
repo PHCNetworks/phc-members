@@ -25,7 +25,7 @@
 							<th>Company Name</th>
 							<th>City</th>
 							<th>Province</th>
-							<th>Country</th>						
+							<th>Country</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -36,11 +36,11 @@
 								<td><%= members_contact.mccompanyname %></td>
 								<td><%= members_contact.mccity %></td>
 								<td><%= members_contact.mcprovince %></td>
-								<td><%= members_contact.mccountry %></td>>
+								<td><%= members_contact.mccountry %></td>
 								<td><div class="btn-group" role="group" aria-label="Member Adresses Group">
-										<%= link_to 'Show', members_main_memberaddress_path(contact.main, contact), class: "btn btn-primary" %>
-										<%= link_to 'Edit', edit_members_main_memberaddress_path(contact.main, contact), class: "btn btn-primary" %>
-										<%= link_to 'Delete', members_main_memberaddress_path(contact.main, contact), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+										<%= link_to 'Show', members_main_contact_path(members_contact.main, members_contact), class: "btn btn-primary" %>
+										<%= link_to 'Edit', edit_members_main_contact_path(members_contact.main, members_contact), class: "btn btn-primary" %>
+										<%= link_to 'Delete', members_main_contact_path(members_contact.main, members_contact), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
 									</div>
 								</td>
 							</tr>

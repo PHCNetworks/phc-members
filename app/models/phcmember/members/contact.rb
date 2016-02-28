@@ -7,7 +7,7 @@ module Phcmember
 		end
 
 		# Model Relationships
-		belongs_to :main
+		belongs_to :main, class_name: 'Members::Main'
 
 		# Validation for Form Fields
 		validates :mccontactname,

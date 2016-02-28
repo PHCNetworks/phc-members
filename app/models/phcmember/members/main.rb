@@ -7,8 +7,8 @@ module Phcmember
 		end
 
 		# Model Relationship
-		has_many :listings, dependent: :destroy
-		has_many :contacts, dependent: :destroy
+		has_many :listings, class_name: 'Members::Listing', dependent: :destroy
+		has_many :contacts, class_name: 'Members::Contact', dependent: :destroy
 
 		# Validation for Form Fields
 		validates :mfirstname,

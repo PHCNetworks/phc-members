@@ -33,7 +33,7 @@ module Phcmember
 			@members_listing = main.listings.build
 			respond_to do |format|
 				format.html # new.html.erb
-				format.xml  { render :xml => @membercontact }
+				format.xml  { render :xml => @members_listing }
 			end
 		end
 
@@ -48,7 +48,7 @@ module Phcmember
 			@main = Members::Main.find(params[:main_id])
 			@members_listing = @main.listings.create(members_listing_params)
 			if @members_listing.save
-				redirect_to @members_listing, notice: 'Listing was successfully created.'
+				redirect_to members_main_listings_path, notice: 'Listing was successfully created.'
 				else
 					render :new
 			end
@@ -57,7 +57,7 @@ module Phcmember
 		# Update Action
 		def update
 			if @members_listing.update(members_listing_params)
-				redirect_to @members_listing, notice: 'Listing was successfully updated.'
+				redirect_to members_main_listings_path, notice: 'Listing was successfully updated.'
 				else
 					render :edit
 			end
@@ -66,9 +66,9 @@ module Phcmember
 		# Delete Action
 		def destroy
 			@main = Members::Main.find(params[:main_id])
-			@members_listing = @main.memberlistings.find(params[:id])
+			@members_listing = @main.listings.find(params[:id])
 			@members_listing.destroy
-			redirect_to members_listings_url, notice: 'Listing was successfully destroyed.'
+			redirect_to members_main_listings_path, notice: 'Listing was successfully destroyed.'
 		end
 
 		private

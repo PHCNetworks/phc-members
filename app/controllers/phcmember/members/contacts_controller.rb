@@ -48,7 +48,7 @@ module Phcmember
 			@main = Members::Main.find(params[:main_id])
 			@members_contact = @main.contacts.create(members_contact_params)
 			if @members_contact.save
-				redirect_to @members_contact, notice: 'Member contact information was successfully created.'
+				redirect_to members_main_contacts_path, notice: 'Member contact information was successfully created.'
 				else
 					render :new
 			end
@@ -57,7 +57,7 @@ module Phcmember
 		# Update Action
 		def update
 			if @members_contact.update(members_contact_params)
-				redirect_to @members_contact, notice: 'Member contact information was successfully updated.'
+				redirect_to members_main_contacts_path, notice: 'Member contact information was successfully updated.'
 				else
 					render :edit
 			end
@@ -68,7 +68,7 @@ module Phcmember
 			@main = Members::Main.find(params[:main_id])
 			@members_contact = @main.contacts.find(params[:id])
 			@members_contact.destroy
-			redirect_to members_contacts_url, notice: 'Member contact information was successfully destroyed.'
+			redirect_to members_main_contacts_path, notice: 'Member contact information was successfully destroyed.'
 		end
 
 		private
@@ -80,7 +80,7 @@ module Phcmember
 
 		# White List
 		def members_contact_params
-			params.require(:members_contact).permit(:mccontactname, :mccompanyname, :mcaddressl1, :mcaddressl2, :mccity, :mlprovince, :mccountry, :mcpostalcode, :mcphone, :mlwebsite, :mlemail, :main_id, :account_id)
+			params.require(:members_contact).permit(:mccontactname, :mccompanyname, :mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mcphone, :mcwebsite, :mcemail, :main_id, :account_id)
 		end
 
 	end
