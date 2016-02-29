@@ -6,6 +6,7 @@ module Phcmembers
 		require 'bootstrap-sass'
 		require 'font-awesome-rails'
 		require 'gravtastic'
+		require 'figaro'
 
 		# Isolate Namespace for PHC Members
 		isolate_namespace Phcmembers

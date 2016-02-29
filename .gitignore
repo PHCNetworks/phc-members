@@ -40,3 +40,6 @@ build/
 /.bundle/
 /lib/bundler/man/
 /vendor/
+
+# Ignore application configuration
+/config/application.yml
