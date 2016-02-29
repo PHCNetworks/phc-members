@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
 	s.add_dependency "devise", '~> 3.5', '>= 3.5.6'
 
 	# UI & Frontend Elements
-	s.add_dependency 'therubyracer', '~> 0.12.2'
 	s.add_dependency 'jquery-rails', '~> 4.0', '>= 4.0.5'
 	s.add_dependency 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 	s.add_dependency 'font-awesome-rails', '~> 4.5'
