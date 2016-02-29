@@ -1,6 +1,7 @@
 module Phcmembers
 	class Engine < ::Rails::Engine
 		# Required Dependencies
+		require 'therubyracer'
 		require 'jquery-rails'
 		require 'sass-rails'
 		require 'bootstrap-sass'

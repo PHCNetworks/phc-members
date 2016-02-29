@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 	s.version     = Phcmembers::VERSION
 	s.authors     = ["BradPotts"]
 	s.email       = ["bradley.j.potts@gmail.com"]
-	s.homepage    = "http:/phcmemberss.com"
+	s.homepage    = "http://phcmembers.com"
 	s.summary     = "Membership & Directory Manager"
 	s.description = "(Under Development) Manage your organization's members and website's membership directory."
 	s.license     = "GPL-3.0"
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
 	s.add_dependency "devise", '~> 3.5', '>= 3.5.6'
 
 	# UI & Frontend Elements
+	s.add_dependency 'therubyracer', '~> 0.12.2'
 	s.add_dependency 'jquery-rails', '~> 4.0', '>= 4.0.5'
 	s.add_dependency 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 	s.add_dependency 'font-awesome-rails', '~> 4.5'
