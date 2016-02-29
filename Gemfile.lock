@@ -54,6 +54,10 @@ GEM
     autoprefixer-rails (6.3.3.1)
       execjs
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -67,6 +71,7 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
+    coderay (1.1.1)
     concurrent-ruby (1.0.1)
     database_cleaner (1.5.1)
     devise (3.5.6)
@@ -194,6 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors (~> 2.1, >= 2.1.1)
   capybara (~> 2.6)
   database_cleaner (~> 1.5)
   factory_girl_rails (~> 4.4, >= 4.4.1)
