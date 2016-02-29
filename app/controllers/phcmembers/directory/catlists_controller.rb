@@ -29,7 +29,7 @@ module Phcmembers
 		# New Directory Listing
 		def new
 			category = Directory::Category.find(params[:category_id])
-			@directory_catlists = category.catlists.build
+			@directory_catlist = category.catlists.build
 		end
 
 		# Edit Directory Listing Action
@@ -41,10 +41,10 @@ module Phcmembers
 		# Create Directory Listing Action
 		def create
 			@category = Directory::Category.find(params[:category_id])
-			@directory_catlist = @category.directory_catlists.create(directory_catlist_params)
+			@directory_catlist = @category.catlists.create(directory_catlist_params)
 			respond_to do |format|
 				if @directory_catlist.save
-					format.html { redirect_to backend_directorycategory_directorylistings_path, notice: 'Comment for Directorycategory was Successfully Created.' }
+					format.html { redirect_to directory_category_catlists_path, notice: 'Comment for Directorycategory was Successfully Created.' }
 					format.json { render action: 'show', status: :created, location: @directory_catlist }
 					else
 						format.html { render action: 'new' }
@@ -57,7 +57,7 @@ module Phcmembers
 		def update
 			respond_to do |format|
 				if @directory_catlist.update(directory_catlist_params)
-					format.html { redirect_to backend_directorycategory_directorylistings_path, notice: 'Comment for Directorycategory was Successfully Updated.' }
+					format.html { redirect_to directory_category_catlists_path, notice: 'Comment for Directorycategory was Successfully Updated.' }
 					format.json { head :no_content }
 					else
 						format.html { render action: 'edit' }
@@ -69,10 +69,10 @@ module Phcmembers
 		# Delete Directory Listing
 		def destroy
 			@category = Directory::Category.find(params[:category_id])
-			@directory_catlist = @category.directory_catlists.find(params[:id])
+			@directory_catlist = @category.catlists.find(params[:id])
 			@directory_catlist.destroy
 			respond_to do |format|
-				format.html { redirect_to backend_directorycategory_directorylistings_path, notice: 'Comment for Directorycategory was Successfully Deleted.'  }
+				format.html { redirect_to directory_category_catlists_path, notice: 'Comment for Directorycategory was Successfully Deleted.'  }
 				format.json { head :no_content }
 			end
 		end

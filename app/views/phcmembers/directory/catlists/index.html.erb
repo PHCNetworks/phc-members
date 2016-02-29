@@ -11,24 +11,26 @@
 
 
 <!-- Main Content -->
-<div class="wrapper wrapper-content">
-	<div class="panel">
-		<div class="panel-heading">
-			Category Listings for <%= @category.catname %> 
-		</div>
-		<div class="panel-body">
-			<table class="table table-bordered table-striped table-hover">
-				<tbody>
-					<% @directory_catlists.each do |directory_catlists| %>
-						<tr>
-							<td><%# directory_catlists.directorycategory.dcname %></td>
-							<td><%# directory_catlists.memberlisting.mlcompanyname %></td>
-							<td><%= link_to 'Destroy', directory_catlist, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure? This will only remove the listing from the directory category. The listing will still be saved with the members profile.' } %></td>
-						</tr>
-					<% end %>
-				</tbody>
-			</table>
-			<%= link_to 'New Listing', new_directory_category_catlist_path, class: "btn btn-primary" %>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Category Listings for <%= @category.catname %> 
+			</div>
+			<div class="panel-body">
+				<table class="table table-bordered table-striped table-hover">
+					<tbody>
+						<% @directory_catlists.each do |directory_catlists| %>
+							<tr>
+								<td><%# directory_catlists.directorycategory.dcname %></td>
+								<td><%# directory_catlists.memberlisting.mlcompanyname %></td>
+								<td><%= link_to 'Destroy', directory_category_catlist_path(directory_catlists.category, directory_catlists), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure? This will only remove the listing from the directory category. The listing will still be saved with the members profile.' } %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<%= link_to 'New Listing', new_directory_category_catlist_path, class: "btn btn-primary" %>
+			</div>
 		</div>
 	</div>
 </div>
