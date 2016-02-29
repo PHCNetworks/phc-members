@@ -43,8 +43,8 @@
 								</td>
 								<td>
 									<div class="btn-group" role="group" aria-label="Member Main Listings Address Group">
-										<%# link_to 'Private Address', backend_membercontact_memberaddresses_path(membercontact), class: "btn btn-warning" %>
-										<%# link_to 'Public Listings', backend_membercontact_memberlistings_path(membercontact), class: "btn btn-primary" %>
+										<%= link_to 'Private Address', members_main_contacts_path(members_main), class: "btn btn-warning" %>
+										<%= link_to 'Public Listings', members_main_listings_path(members_main), class: "btn btn-primary" %>
 									</div>
 								</td>
 							</tr>

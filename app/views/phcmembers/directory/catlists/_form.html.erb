@@ -12,8 +12,8 @@
 	<% end %>
 
 	<div class="form-group">
-		<label><%= f.label :listing_id, "Select a Listing" %></label>
-		<%= f.text_field :listing_id, class: "form-control", placeholder: "Directory Listing" %>
+		<label>Select a Listing</label>
+		<%= collection_select(:directory_catlist, :listing_id, Phcmembers::Members::Listing.order('mlcompanyname'), :id, :mlcompanyname, {}, {class: "form-control form-control-sm"}) %>
 	</div>
 
 	<div class="form-group">

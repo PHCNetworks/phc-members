@@ -36,6 +36,10 @@ module Phcmembers
 		def edit
 			category = Directory::Category.find(params[:category_id])
 			@directory_catlist = category.catlists.find(params[:id])
+			respond_to do |format|
+				format.html # new.html.erb
+				format.xml  { render :xml => @directory_catlist }
+			end
 		end
 
 		# Create Directory Listing Action

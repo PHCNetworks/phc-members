@@ -7,8 +7,8 @@ module Phcmembers
 		end
 
 		# Model Relationships
-		belongs_to :main
-		# has_many :directorylistings, dependent: :destroy
+		belongs_to :main, class_name: 'Members::Main'
+		has_many :catlists, class_name: 'Directory::Catlist', dependent: :destroy
 
 		# Validation for Form Fields
 		validates :mlcontactname,
