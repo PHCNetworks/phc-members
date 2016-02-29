@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
 	s.add_development_dependency 'factory_girl_rails', '~> 4.4', '>= 4.4.1'
 	s.add_development_dependency 'rspec-rails', '~> 3.4'
 	s.add_development_dependency 'capybara', '~> 2.6'
+	s.add_development_dependency 'better_errors', '~> 2.1', '>= 2.1.1'
 
 	s.add_development_dependency 'faker', '~> 1.6'
 	s.add_development_dependency 'selenium-webdriver', '~> 2.52'
