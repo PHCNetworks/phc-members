@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 	s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
 	# Main Dependencies
-	s.add_dependency "rails", '~> 4.2', '>= 4.2.5.1'
+	s.add_dependency "rails", '~> 4.2', '>= 4.2.5.2'
 	
 	#Security Dependencies
 	s.add_dependency "devise", '~> 3.5', '>= 3.5.6'
