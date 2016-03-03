@@ -1,17 +1,9 @@
 <%= form_for(@directory_category) do |f| %>
+	
+	<!-- PHC-Notifi Render Validation -->
+	<%= render 'layouts/phcnotifi/components/validations', :object => @directory_category %>
 
-	<% if @directory_category.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(@directory_category.errors.count, "error") %> prohibited this directorylisting from being saved:</h2>
-			<ul>
-				<% @directory_category.errors.full_messages.each do |message| %>
-					<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
-
-	<div class="form-group">
+	<div class="form-group field_with_errors">
 		<label><%= f.label :catname, "Category Name" %></label>
 		<%= f.text_field :catname, class: "form-control", placeholder: "Directory Category" %>
 	</div>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PHCMembers - Directory Manager</title>
+		<title>PHCMembers - Members & Directory Manager</title>
 			<%= stylesheet_link_tag    "phcmembers/application", media: "all" %>
 			<%= javascript_include_tag "phcmembers/application" %>
 			<%= csrf_meta_tags %>
 	</head>
 	<body>
 		<div class="container">
-			<%= render 'phcnotifi/components/notifications' %>
+			<%= render 'layouts/phcnotifi/components/notifications' %>
 			<%= yield %>
 		</div>
 	</body>

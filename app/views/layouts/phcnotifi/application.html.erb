@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>PHCNetworks Notifications</title>
+		<%= stylesheet_link_tag "phcnotifi/application", media: "all" %>
+		<%= javascript_include_tag "phcnotifi/application" %>
+		<%= csrf_meta_tags %>
+
+	</head>
+	<body data-no-turbolink="true">
+
+		<div class="container">
+			<%= render 'components/notifications' %>
+			<%= render 'components/validations' %>
+			<%= yield %>
+		</div>
+
+	</body>
+</html>

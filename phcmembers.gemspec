@@ -22,8 +22,7 @@ Gem::Specification.new do |s|
 	
 	#Security Dependencies
 	s.add_dependency 'devise', '~> 3.5', '>= 3.5.6'
-	s.add_dependency 'phcnotifi', '~> 0.1.5'
-
+	s.add_dependency 'phcnotifi', '~> 0.2.1'
 
 	# UI & Frontend Elements
 	s.add_dependency 'jquery-rails', '~> 4.0', '>= 4.0.5'
