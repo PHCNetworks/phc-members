@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Phcmembers</title>
+		<title>PHCMembers - Members & Directory Manager</title>
 			<%= stylesheet_link_tag    "phcmembers/application", media: "all" %>
 			<%= javascript_include_tag "phcmembers/application" %>
 			<%= csrf_meta_tags %>
 	</head>
 	<body>
-		<%= render 'layouts/phcmembers/elements/alerts/notifications' %>
-		<%= yield %>
+		<div class="container">
+			<%= render 'phcnotifi/components/notifications' %>
+			<%= yield %>
+		</div>
 	</body>
 </html>

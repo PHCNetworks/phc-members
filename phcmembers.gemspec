@@ -12,16 +12,18 @@ Gem::Specification.new do |s|
 	s.email       = ["bradley.j.potts@gmail.com"]
 	s.homepage    = "http://phcmembers.com"
 	s.summary     = "Membership & Directory Manager"
-	s.description = "(Under Development) Manage your organization's members and website's membership directory."
+	s.description = "Manage your organization's members and website's membership directory."
 	s.license     = "GPL-3.0"
 
 	s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
 	# Main Dependencies
-	s.add_dependency "rails", '~> 4.2', '>= 4.2.5.2'
+	s.add_dependency 'rails', '~> 4.2', '>= 4.2.5.2'
 	
 	#Security Dependencies
-	s.add_dependency "devise", '~> 3.5', '>= 3.5.6'
+	s.add_dependency 'devise', '~> 3.5', '>= 3.5.6'
+	s.add_dependency 'phcnotifi', '~> 0.1.5'
+
 
 	# UI & Frontend Elements
 	s.add_dependency 'jquery-rails', '~> 4.0', '>= 4.0.5'
