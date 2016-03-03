@@ -8,7 +8,7 @@ PATH
       font-awesome-rails (~> 4.5)
       gravtastic (~> 3.2, >= 3.2.6)
       jquery-rails (~> 4.0, >= 4.0.5)
-      phcnotifi (~> 0.2.0)
+      phcnotifi (~> 0.2.1)
       rails (~> 4.2, >= 4.2.5.2)
       sass-rails (~> 5.0, >= 5.0.4)
 
