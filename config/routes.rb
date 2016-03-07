@@ -1,7 +1,7 @@
 Phcmembers::Engine.routes.draw do
 
 	if defined?(Mtdevise) 
-		constraints(Devise::Constraints::SubdomainRequired) do
+		constraints(Mtdevise::Constraints::SubdomainRequired) do
 
 			# Application Client Backend
 			namespace :members do
