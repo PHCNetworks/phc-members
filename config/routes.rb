@@ -55,8 +55,6 @@ Phcmembers::Engine.routes.draw do
 					resources :catlists
 				end
 			end
-		
-		
 
 	end
 
