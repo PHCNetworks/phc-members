@@ -3,8 +3,7 @@ require_dependency "phcmembers/application_controller"
 module Phcmembers
 	class Directory::CategoriesController < ApplicationController
 
-		# Security & Action Filters
-		# before_filter :authenticate_user!
+		# Filters
 		layout 'layouts/phcmembers/directory/directory_all.html.erb'
 		before_action :set_directory_category, only: [:edit, :update, :destroy]
 

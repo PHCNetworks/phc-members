@@ -1,11 +1,6 @@
 module Phcmembers
 	class Members::Contact < ActiveRecord::Base
 
-		# Mtdevise Scope
-		def self.scoped_to(account)
-			where(:account_id => account.id)
-		end
-
 		# Model Relationships
 		belongs_to :main, class_name: 'Members::Main'
 

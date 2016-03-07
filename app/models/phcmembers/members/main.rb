@@ -1,11 +1,6 @@
 module Phcmembers
 	class Members::Main < ActiveRecord::Base
 
-		# Mtdevise Scope
-		def self.scoped_to(account)
-			where(:account_id => account.id)
-		end
-
 		# Model Relationship
 		has_many :listings, class_name: 'Members::Listing', dependent: :destroy
 		has_many :contacts, class_name: 'Members::Contact', dependent: :destroy

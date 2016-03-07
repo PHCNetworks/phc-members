@@ -3,8 +3,7 @@ require_dependency "phcmembers/application_controller"
 module Phcmembers
 	class Members::MainsController < ApplicationController
 	
-		# Security & Action Filters
-		# before_filter :authenticate_user!
+		# Filters
 		layout 'layouts/phcmembers/members/members_all.html.erb'
 		before_action :set_members_main, only: [:show, :edit, :update, :destroy]
 
