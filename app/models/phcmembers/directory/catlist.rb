@@ -1,5 +1,10 @@
 module Phcmembers
 	class Directory::Catlist < ActiveRecord::Base
+		
+		# Mtdevise Scope
+		def self.scoped_to(account)
+			where(:account_id => account.id)
+		end
 
 		# Model Relationship
 		belongs_to :category, class_name: 'Directory::Category'
