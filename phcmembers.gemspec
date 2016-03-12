@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 	s.email       = ["bradley.j.potts@gmail.com"]
 	s.homepage    = "http://phcmembers.com"
 	s.summary     = "Membership & Directory Manager Engine"
-	s.description = "PHC-Members is a membership and web directory engine for ruby on rails apps."
+	s.description = "PHC-Members is a membership and web directory engine for ruby on rails apps setup for use with Devise User."
 	s.license     = "GPL-3.0"
 
 	s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
 	s.add_dependency 'font-awesome-rails', '~> 4.5'
 	s.add_dependency 'sass-rails', '~> 5.0', '>= 5.0.4'
 	s.add_dependency 'gravtastic', '~> 3.2', '>= 3.2.6'
+	s.add_dependency 'country_select', '~> 2.5', '>= 2.5.2'
 	
 	# Configuration
 	s.add_dependency 'figaro', '~> 1.1', '>= 1.1.1'

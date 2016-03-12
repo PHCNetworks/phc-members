@@ -5,6 +5,7 @@ module Phcmembers
 	
 		# Filters
 		layout 'layouts/phcmembers/members/members_all.html.erb'
+		#before_action :authenticate_user!
 		before_action :set_members_main, only: [:show, :edit, :update, :destroy]
 
 		# Member Profile List

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228235448) do
+ActiveRecord::Schema.define(version: 20160227212144) do
 
   create_table "phcmembers_directory_categories", force: :cascade do |t|
     t.string   "catname"
