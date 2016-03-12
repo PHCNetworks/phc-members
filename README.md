@@ -7,7 +7,7 @@ PHC-Members is a membership and web directory engine for ruby on rails apps.
 
 #### Step 1 - Add PHC-Members to your gemfile  
 
-	gem 'phcmembers', '~> 0.9.7'
+	gem 'phcmembers', '~> 0.9.8'
 	bundle exec install  
 
 #### Step 2 - Add database migration files  
