@@ -2,12 +2,12 @@
 [![Code Climate](https://codeclimate.com/github/PHCNetworks/phc-members/badges/gpa.svg)](https://codeclimate.com/github/PHCNetworks/phc-members)
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
 
-### PHC-Members (Membership Application) Documentation
-PHCMembers helps you manage your members and membership directory.
+### PHC-Members (Membership & Directory Engine) Documentation
+PHC-Members is a membership and web directory engine for ruby on rails apps.
 
 #### Step 1 - Add PHC-Members to your gemfile  
 
-	gem 'phcmembers', '~> 0.6.2'
+	gem 'phcmembers', '~> 0.9.7'
 	bundle exec install  
 
 #### Step 2 - Add database migration files  
