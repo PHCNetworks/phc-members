@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmembers (1.0.0)
+    phcmembers (1.0.1)
       bootstrap-sass (~> 3.3, >= 3.3.6)
       country_select (~> 2.5, >= 2.5.2)
       figaro (~> 1.1, >= 1.1.1)
