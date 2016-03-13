@@ -6,8 +6,10 @@
 PHC-Members is a membership and web directory engine for ruby on rails apps.
 
 - Fast setup of mebership and directory modules.
+- Directory and listings manager with a directory API.
+- Member's list, contact information and listings manager.
 - Easy app integration with views for your app.
-- Uses Devise (user model) for authetication.
+- Uses Devise (user model) for authentication.
 
 #### Step 1 - Add PHC-Members to your gemfile  
 
