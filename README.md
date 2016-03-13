@@ -36,3 +36,7 @@ PHC-Members UI requires bootstrap and fontawesome to operate.
 
 	rake assets:clobber
 	rake assets:precompile  
+
+#### Additional Info & Help  
+  
+[Past Security Patch Notes](https://github.com/PHCNetworks/phc-members/wiki/Critical-Security-Updates)
