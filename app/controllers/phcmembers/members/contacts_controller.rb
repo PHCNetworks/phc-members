@@ -80,7 +80,7 @@ module Phcmembers
 
 		# White List
 		def members_contact_params
-			params.require(:members_contact).permit(:mccontactname, :mccompanyname, :mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mcphone, :mcwebsite, :mcemail, :main_id, :account_id)
+			params.require(:members_contact).permit(:mccontactname, :mccompanyname, :mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mcphone, :mcwebsite, :mcemail, :main_id)
 		end
 
 	end

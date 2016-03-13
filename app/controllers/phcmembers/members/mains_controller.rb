@@ -60,7 +60,7 @@ module Phcmembers
 
 		# White List
 		def members_main_params
-			params.require(:members_main).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes, :account_id)
+			params.require(:members_main).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes)
 		end
 
 	end

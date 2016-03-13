@@ -13,9 +13,7 @@ class CreatePhcmembersMembersContacts < ActiveRecord::Migration
 			t.string :mcphone
 			t.string :mcemail
 
-			t.string :mctype
 			t.references :main, index: true
-			t.integer :account_id
 
 			t.timestamps null: false
 

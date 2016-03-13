@@ -15,7 +15,6 @@ class CreatePhcmembersMembersListings < ActiveRecord::Migration
 			t.string :mlemail
 
 			t.references :main, index: true
-			t.integer :account_id
 
 			t.timestamps null: false
 

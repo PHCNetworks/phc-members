@@ -9,8 +9,6 @@ class CreatePhcmembersMembersMains < ActiveRecord::Migration
 			t.string :mphone
 			t.string :mnotes
 
-			t.integer :account_id
-
 			t.timestamps null: false
 
 		end

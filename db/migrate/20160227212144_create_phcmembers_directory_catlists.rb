@@ -6,8 +6,6 @@ class CreatePhcmembersDirectoryCatlists < ActiveRecord::Migration
 			t.integer :subcategory_id
 			t.integer :listing_id
 
-			t.integer :account_id
-
 			t.timestamps null: false
 
 		end
