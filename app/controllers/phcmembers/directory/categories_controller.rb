@@ -5,7 +5,7 @@ module Phcmembers
 
 		# Filters
 		layout 'layouts/phcmembers/directory/directory_all.html.erb'
-		before_action :authenticate_user!
+		#before_action :authenticate_user!
 		before_action :set_directory_category, only: [:edit, :update, :destroy]
 
 		# Directory Category Index

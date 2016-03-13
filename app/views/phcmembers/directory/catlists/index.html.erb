@@ -23,7 +23,7 @@
 						<% @directory_catlists.each do |directory_catlists| %>
 							<tr>
 								<td><%= directory_catlists.category.catname %></td>
-								<td><%# directory_catlists.listing.mlcompanyname %></td>
+								<td><%= directory_catlists.listing.mlcompanyname %></td>
 								<td><%= link_to 'Destroy', directory_category_catlist_path(directory_catlists.category, directory_catlists), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure? This will only remove the listing from the directory category. The listing will still be saved with the members profile.' } %></td>
 							</tr>
 						<% end %>

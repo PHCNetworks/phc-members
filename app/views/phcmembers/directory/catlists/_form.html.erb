@@ -1,16 +1,11 @@
 <%= form_for([@directory_catlist.category, @directory_catlist], url: directory_category_catlists_path) do |f| %>
 	
 	<!-- PHC-Notifi Render Validation -->
-	<%= render 'layouts/phcnotifi/components/validations', :object => @directory_category %>
+	<%= render 'layouts/phcnotifi/components/validations', :object => @directory_catlist %>
 
 	<div class="form-group field_with_errors">
 		<label>Select a Listing</label>
 		<%= collection_select(:directory_catlist, :listing_id, Phcmembers::Members::Listing.order('mlcompanyname'), :id, :mlcompanyname, {}, {class: "form-control form-control-sm"}) %>
-	</div>
-
-	<div class="form-group field_with_errors">
-		<label><%= f.label :category_id, "Select a Category" %></label>
-		<%= f.text_field :category_id, class: "form-control", placeholder: "Directory Category" %>
 	</div>
 
 	<div class="actions">
