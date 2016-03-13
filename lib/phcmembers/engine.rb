@@ -1,12 +1,15 @@
 module Phcmembers
 	class Engine < ::Rails::Engine
-		# Required Dependencies
+		# Main Dependencies
+		require 'figaro'
+		require 'country_select'
+
+		# UI Dependencies
 		require 'jquery-rails'
 		require 'sass-rails'
 		require 'bootstrap-sass'
 		require 'font-awesome-rails'
 		require 'gravtastic'
-		require 'figaro'
 
 		# Isolate Namespace for PHC Members
 		isolate_namespace Phcmembers

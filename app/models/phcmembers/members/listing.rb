@@ -28,7 +28,7 @@ module Phcmembers
 
 		validates :mlcountry,
 			presence: true,
-			length: { minimum: 6 }
+			length: { minimum: 2 }
 
 		validates :mlphone,
 			presence: true,
