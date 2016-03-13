@@ -1,11 +1,11 @@
 <!-- Bread Crumbs -->
 <div class="row">
 	<div class="col-lg-12">
-		<h2>Member's Information</h2>
+		<h2>Member's Listing Information</h2>
 		<ol class="breadcrumb">
 			<li><%= link_to "Home", members_root_path %></li>
 			<li><%= link_to "Members List", members_mains_path %></li>
-			<li><%= link_to "Members Listings", members_main_contacts_path %></li>
+			<li class="active">Member's Directory Listing Index</li>
 		</ol>
 	</div>
 </div>
@@ -15,7 +15,7 @@
 	<div class="col-lg-12">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				Member's Listing Index
+				Member's Directory Listing Index
 			</div>
 			<div class="panel-body">
 				<%= render 'layouts/phcnotifi/components/notifications' %>
