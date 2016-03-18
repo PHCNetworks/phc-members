@@ -12,6 +12,10 @@ module Phcmembers
 		require 'font-awesome-rails'
 		require 'gravtastic'
 
+		# API Dependencies
+		require 'rabl'
+		require 'oj'
+
 		# Isolate Namespace for PHC Members
 		isolate_namespace Phcmembers
 		
@@ -27,7 +31,7 @@ module Phcmembers
 			g.fixture_replacement :factory_girl, dir: "spec/factories"
 		end
 		
-		# Load Helper Files (Prevents Problems)
+		# Load Helper Files
 		config.to_prepare do
 			ApplicationController.helper(ApplicationHelper)
 		end

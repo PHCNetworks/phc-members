@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
 
 ### PHC-Members (Membership & Directory Engine) Documentation
-PHC-Members is a membership and web directory engine for ruby on rails apps.
+PHC-Press is an open source membership and listing directory engine purpose built for PHCMembers application.  
 
 - Fast setup of mebership and directory modules.
 - Directory and listings manager with a directory API.
