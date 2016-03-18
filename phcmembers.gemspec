@@ -29,6 +29,10 @@ Gem::Specification.new do |spec|
 	spec.add_dependency 'sass-rails', '~> 5.0', '>= 5.0.4'
 	spec.add_dependency 'gravtastic', '~> 3.2', '>= 3.2.6'
 	spec.add_dependency 'country_select', '~> 2.5', '>= 2.5.2'
+	
+	# API and Rabl
+	spec.add_dependency 'oj', '~> 2.14', '>= 2.14.6'
+	spec.add_dependency  'rabl', '~> 0.12.0'
 
 	# Configuration
 	spec.add_dependency 'figaro', '~> 1.1', '>= 1.1.1'
