@@ -26,17 +26,7 @@
       <%= render "layouts/application_sidebar" %>
     </aside>
     <aside class="right-side">
-      <%= yield(:content_header) %>
-
-      <% flash.each do |name, msg| %>
-        <div class="pad margin no-print">
-          <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-            <%= msg %>
-          <% end %>
-        </div>
-      <% end %>
-
+      <%= render 'phcnotifi/notifications' %>
       <%= yield %>
     </aside>
   </div>

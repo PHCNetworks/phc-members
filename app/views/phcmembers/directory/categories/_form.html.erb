@@ -1,7 +1,7 @@
 <%= form_for(@directory_category) do |f| %>
 	
 	<!-- PHC-Notifi Render Validation -->
-	<%= render 'layouts/phcnotifi/components/validations', :object => @directory_category %>
+	<%= render 'phcnotifi/validations', :object => @directory_category %>
 
 	<div class="form-group field_with_errors">
 		<label><%= f.label :catname, "Category Name" %></label>

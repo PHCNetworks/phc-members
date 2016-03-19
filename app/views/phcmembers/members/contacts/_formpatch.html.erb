@@ -1,7 +1,7 @@
 <%= form_for([@members_contact.main, @members_contact], url: members_main_contact_path, method: :patch ) do |f| %>
 
 	<!-- PHC-Notifi Render Validation -->
-	<%= render 'layouts/phcnotifi/components/validations', :object => @members_contact %>
+	<%= render 'phcnotifi/validations', :object => @members_contact %>
 	
 	<div class="form-group field_with_errors">
 		<label><%= f.label :mccontactname, "Contact Name*" %></label>
