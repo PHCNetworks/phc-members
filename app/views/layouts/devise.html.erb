@@ -6,7 +6,7 @@
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>PHCMembers Members Manager</title>
+		<title>PHCMembers Accounts</title>
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -20,11 +20,7 @@
 	<body class="skin-blue">
 		<%= render "layouts/components/application_header" %>
 		<div class="wrapper row-offcanvas row-offcanvas-left">
-
-			<aside class="left-side sidebar-offcanvas">
-				<%= render "layouts/components/application_sidebar" %>
-			</aside>
-			<aside class="right-side">
+			<aside>
 				<%= yield(:content_header) %>
 				<% flash.each do |name, msg| %>
 					<div class="pad margin no-print">
