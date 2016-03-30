@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 	spec.email       = ["info@phcnetworks.net"]
 	spec.homepage    = "http://phcnetworks.net/engine-yard"
 	spec.summary     = "Membership & Directory Manager Engine"
-	spec.description = "PHC-Press is an open source membership and listing directory engine purpose built for PHCMembers application."
+	spec.description = "PHC Members is an open source membership management gem purpose built for PHCMembers application."
 	spec.license     = "GPL-3.0"
 
 	spec.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]

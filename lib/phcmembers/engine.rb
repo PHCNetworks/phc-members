@@ -34,6 +34,8 @@ module Phcmembers
 		# Load Helper Files
 		config.to_prepare do
 			ApplicationController.helper(ApplicationHelper)
+			Phcnotifi::ApplicationController.helper(ApplicationHelper)
+			Phctitler::ApplicationController.helper(ApplicationHelper)
 		end
 
 	end
