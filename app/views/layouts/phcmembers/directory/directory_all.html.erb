@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PHCMembers - Web Directory & Listings Manager</title>
+		<title>PHCMembers - Member's Listing & Contacts Manager</title>
 			<%= stylesheet_link_tag    "phcmembers/application", media: "all" %>
 			<%= javascript_include_tag "phcmembers/application" %>
 			<%= csrf_meta_tags %>
 	</head>
 	<body>
 		<div class="container">
+
 			<%= render 'phcnotifi/notifications' %>
 			<%= yield %>
+
 		</div>
 	</body>
 </html>
