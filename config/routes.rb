@@ -1,7 +1,12 @@
 Phcmembers::Engine.routes.draw do
 	
 	# Dashboard
-	root :to => "dashboard#index"
+	namespace :dashboard do
+
+		# Dashboard Main Index
+		get '/' => 'indices#index'
+
+	end
 
 	# Application Client Backend
 	namespace :members do

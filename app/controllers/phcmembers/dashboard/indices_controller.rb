@@ -1,10 +1,12 @@
 require_dependency "phcmembers/application_controller"
 
 module Phcmembers
-	class DashboardController < ApplicationController
+	class Dashboard::IndicesController < ApplicationController
 
-		#before_action :authenticate_user!
+		# Filters
+		before_action :authenticate_user!
 
+		# Dashboard Index
 		def index
 			@members_main = Members::Main.all
 			@members_listing = Members::Listing.all
