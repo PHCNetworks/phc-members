@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 	# Main Dependencies
 	spec.add_dependency 'rails', '~> 4.2', '>= 4.2.5.2'
 	spec.add_dependency 'phcnotifi', '~> 2.6'
+	spec.add_dependency 'phctitler', '~> 1.8', '>= 1.8.2'
 
 	# UI & Frontend Elements
 	spec.add_dependency 'jquery-rails', '~> 4.1', '>= 4.1.1'

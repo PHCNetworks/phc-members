@@ -1,0 +1,51 @@
+<div class="wrapper wrapper-content">
+
+	<div class="row">
+
+		<div class="col-lg-3">
+			<div class="ibox">
+				<div class="ibox-content">
+					<h5>Number of Members</h5>
+					<h1 class="no-margins"><%= @members_main.count(:all) %></h1>
+					<div class="stat-percent font-bold text-navy"><%= @members_contact.count(:all) %></div>
+					<small>Number of Addresses on File</small>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3">
+			<div class="ibox">
+				<div class="ibox-content">
+					<h5>Number of Member Listings</h5>
+					<h1 class="no-margins"><%= @members_listing.count(:all) %></h1>
+					<div class="stat-percent font-bold text-navy"><%= @members_main.count(:all) %>/<%= @members_listing.count(:all) %></div>
+					<small>Member/Listing Ratio</small>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3">
+			<div class="ibox">
+				<div class="ibox-content">
+					<h5>Number of Directory Categories</h5>
+					<h1 class="no-margins"><%= @directory_category.count(:all) %></h1>
+					<div class="stat-percent font-bold text-navy"><%= @directory_catlists.count(:all) %>/<%= @directory_category.count(:all) %></div>
+					<small>Listing/Caegory Ratio</small>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3">
+			<div class="ibox">
+				<div class="ibox-content">
+					<h5>Number of Active Listings</h5>
+					<h1 class="no-margins"><%= @directory_catlists.count(:all) %></h1>
+					<div class="stat-percent font-bold text-danger"><%= @members_listing.count(:all) - @directory_catlists.count(:all) %></div>
+					<small>Listings Deactived</small>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>

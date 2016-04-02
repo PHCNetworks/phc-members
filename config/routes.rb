@@ -1,4 +1,7 @@
 Phcmembers::Engine.routes.draw do
+	
+	# Dashboard
+	root :to => "dashboard#index"
 
 	# Application Client Backend
 	namespace :members do

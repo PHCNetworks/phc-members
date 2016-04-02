@@ -4,6 +4,10 @@ module Phcmembers
 		# Main Dependencies
 		require 'figaro'
 		require 'country_select'
+		
+		# PHCEngines
+		require 'phcnotifi'
+		require 'phctitler'
 
 		# UI Dependencies
 		require 'jquery-rails'
