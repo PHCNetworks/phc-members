@@ -6,7 +6,7 @@
 ### PHC-Members (Membership & Directory Engine) Documentation
 PHCPress is an open source membership and listing directory engine purpose built for PHCMembers application.  
 
-- Fast setup of mebership and web directory modules.
+- Fast setup of membership and web directory modules.
 - Directory and listings manager with a web directory API.
 - Member's list, contact information and listings manager.
 - Easy app integration with views for your app.
@@ -14,7 +14,7 @@ PHCPress is an open source membership and listing directory engine purpose built
 
 #### Step 1 - Add PHC-Members to your gemfile  
 
-	gem 'phcmembers', '~> 1.8', '>= 1.8.1'
+	gem 'phcmembers', '~> 1.9'
 	bundle exec install
 
 #### Step 2 - Add database migration files  
