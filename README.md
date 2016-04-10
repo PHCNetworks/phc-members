@@ -14,7 +14,7 @@ PHCPress is an open source membership and listing directory engine purpose built
   
 #### Step 1 - Add PHC-Members to your gemfile  
   
-	gem 'phcmembers', '~> 1.9'
+	gem 'phcmembers', '~> 2.0'
 	bundle exec install
   
 #### Step 2 - Add database migration files  
