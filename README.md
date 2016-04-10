@@ -3,8 +3,8 @@
 [![Issue Count](https://codeclimate.com/github/PHCNetworks/phc-members/badges/issue_count.svg)](https://codeclimate.com/github/PHCNetworks/phc-members)
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
   
-### PHC-Members (Membership & Directory Engine) Documentation
-PHCPress is an open source membership and listing directory engine purpose built for PHCMembers application.  
+### PHCMembers(2) (Membership & Directory Engine) Documentation
+PHCMembers(2) is an open source membership and listing directory engine purpose built for PHCMembers application.  
   
 - Fast setup of membership and web directory modules.
 - Directory and listings manager with a web directory API.
@@ -12,7 +12,7 @@ PHCPress is an open source membership and listing directory engine purpose built
 - Easy app integration with views for your app.
 - Uses Devise (user model) for authentication.
   
-#### Step 1 - Add PHC-Members to your gemfile  
+#### Step 1 - Add PHCMembers to your gemfile  
   
 	gem 'phcmembers', '~> 2.0'
 	bundle exec install
@@ -22,7 +22,7 @@ PHCPress is an open source membership and listing directory engine purpose built
 	rake railties:install:migrations
 	rake db:migrate
   
-#### Step 3 - Mount PHC-Members in your Routes File  
+#### Step 3 - Mount PHCMembers in your Routes File  
 Mount the Engine in your Routes File
   
 	mount Phcmembers::Engine, :at => '/'
