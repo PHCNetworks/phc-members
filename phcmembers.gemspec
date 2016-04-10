@@ -12,15 +12,15 @@ Gem::Specification.new do |spec|
 	spec.email       = ["info@phcnetworks.net"]
 	spec.homepage    = "http://phcnetworks.net/engine-yard"
 	spec.summary     = "Membership & Directory Manager Engine"
-	spec.description = "PHCMembers is an open source membership management gem purpose built for PHCMembers application."
+	spec.description = "PHCMembers(2) is an open source membership management gem purpose built for PHCMembers application."
 	spec.license     = "GPL-3.0"
 
 	spec.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
 	# Main Dependencies
-	spec.add_dependency 'rails', '~> 4.2', '>= 4.2.5.2'
-	spec.add_dependency 'phcnotifi', '~> 2.6'
-	spec.add_dependency 'phctitler', '~> 1.8', '>= 1.8.2'
+	spec.add_dependency 'rails', '~> 4.2', '>= 4.2.6'
+	spec.add_dependency 'phcnotifi', '~> 2.6', '>= 2.6.5'
+	spec.add_dependency 'phctitler', '~> 1.8', '>= 1.8.5'
 
 	# UI & Frontend Elements
 	spec.add_dependency 'jquery-rails', '~> 4.1', '>= 4.1.1'
@@ -41,9 +41,9 @@ Gem::Specification.new do |spec|
 	spec.add_development_dependency 'sqlite3', '~> 1.3', '>= 1.3.11'
 	spec.add_development_dependency 'database_cleaner', '~> 1.5', '>= 1.5.1'
 
-	spec.add_development_dependency 'factory_girl_rails', '~> 4.6'
+	spec.add_development_dependency 'factory_girl_rails', '~> 4.7'
 	spec.add_development_dependency 'rspec-rails', '~> 3.4', '>= 3.4.2'
-	spec.add_development_dependency 'capybara', '~> 2.6', '>= 2.6.2'
+	spec.add_development_dependency 'capybara', '~> 2.7'
 
 	spec.add_development_dependency 'better_errors', '~> 2.1', '>= 2.1.1'
 	spec.add_development_dependency 'binding_of_caller', '~> 0.7.2'
