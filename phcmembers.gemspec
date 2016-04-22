@@ -34,9 +34,6 @@ Gem::Specification.new do |spec|
 	spec.add_dependency 'oj', '~> 2.15'
 	spec.add_dependency 'rabl', '~> 0.12.0'
 
-	# Configuration
-	spec.add_dependency 'figaro', '~> 1.1', '>= 1.1.1'
-
 	# Development & Testing Dependencies
 	spec.add_development_dependency 'sqlite3', '~> 1.3', '>= 1.3.11'
 	spec.add_development_dependency 'database_cleaner', '~> 1.5', '>= 1.5.1'

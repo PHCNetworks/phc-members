@@ -1,26 +1,66 @@
-<p id="notice"><%= notice %></p>
+<!-- Bread Crumbs -->
+<header id="page-header">
+	<h1><%= @members_main.mfirstname %> Detailed Profile</h1>
+	<ol class="breadcrumb">
+		<li><%= link_to "Home", members_root_path %></li>
+		<li class="active"><%= link_to "Members List", members_mains_path %></li>
+	</ol>
+</header>
 
-<p>
-  <strong>Mfirstname:</strong>
-  <%= @members_main.mfirstname %>
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+			<p><strong>Member Creation Date</strong></p>
+			<p class="text-info"><%= @members_main.created_at %></p>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
 
-<p>
-  <strong>Mlastname:</strong>
-  <%= @members_main.mlastname %>
-</p>
+			<div class="panel panel-info"><%= @members_main.mtitle %>
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= @members_main.mfirstname %> <%= @members_main.mlastname %></h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
 
-<p>
-  <strong>Mtitle:</strong>
-  <%= @members_main.mtitle %>
-</p>
+							<div class=" col-md-9 col-lg-9 "> 
+								<table class="table table-user-information">
+									<tbody>
+										<tr>
+											<tr>
+												<td>Job/Contact Title:</td>
+												<td><%= @members_main.mtitle %></td>
+											</tr>
+											<tr>
+												<td>Home Address</td>
+												<td><%= @members_main.contact.first.mccity %> - <%= @members_main.contact.first.mcprovince %></td>
+											</tr>
+											<tr>
+												<td>Email</td>
+												<td><%= mail_to @members_main.memail %></td>
+											</tr>
+											<tr>
+												<td>Phone Number</td>
+												<td><%= @members_main.mphone %></td>
+											</tr>
+										</tr>
+									</tbody>
+								</table>
+								<a href="#" class="btn btn-primary">My Sales Performance</a>
+								<a href="#" class="btn btn-primary">Team Sales Performance</a>
+							</div>
 
-<p>
-  <strong>Memail:</strong>
-  <%= @members_main.memail %>
-</p>
-
-<p>
-  <strong>Mphone:</strong>
-  <%= @members_main.mphone %>
-</p>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+						<span class="pull-right">
+							<a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+							<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
