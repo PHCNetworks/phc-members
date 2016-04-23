@@ -2,7 +2,6 @@ module Phcmembers
 	class Engine < ::Rails::Engine
 
 		# Main Dependencies
-		require 'figaro'
 		require 'country_select'
 		
 		# PHCEngines

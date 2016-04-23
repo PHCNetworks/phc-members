@@ -1,58 +1,57 @@
 <!-- Bread Crumbs -->
-<div class="row wrapper border-bottom white-bg page-heading">
-	<div class="col-lg-12">
-		<h2>Member's Information</h2>
-		<ol class="breadcrumb">
-			<li><%= link_to "Home", members_root_path %></li>
-			<li class="active"><%= link_to "Members List", members_mains_path %></li>
-		</ol>
-	</div>
-</div>
+<header id="page-header">
+	<h1><%= @members_main.mfirstname %> Detailed Profile</h1>
+	<ol class="breadcrumb">
+		<li><%= link_to "Home", members_root_path %></li>
+		<li class="active"><%= link_to "Members List", members_mains_path %></li>
+	</ol>
+</header>
 
-<!-- Main Contents -->
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				Member's Index
-			</div>
-			<div class="panel-body">
-				<%= render 'phcnotifi/notifications' %>
-				<table class="table table-bordered table-striped table-hover">
-					<thead>
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Email</th>
-							<th>Phone</th>
-							<th colspan="2"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<% @members_mains.each do |members_main| %>
-							<tr>
-								<td><%= members_main.mfirstname %></td>
-								<td><%= members_main.mlastname %></td>
-								<td><%= members_main.memail %></td>
-								<td><%= members_main.mphone %></td>
-								<td>
-									<div class="btn-group" role="group" aria-label="Member Main Group">
-										<%= link_to 'Profile', members_main, class: "btn btn-primary" %>
-										<%= link_to 'Edit', edit_members_main_path(members_main), class: "btn btn-primary" %>
-										<%= link_to 'Delete', members_main, method: :delete, data: { confirm: 'Are you sure? Removing a member will delete all records including all listing information from the directory.' }, class: "btn btn-danger" %>
-									</div>
-								</td>
-								<td>
-									<div class="btn-group" role="group" aria-label="Member Main Listings Address Group">
-										<%= link_to 'Private Address', members_main_contacts_path(members_main), class: "btn btn-warning" %>
-										<%= link_to 'Public Listings', members_main_listings_path(members_main), class: "btn btn-primary" %>
-									</div>
-								</td>
-							</tr>
-						<% end %>
-					</tbody>
-				</table>
-				<%= link_to 'Add a New Member', new_members_main_path, class: "btn btn-primary" %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+			<p><strong>Member Creation Date:</strong> <%= @members_main.created_at %></p>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= @members_main.mfirstname %> <%= @members_main.mlastname %></h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+
+							<div class=" col-md-9 col-lg-9 "> 
+								<table class="table table-user-information">
+									<tbody>
+										<tr>
+											<tr>
+												<td>Job/Contact Title:</td>
+												<td><%= @members_main.mtitle %></td>
+											</tr>
+											<tr>
+												<td>Home Address</td>
+												<td><%= @members_main.contacts.first.mccity %> - <%= @members_main.contacts.first.mcprovince %></td>
+											</tr>
+											<tr>
+												<td>Email</td>
+												<td><%= mail_to @members_main.memail %></td>
+											</tr>
+											<tr>
+												<td>Phone Number</td>
+												<td><%= @members_main.mphone %></td>
+											</tr>
+										</tr>
+									</tbody>
+								</table>
+								<%= link_to 'Private Address', members_main_contacts_path(members_main), class: "btn btn-primary" %>
+								<%= link_to 'Public Listings', members_main_listings_path(members_main), class: "btn btn-primary" %>
+							</div>
+
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,10 @@
 module Phcmembers
 	class Members::Main < ActiveRecord::Base
 
+		# Gravatar
+		include Gravtastic
+		gravtastic :memail
+
 		# Model Relationship
 		has_many :listings, class_name: 'Members::Listing', dependent: :destroy
 		has_many :contacts, class_name: 'Members::Contact', dependent: :destroy
