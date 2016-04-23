@@ -8,14 +8,6 @@ module Phcmembers
 		before_action :authenticate_user!
 		before_action :set_members_main, only: [:show, :edit, :update, :destroy]
 
-		# Add Member Contact Information 
-		before_action :phc_member_mains_info
-
-		def phc_member_mains_info  
-			main = Members::Main.find(params[:main_id])
-			@members_contact = main.contacts.find(params[:id])
-		end
-
 		# Member Profile List
 		def index
 			@members_mains = Members::Main.all
