@@ -1,11 +1,11 @@
 <!-- Bread Crumbs -->
-	<header id="page-header">
-		<h1><%= @members_main.mfirstname %> Detailed Profile</h1>
-		<ol class="breadcrumb">
-			<li><%= link_to "Home", members_root_path %></li>
-			<li class="active"><%= link_to "Members List", members_mains_path %></li>
-		</ol>
-	</header>
+<header id="page-header">
+	<h1><%= @members_main.mfirstname %> Detailed Profile</h1>
+	<ol class="breadcrumb">
+		<li><%= link_to "Home", members_root_path %></li>
+		<li class="active"><%= link_to "Members List", members_mains_path %></li>
+	</ol>
+</header>
 
 <div class="container">
 
@@ -16,7 +16,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-lg-12" >
+		<div class="col-lg-12">
 
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -24,10 +24,10 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-3" align="center">
+						<div class="col-lg-3">
 							<%= image_tag @members_main.gravatar_url, :class => 'img-circle img-responsive' %>
 						</div>
-						<div class="col-lg-9"> 
+						<div class="col-lg-9">
 							<table class="table table-user-information">
 								<tbody>
 									<tr>
