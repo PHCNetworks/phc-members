@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmembers (2.0.5)
+    phcmembers (2.0.6)
       bootstrap-sass (~> 3.3, >= 3.3.6)
       country_select (~> 2.5, >= 2.5.2)
       font-awesome-rails (~> 4.5, >= 4.5.0.1)
