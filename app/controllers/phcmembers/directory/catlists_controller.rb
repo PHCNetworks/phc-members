@@ -10,6 +10,7 @@ module Phcmembers
 
 		# Add Directory Category Information 
 		before_action :directorycategory
+
 		def directorycategory  
 			@category = Directory::Category.find(params[:category_id])
 		end

@@ -12,7 +12,7 @@ module Phcmembers
 		before_action :phc_member_mains_info
 
 		def phc_member_mains_info  
-			@membercontact = Members::Main.find(params[:main_id])
+			@members_main = Members::Main.find(params[:main_id])
 		end
 
 		# Member Listing Index
