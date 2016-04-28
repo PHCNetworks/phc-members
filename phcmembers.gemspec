@@ -12,15 +12,15 @@ Gem::Specification.new do |spec|
 	spec.email       = ["info@phcnetworks.net"]
 	spec.homepage    = "http://phcnetworks.net/engine-yard"
 	spec.summary     = "Membership & Directory Manager Engine"
-	spec.description = "PHCMembers(2) is an open source membership management gem purpose built for PHCMembers application."
+	spec.description = "PHCMembers(2) is an open source membership management engine built for PHCMembers application."
 	spec.license     = "GPL-3.0"
 
 	spec.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
 	# Main Dependencies
 	spec.add_dependency 'rails', '~> 4.2', '>= 4.2.6'
-	spec.add_dependency 'phcnotifi', '~> 2.6', '>= 2.6.5'
-	spec.add_dependency 'phctitler', '~> 1.8', '>= 1.8.5'
+	spec.add_dependency 'phcnotifi', '~> 2.6', '>= 2.6.8'
+	spec.add_dependency 'phctitler', '~> 1.8', '>= 1.8.8'
 
 	# UI & Frontend Elements
 	spec.add_dependency 'jquery-rails', '~> 4.1', '>= 4.1.1'
