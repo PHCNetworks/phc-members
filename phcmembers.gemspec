@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 	spec.email       = ["info@phcnetworks.net"]
 	spec.homepage    = "http://phcnetworks.net/engine-yard"
 	spec.summary     = "Membership & Directory Manager Engine"
-	spec.description = "PHCMembers(2) is an open source membership management engine built for PHCMembers application."
+	spec.description = "PHCMembers(2) is a membership & directory management gem built for PHCMembers application."
 	spec.license     = "GPL-3.0"
 
 	spec.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
@@ -20,12 +20,12 @@ Gem::Specification.new do |spec|
 	# Main Dependencies
 	spec.add_dependency 'rails', '~> 4.2', '>= 4.2.6'
 	spec.add_dependency 'phcnotifi', '~> 2.6', '>= 2.6.8'
-	spec.add_dependency 'phctitler', '~> 1.8', '>= 1.8.8'
+	spec.add_dependency 'phctitleseo', '~> 2.0'
 
 	# UI & Frontend Elements
 	spec.add_dependency 'jquery-rails', '~> 4.1', '>= 4.1.1'
 	spec.add_dependency 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-	spec.add_dependency 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
+	spec.add_dependency 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
 	spec.add_dependency 'sass-rails', '~> 5.0', '>= 5.0.4'
 	spec.add_dependency 'gravtastic', '~> 3.2', '>= 3.2.6'
 	spec.add_dependency 'country_select', '~> 2.5', '>= 2.5.2'
@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
 
 	spec.add_development_dependency 'factory_girl_rails', '~> 4.7'
 	spec.add_development_dependency 'rspec-rails', '~> 3.4', '>= 3.4.2'
-	spec.add_development_dependency 'capybara', '~> 2.7'
+	spec.add_development_dependency 'capybara', '~> 2.7', '>= 2.7.1'
 
 	spec.add_development_dependency 'better_errors', '~> 2.1', '>= 2.1.1'
 	spec.add_development_dependency 'binding_of_caller', '~> 0.7.2'
