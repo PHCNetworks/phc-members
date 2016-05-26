@@ -5,7 +5,7 @@ module Phcmembers
 
 		# Filters
 		layout 'layouts/phcmembers/directory/directory_all.html.erb'
-		before_action :authenticate_user!
+		before_filter :authenticate_user!, if: -> { defined?(Devise) }
 		before_action :set_directory_catlist, only: [:show, :edit, :update, :destroy]
 
 		# Add Directory Category Information 
