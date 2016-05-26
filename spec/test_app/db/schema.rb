@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312235635) do
+ActiveRecord::Schema.define(version: 20160227212144) do
 
   create_table "phcmembers_directory_categories", force: :cascade do |t|
     t.string   "catname"
-    t.integer  "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160312235635) do
     t.integer  "category_id"
     t.integer  "subcategory_id"
     t.integer  "listing_id"
-    t.integer  "account_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -40,9 +38,7 @@ ActiveRecord::Schema.define(version: 20160312235635) do
     t.string   "mcpostalcode"
     t.string   "mcphone"
     t.string   "mcemail"
-    t.string   "mctype"
     t.integer  "main_id"
-    t.integer  "account_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -62,7 +58,6 @@ ActiveRecord::Schema.define(version: 20160312235635) do
     t.string   "mlwebsite"
     t.string   "mlemail"
     t.integer  "main_id"
-    t.integer  "account_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -76,7 +71,6 @@ ActiveRecord::Schema.define(version: 20160312235635) do
     t.string   "memail"
     t.string   "mphone"
     t.string   "mnotes"
-    t.integer  "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
