@@ -10,7 +10,7 @@ PHCMembers(2) is an open source membership and listing directory engine purpose 
 - Directory and listings manager with a web directory API.
 - Member's list, contact information and listings manager.
 - Easy app integration with views that can be customized.
-- Uses Devise (user model) for authentication.
+- User authetication will activate when Devise is installed.
   
 #### Step 1 - Add PHCMembers to your gemfile  
   
