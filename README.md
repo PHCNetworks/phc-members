@@ -14,7 +14,7 @@ PHCMembers(2) is an open source membership and listing directory engine purpose 
   
 #### Step 1 - Add PHCMembers to your gemfile  
   
-	gem 'phcmembers', '~> 2.1', '>= 2.1.3'
+	gem 'phcmembers', '~> 2.2'
 	bundle exec install
   
 #### Step 2 - Add database migration files  
