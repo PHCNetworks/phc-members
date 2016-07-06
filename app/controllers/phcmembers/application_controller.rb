@@ -1,9 +1,5 @@
 module Phcmembers
-	class ApplicationController < ActionController::Base
-
-		# Add Helpers
-		helper Phctitleseo::Engine.helpers
-		helper Phcnotifi::Engine.helpers
-
-	end
+  class ApplicationController < ActionController::Base
+    protect_from_forgery with: :exception
+  end
 end

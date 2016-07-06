@@ -1,87 +1,62 @@
 require_dependency "phcmembers/application_controller"
 
 module Phcmembers
-	class Members::ContactsController < ApplicationController
+  class Members::ContactsController < ApplicationController
+    before_action :set_members_contact, only: [:show, :edit, :update, :destroy]
 
-		# Filters
-		layout 'layouts/phcmembers/members/members_all.html.erb'
-		before_filter :authenticate_user!, if: -> { defined?(Devise) }
-		before_action :set_members_contact, only: [:show, :edit, :update, :destroy]
+    # GET /members/contacts
+    def index
+      @members_contacts = Members::Contact.all
+    end
 
-		# Add Member Contact Information 
-		before_action :phc_member_mains_info
+    # GET /members/contacts/1
+    def show
+    end
 
-		def phc_member_mains_info  
-			@members_main = Members::Main.find(params[:main_id])
-		end
+    # GET /members/contacts/new
+    def new
+      @members_contact = Members::Contact.new
+    end
 
-		# Member Contact Index
-		def index
-			main = Members::Main.find(params[:main_id])
-			@members_contact = main.contacts
-		end
+    # GET /members/contacts/1/edit
+    def edit
+    end
 
-		# Detailed Member Contact Information
-		def show
-			main = Members::Main.find(params[:main_id])
-			@members_contact = main.contacts.find(params[:id])
-		end
+    # POST /members/contacts
+    def create
+      @members_contact = Members::Contact.new(members_contact_params)
 
-		# New Contact
-		def new
-			main = Members::Main.find(params[:main_id])
-			@members_contact = main.contacts.build
-			respond_to do |format|
-				format.html # new.html.erb
-				format.xml  { render :xml => @members_contact }
-			end
-		end
+      if @members_contact.save
+        redirect_to @members_contact, notice: 'Contact was successfully created.'
+      else
+        render :new
+      end
+    end
 
-		# Edit Contact
-		def edit
-			main = Members::Main.find(params[:main_id])
-			@members_contact = main.contacts.find(params[:id])
-		end
+    # PATCH/PUT /members/contacts/1
+    def update
+      if @members_contact.update(members_contact_params)
+        redirect_to @members_contact, notice: 'Contact was successfully updated.'
+      else
+        render :edit
+      end
+    end
 
-		# Create Action
-		def create
-			@main = Members::Main.find(params[:main_id])
-			@members_contact = @main.contacts.create(members_contact_params)
-			if @members_contact.save
-				redirect_to members_main_contacts_path, notice: 'Member contact information was successfully created.'
-				else
-					render :new
-			end
-		end
+    # DELETE /members/contacts/1
+    def destroy
+      @members_contact.destroy
+      redirect_to members_contacts_url, notice: 'Contact was successfully destroyed.'
+    end
 
-		# Update Action
-		def update
-			if @members_contact.update(members_contact_params)
-				redirect_to members_main_contacts_path, notice: 'Member contact information was successfully updated.'
-				else
-					render :edit
-			end
-		end
+    private
+      # Use callbacks to share common setup or constraints between actions.
+      def set_members_contact
+        @members_contact = Members::Contact.find(params[:id])
+      end
 
-		# Delete Action
-		def destroy
-			@main = Members::Main.find(params[:main_id])
-			@members_contact = @main.contacts.find(params[:id])
-			@members_contact.destroy
-			redirect_to members_main_contacts_path, notice: 'Member contact information was successfully destroyed.'
-		end
-
-		private
-
-		# Common Callbacks
-		def set_members_contact
-			@members_contact = Members::Contact.find(params[:id])
-		end
-
-		# White List
-		def members_contact_params
-			params.require(:members_contact).permit(:mccontactname, :mccompanyname, :mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mcphone, :mcwebsite, :mcemail, :main_id)
-		end
-
-	end
+      # Only allow a trusted parameter "white list" through.
+      def members_contact_params
+        params.fetch(:members_contact, {})
+      end
+  end
 end

@@ -1,34 +1,17 @@
-<%= form_for(@members_main) do |f| %>
+<%= form_for(members_main) do |f| %>
+  <% if members_main.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(members_main.errors.count, "error") %> prohibited this members_main from being saved:</h2>
 
-	<!-- PHC-Notifi Render Validation -->
-	<%= render 'phcnotifi/validations', :object => @members_main %>
+      <ul>
+      <% members_main.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-	<div class="form-group field_with_errors">
-		<label><%= f.label :mfirstname, "First Name*" %></label>
-		<%= f.text_field :mfirstname, class: 'form-control', placeholder: 'Members First Name' %>
-	</div>
-	<div class="form-group field_with_errors">
-		<label><%= f.label :mlastname, "Last Name*" %></label>
-		<%= f.text_field :mlastname, class: 'form-control', placeholder: 'Members Last Name' %>
-	</div>
-	<div class="form-group field_with_errors">
-		<label><%= f.label :mtitle, "Title" %></label>
-		<%= f.text_field :mtitle, class: 'form-control', placeholder: 'Members Title' %>
-	</div>
-	<div class="form-group field_with_errors">
-		<label><%= f.label :memail, "Email*" %></label>
-		<%= f.text_field :memail, class: 'form-control', placeholder: 'Members Email' %>
-	</div>
-	<div class="form-group field_with_errors">
-		<label><%= f.label :mphone, "Phone*" %></label>
-		<%= f.text_field :mphone, class: 'form-control', placeholder: 'Members Phone' %>
-	</div>
-	<div class="form-group field_with_errors">
-		<label><%= f.label :mnotes, "Member Notes (Private)" %></label>
-		<%= f.text_area :mnotes, class: 'form-control', placeholder: 'Member Notes' %>
-	</div>
-	<div class="actions">
-		<%= f.submit "Submit", class: "btn btn-primary" %>
-	</div>
-
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

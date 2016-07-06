@@ -1,36 +1,63 @@
 Phcmembers::Engine.routes.draw do
-	
-	# Dashboard
-	namespace :dashboard do
 
-		# Dashboard Main Index
-		get '/' => 'indices#index'
+  namespace :directory do
+    resources :categories
+  end
+  namespace :directory do
+    resources :listings
+  end
+  namespace :members do
+    resources :mains
+  end
+  namespace :members do
+    resources :contacts
+  end
+  namespace :members do
+    resources :businesses
+  end
+	# Dashboard (Engine Root)
+	get 'dashboard/mains/index', :path => "dashboard"
+
+	# Application API
+	namespace :api do
+
+		# Routes for API
+		resources :catsapi, defaults: {format: 'json'} do
+			resources :listapi
+		end
 
 	end
 
 	# Application Client Backend
+
 	namespace :members do
 
 		# Members Main Index
 		root 'mains#index'
 
 		# Member Routes
-		resources :mains do 
-			resources :listings
+		resources :mains do
+
+			# Member Routes
+			resources :businesses
 			resources :contacts
+			
+			# Auto Complete Routes
+			get :autocomplete_members_contact_mccompanyname, :on => :collection
+
 		end
 
 	end
 
 	namespace :directory do
 
-		# Directory Main Index
+		# Members Main Index
 		root 'categories#index'
 
-		# Directory Routes
 		resources :categories do
-			resources :catlists
+			resources :listings
 		end
+
 	end
 
 end

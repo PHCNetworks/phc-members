@@ -40,7 +40,7 @@ module Phcmembers
     describe "GET #index" do
       it "assigns all directory_categories as @directory_categories" do
         category = Directory::Category.create! valid_attributes
-        get :index, {}, valid_session
+        get :index, params: {}, session: valid_session
         expect(assigns(:directory_categories)).to eq([category])
       end
     end
@@ -48,14 +48,14 @@ module Phcmembers
     describe "GET #show" do
       it "assigns the requested directory_category as @directory_category" do
         category = Directory::Category.create! valid_attributes
-        get :show, {:id => category.to_param}, valid_session
+        get :show, params: {id: category.to_param}, session: valid_session
         expect(assigns(:directory_category)).to eq(category)
       end
     end
 
     describe "GET #new" do
       it "assigns a new directory_category as @directory_category" do
-        get :new, {}, valid_session
+        get :new, params: {}, session: valid_session
         expect(assigns(:directory_category)).to be_a_new(Directory::Category)
       end
     end
@@ -63,7 +63,7 @@ module Phcmembers
     describe "GET #edit" do
       it "assigns the requested directory_category as @directory_category" do
         category = Directory::Category.create! valid_attributes
-        get :edit, {:id => category.to_param}, valid_session
+        get :edit, params: {id: category.to_param}, session: valid_session
         expect(assigns(:directory_category)).to eq(category)
       end
     end
@@ -72,30 +72,30 @@ module Phcmembers
       context "with valid params" do
         it "creates a new Directory::Category" do
           expect {
-            post :create, {:directory_category => valid_attributes}, valid_session
+            post :create, params: {directory_category: valid_attributes}, session: valid_session
           }.to change(Directory::Category, :count).by(1)
         end
 
         it "assigns a newly created directory_category as @directory_category" do
-          post :create, {:directory_category => valid_attributes}, valid_session
+          post :create, params: {directory_category: valid_attributes}, session: valid_session
           expect(assigns(:directory_category)).to be_a(Directory::Category)
           expect(assigns(:directory_category)).to be_persisted
         end
 
         it "redirects to the created directory_category" do
-          post :create, {:directory_category => valid_attributes}, valid_session
+          post :create, params: {directory_category: valid_attributes}, session: valid_session
           expect(response).to redirect_to(Directory::Category.last)
         end
       end
 
       context "with invalid params" do
         it "assigns a newly created but unsaved directory_category as @directory_category" do
-          post :create, {:directory_category => invalid_attributes}, valid_session
+          post :create, params: {directory_category: invalid_attributes}, session: valid_session
           expect(assigns(:directory_category)).to be_a_new(Directory::Category)
         end
 
         it "re-renders the 'new' template" do
-          post :create, {:directory_category => invalid_attributes}, valid_session
+          post :create, params: {directory_category: invalid_attributes}, session: valid_session
           expect(response).to render_template("new")
         end
       end
@@ -109,20 +109,20 @@ module Phcmembers
 
         it "updates the requested directory_category" do
           category = Directory::Category.create! valid_attributes
-          put :update, {:id => category.to_param, :directory_category => new_attributes}, valid_session
+          put :update, params: {id: category.to_param, directory_category: new_attributes}, session: valid_session
           category.reload
           skip("Add assertions for updated state")
         end
 
         it "assigns the requested directory_category as @directory_category" do
           category = Directory::Category.create! valid_attributes
-          put :update, {:id => category.to_param, :directory_category => valid_attributes}, valid_session
+          put :update, params: {id: category.to_param, directory_category: valid_attributes}, session: valid_session
           expect(assigns(:directory_category)).to eq(category)
         end
 
         it "redirects to the directory_category" do
           category = Directory::Category.create! valid_attributes
-          put :update, {:id => category.to_param, :directory_category => valid_attributes}, valid_session
+          put :update, params: {id: category.to_param, directory_category: valid_attributes}, session: valid_session
           expect(response).to redirect_to(category)
         end
       end
@@ -130,13 +130,13 @@ module Phcmembers
       context "with invalid params" do
         it "assigns the directory_category as @directory_category" do
           category = Directory::Category.create! valid_attributes
-          put :update, {:id => category.to_param, :directory_category => invalid_attributes}, valid_session
+          put :update, params: {id: category.to_param, directory_category: invalid_attributes}, session: valid_session
           expect(assigns(:directory_category)).to eq(category)
         end
 
         it "re-renders the 'edit' template" do
           category = Directory::Category.create! valid_attributes
-          put :update, {:id => category.to_param, :directory_category => invalid_attributes}, valid_session
+          put :update, params: {id: category.to_param, directory_category: invalid_attributes}, session: valid_session
           expect(response).to render_template("edit")
         end
       end
@@ -146,13 +146,13 @@ module Phcmembers
       it "destroys the requested directory_category" do
         category = Directory::Category.create! valid_attributes
         expect {
-          delete :destroy, {:id => category.to_param}, valid_session
+          delete :destroy, params: {id: category.to_param}, session: valid_session
         }.to change(Directory::Category, :count).by(-1)
       end
 
       it "redirects to the directory_categories list" do
         category = Directory::Category.create! valid_attributes
-        delete :destroy, {:id => category.to_param}, valid_session
+        delete :destroy, params: {id: category.to_param}, session: valid_session
         expect(response).to redirect_to(directory_categories_url)
       end
     end

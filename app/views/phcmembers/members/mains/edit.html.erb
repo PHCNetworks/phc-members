@@ -1,26 +1,6 @@
-<!-- Bread Crumbs -->
-<div class="row wrapper border-bottom white-bg page-heading">
-	<div class="col-lg-12">
-		<h2>Member's Information</h2>
-		<ol class="breadcrumb">
-			<li><%= link_to "Home", members_root_path %></li>
-			<li><%= link_to "Members List", members_mains_path %></li>
-			<li class="active">Update Member's Information</li>
-		</ol>
-	</div>
-</div>
+<h1>Editing Members Main</h1>
 
-<!-- Main Content -->
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				Update Member's Information
-			</div>
-			<div class="panel-body">
-				<%= render 'phcnotifi/notifications' %>
-				<%= render 'form' %>
-			</div>
-		</div>
-	</div>
-</div>
+<%= render 'form', members_main: @members_main %>
+
+<%= link_to 'Show', @members_main %> |
+<%= link_to 'Back', members_mains_path %>

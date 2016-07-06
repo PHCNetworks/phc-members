@@ -1,51 +1,25 @@
-<!-- Breadcrumbs -->
-<div class="row">
-	<div class="col-lg-12">
-		<h2>Directory Categories &amp; Listings</h2>
-		<ol class="breadcrumb">
-			<li><%= link_to "Home", directory_root_path %></li>
-			<li class="active"><%= link_to "Directory Categories & Listings", directory_categories_path %></li>
-		</ol>
-	</div>
-</div>
+<p id="notice"><%= notice %></p>
 
-<!-- Main Contents -->
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				Directory Categories &amp; Listings
-			</div>
-			<div class="panel-body">
-				<%= render 'phcnotifi/notifications' %>
-				<table class="table table-bordered table-striped table-hover">
-					<thead>
-						<tr>
-							<th>Category Name</th>
-							<th colspan="2"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<% @directory_categories.each do |directory_category| %>
-							<tr>
-								<td><%= directory_category.catname %></td>
-								<td>
-									<div class="btn-group" role="group" aria-label="Directory Group">
-										<%= link_to 'Edit', edit_directory_category_path(directory_category), class: "btn btn-primary" %>
-										<%= link_to 'Destroy', directory_category, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure? Removing a directory category will also remove all listing connections.?' } %>
-									</div>
-								</td>
-								<td>
-									<div class="btn-group" role="group" aria-label="Directory Connection Group">
-										<%= link_to  'Connect Member Listings', directory_category_catlists_path(directory_category), :class => "btn btn-success" %>
-									</div>
-								</td>
-							</tr>
-						<% end %>
-					</tbody>
-				</table>
-				<%= link_to 'New Directory Category', new_directory_category_path, class: "btn btn-primary" %>
-			</div>
-		</div>
-	</div>
-</div>
+<h1>Directory Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @directory_categories.each do |directory_category| %>
+      <tr>
+        <td><%= link_to 'Show', directory_category %></td>
+        <td><%= link_to 'Edit', edit_directory_category_path(directory_category) %></td>
+        <td><%= link_to 'Destroy', directory_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Directory Category', new_directory_category_path %>

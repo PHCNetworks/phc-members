@@ -1,25 +1,29 @@
 module Phcmembers
 	class Engine < ::Rails::Engine
 
+		# Load Security
+		require 'paper_trail'
+
 		# Main Dependencies
-		require 'country_select'
-		
-		# PHCEngines
 		require 'phcnotifi'
 		require 'phctitleseo'
+		
+		# Data
+		require 'country_select'
 
 		# UI Dependencies
 		require 'jquery-rails'
+		require 'jquery-ui-rails'
 		require 'sass-rails'
 		require 'bootstrap-sass'
 		require 'font-awesome-rails'
 		require 'gravtastic'
-
+		
 		# API Dependencies
 		require 'rabl'
 		require 'oj'
 
-		# Isolate Namespace for PHC Members
+		# Isolate Namespace
 		isolate_namespace Phcmembers
 		
 		# Testing Generator
@@ -33,10 +37,9 @@ module Phcmembers
 			request_specs: false
 			g.fixture_replacement :factory_girl, dir: "spec/factories"
 		end
-		
-		# Load Helper Files
+
+		# Load Requried Helper Files
 		config.to_prepare do
-			ApplicationController.helper(ApplicationHelper)
 			Phcnotifi::ApplicationController.helper(ApplicationHelper)
 			Phctitleseo::ApplicationController.helper(ApplicationHelper)
 		end

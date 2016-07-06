@@ -40,7 +40,7 @@ module Phcmembers
     describe "GET #index" do
       it "assigns all members_contacts as @members_contacts" do
         contact = Members::Contact.create! valid_attributes
-        get :index, {}, valid_session
+        get :index, params: {}, session: valid_session
         expect(assigns(:members_contacts)).to eq([contact])
       end
     end
@@ -48,14 +48,14 @@ module Phcmembers
     describe "GET #show" do
       it "assigns the requested members_contact as @members_contact" do
         contact = Members::Contact.create! valid_attributes
-        get :show, {:id => contact.to_param}, valid_session
+        get :show, params: {id: contact.to_param}, session: valid_session
         expect(assigns(:members_contact)).to eq(contact)
       end
     end
 
     describe "GET #new" do
       it "assigns a new members_contact as @members_contact" do
-        get :new, {}, valid_session
+        get :new, params: {}, session: valid_session
         expect(assigns(:members_contact)).to be_a_new(Members::Contact)
       end
     end
@@ -63,7 +63,7 @@ module Phcmembers
     describe "GET #edit" do
       it "assigns the requested members_contact as @members_contact" do
         contact = Members::Contact.create! valid_attributes
-        get :edit, {:id => contact.to_param}, valid_session
+        get :edit, params: {id: contact.to_param}, session: valid_session
         expect(assigns(:members_contact)).to eq(contact)
       end
     end
@@ -72,30 +72,30 @@ module Phcmembers
       context "with valid params" do
         it "creates a new Members::Contact" do
           expect {
-            post :create, {:members_contact => valid_attributes}, valid_session
+            post :create, params: {members_contact: valid_attributes}, session: valid_session
           }.to change(Members::Contact, :count).by(1)
         end
 
         it "assigns a newly created members_contact as @members_contact" do
-          post :create, {:members_contact => valid_attributes}, valid_session
+          post :create, params: {members_contact: valid_attributes}, session: valid_session
           expect(assigns(:members_contact)).to be_a(Members::Contact)
           expect(assigns(:members_contact)).to be_persisted
         end
 
         it "redirects to the created members_contact" do
-          post :create, {:members_contact => valid_attributes}, valid_session
+          post :create, params: {members_contact: valid_attributes}, session: valid_session
           expect(response).to redirect_to(Members::Contact.last)
         end
       end
 
       context "with invalid params" do
         it "assigns a newly created but unsaved members_contact as @members_contact" do
-          post :create, {:members_contact => invalid_attributes}, valid_session
+          post :create, params: {members_contact: invalid_attributes}, session: valid_session
           expect(assigns(:members_contact)).to be_a_new(Members::Contact)
         end
 
         it "re-renders the 'new' template" do
-          post :create, {:members_contact => invalid_attributes}, valid_session
+          post :create, params: {members_contact: invalid_attributes}, session: valid_session
           expect(response).to render_template("new")
         end
       end
@@ -109,20 +109,20 @@ module Phcmembers
 
         it "updates the requested members_contact" do
           contact = Members::Contact.create! valid_attributes
-          put :update, {:id => contact.to_param, :members_contact => new_attributes}, valid_session
+          put :update, params: {id: contact.to_param, members_contact: new_attributes}, session: valid_session
           contact.reload
           skip("Add assertions for updated state")
         end
 
         it "assigns the requested members_contact as @members_contact" do
           contact = Members::Contact.create! valid_attributes
-          put :update, {:id => contact.to_param, :members_contact => valid_attributes}, valid_session
+          put :update, params: {id: contact.to_param, members_contact: valid_attributes}, session: valid_session
           expect(assigns(:members_contact)).to eq(contact)
         end
 
         it "redirects to the members_contact" do
           contact = Members::Contact.create! valid_attributes
-          put :update, {:id => contact.to_param, :members_contact => valid_attributes}, valid_session
+          put :update, params: {id: contact.to_param, members_contact: valid_attributes}, session: valid_session
           expect(response).to redirect_to(contact)
         end
       end
@@ -130,13 +130,13 @@ module Phcmembers
       context "with invalid params" do
         it "assigns the members_contact as @members_contact" do
           contact = Members::Contact.create! valid_attributes
-          put :update, {:id => contact.to_param, :members_contact => invalid_attributes}, valid_session
+          put :update, params: {id: contact.to_param, members_contact: invalid_attributes}, session: valid_session
           expect(assigns(:members_contact)).to eq(contact)
         end
 
         it "re-renders the 'edit' template" do
           contact = Members::Contact.create! valid_attributes
-          put :update, {:id => contact.to_param, :members_contact => invalid_attributes}, valid_session
+          put :update, params: {id: contact.to_param, members_contact: invalid_attributes}, session: valid_session
           expect(response).to render_template("edit")
         end
       end
@@ -146,13 +146,13 @@ module Phcmembers
       it "destroys the requested members_contact" do
         contact = Members::Contact.create! valid_attributes
         expect {
-          delete :destroy, {:id => contact.to_param}, valid_session
+          delete :destroy, params: {id: contact.to_param}, session: valid_session
         }.to change(Members::Contact, :count).by(-1)
       end
 
       it "redirects to the members_contacts list" do
         contact = Members::Contact.create! valid_attributes
-        delete :destroy, {:id => contact.to_param}, valid_session
+        delete :destroy, params: {id: contact.to_param}, session: valid_session
         expect(response).to redirect_to(members_contacts_url)
       end
     end

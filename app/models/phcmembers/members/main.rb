@@ -1,12 +1,15 @@
 module Phcmembers
 	class Members::Main < ActiveRecord::Base
 
+		# Add Paper Trail
+		has_paper_trail
+
 		# Gravatar
 		include Gravtastic
 		gravtastic :memail
 
 		# Model Relationship
-		has_many :listings, class_name: 'Members::Listing', dependent: :destroy
+		has_many :businesses, class_name: 'Members::Business', dependent: :destroy
 		has_many :contacts, class_name: 'Members::Contact', dependent: :destroy
 
 		# Validation for Form Fields
@@ -23,12 +26,12 @@ module Phcmembers
 
 		validates :memail,
 			presence: true,
-			uniqueness: true,
+			uniqueness: {scope: :oganization_id},
 			length: { minimum: 6 }
 
 		validates :mphone,
 			presence: true,
-			uniqueness: true,
+			uniqueness: {scope: :oganization_id},
 			format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Number Format: xxx-xxx-xxxx" }
 
 	end

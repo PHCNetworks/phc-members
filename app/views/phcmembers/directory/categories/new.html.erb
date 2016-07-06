@@ -1,26 +1,5 @@
-<!-- Bread Crumbs -->
-<div class="row">
-	<div class="col-lg-12">
-		<h2>Directory Categories</h2>
-		<ol class="breadcrumb">
-			<li><%= link_to "Home", directory_root_path %></li>
-			<li><%= link_to "Directory Categories", directory_categories_path %></li>
-			<li class="active">Create a New Directory Category</li>
-		</ol>
-	</div>
-</div>
+<h1>New Directory Category</h1>
 
-<!-- Main Content -->
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				Create a New Directory Category
-			</div>
-			<div class="panel-body">
-				<%= render 'phcnotifi/notifications' %>
-				<%= render 'form' %>
-			</div>
-		</div>
-	</div>
-</div>
+<%= render 'form', directory_category: @directory_category %>
+
+<%= link_to 'Back', directory_categories_path %>

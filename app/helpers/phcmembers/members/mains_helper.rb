@@ -1,4 +1,4 @@
 module Phcmembers
-	module Members::MainsHelper
-	end
+  module Members::MainsHelper
+  end
 end
