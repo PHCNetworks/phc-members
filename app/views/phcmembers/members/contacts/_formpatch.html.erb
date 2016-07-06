@@ -1,5 +1,5 @@
-<%= form_for([@members_contact.main, @members_contact], url: members_main_contacts_path) do |f| %>
-	
+<%= form_for([@members_contact.main, @members_contact], url: members_main_contact_path, method: :patch ) do |f| %>
+
 	<!-- PHC-Notifi Render Validation -->
 	<%= render 'phcnotifi/validations', :object => @members_contact %>
 
