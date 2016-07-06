@@ -1,4 +1,4 @@
-<%= form_for([@members_business.main, @members_business], url: members_main_businesses_path) do |f| %>
+<%= form_for([@members_business.main, @members_business], url: members_main_business_path, method: :patch) do |f| %>
 
 	<!-- PHC-Notifi Render Validation -->
 	<%= render 'phcnotifi/validations', :object => @members_business %>

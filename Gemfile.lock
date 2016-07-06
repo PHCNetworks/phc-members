@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     phcmembers (3.0.0)
-      bootstrap-sass (~> 3.3, >= 3.3.6)
+      bootstrap (~> 4.0.0.alpha3)
       country_select (~> 2.5, >= 2.5.2)
       font-awesome-rails (~> 4.6, >= 4.6.3.1)
       gravtastic (~> 3.2, >= 3.2.6)
@@ -62,6 +62,9 @@ GEM
     arel (7.0.0)
     autoprefixer-rails (6.3.7)
       execjs
+    bootstrap (4.0.0.alpha3)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -93,9 +96,9 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    faker (1.6.3)
+    faker (1.6.4)
       i18n (~> 0.5)
-    ffi (1.9.12)
+    ffi (1.9.13)
     font-awesome-rails (4.6.3.1)
       railties (>= 3.2, < 5.1)
     globalid (0.3.6)
