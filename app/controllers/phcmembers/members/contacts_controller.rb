@@ -3,7 +3,7 @@ require_dependency "phcmemberspro/application_controller"
 module Phcmemberspro
 	class Members::ContactsController < ApplicationController
 
-		# Security & Action Filters
+		# Filters
 		before_action :set_paper_trail_whodunnit
 		before_action :phc_member_mains_info
 		before_action :set_members_contact, only: [:show, :edit, :update, :destroy]

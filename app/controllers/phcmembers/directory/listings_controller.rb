@@ -1,62 +1,77 @@
-require_dependency "phcmembers/application_controller"
+require_dependency "phcmemberspro/application_controller"
 
-module Phcmembers
-  class Directory::ListingsController < ApplicationController
-    before_action :set_directory_listing, only: [:show, :edit, :update, :destroy]
+module Phcmemberspro
+	class Directory::ListingsController < ApplicationController
 
-    # GET /directory/listings
-    def index
-      @directory_listings = Directory::Listing.all
-    end
+		# Filters
+		before_action :set_paper_trail_whodunnit
+		before_action :directory_category_information
+		before_action :set_directory_listing, only: [:show, :update, :destroy]
+		# layout 'layouts/phcmemberspro/directory/directory_all.html.erb'
 
-    # GET /directory/listings/1
-    def show
-    end
+		# Directory Listing Index
+		def index
+			category = Directory::Category.find(params[:category_id])
+			@directory_listings = category.listings.all
+		end
 
-    # GET /directory/listings/new
-    def new
-      @directory_listing = Directory::Listing.new
-    end
+		# Show Directory Listing
+		def show
+			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Directory::Listing')
+			category = Directory::Category.find(params[:category_id])
+			@directory_listing = category.listings.find(params[:id])
+		end
 
-    # GET /directory/listings/1/edit
-    def edit
-    end
+		# New Directory Listing
+		def new
+			category = Directory::Category.find(params[:category_id])
+			@directory_listing = category.listings.build
+		end
 
-    # POST /directory/listings
-    def create
-      @directory_listing = Directory::Listing.new(directory_listing_params)
+		# Create Directory Listing Action
+		def create
+			@category = Directory::Category.find(params[:category_id])
+			@directory_listing = @category.listings.create(directory_listing_params)
+			if @directory_listing.save
+				redirect_to directory_category_listings_path, notice: 'Listing was successfully created.'
+				else
+					render :new
+			end
+		end
 
-      if @directory_listing.save
-        redirect_to @directory_listing, notice: 'Listing was successfully created.'
-      else
-        render :new
-      end
-    end
+		# Update Directory Listing Action
+		def update
+			if @directory_listing.update(directory_listing_params)
+				redirect_to directory_category_listings_path, notice: 'Listing was successfully updated.'
+				else
+					render :edit
+			end
+		end
 
-    # PATCH/PUT /directory/listings/1
-    def update
-      if @directory_listing.update(directory_listing_params)
-        redirect_to @directory_listing, notice: 'Listing was successfully updated.'
-      else
-        render :edit
-      end
-    end
+		# Delete Directory Listing
+		def destroy
+			@category = Directory::Category.find(params[:category_id])
+			@directory_listing = @category.listings.find(params[:id])
+			@directory_listing.destroy
+		  redirect_to directory_category_listings_path, notice: 'Listing was successfully destroyed.'
+		end
 
-    # DELETE /directory/listings/1
-    def destroy
-      @directory_listing.destroy
-      redirect_to directory_listings_url, notice: 'Listing was successfully destroyed.'
-    end
+		private
+		
+		# Directory Category Information
+		def directory_category_information  
+			@directory_category = Directory::Category.find(params[:category_id])
+		end
+		
+		# Common Callbacks
+		def set_directory_listing
+			@directory_listing = Directory::Listing.find(params[:id])
+		end
 
-    private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_directory_listing
-        @directory_listing = Directory::Listing.find(params[:id])
-      end
+		# Whitelists
+		def directory_listing_params
+			params.require(:directory_listing).permit(:business_id, :category_id, :main_id, :user_id, :membership_id, :oganization_id)
+		end
 
-      # Only allow a trusted parameter "white list" through.
-      def directory_listing_params
-        params.fetch(:directory_listing, {})
-      end
-  end
+	end
 end
