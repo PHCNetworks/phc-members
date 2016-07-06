@@ -3,8 +3,8 @@
 [![Issue Count](https://codeclimate.com/github/PHCNetworks/phc-members/badges/issue_count.svg)](https://codeclimate.com/github/PHCNetworks/phc-members)
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
   
-### PHCMembers(2) (Membership & Directory Engine) Documentation
-PHCMembers(2) is an open source membership and listing directory engine purpose built for PHCMembers application.  
+### PHCMembers(3) (Membership & Directory Engine) Documentation
+PHCMembers(3) is an open source membership and listing directory engine purpose built for PHCMembers application.  
   
 - Fast setup of membership and web directory modules.
 - Directory and listings manager with a web directory API.
