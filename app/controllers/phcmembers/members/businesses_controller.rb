@@ -1,62 +1,83 @@
 require_dependency "phcmembers/application_controller"
 
 module Phcmembers
-  class Members::BusinessesController < ApplicationController
-    before_action :set_members_business, only: [:show, :edit, :update, :destroy]
+	class Members::BusinessesController < ApplicationController
 
-    # GET /members/businesses
-    def index
-      @members_businesses = Members::Business.all
-    end
+		# Filters
+		before_action :set_paper_trail_whodunnit
+		before_action :phc_member_mains_info
+		before_action :set_members_business, only: [:edit, :update, :destroy]
+		# layout 'layouts/phcmembers/members/members_all.html.erb'
 
-    # GET /members/businesses/1
-    def show
-    end
+		# Member Members Business Information Index
+		def index
+			main = Members::Main.find(params[:main_id])
+			@members_businesses = main.businesses.order('mbcompanyname ASC')
+		end
 
-    # GET /members/businesses/new
-    def new
-      @members_business = Members::Business.new
-    end
+		# Detailed Member Contact Information
+		def show
+			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Members::Business')
+			main = Members::Main.find(params[:main_id])
+			@members_businesses = main.businesses.find(params[:id])
+		end
 
-    # GET /members/businesses/1/edit
-    def edit
-    end
+		# New Member Members Business Information
+		def new
+			main = Members::Main.find(params[:main_id])
+			@members_business = main.businesses.build
+		end
 
-    # POST /members/businesses
-    def create
-      @members_business = Members::Business.new(members_business_params)
+		# Edit Member Members Business Information
+		def edit
+			main = Members::Main.find(params[:main_id])
+			@members_business = main.businesses.find(params[:id])
+		end
 
-      if @members_business.save
-        redirect_to @members_business, notice: 'Business was successfully created.'
-      else
-        render :new
-      end
-    end
+		# Create Action
+		def create
+			@main = Members::Main.find(params[:main_id])
+			@members_business = @main.businesses.create(members_business_params)
+			if @members_business.save
+				redirect_to members_main_businesses_path, notice: 'Members Business was successfully created.'
+				else
+					render :new
+			end
+		end
 
-    # PATCH/PUT /members/businesses/1
-    def update
-      if @members_business.update(members_business_params)
-        redirect_to @members_business, notice: 'Business was successfully updated.'
-      else
-        render :edit
-      end
-    end
+		# Update Action
+		def update
+			if @members_business.update(members_business_params)
+				redirect_to members_main_businesses_path, notice: 'Members Business Information was successfully updated.'
+				else
+					render :edit
+			end
+		end
 
-    # DELETE /members/businesses/1
-    def destroy
-      @members_business.destroy
-      redirect_to members_businesses_url, notice: 'Business was successfully destroyed.'
-    end
+		# Delete Action
+		def destroy
+			@main = Members::Main.find(params[:main_id])
+			@members_business = @main.businesses.find(params[:id])
+			@members_business.destroy
+				redirect_to members_main_businesses_path, notice: 'Members Business has been Deleted.'
+		end
 
-    private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_members_business
-        @members_business = Members::Business.find(params[:id])
-      end
+		private
+		
+		# Grab Member Information
+		def phc_member_mains_info  
+			@members_main = Members::Main.find(params[:main_id])
+		end
 
-      # Only allow a trusted parameter "white list" through.
-      def members_business_params
-        params.fetch(:members_business, {})
-      end
-  end
+		# Common Callbacks
+		def set_members_business
+			@members_business = Members::Business.find(params[:id])
+		end
+
+		# White List
+		def members_business_params
+			params.require(:members_business).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :main_id, :user_id, :membership_id, :oganization_id)
+		end
+
+	end
 end

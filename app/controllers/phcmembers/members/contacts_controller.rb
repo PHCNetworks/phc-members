@@ -1,62 +1,83 @@
-require_dependency "phcmembers/application_controller"
+require_dependency "phcmemberspro/application_controller"
 
-module Phcmembers
-  class Members::ContactsController < ApplicationController
-    before_action :set_members_contact, only: [:show, :edit, :update, :destroy]
+module Phcmemberspro
+	class Members::ContactsController < ApplicationController
 
-    # GET /members/contacts
-    def index
-      @members_contacts = Members::Contact.all
-    end
+		# Security & Action Filters
+		before_action :set_paper_trail_whodunnit
+		before_action :phc_member_mains_info
+		before_action :set_members_contact, only: [:show, :edit, :update, :destroy]
+		# layout 'layouts/phcmemberspro/members/members_all.html.erb'
 
-    # GET /members/contacts/1
-    def show
-    end
+		# Member Contact Index
+		def index
+			main = Members::Main.find(params[:main_id])
+			@members_contacts = main.contacts.order('mcprovince ASC')
+		end
 
-    # GET /members/contacts/new
-    def new
-      @members_contact = Members::Contact.new
-    end
+		# Detailed Member Contact Information
+		def show
+			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Members::Contact')
+			main = Members::Main.find(params[:main_id])
+			@members_contact = main.contacts.find(params[:id])
+		end
 
-    # GET /members/contacts/1/edit
-    def edit
-    end
+		# New Contact
+		def new
+			main = Members::Main.find(params[:main_id])
+			@members_contact = main.contacts.build
+		end
 
-    # POST /members/contacts
-    def create
-      @members_contact = Members::Contact.new(members_contact_params)
+		# Edit Contact
+		def edit
+			main = Members::Main.find(params[:main_id])
+			@members_contact = main.contacts.find(params[:id])
+		end
 
-      if @members_contact.save
-        redirect_to @members_contact, notice: 'Contact was successfully created.'
-      else
-        render :new
-      end
-    end
+		# Create Action
+		def create
+			@main = Members::Main.find(params[:main_id])
+			@members_contact = @main.contacts.create(members_contact_params)
+			if @members_contact.save
+				redirect_to members_main_contacts_path, notice: 'Member contact was successfully created.'
+				else
+					render :new
+			end
+		end
 
-    # PATCH/PUT /members/contacts/1
-    def update
-      if @members_contact.update(members_contact_params)
-        redirect_to @members_contact, notice: 'Contact was successfully updated.'
-      else
-        render :edit
-      end
-    end
+		# Update Action
+		def update
+			if @members_contact.update(members_contact_params)
+				redirect_to members_main_contacts_path, notice: 'Member contact information was successfully updated.'
+				else
+					render :edit
+			end
+		end
 
-    # DELETE /members/contacts/1
-    def destroy
-      @members_contact.destroy
-      redirect_to members_contacts_url, notice: 'Contact was successfully destroyed.'
-    end
+		# Delete Action
+		def destroy
+			@main = Members::Main.find(params[:main_id])
+			@members_contact = @main.contacts.find(params[:id])
+			@members_contact.destroy
+			redirect_to members_main_contacts_path, notice: 'Member contact was successfully destroyed.'
+		end
 
-    private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_members_contact
-        @members_contact = Members::Contact.find(params[:id])
-      end
+		private
 
-      # Only allow a trusted parameter "white list" through.
-      def members_contact_params
-        params.fetch(:members_contact, {})
-      end
-  end
+		# Get Main Member Info
+		def phc_member_mains_info  
+			@members_main = Members::Main.find(params[:main_id])
+		end
+
+		# Common Callbacks
+		def set_members_contact
+			@members_contact = Members::Contact.find(params[:id])
+		end
+
+		# White List
+		def members_contact_params
+			params.require(:members_contact).permit(:mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mctype, :main_id, :user_id, :membership_id, :oganization_id)
+		end
+
+	end
 end
