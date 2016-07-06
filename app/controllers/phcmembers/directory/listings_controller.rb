@@ -12,7 +12,7 @@ module Phcmemberspro
 		# Directory Listing Index
 		def index
 			category = Directory::Category.find(params[:category_id])
-			@directory_listings = category.listings.all
+			@directory_listings = category.listings
 		end
 
 		# Show Directory Listing
