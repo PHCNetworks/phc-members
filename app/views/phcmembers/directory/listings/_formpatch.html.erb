@@ -1,5 +1,5 @@
-<%= form_for([@directory_listing.category, @directory_listing], url: directory_category_listings_path) do |f| %>
-	
+<%= form_for([@directory_listing.category, @directory_listing], url: directory_category_listing_path, method: :patch) do |f| %>
+
 	<!-- PHC-Notifi Render Validation -->
 	<%= render 'phcnotifi/validations', :object => @directory_listing %>
 
