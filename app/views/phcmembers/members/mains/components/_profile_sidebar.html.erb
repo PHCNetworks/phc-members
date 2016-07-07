@@ -1,0 +1,67 @@
+<div class="card">
+	<%= image_tag @members_main.gravatar_url, :class => 'card-img-top' %>
+	<div class="card-block">
+		<h4 class="card-title"><%= @members_main.mfirstname + ' ' + @members_main.mlastname %></h4>
+		<h4 class="card-title"><%= @members_main.mtitle %></h4>
+		<%= link_to 'Update Member', edit_members_main_path(@members_main), class: "btn btn-primary" %>
+		<%= link_to 'Delete Member', @members_main, method: :delete, data: { confirm: 'Are you sure? Removing a member will delete all records, including business information and any member directory connections.' }, class: "btn btn-danger" %>
+	</div>
+</div>
+<div class="card">
+	<div class="card-block">
+		<ul class="nav">
+			<li>
+				<%= link_to members_main_businesses_path(@members_main) do %>
+					<i class="icon-briefcase"></i> Member Businesses
+				<% end %>
+			</li>
+			<li>
+				<%= link_to members_main_contacts_path(@members_main) do %>
+					<i class="icon-envelope-letter"></i> Member Addresses
+				<% end %>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="card">
+	<div class="card-block">
+		<!-- STATS -->
+		<div class="row list-separated profile-stat">
+			<div class="col-md-4 col-sm-4 col-xs-6">
+				<div class="uppercase profile-stat-title"> <%= @members_contacts.count(:all) %> </div>
+				<div class="uppercase profile-stat-text"> <%= "Contact".pluralize(2) %> </div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-6">
+				<div class="uppercase profile-stat-title"> <%= @members_businesses.count(:all) %> </div>
+				<div class="uppercase profile-stat-text"> <%= "Business".pluralize(2) %> </div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-6">
+				<div class="uppercase profile-stat-title"> <%= @members_businesses.count(:all) %> </div>
+				<div class="uppercase profile-stat-text">  <%= "Listing".pluralize(2) %> </div>
+			</div>
+		</div>
+		<!-- STATS -->
+		<div>
+			<h4 class="profile-desc-title">Member Notes</h4>
+			<span class="profile-desc-text"><%= @members_main.mnotes %></span>
+			<div class="margin-top-20 profile-desc-link">
+				<%= mail_to @members_main.memail do %>
+					<i class="fa fa-envelope"></i>
+					<%= @members_main.memail %> 
+				<% end %>
+			</div>
+			<div class="margin-top-20 profile-desc-link">
+				<i class="fa fa-twitter"></i>
+				<a href="https://www.twitter.com/<%= @members_main.smtwitter %>"><%= @members_main.smtwitter %></a>
+			</div>
+			<div class="margin-top-20 profile-desc-link">
+				<i class="fa fa-facebook"></i>
+				<a href="https://www.facebook.com/<%= @members_main.smfacebook %>"><%= @members_main.smfacebook %></a>
+			</div>
+			<div class="margin-top-20 profile-desc-link">
+				<i class="fa fa-linkedin"></i>
+				<a href="https://www.linkedin.com/in/<%= @members_main.smlinkedin %>"><%= @members_main.smfacebook %></a>
+			</div>
+		</div>
+	</div>
+</div>
