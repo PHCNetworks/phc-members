@@ -1,6 +1,6 @@
 <!-- Title System -->
-<% phc_title "PHCMembers - Business Manager" %>
-<% phc_title_tagline "Detailed Business Profile for " + @members_businesses.mbcompanyname %>
+<% phc_title "PHCMembers - Members Address Manager" %>
+<% phc_title_tagline "Detailed Address Information for " + @members_main.mfirstname + " " + @members_main.mlastname %>
 
 <!-- BreadCrumbs -->
 <div class="row">
@@ -8,10 +8,10 @@
 
 		<!-- Bread Crumb -->
 		<ol class="breadcrumb">
-    		<li><%= link_to "Home", members_root_path %><i class="fa fa-circle"></i></li>
-    		<li><%= link_to "Members List", members_mains_path %><i class="fa fa-circle"></i></li>
-    		<li><%= link_to "Members Contacts", members_main_contacts_path %><i class="fa fa-circle"></i></li>
-    		<li class="active"><%= yield(:phc_title_tagline) %></li>
+			<li><%= link_to "Home", members_root_path %><i class="fa fa-circle"></i></li>
+			<li><%= link_to "Members List", members_mains_path %><i class="fa fa-circle"></i></li>
+			<li><%= link_to "Members Contacts", members_main_contacts_path %><i class="fa fa-circle"></i></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
 		</ol>
 
 	</div>
