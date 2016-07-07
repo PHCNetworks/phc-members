@@ -1,0 +1,20 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover table-header-fixed">
+		<thead>
+			<tr>
+				<th>Business Name</th>
+				<th>Contact Name</th>
+				<th>Phone Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @directory_listings.each do |directory_listings| %>
+				<tr>
+					<td class="highlight"><%= link_to directory_listings.business.mbcompanyname, directory_category_listing_path(directory_listings.category, directory_listings) %></td>
+					<td class="highlight"><%= link_to directory_listings.business.mbcontactname, directory_category_listing_path(directory_listings.category, directory_listings) %></td>
+					<td class="highlight"><%= link_to directory_listings.business.mbphone, directory_category_listing_path(directory_listings.category, directory_listings) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

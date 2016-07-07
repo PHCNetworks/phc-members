@@ -1,4 +1,34 @@
-<p id="notice"><%= notice %></p>
+<!-- Title System -->
+<% phc_title  "PHCMembers - Directory Category Manager" %>
+<% phc_title_tagline "Detail Information for " + @directory_category.catname %>
 
-<%= link_to 'Edit', edit_directory_category_path(@directory_category) %> |
-<%= link_to 'Back', directory_categories_path %>
+<!-- BreadCrumbs -->
+<div class="row">
+	<div class="col-lg-12">
+
+		<!-- Bread Crumb -->
+		<ol class="breadcrumb">
+			<li><%= link_to "Home", directory_root_path %><i class="fa fa-circle"></i></li>
+			<li><%= link_to "Directory Categories", directory_categories_path %><i class="fa fa-circle"></i></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
+		</ol>
+
+	</div>
+</div>
+
+<!-- Page Title -->
+<div class="row">
+	<div class="col-lg-12">
+
+		<h3 class="page-title">
+			<%= yield(:phc_title) %> </br>
+			<small><%= yield(:phc_title_tagline) %></small>
+		</h3>
+
+	</div>
+</div>
+
+<!-- Main Content -->
+<div class="row">
+	<%= render 'phcmemberspro/members/contacts/components/contact_main' %>
+</div>
