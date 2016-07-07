@@ -1,8 +1,13 @@
 class CreatePhcmembersDirectoryCategories < ActiveRecord::Migration[5.0]
-  def change
-    create_table :phcmembers_directory_categories do |t|
+	def change
+		create_table :phcmemberspro_directory_categories do |t|
 
-      t.timestamps
-    end
-  end
+			t.string :catname
+			
+			t.references :business, index: true
+
+			t.timestamps
+
+		end
+	end
 end
