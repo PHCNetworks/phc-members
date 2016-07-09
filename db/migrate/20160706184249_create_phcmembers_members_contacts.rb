@@ -1,6 +1,6 @@
 class CreatePhcmembersMembersContacts < ActiveRecord::Migration[5.0]
 	def change
-		create_table :phcmemberspro_members_contacts do |t|
+		create_table :phcmembers_members_contacts do |t|
 
 			t.string :mcaddressl1
 			t.string :mcaddressl2
