@@ -1,20 +1,5 @@
 Phcmembers::Engine.routes.draw do
 
-  namespace :directory do
-    resources :categories
-  end
-  namespace :directory do
-    resources :listings
-  end
-  namespace :members do
-    resources :mains
-  end
-  namespace :members do
-    resources :contacts
-  end
-  namespace :members do
-    resources :businesses
-  end
 	# Dashboard (Engine Root)
 	get 'dashboard/mains/index', :path => "dashboard"
 

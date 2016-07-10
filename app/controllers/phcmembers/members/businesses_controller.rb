@@ -76,7 +76,7 @@ module Phcmembers
 
 		# White List
 		def members_business_params
-			params.require(:members_business).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :main_id, :user_id, :membership_id, :oganization_id)
+			params.require(:members_business).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :main_id)
 		end
 
 	end

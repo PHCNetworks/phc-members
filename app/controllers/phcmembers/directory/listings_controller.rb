@@ -1,6 +1,6 @@
-require_dependency "phcmemberspro/application_controller"
+require_dependency "phcmembers/application_controller"
 
-module Phcmemberspro
+module Phcmembers
 	class Directory::ListingsController < ApplicationController
 
 		# Filters
@@ -70,7 +70,7 @@ module Phcmemberspro
 
 		# Whitelists
 		def directory_listing_params
-			params.require(:directory_listing).permit(:business_id, :category_id, :main_id, :user_id, :membership_id, :oganization_id)
+			params.require(:directory_listing).permit(:business_id, :category_id, :main_id)
 		end
 
 	end

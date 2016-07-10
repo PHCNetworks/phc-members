@@ -62,7 +62,7 @@ module Phcmembers
 
 		# whitelist
 		def directory_category_params
-			params.require(:directory_category).permit(:catname, :user_id, :membership_id, :oganization_id)
+			params.require(:directory_category).permit(:catname)
 		end
 
 	end

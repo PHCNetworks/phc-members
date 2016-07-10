@@ -26,12 +26,10 @@ module Phcmembers
 
 		validates :memail,
 			presence: true,
-			uniqueness: {scope: :oganization_id},
 			length: { minimum: 6 }
 
 		validates :mphone,
 			presence: true,
-			uniqueness: {scope: :oganization_id},
 			format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Number Format: xxx-xxx-xxxx" }
 
 	end
