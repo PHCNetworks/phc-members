@@ -2,14 +2,15 @@
 <% phc_title "PHCMembers - Members Manager" %>
 <% phc_title_tagline @members_main.mfirstname + " Detailed Profile" %>
 
+<!-- BreadCrumbs -->
 <div class="page-bar">
 
-	<!-- Bread Crumb -->
-	<ul class="page-breadcrumb">
-		<li><%= link_to "Home", members_root_path %><i class="fa fa-circle"></i></li>
-		<li class="active"><%= link_to "Members List", members_mains_path %><i class="fa fa-circle"></i></li>
-		<li class="active"><%= @members_main.mfirstname + ' ' + @members_main.mlastname %> Detailed Profile</li>
-	</ul>
+		<!-- Bread Crumb -->
+		<ol class="breadcrumb">
+			<li><%= link_to "Home", members_root_path %></li>
+			<li><%= link_to "Members List", members_mains_path %></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
+		</ol>
 
 </div>
 
