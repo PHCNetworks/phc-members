@@ -28,15 +28,15 @@
 		<!-- STATS -->
 		<div class="row list-separated profile-stat">
 			<div class="col-md-4 col-sm-4 col-xs-6">
-				<div class="uppercase profile-stat-title"> <%= @members_contacts.count(:all) %> </div>
+				<div class="uppercase profile-stat-title"> <%= @members_main.contacts.count(:all) %> </div>
 				<div class="uppercase profile-stat-text"> <%= "Contact".pluralize(2) %> </div>
 			</div>
 			<div class="col-md-4 col-sm-4 col-xs-6">
-				<div class="uppercase profile-stat-title"> <%= @members_businesses.count(:all) %> </div>
+				<div class="uppercase profile-stat-title"> <%= @members_main.businesses.count(:all) %> </div>
 				<div class="uppercase profile-stat-text"> <%= "Business".pluralize(2) %> </div>
 			</div>
 			<div class="col-md-4 col-sm-4 col-xs-6">
-				<div class="uppercase profile-stat-title"> <%= @members_businesses.count(:all) %> </div>
+				<div class="uppercase profile-stat-title"> <%= @members_main.businesses.count(:all) %> </div>
 				<div class="uppercase profile-stat-text">  <%= "Listing".pluralize(2) %> </div>
 			</div>
 		</div>
