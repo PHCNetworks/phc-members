@@ -8,9 +8,9 @@
 
 		<!-- Bread Crumb -->
 		<ol class="breadcrumb">
-			<li><%= link_to "Home", members_root_path %><i class="fa fa-circle"></i></li>
-			<li><%= link_to "Members List", members_mains_path %><i class="fa fa-circle"></i></li>
-			<li><%= link_to "Members Businesses", members_main_businesses_path %><i class="fa fa-circle"></i></li>
+			<li><%= link_to "Home", members_root_path %></li>
+			<li><%= link_to "Members List", members_mains_path %></li>
+			<li><%= link_to "Members Businesses", members_main_businesses_path %></li>
 			<li class="active"><%= yield(:phc_title_tagline) %></li>
 		</ol>
 
@@ -31,5 +31,5 @@
 
 <!-- Main Content -->
 <div class="row">
-	<%= render 'phcmemberspro/members/businesses/components/business_main' %>
+	<%= render 'phcmembers/members/businesses/components/business_main' %>
 </div>
