@@ -8,13 +8,12 @@
 
 		<!-- Bread Crumb -->
 		<ol class="breadcrumb">
-			<li><%= link_to "Home", directory_root_path %><i class="fa fa-circle"></i></li>
-			<li class="active"><%= link_to "Directory Categories", directory_categories_path %></li>
+			<li><%= link_to "Home", directory_root_path %></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
 		</ol>
 
 	</div>
 </div>
-
 
 <!-- Page Title -->
 <div class="row">
@@ -27,7 +26,6 @@
 
 	</div>
 </div>
-
 
 <!-- Main Content -->
 <div class="row">

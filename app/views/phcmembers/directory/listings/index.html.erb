@@ -1,6 +1,6 @@
 <!-- Title System -->
-<% phc_title "PHCMembers - Business Manager" %>
-<% phc_title_tagline "Business Index for " + @members_main.mfirstname + " " + @members_main.mlastname %>
+<% phc_title  "PHCMembers - Directory Category Manager" %>
+<% phc_title_tagline "Listings Index for " + @directory_category.catname + " Category" %>
 
 <!-- BreadCrumbs -->
 <div class="row">
@@ -8,8 +8,9 @@
 
 		<!-- Bread Crumb -->
 		<ol class="breadcrumb">
-			<li><%= link_to "Home", directory_root_path %><i class="fa fa-circle"></i></li>
-			<li class="active"><%= link_to "Listings Index for " + @directory_category.catname + " Category", directory_category_listings_path %></li>
+			<li><%= link_to "Directories Home", directory_root_path %></li>
+			<li><%= link_to "Categories List", directory_categories_path %></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
 		</ol>
 
 	</div>

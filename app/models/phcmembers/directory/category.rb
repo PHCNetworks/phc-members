@@ -11,7 +11,6 @@ module Phcmembers
 		# Validation for Form Fields
 		validates :catname,
 			presence: true,
-			uniqueness: {scope: :oganization_id},
 			length: { minimum: 3 }
 
 	end
