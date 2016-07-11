@@ -1,8 +1,7 @@
 <ul class="list-group">
 	<% @directory_category.listings.each do |directory_category_listings| %>
 		<li class="list-group-item">
-			<span class="badge badge-default badge-roundless"><%= directory_category.listings.count %></span></span>
-			<%= link_to directory_category_listings.catname, directory_category %>
+			<%= link_to directory_category_listings.business.mbcompanyname, directory_category_listings_path(@directory_category)  %>
 		</li>
 	<% end %>
 </ul>
