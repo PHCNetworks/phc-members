@@ -5,7 +5,6 @@ module Phcmembers
 
 		# Filters
 		before_action :set_paper_trail_whodunnit
-		before_action :directory_category_information
 		before_action :set_directory_listing, only: [:show, :update, :destroy]
 		# layout 'layouts/phcmemberspro/directory/directory_all.html.erb'
 
@@ -57,11 +56,6 @@ module Phcmembers
 		end
 
 		private
-		
-		# Directory Category Information
-		def directory_category_information  
-			@directory_category = Directory::Category.find(params[:category_id])
-		end
 		
 		# Common Callbacks
 		def set_directory_listing

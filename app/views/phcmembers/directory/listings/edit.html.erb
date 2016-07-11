@@ -1,6 +1,6 @@
 <!-- Title System -->
 <% phc_title "Directory Listings Manager" %>
-<% phc_title_tagline "New Listing Connection for " + @directory_category.catname + " Category" %>
+<% phc_title_tagline "New Listing Connection for Category" %>
 
 <!-- BreadCrumbs -->
 <div class="row">
@@ -37,7 +37,7 @@
 				<%= yield(:phc_title_tagline) %>
 			</div>
 			<div class="card-block">
-				<%= render 'form' %>
+				<%= render 'formpatch' %>
 			</div>
 		</div>
 
