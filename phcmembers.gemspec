@@ -19,9 +19,9 @@ Gem::Specification.new do |spec|
 
 	# Main Dependencies
 	spec.add_dependency 'rails', '~> 5.0', '>= 5.0.0'
-	spec.add_dependency 'phctitleseo', '~> 3.0', '>= 3.0.1'
+	spec.add_dependency 'phctitleseo', '~> 3.0', '>= 3.0.5'
 	spec.add_dependency 'phcnotifi', '~> 3.0', '>= 3.0.5'
-	spec.add_dependency 'multi_json', '~> 1.12', '>= 1.12.1'
+	spec.add_dependency 'authrocket', '~> 2.0', '>= 2.0.2'
 	spec.add_dependency 'paper_trail', '~> 5.2'
 	spec.add_dependency 'pg', '~> 0.18.4'
 
@@ -35,11 +35,12 @@ Gem::Specification.new do |spec|
 	spec.add_dependency 'gravtastic', '~> 3.2', '>= 3.2.6'
 
 	# API and Rabl
-	spec.add_dependency 'oj', '~> 2.15'
+	spec.add_dependency 'oj', '~> 2.17', '>= 2.17.1'
 	spec.add_dependency 'rabl', '~> 0.12.0'
+	spec.add_dependency 'multi_json', '~> 1.12', '>= 1.12.1'
 
 	# Development & Testing Dependencies
-	spec.add_development_dependency 'rspec-rails', '~> 3.5'
+	spec.add_development_dependency 'rspec-rails', '~> 3.5', '>= 3.5.1'
 	spec.add_development_dependency 'factory_girl_rails', '~> 4.7'
 	spec.add_development_dependency 'capybara', '~> 2.7', '>= 2.7.1'
 	spec.add_development_dependency 'byebug', '~> 9.0', '>= 9.0.5'
@@ -47,7 +48,7 @@ Gem::Specification.new do |spec|
 	spec.add_development_dependency 'sqlite3', '~> 1.3', '>= 1.3.11'
 	spec.add_development_dependency 'database_cleaner', '~> 1.5', '>= 1.5.3'
 
-	spec.add_development_dependency 'faker', '~> 1.6', '>= 1.6.3'
+	spec.add_development_dependency 'faker', '~> 1.6', '>= 1.6.5'
 	spec.add_development_dependency 'launchy', '~> 2.4', '>= 2.4.3'
 	spec.add_development_dependency 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
 
