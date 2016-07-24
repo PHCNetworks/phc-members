@@ -1,27 +1,28 @@
 <%= form_for(member_profile) do |f| %>
-  <% if member_profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(member_profile.errors.count, "error") %> prohibited this member_profile from being saved:</h2>
 
-      <ul>
-      <% member_profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<div class="form-group field_with_errors">
+		<%= f.label :mfirstname, "First Name*" %>
+		<%= f.text_field :mfirstname, class: 'form-control', placeholder: 'First Name' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= f.label :mlastname, "Last Name*" %>
+		<%= f.text_field :mlastname, class: 'form-control', placeholder: 'Last Name' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= f.label :mtitle, "Job Title" %>
+		<%= f.text_field :mtitle, class: 'form-control', placeholder: 'Job Title/Salutation' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= f.label :memail, "Contact Email Address*" %>
+		<%= f.text_field :memail, class: 'form-control', placeholder: 'Contact Email (Will Remain Private)' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= f.label :mphone, "Contact Phone Number*" %>
+		<%= f.text_field :mphone, class: 'form-control masked', placeholder: 'Contact Phone Number (Will Remain Private)', data: {format: '(999) 999-9999', placeholder: 'x'} %>
+	</div>
 
-  <div class="field">
-    <%= f.label :mfirstname %>
-    <%= f.text_field :mfirstname %>
-  </div>
+	<div class="actions">
+		<%= f.submit "Submit", class: "btn blue-hoki" %>
+	</div>
 
-  <div class="field">
-    <%= f.label :mlastname %>
-    <%= f.text_field :mlastname %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
