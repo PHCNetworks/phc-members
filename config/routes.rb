@@ -1,5 +1,8 @@
 Phcmembers::Engine.routes.draw do
 
+  namespace :member do
+    resources :profiles
+  end
 	# Dashboard (Engine Root)
 	get 'dashboard/mains/index', :path => "dashboard"
 
@@ -21,11 +24,11 @@ Phcmembers::Engine.routes.draw do
 		root 'mains#index'
 
 		# Member Routes
-		resources :mains do
+		resources :mains, class_name: 'Phcmembers::Members::Main' do
 
 			# Member Routes
-			resources :businesses
-			resources :contacts
+			resources :businesses, class_name: 'Phcmembers::Members::Business'
+			resources :contacts, class_name: 'Phcmembers::Members::Contact'
 			
 			# Auto Complete Routes
 			get :autocomplete_members_contact_mccompanyname, :on => :collection
@@ -39,9 +42,8 @@ Phcmembers::Engine.routes.draw do
 		# Members Main Index
 		root 'categories#index'
 
-		resources :categories do
-			resources :listings
-		end
+		resources :categories, class_name: 'Phcmembers::Directory::Category'
+		resources :listings, class_name: 'Phcmembers::Directory::Listing'
 
 	end
 

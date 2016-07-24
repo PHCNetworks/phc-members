@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Member Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mfirstname</th>
+      <th>Mlastname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @member_profiles.each do |member_profile| %>
+      <tr>
+        <td><%= member_profile.mfirstname %></td>
+        <td><%= member_profile.mlastname %></td>
+        <td><%= link_to 'Show', member_profile %></td>
+        <td><%= link_to 'Edit', edit_member_profile_path(member_profile) %></td>
+        <td><%= link_to 'Destroy', member_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member Profile', new_member_profile_path %>
