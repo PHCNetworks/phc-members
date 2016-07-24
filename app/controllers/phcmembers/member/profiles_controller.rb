@@ -34,7 +34,7 @@ module Phcmembers
 			@member_profile.membership_id = membership_info.id
 			@member_profile.oganization_id = membership_info.org_id
 			if @member_profile.save
-				redirect_to @member_profile, notice: 'Profile was successfully created.'
+				redirect_to member_profiles_url, notice: 'Profile was successfully created.'
 				else
 					render :new
 			end
@@ -46,7 +46,7 @@ module Phcmembers
 			@member_profile.membership_id = membership_info.id
 			@member_profile.oganization_id = membership_info.org_id
 			if @member_profile.update(member_profile_params)
-				redirect_to @member_profile, notice: 'Profile was successfully updated.'
+				redirect_to member_profiles_url, notice: 'Profile was successfully updated.'
 				else
 					render :edit
 			end
@@ -67,7 +67,7 @@ module Phcmembers
 
 		# Whitelist
 		def member_profile_params
-			params.require(:member_profile).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes, :smfacebook, :smtwitter, :smlinkedin, :user_id, :membership_id, :oganization_id)
+			params.require(:member_profile).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes, :user_id, :membership_id, :oganization_id)
 		end
 
 	end

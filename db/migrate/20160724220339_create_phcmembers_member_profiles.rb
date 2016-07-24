@@ -9,10 +9,6 @@ class CreatePhcmembersMemberProfiles < ActiveRecord::Migration[5.0]
 			t.string :mphone
 			t.string :mnotes
 
-			t.string :smtwitter
-			t.string :smfacebook
-			t.string :smlinkedin
-
 			t.string :user_id
 			t.string :membership_id
 			t.string :oganization_id
