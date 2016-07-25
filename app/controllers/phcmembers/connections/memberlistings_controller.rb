@@ -1,62 +1,65 @@
 require_dependency "phcmembers/application_controller"
 
 module Phcmembers
-  class Connections::MemberlistingsController < ApplicationController
-    before_action :set_connections_memberlisting, only: [:show, :edit, :update, :destroy]
+	class Connections::MemberlistingsController < ApplicationController
 
-    # GET /connections/memberlistings
-    def index
-      @connections_memberlistings = Connections::Memberlisting.all
-    end
+		# Security & Filters
+		before_action :set_connections_memberlisting, only: [:show, :edit, :update, :destroy]
 
-    # GET /connections/memberlistings/1
-    def show
-    end
+		# INDEX - Member/Listing Connection
+		def index
+			@connections_memberlistings = Connections::Memberlisting.all
+		end
 
-    # GET /connections/memberlistings/new
-    def new
-      @connections_memberlisting = Connections::Memberlisting.new
-    end
+		# DETAILED - Member/Listing Connection
+		def show
+		end
 
-    # GET /connections/memberlistings/1/edit
-    def edit
-    end
+		# NEW - Member/Listing Connection
+		def new
+		@connections_memberlisting = Connections::Memberlisting.new
+		end
 
-    # POST /connections/memberlistings
-    def create
-      @connections_memberlisting = Connections::Memberlisting.new(connections_memberlisting_params)
+		# EDIT - Member/Listing Connection
+		def edit
+		end
 
-      if @connections_memberlisting.save
-        redirect_to @connections_memberlisting, notice: 'Memberlisting was successfully created.'
-      else
-        render :new
-      end
-    end
+		# POST - Member/Listing Connection
+		def create
+			@connections_memberlisting = Connections::Memberlisting.new(connections_memberlisting_params)
+			if @connections_memberlisting.save
+				redirect_to @connections_memberlisting, notice: 'Memberlisting was successfully created.'
+				else
+					render :new
+			end
+		end
 
-    # PATCH/PUT /connections/memberlistings/1
-    def update
-      if @connections_memberlisting.update(connections_memberlisting_params)
-        redirect_to @connections_memberlisting, notice: 'Memberlisting was successfully updated.'
-      else
-        render :edit
-      end
-    end
+		# PATCH/PUT - Member/Listing Connection
+		def update
+			if @connections_memberlisting.update(connections_memberlisting_params)
+				redirect_to @connections_memberlisting, notice: 'Memberlisting was successfully updated.'
+				else
+					render :edit
+			end
+		end
 
-    # DELETE /connections/memberlistings/1
-    def destroy
-      @connections_memberlisting.destroy
-      redirect_to connections_memberlistings_url, notice: 'Memberlisting was successfully destroyed.'
-    end
+		# DELETE /connections/memberlistings/1
+		def destroy
+			@connections_memberlisting.destroy
+			redirect_to connections_memberlistings_url, notice: 'Memberlisting was successfully destroyed.'
+		end
 
-    private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_connections_memberlisting
-        @connections_memberlisting = Connections::Memberlisting.find(params[:id])
-      end
+		private
 
-      # Only allow a trusted parameter "white list" through.
-      def connections_memberlisting_params
-        params.require(:connections_memberlisting).permit(:profile_id, :listing_id)
-      end
-  end
+		# Callbacks
+		def set_connections_memberlisting
+			@connections_memberlisting = Connections::Memberlisting.find(params[:id])
+		end
+
+		# Whitelist
+		def connections_memberlisting_params
+			params.require(:connections_memberlisting).permit(:profile_id, :listing_id)
+		end
+
+	end
 end

@@ -1,62 +1,65 @@
 require_dependency "phcmembers/application_controller"
 
 module Phcmembers
-  class Connections::MemberaddressesController < ApplicationController
-    before_action :set_connections_memberaddress, only: [:show, :edit, :update, :destroy]
+	class Connections::MemberaddressesController < ApplicationController
 
-    # GET /connections/memberaddresses
-    def index
-      @connections_memberaddresses = Connections::Memberaddress.all
-    end
+		# Filters & Security
+		before_action :set_connections_memberaddress, only: [:show, :edit, :update, :destroy]
 
-    # GET /connections/memberaddresses/1
-    def show
-    end
+		# INDEX - Member/Address Connection
+		def index
+			@connections_memberaddresses = Connections::Memberaddress.all
+		end
 
-    # GET /connections/memberaddresses/new
-    def new
-      @connections_memberaddress = Connections::Memberaddress.new
-    end
+		# DETAILED - Member/Address Connection
+		def show
+		end
 
-    # GET /connections/memberaddresses/1/edit
-    def edit
-    end
+		# NEW - Member/Address Connection
+		def new
+			@connections_memberaddress = Connections::Memberaddress.new
+		end
 
-    # POST /connections/memberaddresses
-    def create
-      @connections_memberaddress = Connections::Memberaddress.new(connections_memberaddress_params)
+		# EDIT - Member/Address Connection
+		def edit
+		end
 
-      if @connections_memberaddress.save
-        redirect_to @connections_memberaddress, notice: 'Memberaddress was successfully created.'
-      else
-        render :new
-      end
-    end
+		# POST - Member/Address Connection
+		def create
+			@connections_memberaddress = Connections::Memberaddress.new(connections_memberaddress_params)
+			if @connections_memberaddress.save
+				redirect_to @connections_memberaddress, notice: 'Memberaddress was successfully created.'
+				else
+					render :new
+			end
+		end
 
-    # PATCH/PUT /connections/memberaddresses/1
-    def update
-      if @connections_memberaddress.update(connections_memberaddress_params)
-        redirect_to @connections_memberaddress, notice: 'Memberaddress was successfully updated.'
-      else
-        render :edit
-      end
-    end
+		# PATCH/PUT - Member/Address Connection
+		def update
+			if @connections_memberaddress.update(connections_memberaddress_params)
+				redirect_to @connections_memberaddress, notice: 'Memberaddress was successfully updated.'
+				else
+					render :edit
+			end
+		end
 
-    # DELETE /connections/memberaddresses/1
-    def destroy
-      @connections_memberaddress.destroy
-      redirect_to connections_memberaddresses_url, notice: 'Memberaddress was successfully destroyed.'
-    end
+		# DELETE - Member/Address Connection
+		def destroy
+			@connections_memberaddress.destroy
+			redirect_to connections_memberaddresses_url, notice: 'Memberaddress was successfully destroyed.'
+		end
 
-    private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_connections_memberaddress
-        @connections_memberaddress = Connections::Memberaddress.find(params[:id])
-      end
+		private
+		
+		# Callbacks
+		def set_connections_memberaddress
+			@connections_memberaddress = Connections::Memberaddress.find(params[:id])
+		end
 
-      # Only allow a trusted parameter "white list" through.
-      def connections_memberaddress_params
-        params.require(:connections_memberaddress).permit(:profile_id, :listing_id)
-      end
-  end
+		# Whitelist
+		def connections_memberaddress_params
+			params.require(:connections_memberaddress).permit(:profile_id, :listing_id)
+		end
+
+	end
 end
