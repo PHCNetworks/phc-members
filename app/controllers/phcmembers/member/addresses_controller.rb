@@ -3,9 +3,8 @@ require_dependency "phcmembers/application_controller"
 module Phcmembers
 	class Member::AddressesController < ApplicationController
 
-		# Security & Filters
+		# Security & Action Filters
 		before_action :set_paper_trail_whodunnit
-		before_action :phc_member_mains_info
 		before_action :set_member_address, only: [:show, :edit, :update, :destroy]
 		layout 'layouts/phcmemberspro/members/members_all.html.erb'
 

@@ -4,7 +4,6 @@ module Phcmembers
 	class Directory::ListingsController < ApplicationController
 
 		# Security & Action Filters
-		before_action :require_user
 		before_action :set_paper_trail_whodunnit
 		before_action :set_directory_listing, only: [:show, :edit, :update, :destroy]
 		layout 'layouts/phcmemberspro/directory/directory_all.html.erb'

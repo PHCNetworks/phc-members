@@ -3,7 +3,8 @@ require_dependency "phcmembers/application_controller"
 module Phcmembers
 	class Connections::MemberlistingsController < ApplicationController
 
-		# Security & Filters
+		# Security & Action Filters
+		before_action :set_paper_trail_whodunnit
 		before_action :set_connections_memberlisting, only: [:show, :edit, :update, :destroy]
 
 		# INDEX - Member/Listing Connection

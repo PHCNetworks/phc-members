@@ -15,7 +15,7 @@ module Phcmembers
 		# DETAILED PROFILE - Member Profile
 		def show
 			@member_profile = Members::Profile.find(params[:id])
-			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmemberspro::Members::Profile')
+			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Members::Profile')
 		end
 
 		# NEW FORM - Member Profile
