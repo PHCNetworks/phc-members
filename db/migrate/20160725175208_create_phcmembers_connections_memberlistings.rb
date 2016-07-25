@@ -1,10 +1,12 @@
 class CreatePhcmembersConnectionsMemberlistings < ActiveRecord::Migration[5.0]
-  def change
-    create_table :phcmembers_connections_memberlistings do |t|
-      t.references :profile, foreign_key: true
-      t.references :listing, foreign_key: true
+	def change
+		create_table :phcmembers_connections_memberlistings do |t|
 
-      t.timestamps
-    end
-  end
+			t.references :profile
+			t.references :listing
+
+			t.timestamps
+
+		end
+	end
 end
