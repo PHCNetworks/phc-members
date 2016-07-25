@@ -1,26 +1,5 @@
 Phcmembers::Engine.routes.draw do
 
-  namespace :directory do
-    resources :categories
-  end
-  namespace :connections do
-    resources :memberaddresses
-  end
-  namespace :connections do
-    resources :memberlistings
-  end
-  namespace :connections do
-    resources :categorylistings
-  end
-  namespace :directory do
-    resources :listings
-  end
-  namespace :member do
-    resources :addresses
-  end
-  namespace :member do
-    resources :profiles
-  end
 	# Dashboard (Engine Root)
 	get 'dashboard/mains/index', :path => "dashboard"
 
@@ -36,25 +15,19 @@ Phcmembers::Engine.routes.draw do
 
 	# Application Client Backend
 
+	# Members Section
 	namespace :members do
 
 		# Members Main Index
 		root 'mains#index'
 
 		# Member Routes
-		resources :mains, class_name: 'Phcmembers::Members::Main' do
-
-			# Member Routes
-			resources :businesses, class_name: 'Phcmembers::Members::Business'
-			resources :contacts, class_name: 'Phcmembers::Members::Contact'
-			
-			# Auto Complete Routes
-			get :autocomplete_members_contact_mccompanyname, :on => :collection
-
-		end
+		resources :addresses, class_name: 'Phcmembers::Member::Address'
+		resources :profiles, class_name: 'Phcmembers::Member::Profile'
 
 	end
 
+	# Directory Section
 	namespace :directory do
 
 		# Members Main Index
@@ -63,6 +36,13 @@ Phcmembers::Engine.routes.draw do
 		resources :categories, class_name: 'Phcmembers::Directory::Category'
 		resources :listings, class_name: 'Phcmembers::Directory::Listing'
 
+	end
+
+	# Connection Section
+	namespace :connections do
+		resources :memberaddresses, class_name: 'Phcmembers::Connections::Memberaddress'
+		resources :memberlistings, class_name: 'Phcmembers::Connections::Memberlisting'
+		resources :categorylistings, class_name: 'Phcmembers::Connections::Categorylisting'
 	end
 
 end

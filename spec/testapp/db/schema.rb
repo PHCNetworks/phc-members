@@ -10,28 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707154842) do
+ActiveRecord::Schema.define(version: 20160725182257) do
+
+  create_table "phcmembers_connections_categorylistings", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "listing_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_phcmembers_connections_categorylistings_on_category_id"
+    t.index ["listing_id"], name: "index_phcmembers_connections_categorylistings_on_listing_id"
+  end
+
+  create_table "phcmembers_connections_memberaddresses", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_phcmembers_connections_memberaddresses_on_listing_id"
+    t.index ["profile_id"], name: "index_phcmembers_connections_memberaddresses_on_profile_id"
+  end
+
+  create_table "phcmembers_connections_memberlistings", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_phcmembers_connections_memberlistings_on_listing_id"
+    t.index ["profile_id"], name: "index_phcmembers_connections_memberlistings_on_profile_id"
+  end
 
   create_table "phcmembers_directory_categories", force: :cascade do |t|
     t.string   "catname"
-    t.integer  "business_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["business_id"], name: "index_phcmembers_directory_categories_on_business_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "phcmembers_directory_listings", force: :cascade do |t|
-    t.integer  "main_id"
-    t.integer  "business_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["business_id"], name: "index_phcmembers_directory_listings_on_business_id"
-    t.index ["category_id"], name: "index_phcmembers_directory_listings_on_category_id"
-    t.index ["main_id"], name: "index_phcmembers_directory_listings_on_main_id"
-  end
-
-  create_table "phcmembers_members_businesses", force: :cascade do |t|
     t.string   "mbcompanyname"
     t.string   "mbcontactname"
     t.string   "mbaddressl1"
@@ -43,16 +57,11 @@ ActiveRecord::Schema.define(version: 20160707154842) do
     t.string   "mbphone"
     t.string   "mbcontactemail"
     t.string   "mbwebsite"
-    t.integer  "main_id"
-    t.string   "user_id"
-    t.string   "membership_id"
-    t.string   "oganization_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["main_id"], name: "index_phcmembers_members_businesses_on_main_id"
   end
 
-  create_table "phcmembers_members_contacts", force: :cascade do |t|
+  create_table "phcmembers_member_addresses", force: :cascade do |t|
     t.string   "mcaddressl1"
     t.string   "mcaddressl2"
     t.string   "mccity"
@@ -60,22 +69,17 @@ ActiveRecord::Schema.define(version: 20160707154842) do
     t.string   "mccountry"
     t.string   "mcpostalcode"
     t.string   "mctype"
-    t.integer  "main_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["main_id"], name: "index_phcmembers_members_contacts_on_main_id"
   end
 
-  create_table "phcmembers_members_mains", force: :cascade do |t|
+  create_table "phcmembers_member_profiles", force: :cascade do |t|
     t.string   "mfirstname"
     t.string   "mlastname"
     t.string   "mtitle"
     t.string   "memail"
     t.string   "mphone"
     t.string   "mnotes"
-    t.string   "smtwitter"
-    t.string   "smfacebook"
-    t.string   "smlinkedin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

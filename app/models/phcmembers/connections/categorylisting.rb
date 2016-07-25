@@ -6,7 +6,7 @@ module Phcmembers
 
 		# Relationships
 		belongs_to :category, class_name: 'Phcmembers::Directory::Category'
-		belongs_to :listing, class_name: 'Phcmembers::Connection::Categorylisting'
+		belongs_to :listing, class_name: 'Phcmembers::Directory::Listing'
 
 	end
 end

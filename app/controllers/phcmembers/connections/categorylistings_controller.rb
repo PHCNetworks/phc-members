@@ -14,6 +14,8 @@ module Phcmembers
 
 		# DETAILED CATEGORY VIEW - Category/Listing Connection
 		def show
+			@connections_categorylistings = Connections::Categorylisting.find(params[:id])
+			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Connections::Categorylisting')
 		end
 
 		# NEW - Category/Listing Connection
