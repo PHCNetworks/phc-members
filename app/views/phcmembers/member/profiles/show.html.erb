@@ -1,14 +1,32 @@
-<p id="notice"><%= notice %></p>
+<!-- Title System -->
+<% phc_title "PHCMembers - Member Profile Manager" %>
+<% phc_title_tagline @member_profile.mfirstname + " Detailed Member Profile" %>
 
-<p>
-  <strong>Mfirstname:</strong>
-  <%= @member_profile.mfirstname %>
-</p>
+<div class="page-bar">
 
-<p>
-  <strong>Mlastname:</strong>
-  <%= @member_profile.mlastname %>
-</p>
+	<!-- Bread Crumbs -->
+	<ul class="page-breadcrumb">
+		<li><%= link_to "Home", members_root_path %><i class="fa fa-circle"></i></li>
+		<li><%= link_to "Members List", member_profile_path %><i class="fa fa-circle"></i></li>
+		<li class="active"><%= yield(:phc_title_tagline) %></li>
+	</ul>
 
-<%= link_to 'Edit', edit_member_profile_path(@member_profile) %> |
-<%= link_to 'Back', member_profiles_path %>
+</div>
+
+<!-- Page Title -->
+<h3 class="page-title">
+	<%= yield(:phc_title) %> </br>
+	<small><%= yield(:phc_title_tagline) %></small>
+</h3>
+
+<!-- Main Content -->
+<div class="row">
+	<div class="col-md-12">
+		<div class="profile-sidebar">
+			<%= render 'phcmemberspro/members/profiles/components/profile_sidebar' %>
+		</div>
+		<div class="profile-content">
+			<%= render 'phcmemberspro/members/profiles/components/profile_main' %>
+		</div>
+	</div>
+</div>
