@@ -29,7 +29,7 @@ module Phcmembers
 		def create
 			@connections_memberlisting = Connections::Memberlisting.new(connections_memberlisting_params)
 			if @connections_memberlisting.save
-				redirect_to @connections_memberlisting, notice: 'Memberlisting was successfully created.'
+				redirect_to connections_memberlistings_url, notice: 'Memberlisting was successfully created.'
 				else
 					render :new
 			end
@@ -38,7 +38,7 @@ module Phcmembers
 		# PATCH/PUT - Member/Listing Connection
 		def update
 			if @connections_memberlisting.update(connections_memberlisting_params)
-				redirect_to @connections_memberlisting, notice: 'Memberlisting was successfully updated.'
+				redirect_to connections_memberlistings_url, notice: 'Memberlisting was successfully updated.'
 				else
 					render :edit
 			end

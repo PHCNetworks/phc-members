@@ -29,7 +29,7 @@ module Phcmembers
 		def create
 			@connections_memberaddress = Connections::Memberaddress.new(connections_memberaddress_params)
 			if @connections_memberaddress.save
-				redirect_to @connections_memberaddress, notice: 'Memberaddress was successfully created.'
+				redirect_to connections_memberaddresses_url, notice: 'Memberaddress was successfully created.'
 				else
 					render :new
 			end
@@ -38,7 +38,7 @@ module Phcmembers
 		# PATCH/PUT - Member/Address Connection
 		def update
 			if @connections_memberaddress.update(connections_memberaddress_params)
-				redirect_to @connections_memberaddress, notice: 'Memberaddress was successfully updated.'
+				redirect_to connections_memberaddresses_url, notice: 'Memberaddress was successfully updated.'
 				else
 					render :edit
 			end

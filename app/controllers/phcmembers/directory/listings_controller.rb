@@ -30,7 +30,7 @@ module Phcmembers
 		def create
 			@directory_listing = Directory::Listing.new(directory_listing_params)
 			if @directory_listing.save
-				redirect_to @directory_listing, notice: 'Listing was successfully created.'
+				redirect_to directory_listings_url, notice: 'Listing was successfully created.'
 				else
 					render :new
 			end
@@ -39,7 +39,7 @@ module Phcmembers
 		# PATCH/PUT - Directory Listings
 		def update
 			if @directory_listing.update(directory_listing_params)
-				redirect_to @directory_listing, notice: 'Listing was successfully updated.'
+				redirect_to directory_listings_url, notice: 'Listing was successfully updated.'
 				else
 					render :edit
 			end

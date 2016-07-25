@@ -30,7 +30,7 @@ module Phcmembers
 		def create
 			@directory_category = Directory::Category.new(directory_category_params)
 			if @directory_category.save
-				redirect_to @directory_category, notice: 'Category was successfully created.'
+				redirect_to directory_categories_url, notice: 'Category was successfully created.'
 				else
 					render :new
 			end
@@ -39,7 +39,7 @@ module Phcmembers
 		# PATCH/PUT - Directory Category
 		def update
 			if @directory_category.update(directory_category_params)
-				redirect_to @directory_category, notice: 'Category was successfully updated.'
+				redirect_to directory_categories_url, notice: 'Category was successfully updated.'
 				else
 					render :edit
 			end

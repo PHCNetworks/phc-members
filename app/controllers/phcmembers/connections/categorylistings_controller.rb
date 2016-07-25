@@ -29,7 +29,7 @@ module Phcmembers
 		def create
 			@connections_categorylisting = Connections::Categorylisting.new(connections_categorylisting_params)
 			if @connections_categorylisting.save
-				redirect_to @connections_categorylisting, notice: 'Categorylisting was successfully created.'
+				redirect_to connections_memberaddresses_url, notice: 'Categorylisting was successfully created.'
 				else
 					render :new
 			end
@@ -38,7 +38,7 @@ module Phcmembers
 		# PATCH/PUT - Category/Listing Connection
 		def update
 			if @connections_categorylisting.update(connections_categorylisting_params)
-				redirect_to @connections_categorylisting, notice: 'Categorylisting was successfully updated.'
+				redirect_to connections_memberaddresses_url, notice: 'Categorylisting was successfully updated.'
 				else
 					render :edit
 			end

@@ -31,7 +31,7 @@ module Phcmembers
 			@member_address = Member::Address.new(member_address_params)
 
 			if @member_address.save
-				redirect_to @member_address, notice: 'Address was successfully created.'
+				redirect_to member_addresses_url, notice: 'Address was successfully created.'
 				else
 					render :new
 			end
@@ -40,7 +40,7 @@ module Phcmembers
 		# PATCH/PUT - Member Address
 		def update
 			if @member_address.update(member_address_params)
-			redirect_to @member_address, notice: 'Address was successfully updated.'
+			redirect_to member_addresses_url, notice: 'Address was successfully updated.'
 				else
 				render :edit
 			end
