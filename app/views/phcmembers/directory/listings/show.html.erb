@@ -1,4 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!-- Title System -->
+<% phc_title "PHCMembers - Business Manager" %>
+<% phc_title_tagline "Detailed Business Profile for " + @members_businesses.mbcompanyname %>
 
-<%= link_to 'Edit', edit_directory_listing_path(@directory_listing) %> |
-<%= link_to 'Back', directory_listings_path %>
+<!-- BreadCrumbs -->
+<div class="row">
+	<div class="col-lg-12">
+
+		<!-- Bread Crumb -->
+		<ol class="breadcrumb">
+			<li><%= link_to "Members Home", members_root_path %></li>
+			<li><%= link_to "Members List", members_mains_path %></li>
+			<li><%= link_to @members_main.mfirstname + " " + @members_main.mlastname + " Businesses", members_main_businesses_path %></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
+		</ol>
+
+	</div>
+</div>
+
+<!-- Page Title -->
+<div class="row">
+	<div class="col-lg-12">
+
+		<h3 class="page-title">
+			<%= yield(:phc_title) %> </br>
+			<small><%= yield(:phc_title_tagline) %></small>
+		</h3>
+
+	</div>
+</div>
+
+<!-- Main Content -->
+<div class="row">
+	<%= render 'phcmembers/members/businesses/components/business_main' %>
+</div>
