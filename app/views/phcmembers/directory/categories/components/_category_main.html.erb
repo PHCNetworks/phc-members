@@ -1,0 +1,24 @@
+<div class="col-md-6">
+	<div class="card">
+		<div class="card-header">
+			Recent Listings for <%= @directory_category.catname %>
+		</div>
+		<div class="card-block">
+			<%= render 'phcmembers/directory/categories/components/category_list' %>
+			<%= link_to directory_category_listings_path(@directory_category), class: "btn blue-chambray" do %>
+				<i class="fa fa-list-alt"></i> All Listings for <%= @directory_category.catname %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-6">
+	<div class="card">
+		<div class="card-header">
+			Category Change Log
+		</div>
+		<div class="card-block">
+			<%= render 'phcmembers/directory/categories/components/category_audits' %>
+		</div>
+	</div>
+</div>
