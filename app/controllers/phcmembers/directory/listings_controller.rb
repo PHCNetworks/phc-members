@@ -6,7 +6,7 @@ module Phcmembers
 		# Security & Action Filters
 		before_action :set_paper_trail_whodunnit
 		before_action :set_directory_listing, only: [:show, :edit, :update, :destroy]
-		layout 'layouts/phcmemberspro/directory/directory_all.html.erb'
+		layout 'layouts/phcmembers/directory/directory_all.html.erb'
 
 		# INDEX - Directory Listings
 		def index
