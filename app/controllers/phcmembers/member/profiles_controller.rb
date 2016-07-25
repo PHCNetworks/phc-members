@@ -30,9 +30,6 @@ module Phcmembers
 		# POST - Member Profile
 		def create
 			@member_profile = Member::Profile.new(member_profile_params)
-			@member_profile.user_id = current_user.id
-			@member_profile.membership_id = membership_info.id
-			@member_profile.oganization_id = membership_info.org_id
 			if @member_profile.save
 				redirect_to member_profiles_url, notice: 'Profile was successfully created.'
 				else
@@ -42,9 +39,6 @@ module Phcmembers
 
 		# PATCH/PUT - Member Profile
 		def update
-			@member_profile.user_id = current_user.id
-			@member_profile.membership_id = membership_info.id
-			@member_profile.oganization_id = membership_info.org_id
 			if @member_profile.update(member_profile_params)
 				redirect_to member_profiles_url, notice: 'Profile was successfully updated.'
 				else
@@ -67,7 +61,7 @@ module Phcmembers
 
 		# Whitelist
 		def member_profile_params
-			params.require(:member_profile).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes, :user_id, :membership_id, :oganization_id)
+			params.require(:member_profile).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes)
 		end
 
 	end

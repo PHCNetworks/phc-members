@@ -1,34 +1,4 @@
-<!-- Title System -->
-<% phc_title "Directory Listings Manager" %>
-<% phc_title_tagline "Detailed Listing Information" %>
+<p id="notice"><%= notice %></p>
 
-<!-- BreadCrumbs -->
-<div class="row">
-	<div class="col-lg-12">
-
-		<!-- Bread Crumb -->
-		<ol class="breadcrumb">
-			<li><%= link_to "Directories Home", directory_root_path %></li>
-			<li><%= link_to "Categories List", directory_categories_path %></li>
-			<li class="active"><%= yield(:phc_title_tagline) %></li>
-		</ol>
-
-	</div>
-</div>
-
-<!-- Page Title -->
-<div class="row">
-	<div class="col-lg-12">
-
-		<h3 class="page-title">
-			<%= yield(:phc_title) %> </br>
-			<small><%= yield(:phc_title_tagline) %></small>
-		</h3>
-
-	</div>
-</div>
-
-<!-- Main Content -->
-<div class="row">
-	<%= render 'phcmembers/directory/listings/components/listing_main' %>
-</div>
+<%= link_to 'Edit', edit_directory_listing_path(@directory_listing) %> |
+<%= link_to 'Back', directory_listings_path %>

@@ -1,15 +1,17 @@
-<%= form_for([@directory_listing.category, @directory_listing], url: directory_category_listings_path) do |f| %>
-	
-	<!-- PHC-Notifi Render Validation -->
-	<%= render 'phcnotifi/validations', :object => @directory_listing %>
+<%= form_for(directory_listing) do |f| %>
+  <% if directory_listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(directory_listing.errors.count, "error") %> prohibited this directory_listing from being saved:</h2>
 
-	<div class="form-group field_with_errors">
-		<label>Select a Listing</label>
-		<%= collection_select(:directory_listing, :business_id, Phcmembers::Members::Business.order('mbcompanyname'), :id, :mbcompanyname, {}, {class: "form-control"}) %>
-	</div>
+      <ul>
+      <% directory_listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-	<div class="actions">
-		<%= f.submit "Submit", class: "btn blue-hoki" %>
-	</div>
-
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

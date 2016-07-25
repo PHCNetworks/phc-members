@@ -1,5 +1,23 @@
 Phcmembers::Engine.routes.draw do
 
+  namespace :directory do
+    resources :categories
+  end
+  namespace :connections do
+    resources :memberaddresses
+  end
+  namespace :connections do
+    resources :memberlistings
+  end
+  namespace :connections do
+    resources :categorylistings
+  end
+  namespace :directory do
+    resources :listings
+  end
+  namespace :member do
+    resources :addresses
+  end
   namespace :member do
     resources :profiles
   end

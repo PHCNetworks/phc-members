@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Connections Categorylistings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Listing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connections_categorylistings.each do |connections_categorylisting| %>
+      <tr>
+        <td><%= connections_categorylisting.category %></td>
+        <td><%= connections_categorylisting.listing %></td>
+        <td><%= link_to 'Show', connections_categorylisting %></td>
+        <td><%= link_to 'Edit', edit_connections_categorylisting_path(connections_categorylisting) %></td>
+        <td><%= link_to 'Destroy', connections_categorylisting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Connections Categorylisting', new_connections_categorylisting_path %>

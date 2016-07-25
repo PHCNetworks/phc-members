@@ -1,34 +1,9 @@
-<!-- Title System -->
-<% phc_title  "PHCMembers - Directory Category Manager" %>
-<% phc_title_tagline "Detail Information for " + @directory_category.catname %>
+<p id="notice"><%= notice %></p>
 
-<!-- BreadCrumbs -->
-<div class="row">
-	<div class="col-lg-12">
+<p>
+  <strong>Catname:</strong>
+  <%= @directory_category.catname %>
+</p>
 
-		<!-- Bread Crumb -->
-		<ol class="breadcrumb">
-			<li><%= link_to "Directory Home", directory_root_path %></li>
-			<li><%= link_to "Directory Categories", directory_categories_path %></li>
-			<li class="active"><%= yield(:phc_title_tagline) %></li>
-		</ol>
-
-	</div>
-</div>
-
-<!-- Page Title -->
-<div class="row">
-	<div class="col-lg-12">
-
-		<h3 class="page-title">
-			<%= yield(:phc_title) %> </br>
-			<small><%= yield(:phc_title_tagline) %></small>
-		</h3>
-
-	</div>
-</div>
-
-<!-- Main Content -->
-<div class="row">
-	<%= render 'phcmembers/directory/categories/components/category_main' %>
-</div>
+<%= link_to 'Edit', edit_directory_category_path(@directory_category) %> |
+<%= link_to 'Back', directory_categories_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Connections Memberaddresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Listing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connections_memberaddresses.each do |connections_memberaddress| %>
+      <tr>
+        <td><%= connections_memberaddress.profile %></td>
+        <td><%= connections_memberaddress.listing %></td>
+        <td><%= link_to 'Show', connections_memberaddress %></td>
+        <td><%= link_to 'Edit', edit_connections_memberaddress_path(connections_memberaddress) %></td>
+        <td><%= link_to 'Destroy', connections_memberaddress, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Connections Memberaddress', new_connections_memberaddress_path %>

@@ -1,0 +1,22 @@
+<%= form_for(member_address) do |f| %>
+  <% if member_address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(member_address.errors.count, "error") %> prohibited this member_address from being saved:</h2>
+
+      <ul>
+      <% member_address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :maaddressl1 %>
+    <%= f.text_field :maaddressl1 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

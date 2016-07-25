@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @connections_memberaddress.profile %>
+</p>
+
+<p>
+  <strong>Listing:</strong>
+  <%= @connections_memberaddress.listing %>
+</p>
+
+<%= link_to 'Edit', edit_connections_memberaddress_path(@connections_memberaddress) %> |
+<%= link_to 'Back', connections_memberaddresses_path %>

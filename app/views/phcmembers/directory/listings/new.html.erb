@@ -1,45 +1,5 @@
-<!-- Title System -->
-<% phc_title "Directory Listings Manager" %>
-<% phc_title_tagline "New Listing Connection for " + @directory_category.catname + " Category" %>
+<h1>New Directory Listing</h1>
 
-<!-- BreadCrumbs -->
-<div class="row">
-	<div class="col-lg-12">
+<%= render 'form', directory_listing: @directory_listing %>
 
-		<!-- Bread Crumb -->
-		<ol class="breadcrumb">
-			<li><%= link_to "Directories Home", directory_root_path %></li>
-			<li><%= link_to "Categories List", directory_categories_path %></li>
-			<li class="active"><%= yield(:phc_title_tagline) %></li>
-		</ol>
-
-	</div>
-</div>
-
-<!-- Page Title -->
-<div class="row">
-	<div class="col-lg-12">
-
-		<h3 class="page-title">
-			<%= yield(:phc_title) %> </br>
-			<small><%= yield(:phc_title_tagline) %></small>
-		</h3>
-
-	</div>
-</div>
-
-<!-- Main Content -->
-<div class="row">
-	<div class="col-lg-12">
-
-		<div class="card">
-			<div class="card-header">
-				<%= yield(:phc_title_tagline) %>
-			</div>
-			<div class="card-block">
-				<%= render 'form' %>
-			</div>
-		</div>
-
-	</div>
-</div>
+<%= link_to 'Back', directory_listings_path %>

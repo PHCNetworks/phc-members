@@ -1,73 +1,25 @@
-<!-- Title System -->
-<% phc_title  "PHCMembers - Directory Category Manager" %>
-<% phc_title_tagline "Listings Index for " + @directory_category.catname + " Category" %>
+<p id="notice"><%= notice %></p>
 
-<!-- BreadCrumbs -->
-<div class="row">
-	<div class="col-lg-12">
+<h1>Directory Listings</h1>
 
-		<!-- Bread Crumb -->
-		<ol class="breadcrumb">
-			<li><%= link_to "Directories Home", directory_root_path %></li>
-			<li><%= link_to "Categories List", directory_categories_path %></li>
-			<li class="active"><%= yield(:phc_title_tagline) %></li>
-		</ol>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-	</div>
-</div>
+  <tbody>
+    <% @directory_listings.each do |directory_listing| %>
+      <tr>
+        <td><%= link_to 'Show', directory_listing %></td>
+        <td><%= link_to 'Edit', edit_directory_listing_path(directory_listing) %></td>
+        <td><%= link_to 'Destroy', directory_listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
+<br>
 
-<!-- Page Title -->
-<div class="row">
-	<div class="col-lg-12">
-
-		<h3 class="page-title">
-			<%= yield(:phc_title) %> </br>
-			<small><%= yield(:phc_title_tagline) %></small>
-		</h3>
-
-	</div>
-</div>
-
-
-<!-- Main Content -->
-<div class="row">
-	<div class="col-lg-12">
-
-		<div class="card">
-			<div class="card-header">
-				<%= yield(:phc_title) %>
-			</div>
-			<div class="card-block">
-				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover">
-	
-						<thead class="thead-inverse">
-							<tr>
-								<th>Business Name</th>
-								<th>Contact Name</th>
-								<th>Phone Number</th>
-								<th>Email</th>
-								<th>Website</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<% @directory_listings.each do |directory_listings| %>
-								<tr>
-									<td class="highlight"><%= link_to directory_listings.business.mbcompanyname, directory_category_listing_path(directory_listings.category, directory_listings) %></td>
-									<td class="highlight"><%= link_to directory_listings.business.mbcontactname, directory_category_listing_path(directory_listings.category, directory_listings) %></td>
-									<td class="highlight"><%= link_to directory_listings.business.mbphone, directory_category_listing_path(directory_listings.category, directory_listings) %></td>
-									<td class="highlight"><%= link_to directory_listings.business.mbcontactemail, directory_category_listing_path(directory_listings.category, directory_listings) %></td>
-									<td class="highlight"><%= link_to directory_listings.business.mbwebsite, directory_category_listing_path(directory_listings.category, directory_listings) %></td>
-								</tr>
-							<% end %>
-						</tbody>
-
-					</table>
-				</div>
-			</div>
-		</div>
-
-	</div>
-</div>
+<%= link_to 'New Directory Listing', new_directory_listing_path %>

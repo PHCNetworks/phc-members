@@ -1,69 +1,62 @@
 require_dependency "phcmembers/application_controller"
 
 module Phcmembers
-	class Directory::CategoriesController < ApplicationController
+  class Directory::CategoriesController < ApplicationController
+    before_action :set_directory_category, only: [:show, :edit, :update, :destroy]
 
-		# Filters
-		before_action :set_paper_trail_whodunnit
-		before_action :set_directory_category, only: [:edit, :update, :destroy]
-		# layout 'layouts/phcmemberspro/directory/directory_all.html.erb'
+    # GET /directory/categories
+    def index
+      @directory_categories = Directory::Category.all
+    end
 
-		# Directory Category Index
-		def index
-			@directory_categories = Directory::Category.all
-		end
+    # GET /directory/categories/1
+    def show
+    end
 
-		# Directory Category Details
-		def show
-			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Directory::Category')
-			@directory_category = Directory::Category.find(params[:id])
-		end
+    # GET /directory/categories/new
+    def new
+      @directory_category = Directory::Category.new
+    end
 
-		# New Directory Category
-		def new
-			@directory_category = Directory::Category.new
-		end
+    # GET /directory/categories/1/edit
+    def edit
+    end
 
-		# Edit Directory Category
-		def edit
-		end
+    # POST /directory/categories
+    def create
+      @directory_category = Directory::Category.new(directory_category_params)
 
-		# Create Action
-		def create
-			@directory_category = Directory::Category.new(directory_category_params)
-			if @directory_category.save
-				redirect_to directory_categories_path, notice: 'Category was successfully created.'
-				else
-					render :new
-			end
-		end
+      if @directory_category.save
+        redirect_to @directory_category, notice: 'Category was successfully created.'
+      else
+        render :new
+      end
+    end
 
-		# Update Action
-		def update
-			if @directory_category.update(directory_category_params)
-				redirect_to directory_categories_path, notice: 'Category was successfully updated.'
-				else
-					render :edit
-			end
-		end
+    # PATCH/PUT /directory/categories/1
+    def update
+      if @directory_category.update(directory_category_params)
+        redirect_to @directory_category, notice: 'Category was successfully updated.'
+      else
+        render :edit
+      end
+    end
 
-		# Delete Action
-		def destroy
-			@directory_category.destroy
-			redirect_to directory_categories_path, notice: 'Category was successfully destroyed.'
-		end
+    # DELETE /directory/categories/1
+    def destroy
+      @directory_category.destroy
+      redirect_to directory_categories_url, notice: 'Category was successfully destroyed.'
+    end
 
-		private
+    private
+      # Use callbacks to share common setup or constraints between actions.
+      def set_directory_category
+        @directory_category = Directory::Category.find(params[:id])
+      end
 
-		# Common Callbacks
-		def set_directory_category
-			@directory_category = Directory::Category.find(params[:id])
-		end
-
-		# whitelist
-		def directory_category_params
-			params.require(:directory_category).permit(:catname)
-		end
-
-	end
+      # Only allow a trusted parameter "white list" through.
+      def directory_category_params
+        params.require(:directory_category).permit(:catname)
+      end
+  end
 end

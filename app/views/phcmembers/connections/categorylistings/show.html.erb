@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @connections_categorylisting.category %>
+</p>
+
+<p>
+  <strong>Listing:</strong>
+  <%= @connections_categorylisting.listing %>
+</p>
+
+<%= link_to 'Edit', edit_connections_categorylisting_path(@connections_categorylisting) %> |
+<%= link_to 'Back', connections_categorylistings_path %>
