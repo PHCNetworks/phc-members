@@ -1,3 +1,4 @@
+// Page Header Title
 .page-title {
 	padding: 25px 0px 40px 0px;
 	font-size: 28px;
@@ -6,8 +7,7 @@
 	color: #666;
 	margin: 0px 0px 15px 0px;
 	font-weight: 300;
-
-	/* subtitle */
+	// Title SubScript
 	small {
 		font-size: 14px;
 		letter-spacing: 0px;
@@ -20,7 +20,6 @@
 		color: #666;
 		margin-bottom: 20px;
 		margin-top: 20px;
-
 		small {
 			color: #666;
 		}
@@ -30,4 +29,10 @@
 		margin: 25px 0;
 		font-size: 24px;
 	}
+}
+
+// Fix for Time in List
+.feeds {
+	padding: 5px 5px 5px 5px;
+	font-size: 13px;
 }

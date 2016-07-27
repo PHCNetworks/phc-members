@@ -1,28 +1,35 @@
-<!-- Title System -->
+<!-- Title Variables -->
 <% phc_title "PHCMembers - Member Profile Manager" %>
-<% phc_title_tagline @member_profile.mfirstname + " Detailed Member Profile" %>
+<% phc_title_tagline "Create a New Member Profile" %>
 
-<!-- Bread Crumbs -->
-<ol class="breadcrumb">
-	<li><%= link_to "Dashboard", member_root_path %></li>
-	<li><%= link_to "Members Profile List", member_profiles_path %></li>
-	<li class="active"><%= yield(:phc_title_tagline) %></li>
-</ol>
+<!-- Page Header -->
+<div class="row">
+	<div class="col-lg-12">
 
-<!-- Page Title -->
-<h3 class="page-title">
-	<%= yield(:phc_title) %> </br>
-	<small><%= yield(:phc_title_tagline) %></small>
-</h3>
+		<!-- Bread Crumbs -->
+		<ol class="breadcrumb">
+			<li><%= link_to "Dashboard", member_root_path %></li>
+			<li><%= link_to "Members Profile List", member_profiles_path %></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
+		</ol>
+
+		<!-- Page Title -->
+		<h3 class="page-title">
+			<%= yield(:phc_title) %> </br>
+			<small><%= yield(:phc_title_tagline) %></small>
+		</h3>
+
+	</div>
+</div>
 
 <!-- Main Content -->
 <div class="row">
-	<div class="col-md-12">
-		<div class="profile-sidebar">
-			<%= render 'phcmemberspro/members/profiles/components/profile_sidebar' %>
-		</div>
-		<div class="profile-content">
-			<%= render 'phcmemberspro/members/profiles/components/profile_main' %>
-		</div>
+
+	<div class="col-md-3">
+		<%= render 'phcmembers/member/profiles/components/profile_sidebar' %>
 	</div>
+	<div class="col-md-9">
+		<%= render 'phcmembers/member/profiles/components/profile_main' %>
+	</div>
+
 </div>
