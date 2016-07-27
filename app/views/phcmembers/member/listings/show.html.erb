@@ -1,0 +1,38 @@
+<!-- Title System -->
+<% phc_title "PHCMembers - Member Profile Manager" %>
+<% phc_title_tagline "Listing for " + @member_profile.mfirstname + " " + @member_profile.mlastname + " " + @members_businesses.mbcompanyname %>
+
+<!-- Title System -->
+<% phc_title "PHCMembers - Business Manager" %>
+<% phc_title_tagline "Detailed Business Profile for " + %>
+
+<!-- BreadCrumbs -->
+<div class="row">
+	<div class="col-lg-12">
+
+		<!-- Bread Crumb -->
+		<ol class="breadcrumb">
+			<li><%= link_to "Directory Home", directory_root_path %></li>
+			<li><%= link_to "Directory Listings", directory_listings_path %></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
+		</ol>
+
+	</div>
+</div>
+
+<!-- Page Title -->
+<div class="row">
+	<div class="col-lg-12">
+
+		<h3 class="page-title">
+			<%= yield(:phc_title) %> </br>
+			<small><%= yield(:phc_title_tagline) %></small>
+		</h3>
+
+	</div>
+</div>
+
+<!-- Main Content -->
+<div class="row">
+	<%= render 'phcmembers/member/listings/components/listing_main' %>
+</div>

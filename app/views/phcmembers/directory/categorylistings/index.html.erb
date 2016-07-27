@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Directory Categorylistings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @directory_categorylistings.each do |directory_categorylisting| %>
+      <tr>
+        <td><%= link_to 'Show', directory_categorylisting %></td>
+        <td><%= link_to 'Edit', edit_directory_categorylisting_path(directory_categorylisting) %></td>
+        <td><%= link_to 'Destroy', directory_categorylisting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Directory Categorylisting', new_directory_categorylisting_path %>

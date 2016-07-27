@@ -29,7 +29,6 @@ module Phcmembers
 		# POST - Member Address
 		def create
 			@member_address = Member::Address.new(member_address_params)
-
 			if @member_address.save
 				redirect_to member_addresses_url, notice: 'Address was successfully created.'
 				else

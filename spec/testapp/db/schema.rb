@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20160725182257) do
 
-  create_table "phcmembers_connections_categorylistings", force: :cascade do |t|
-    t.integer  "category_id"
-    t.integer  "listing_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_phcmembers_connections_categorylistings_on_category_id"
-    t.index ["listing_id"], name: "index_phcmembers_connections_categorylistings_on_listing_id"
-  end
-
   create_table "phcmembers_connections_memberaddresses", force: :cascade do |t|
     t.integer  "profile_id"
     t.integer  "listing_id"
@@ -57,8 +48,10 @@ ActiveRecord::Schema.define(version: 20160725182257) do
     t.string   "mbphone"
     t.string   "mbcontactemail"
     t.string   "mbwebsite"
+    t.integer  "category_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["category_id"], name: "index_phcmembers_directory_listings_on_category_id"
   end
 
   create_table "phcmembers_member_addresses", force: :cascade do |t|

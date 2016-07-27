@@ -1,0 +1,65 @@
+<%= form_for([@directory_listing.category, @directory_listing]) do |f| %>
+
+	<!-- PHC-Notifi Render Validation -->
+	<%= render 'phcnotifi/validations', :object => @directory_listing %>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbcompanyname, "Company Name" %>
+		<%= f.text_field :mbcompanyname, class: "form-control", placeholder: "Business/Organization: Name" %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbcontactname, "Contact Name" %>
+		<%= f.text_field :mbcontactname, class: "form-control", placeholder: "Business/Organization: Contact Person" %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbaddressl1, "Address Line 1" %>
+		<%= f.text_field :mbaddressl1, class: "form-control", placeholder: "Location: Street Address" %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbaddressl2, "Address Line 2" %>
+		<%= f.text_field :mbaddressl2, class: "form-control", placeholder: "Location: Box - Suite - Floor" %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbcity, "City" %>
+		<%= f.text_field :mbcity, class: "form-control", placeholder: "Location: City" %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbprovince, "Province/State" %>
+		<%= f.text_field :mbprovince, class: "form-control", placeholder: "Location: Province/State" %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbcountry, "Country" %>
+		<%= country_select("members_business", "mbcountry", { priority_countries: ["CA", "GB", "FR", "US"], selected: "CA" }, { class: 'form-control', data: { attribute: "value" } }) %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbpostalcode, "Postal Code" %><br>
+		<%= f.text_field :mbpostalcode, class: "form-control", placeholder: "Location: PostalCode" %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbphone, "Business Phone Number" %>
+		<%= f.text_field :mbphone, class: "form-control", placeholder: "Business/Organization: PhoneNumber (Public)" %>
+	</div>
+
+	<div class="form-group field_with_errors">
+		<%= f.label :mbcontactemail, "Business General Email" %>
+		<%= f.text_field :mbcontactemail, class: "form-control", placeholder: "Business/Organization: Email Address (Public)" %>
+	</div>
+	
+	<div class="form-group field_with_errors">
+		<%= f.label :mbwebsite, "Business Website" %>
+		<%= f.text_field :mbwebsite, class: "form-control", placeholder: "Business/Organization: Website (Public)" %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit "Submit", class: "btn blue-hoki" %>
+	</div>
+
+<% end %>

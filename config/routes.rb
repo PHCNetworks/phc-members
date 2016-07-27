@@ -1,5 +1,8 @@
 Phcmembers::Engine.routes.draw do
 
+  namespace :directory do
+    resources :categorylistings
+  end
 	# Dashboard (Engine Root)
 	get 'dashboard/mains/index', :path => "dashboard"
 
@@ -16,14 +19,16 @@ Phcmembers::Engine.routes.draw do
 	# Application Client Backend
 
 	# Members Section
-	namespace :members do
+	namespace :member do
 
 		# Members Main Index
-		root 'mains#index'
+		root 'profiles#index'
 
 		# Member Routes
-		resources :addresses, class_name: 'Phcmembers::Member::Address'
-		resources :profiles, class_name: 'Phcmembers::Member::Profile'
+		resources :profiles, class_name: 'Phcmembers::Member::Profile' do
+			resources :listings, class_name: 'Phcmembers::Member::Listing'
+			resources :addresses, class_name: 'Phcmembers::Member::Address'
+		end
 
 	end
 
@@ -34,7 +39,6 @@ Phcmembers::Engine.routes.draw do
 		root 'categories#index'
 
 		resources :categories, class_name: 'Phcmembers::Directory::Category'
-		resources :listings, class_name: 'Phcmembers::Directory::Listing'
 
 	end
 
@@ -42,7 +46,6 @@ Phcmembers::Engine.routes.draw do
 	namespace :connections do
 		resources :memberaddresses, class_name: 'Phcmembers::Connections::Memberaddress'
 		resources :memberlistings, class_name: 'Phcmembers::Connections::Memberlisting'
-		resources :categorylistings, class_name: 'Phcmembers::Connections::Categorylisting'
 	end
 
 end

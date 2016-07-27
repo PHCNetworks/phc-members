@@ -9,7 +9,7 @@ module Phcmembers
 
 		# INDEX - Member Profile
 		def index
-			@member_profiles = Member::Profile.where(oganization_id: membership_info.org_id)
+			@member_profiles = Member::Profile.all
 		end
 
 		# DETAILED PROFILE - Member Profile

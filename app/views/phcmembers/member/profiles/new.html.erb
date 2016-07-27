@@ -1,31 +1,34 @@
-<!-- Title System -->
+<!-- Title Variables -->
 <% phc_title "PHCMembers - Member Profile Manager" %>
 <% phc_title_tagline "Create a New Member Profile" %>
 
-<div class="page-bar">
+<!-- Page Header -->
+<div class="row">
+	<div class="col-lg-12">
 
-	<!-- Bread Crumbs -->
-	<ul class="page-breadcrumb">
-		<li><%= link_to "Dashboard", members_root_path %><i class="fa fa-circle"></i></li>
-		<li><%= link_to "Members Profile List", member_profiles_path %><i class="fa fa-circle"></i></li>
-		<li class="active"><%= yield(:phc_title_tagline) %></li>
-	</ul>
+		<!-- Bread Crumbs -->
+		<ol class="breadcrumb">
+			<li><%= link_to "Dashboard", member_root_path %></li>
+			<li><%= link_to "Members Profile List", member_profiles_path %></li>
+			<li class="active"><%= yield(:phc_title_tagline) %></li>
+		</ol>
 
+		<!-- Page Title -->
+		<h3 class="page-title">
+			<%= yield(:phc_title) %> </br>
+			<small><%= yield(:phc_title_tagline) %></small>
+		</h3>
+
+	</div>
 </div>
-
-<!-- Page Title -->
-<h3 class="page-title">
-	<%= yield(:phc_title) %> </br>
-	<small><%= yield(:phc_title_tagline) %></small>
-</h3>
 
 <!-- Main Content -->
 <div class="row">
 	<div class="col-lg-12">
 
-		<div class="portlet light">
+		<div class="panel panel-default">
 
-			<div class="portlet-title">
+			<div class="panel-heading">
 				<div class="caption">
 					<span class="caption-subject bold uppercase"><%= yield(:phc_title_tagline) %></span>
 				</div>
@@ -33,7 +36,7 @@
 				</div>
 			</div>
 
-			<div class="portlet-body">
+			<div class="panel-body">
 				<%= render 'form', member_profile: @member_profile %>
 			</div>
 
