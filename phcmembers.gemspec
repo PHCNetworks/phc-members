@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 	spec.email       = ["developers@phcnetworks.net"]
 	spec.homepage    = "https://phcmembers.com/"
 	spec.summary     = "Membership & Directory Manager Engine"
-	spec.description = "PHCMembers(3) is an open source membership managment rails engine."
+	spec.description = "PHCMembers(4) is an open source membership managment rails engine."
 	spec.license     = "MIT"
 
 	spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
