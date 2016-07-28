@@ -1,7 +1,7 @@
 <ul class="list-group">
-	<% @directory_category.listings.each do |directory_category_listings| %>
+	<% @directory_category.listings.each do |member_listing| %>
 		<li class="list-group-item">
-			<%= link_to directory_category_listings.business.mbcompanyname, directory_category_listings_path(@directory_category)  %>
+			<%= link_to member_listing.listing.mbcompanyname  %>
 		</li>
 	<% end %>
 </ul>
