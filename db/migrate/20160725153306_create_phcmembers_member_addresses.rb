@@ -9,6 +9,8 @@ class CreatePhcmembersMemberAddresses < ActiveRecord::Migration[5.0]
 			t.string :mccountry
 			t.string :mcpostalcode
 			t.string :mctype
+			
+			t.references :profile
 
 			t.timestamps
 

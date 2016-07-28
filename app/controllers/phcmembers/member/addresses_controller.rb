@@ -5,8 +5,8 @@ module Phcmembers
 
 		# Security & Action Filters
 		before_action :set_paper_trail_whodunnit
+		before_action :get_member_profile_info
 		before_action :set_member_address, only: [:show, :edit, :update, :destroy]
-		layout 'layouts/phcmemberspro/members/members_all.html.erb'
 
 		# INDEX - Member Address
 		def index
@@ -60,7 +60,7 @@ module Phcmembers
 
 		# Whitelist
 		def member_address_params
-			params.require(:member_address).permit(:mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mctype, :main_id)
+			params.require(:member_address).permit(:mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mctype, :profile_id)
 		end
 
 	end

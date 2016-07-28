@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20160727042756) do
     t.string   "mccountry"
     t.string   "mcpostalcode"
     t.string   "mctype"
+    t.integer  "profile_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["profile_id"], name: "index_phcmembers_member_addresses_on_profile_id"
   end
 
   create_table "phcmembers_member_listings", force: :cascade do |t|
