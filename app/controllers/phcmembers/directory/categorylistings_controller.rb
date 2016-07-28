@@ -5,7 +5,7 @@ module Phcmembers
 
 		# Security & Action Filters
 		before_action :set_paper_trail_whodunnit
-		before_action :set_directory_category, only: [:show, :edit, :update, :destroy]
+		before_action :set_directory_category, only: [:show, :destroy]
 
 		# INDEX - Directory Category/Listings
 		def index
@@ -14,34 +14,8 @@ module Phcmembers
 
 		# DETAILED - Directory Category/Listings
 		def show
-		end
-
-		# NEW - Directory Category/Listings
-		def new
-			@directory_categorylisting = Directory::Categorylisting.new
-		end
-
-		# EDIT - Directory Category/Listings
-		def edit
-		end
-
-		# POST - Directory Category
-		def create
-			@directory_categorylisting = Directory::Categorylisting.new(directory_categorylisting_params)
-			if @directory_categorylisting.save
-				redirect_to directory_categorylistings_url, notice: 'Listing was successfully created.'
-				else
-					render :new
-			end
-		end
-
-		# PATCH/PUT - Directory Category
-		def update
-			if @directory_categorylisting.update(directory_categorylisting_params)
-				redirect_to directory_categorylistings_url, notice: 'Listing was successfully updated.'
-				else
-					render :edit
-			end
+			@directory_listing = Directory::Listing.find(params[:id])
+			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Directory::Listing')
 		end
 
 		# DELETE - Directory Category
