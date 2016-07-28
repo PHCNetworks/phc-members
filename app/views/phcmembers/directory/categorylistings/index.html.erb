@@ -42,7 +42,6 @@
 							<tr>
 								<th>Category</th>
 								<th>Company Name</th>
-								<th></th>
 							</tr>
 						</thead>
 
@@ -50,8 +49,7 @@
 							<% @directory_categorylistings.each do |directory_categorylisting| %>
 								<tr>
 									<td><%= directory_categorylisting.category.catname %></td>
-									<td><%= directory_categorylisting.category.mbcompanyname %></td>
-									<td><%= link_to 'Destroy', directory_categorylisting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+									<td><%= directory_categorylisting.listing.mbcompanyname %></td>
 								</tr>
 							<% end %>
 						</tbody>

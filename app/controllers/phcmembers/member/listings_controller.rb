@@ -36,6 +36,7 @@ module Phcmembers
 			@profile = Member::Profile.find(params[:profile_id])
 			@member_listing = @profile.listings.create(member_listing_params)
 			if @member_listing.save
+				@member_listing.categorylistings.build
 				redirect_to member_profile_listings_url, notice: 'Listing was successfully created.'
 				else
 					render :new
@@ -45,6 +46,7 @@ module Phcmembers
 		# PATCH/PUT - Directory Listings
 		def update
 			if @member_listing.update(member_listing_params)
+				@member_listing.categorylistings.build
 				redirect_to member_profile_listings_url, notice: 'Listing was successfully updated.'
 				else
 					render :edit
@@ -68,7 +70,7 @@ module Phcmembers
 
 		# Whitelist
 		def member_listing_params
-			params.require(:member_listing).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :category_id, :profile_id)
+			params.require(:member_listing).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :profile_id, category_ids: [])
 		end
 
 	end

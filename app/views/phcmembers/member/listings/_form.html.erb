@@ -58,6 +58,13 @@
 		<%= f.text_field :mbwebsite, class: "form-control", placeholder: "Business/Organization: Website (Public)" %>
 	</div>
 
+	<div class="form-group">
+		<%= f.collection_check_boxes :category_ids, Phcmembers::Directory::Category.all, :id, :catname do |listing_category| %>
+			<%= listing_category.check_box %>
+			<%= listing_category.label %></br>
+		<% end %>
+	</div>
+
 	<div class="actions">
 		<%= f.submit "Submit", class: "btn btn-primary" %>
 	</div>
