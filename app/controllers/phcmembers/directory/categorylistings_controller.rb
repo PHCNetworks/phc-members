@@ -29,7 +29,7 @@ module Phcmembers
 		def create
 			@directory_categorylisting = Directory::Categorylisting.new(directory_categorylisting_params)
 			if @directory_categorylisting.save
-				redirect_to @directory_categorylisting, notice: 'Listing was successfully created.'
+				redirect_to directory_categorylistings_url, notice: 'Listing was successfully created.'
 				else
 					render :new
 			end
@@ -38,7 +38,7 @@ module Phcmembers
 		# PATCH/PUT - Directory Category
 		def update
 			if @directory_categorylisting.update(directory_categorylisting_params)
-				redirect_to @directory_categorylisting, notice: 'Listing was successfully updated.'
+				redirect_to directory_categorylistings_url, notice: 'Listing was successfully updated.'
 				else
 					render :edit
 			end
