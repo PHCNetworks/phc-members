@@ -14,7 +14,7 @@ class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.0]
 			t.string :mbcontactemail
 			t.string :mbwebsite
 			
-			t.references :category
+			t.references :profile
 
 			t.timestamps
 

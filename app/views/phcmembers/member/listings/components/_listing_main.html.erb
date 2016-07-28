@@ -1,21 +1,31 @@
 <div class="col-md-6">
-	<div class="card">
-		<div class="card-header">
-			<%= @member_profile.mfirstname + ' ' + @member_profile.mlastname + ' ' + @member_listing.mbcompanyname %>
+
+	<div class="panel panel-default">
+
+		<div class="panel-heading">
+			<%= @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' ' + @member_listing.mbcompanyname %>
 		</div>
-		<div class="card-block">
+
+		<div class="panel-body">
 			<%= render 'phcmembers/member/listings/components/listing_address' %>
 		</div>
+
 	</div>
+
 </div>
 
 <div class="col-md-6">
-	<div class="card">
-		<div class="card-header">
-			<%= @member_profile.mfirstname + ' ' + @member_profile.mlastname + ' ' + @member_profile.mbcompanyname %> Business Change Logs
+
+	<div class="panel panel-default">
+
+		<div class="panel-heading">
+			<%= @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' ' + @member_listing.mbcompanyname %> Business Change Logs
 		</div>
-		<div class="card-block">
+
+		<div class="panel-body">
 			<%= render 'phcmembers/member/listings/components/listing_audits' %>
 		</div>
+
 	</div>
+
 </div>

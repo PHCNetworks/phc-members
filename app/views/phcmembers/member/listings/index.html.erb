@@ -1,24 +1,19 @@
-<!-- Title System -->
-<% phc_title "PHCMembers - Member Listing Manager" %>
-<% phc_title_tagline "Business Index for " + @member_profile.mfirstname + " " + @member_profile.mlastname %>
+<!-- Title Variables -->
+<% phc_title "PHCMembers - Member Listings Manager" %>
+<% phc_title_tagline "Listing Index for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
 
-<!-- BreadCrumbs -->
+<!-- Page Header -->
 <div class="row">
 	<div class="col-lg-12">
 
-		<!-- Bread Crumb -->
+		<!-- Bread Crumbs -->
 		<ol class="breadcrumb">
-			<li><%= link_to "Directory Home", directory_root_path %></li>
+			<li><%= link_to "Dashboard", member_root_path %></li>
+			<li><%= link_to "Member Profile List", member_profiles_path %></li>
 			<li class="active"><%= yield(:phc_title_tagline) %></li>
 		</ol>
 
-	</div>
-</div>
-
-<!-- Page Title -->
-<div class="row">
-	<div class="col-lg-12">
-
+		<!-- Page Title -->
 		<h3 class="page-title">
 			<%= yield(:phc_title) %> </br>
 			<small><%= yield(:phc_title_tagline) %></small>
@@ -31,13 +26,18 @@
 <div class="row">
 	<div class="col-lg-12">
 
-		<div class="card">
-			<div class="card-header">
-				<%= yield(:phc_title) %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+
+				<div class="caption">
+					<span class="caption-subject bold uppercase"><%= yield(:phc_title_tagline) %></span>
+				</div>
+
 			</div>
-			<div class="card-block">
-				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover">
+			<div class="panel-body">
+
+				<div class="table-scrollable">
+					<table class="table table-striped table-bordered table-advance table-hover">
 	
 						<thead class="thead-inverse">
 							<tr>
@@ -45,9 +45,9 @@
 								<th>Conact Name</th>
 								<th>City</th>
 								<th>Country</th>
-								<th>Business Phone</th>
-								<th>Business Email</th>
-								<th>Business Website</th>
+								<th>Listing Phone</th>
+								<th>Listing Email</th>
+								<th>Listing Website</th>
 							</tr>
 						</thead>
 
@@ -55,12 +55,12 @@
 							<% @member_listings.each do |member_listing| %>
 								<tr>
 									<td class="highlight"><%= link_to member_listing.mbcompanyname, member_profile_listing_path(member_listing.profile, member_listing) %></td>
-									<td class="highlight"><%= link_to member_listing.mbcontactname, member_profile_listing_path(member_listing.main, member_listing) %></td>
-									<td class="highlight"><%= link_to member_listing.mbcity, member_profile_listing_path(member_listing.main, member_listing) %></td>
-									<td class="highlight"><%= link_to member_listing.mbcountry, member_profile_listing_path(member_listing.main, member_listing) %></td>
-									<td class="highlight"><%= link_to member_listing.mbphone, member_profile_listing_path(member_listing.main, member_listing) %></td>
-									<td class="highlight"><%= link_to member_listing.mbcontactemail, member_profile_listing_path(member_listing.main, member_listing) %></td>
-									<td class="highlight"><%= link_to member_listing.mbwebsite, member_profile_listing_path(member_listing.main, member_listing) %></td>
+									<td class="highlight"><%= link_to member_listing.mbcontactname, member_profile_listing_path(member_listing.profile, member_listing) %></td>
+									<td class="highlight"><%= link_to member_listing.mbcity, member_profile_listing_path(member_listing.profile, member_listing) %></td>
+									<td class="highlight"><%= link_to member_listing.mbcountry, member_profile_listing_path(member_listing.profile, member_listing) %></td>
+									<td class="highlight"><%= link_to member_listing.mbphone, member_profile_listing_path(member_listing.profile, member_listing) %></td>
+									<td class="highlight"><%= link_to member_listing.mbcontactemail, member_profile_listing_path(member_listing.profile, member_listing) %></td>
+									<td class="highlight"><%= link_to member_listing.mbwebsite, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 								</tr>
 							<% end %>
 						</tbody>
@@ -69,6 +69,10 @@
 				</div>
 			</div>
 		</div>
+
+		<%= link_to new_member_profile_listing_path, class: "btn btn-primary" do %>
+			<i class="fa fa-plus"></i> <%= "Create a New Listing for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
+		<% end %>
 
 	</div>
 </div>

@@ -5,19 +5,20 @@ module Phcmembers
 
 		# Security & Action Filters
 		before_action :set_paper_trail_whodunnit
+		before_action :get_member_profile_info
 		before_action :set_member_listing, only: [:show, :edit, :update, :destroy]
 
 		# INDEX - Directory Listings
 		def index
 			profile = Member::Profile.find(params[:profile_id])
-			@meber_listings = profile.listings
+			@member_listings = profile.listings
 		end
 
 		# LISTINGS DETAILS - Directory Listings
 		def show
 			profile = Member::Profile.find(params[:profile_id])
 			@meber_listing = profile.listings.find(params[:id])
-			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Directory::Listing')
+			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Member::Listing')
 		end
 
 		# NEW - Directory Listings
@@ -35,7 +36,7 @@ module Phcmembers
 			@profile = Member::Profile.find(params[:profile_id])
 			@member_listing = @profile.listings.create(member_listing_params)
 			if @member_listing.save
-				redirect_to member_listings_url, notice: 'Listing was successfully created.'
+				redirect_to member_profile_listings_url, notice: 'Listing was successfully created.'
 				else
 					render :new
 			end
@@ -44,7 +45,7 @@ module Phcmembers
 		# PATCH/PUT - Directory Listings
 		def update
 			if @member_listing.update(member_listing_params)
-				redirect_to member_listings_url, notice: 'Listing was successfully updated.'
+				redirect_to member_profile_listings_url, notice: 'Listing was successfully updated.'
 				else
 					render :edit
 			end
@@ -55,7 +56,7 @@ module Phcmembers
 			@profile = Member::Profile.find(params[:profile_id])
 			@member_listing = @profile.listings.find(params[:id])
 			@member_listing.destroy
-			redirect_to member_listings_url, notice: 'Listing was successfully destroyed.'
+			redirect_to member_profile_listings_url, notice: 'Listing was successfully destroyed.'
 		end
 
 		private
