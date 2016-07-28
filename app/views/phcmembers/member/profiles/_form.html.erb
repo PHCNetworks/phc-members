@@ -1,5 +1,8 @@
 <%= form_for(member_profile) do |f| %>
 
+	<!-- PHC-Notifi Render Validation -->
+	<%= render 'phcnotifi/validations', :object => @member_profile %>
+
 	<div class="form-group field_with_errors">
 		<%= f.label :mfirstname, "First Name*" %>
 		<%= f.text_field :mfirstname, class: 'form-control', placeholder: 'First Name' %>

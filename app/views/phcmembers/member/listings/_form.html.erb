@@ -35,7 +35,7 @@
 
 	<div class="form-group field_with_errors">
 		<%= f.label :mbcountry, "Country" %>
-		<%= country_select("members_business", "mbcountry", { priority_countries: ["CA", "GB", "FR", "US"], selected: "CA" }, { class: 'form-control', data: { attribute: "value" } }) %>
+		<%= country_select("member_listing", "mbcountry", { priority_countries: ["CA", "GB", "FR", "US"], selected: "CA" }, { class: 'form-control', data: { attribute: "value" } }) %>
 	</div>
 
 	<div class="form-group field_with_errors">
@@ -59,7 +59,7 @@
 	</div>
 
 	<div class="actions">
-		<%= f.submit "Submit", class: "btn blue-hoki" %>
+		<%= f.submit "Submit", class: "btn btn-primary" %>
 	</div>
 
 <% end %>
