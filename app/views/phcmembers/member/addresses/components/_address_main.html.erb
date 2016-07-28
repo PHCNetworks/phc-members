@@ -1,0 +1,31 @@
+<div class="col-md-6">
+
+	<div class="panel panel-default">
+
+		<div class="panel-heading">
+			<%= @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname %>
+		</div>
+
+		<div class="panel-body">
+			<%= render 'phcmembers/member/addresses/components/address_address' %>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="col-md-6">
+
+	<div class="panel panel-default">
+
+		<div class="panel-heading">
+			<%= @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname %> Address Change Logs
+		</div>
+
+		<div class="panel-body">
+			<%= render 'phcmembers/member/addresses/components/address_audits' %>
+		</div>
+
+	</div>
+
+</div>

@@ -1,6 +1,6 @@
 <!-- Title Variables -->
-<% phc_title "PHCMembers - Member Listings Manager" %>
-<% phc_title_tagline "Listing Index for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
+<% phc_title "PHCMembers - Member Address Manager" %>
+<% phc_title_tagline "Address Index for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
 
 <!-- Page Header -->
 <div class="row">
@@ -53,13 +53,13 @@
 						<tbody>
 							<% @member_addresses.each do |member_address| %>
 								<tr>
-									<td class="highlight"><%= link_to member_address.mcaddressl1, member_profile_address_path(member_address.main, member_address) %></td>
-									<td class="highlight"><%= link_to member_address.mcaddressl2, member_profile_address_path(member_address.main, member_address) %></td>
-									<td class="highlight"><%= link_to member_address.mccity, member_profile_address_path(member_address.main, member_address) %></td>
-									<td class="highlight"><%= link_to member_address.mcprovince, member_profile_address_path(member_address.main, member_address) %></td>
-									<td class="highlight"><%= link_to member_address.mccountry, member_profile_address_path(member_address.main, member_address) %></td>
-									<td class="highlight"><%= link_to member_address.mcpostalcode, member_profile_address_path(member_address.main, member_address) %></td>
-									<td class="highlight"><%= link_to member_address.mctype, member_profile_address_path(member_address.main, member_address) %></td>
+									<td class="highlight"><%= link_to member_address.mcaddressl1, member_profile_address_path(member_address.profile, member_address) %></td>
+									<td class="highlight"><%= link_to member_address.mcaddressl2, member_profile_address_path(member_address.profile, member_address) %></td>
+									<td class="highlight"><%= link_to member_address.mccity, member_profile_address_path(member_address.profile, member_address) %></td>
+									<td class="highlight"><%= link_to member_address.mcprovince, member_profile_address_path(member_address.profile, member_address) %></td>
+									<td class="highlight"><%= link_to member_address.mccountry, member_profile_address_path(member_address.profile, member_address) %></td>
+									<td class="highlight"><%= link_to member_address.mcpostalcode, member_profile_address_path(member_address.profile, member_address) %></td>
+									<td class="highlight"><%= link_to member_address.mctype, member_profile_address_path(member_address.profile, member_address) %></td>
 								</tr>
 							<% end %>
 						</tbody>

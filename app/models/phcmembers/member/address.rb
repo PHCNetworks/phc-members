@@ -4,9 +4,8 @@ module Phcmembers
 		# Add Paper Trail
 		has_paper_trail
 
-		# Model Relationship
-		has_many :memberaddresses, class_name: 'Phcmembers::Connection::Memberaddress', dependent: :destroy
-		has_many :profiles, class_name: 'Phcmembers::Member::Profile', :through => :memberaddresses
+		# Model Relationships
+		belongs_to :profile, class_name: 'Phcmembers::Member::Profile'
 
 	end
 end

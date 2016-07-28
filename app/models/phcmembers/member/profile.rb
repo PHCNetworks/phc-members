@@ -9,10 +9,7 @@ module Phcmembers
 		gravtastic :memail
 
 		# Model Relationship
-		#has_many :memberaddresses, class_name: 'Phcmembers::Connection::Memberaddress', dependent: :destroy
-		#has_many :addresses, class_name: 'Phcmembers::Member::Address', :through => :memberaddresses
-		
-		#has_many :memberlistings, class_name: 'Phcmembers::Connection::Memberlisting', dependent: :destroy
+		has_many :addresses, class_name: 'Phcmembers::Member::Address'
 		has_many :listings, class_name: 'Phcmembers::Member::Listing'
 
 		# Validation for Form Fields

@@ -8,47 +8,55 @@ module Phcmembers
 		before_action :get_member_profile_info
 		before_action :set_member_address, only: [:show, :edit, :update, :destroy]
 
-		# INDEX - Member Address
+		# INDEX - Directory Listings
 		def index
-			@member_addresses = Member::Address.all
+			profile = Member::Profile.find(params[:profile_id])
+			@member_addresses = profile.addresses
 		end
 
-		# ADDRESS DETAILS - Member Address
+		# LISTINGS DETAILS - Directory Listings
 		def show
+			profile = Member::Profile.find(params[:profile_id])
+			@member_address = profile.addresses.find(params[:id])
+			@versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Member::Address')
 		end
 
-		# NEW - Member Address
+		# NEW - Directory Listings
 		def new
-		@member_address = Member::Address.new
+			profile = Member::Profile.find(params[:profile_id])
+			@member_address = profile.addresses.build
 		end
 
-		# GET - Member Address
+		# EDIT - Directory Listings
 		def edit
 		end
 
-		# POST - Member Address
+		# POST - Directory Listings
 		def create
-			@member_address = Member::Address.new(member_address_params)
+			@profile = Member::Profile.find(params[:profile_id])
+			@member_address = @profile.addresses.create(member_address_params)
 			if @member_address.save
-				redirect_to member_addresses_url, notice: 'Address was successfully created.'
+				redirect_to member_profile_addresses_url, notice: 'Listing was successfully created.'
 				else
 					render :new
 			end
 		end
 
-		# PATCH/PUT - Member Address
+		# PATCH/PUT - Directory Listings
 		def update
 			if @member_address.update(member_address_params)
-			redirect_to member_addresses_url, notice: 'Address was successfully updated.'
+				redirect_to member_profile_addresses_url, notice: 'Listing was successfully updated.'
 				else
-				render :edit
+					render :edit
 			end
 		end
 
-		# DELETE - Member Address
+		# DELETE - Directory Listings
 		def destroy
+			@profile = Member::Profile.find(params[:profile_id])
+			@member_address = @profile.addresses.find(params[:id])
 			@member_address.destroy
-			redirect_to member_addresses_url, notice: 'Address was successfully destroyed.'
+			redirect_to member_profile_addresses_url, notice: 'Listing was successfully destroyed.'
 		end
 
 		private
