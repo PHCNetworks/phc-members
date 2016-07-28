@@ -6,7 +6,6 @@ module Phcmembers
 		# Security & Action Filters
 		before_action :set_paper_trail_whodunnit
 		before_action :set_directory_category, only: [:show, :edit, :update, :destroy]
-		layout 'layouts/phcmembers/directory/directory_all.html.erb'
 
 		# INDEX - Directory Category
 		def index

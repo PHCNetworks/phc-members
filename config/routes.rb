@@ -1,7 +1,7 @@
 Phcmembers::Engine.routes.draw do
 
   namespace :directory do
-    resources :categorylistings
+    
   end
 	# Dashboard (Engine Root)
 	get 'dashboard/mains/index', :path => "dashboard"
@@ -39,13 +39,7 @@ Phcmembers::Engine.routes.draw do
 		root 'categories#index'
 
 		resources :categories, class_name: 'Phcmembers::Directory::Category'
-
-	end
-
-	# Connection Section
-	namespace :connections do
-		resources :memberaddresses, class_name: 'Phcmembers::Connections::Memberaddress'
-		resources :memberlistings, class_name: 'Phcmembers::Connections::Memberlisting'
+		resources :categorylistings, class_name: 'Phcmembers::Directory::Categorylistings'
 	end
 
 end

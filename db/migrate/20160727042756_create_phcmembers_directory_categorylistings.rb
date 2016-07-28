@@ -1,8 +1,10 @@
 class CreatePhcmembersDirectoryCategorylistings < ActiveRecord::Migration[5.0]
-  def change
-    create_table :phcmembers_directory_categorylistings do |t|
+	def change
+		create_table :phcmembers_directory_categorylistings do |t|
 
-      t.timestamps
-    end
-  end
+			t.references :category
+			t.references :listing
+
+		end
+	end
 end
