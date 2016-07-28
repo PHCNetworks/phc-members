@@ -3,8 +3,8 @@
 [![Issue Count](https://codeclimate.com/github/PHCNetworks/phc-members/badges/issue_count.svg)](https://codeclimate.com/github/PHCNetworks/phc-members)
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
   
-### PHCMembers(3) (Membership & Directory Engine) Documentation
-PHCMembers(3) is an open source membership and listing directory engine purpose built for PHCMembers application.  
+### PHCMembers(4) (Membership & Directory Engine) Documentation
+PHCMembers(4) is an open source membership and listing directory engine purpose built for PHCMembers application.  
   
 - Fast setup of membership and web directory modules.
 - Directory and listings manager with a web directory API.
@@ -14,7 +14,7 @@ PHCMembers(3) is an open source membership and listing directory engine purpose 
   
 #### Step 1 - Add PHCMembers to your gemfile  
   
-	gem 'phcmembers', '~> 3.0', '>= 3.0.1'
+	gem 'phcmembers', '~> 4.0'
 	bundle exec install
   
 #### Step 2 - Add database migration files  
