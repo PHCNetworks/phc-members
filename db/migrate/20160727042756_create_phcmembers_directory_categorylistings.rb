@@ -5,6 +5,8 @@ class CreatePhcmembersDirectoryCategorylistings < ActiveRecord::Migration[5.0]
 			t.references :category
 			t.references :listing
 
+			t.timestamps
+
 		end
 	end
 end
