@@ -14,13 +14,13 @@ PHCMembers(4) is an open source membership and listing directory engine purpose 
   
 #### Step 1 - Add PHCMembers to your gemfile  
   
-	gem 'phcmembers', '~> 4.0'
+	gem 'phcmembers', '~> 4.1'
 	bundle exec install
   
 #### Step 2 - Add database migration files  
   
-	rake railties:install:migrations
-	rake db:migrate
+	rails railties:install:migrations
+	rails db:migrate
   
 #### Step 3 - Mount PHCMembers in your Routes File  
 Mount the Engine in your Routes File
@@ -33,12 +33,11 @@ Generate views for customization and app integration.
 	rails generate phcmembers:views
   
 #### Step 5 - Recompile Assets  
-PHC-Members UI requires bootstrap and fontawesome to operate.  
+PHCMembers UI requires Bootstrap and Fontawesome to operate.  
   
-	rake assets:clobber
-	rake assets:precompile
+	rails assets:clobber
+	rails assets:precompile
   
 #### Additional Info & Help  
   
 [Past Security Patch Notes](https://github.com/PHCNetworks/phc-members/wiki/Critical-Security-Updates)
-  
