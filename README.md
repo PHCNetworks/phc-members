@@ -40,4 +40,4 @@ PHCMembers UI requires Bootstrap and Fontawesome to operate.
   
 #### Additional Info & Help  
   
-[Past Security Patch Notes](https://github.com/PHCNetworks/phc-members/wiki/Critical-Security-Updates)
+- [Past Security Patch Notes](https://github.com/PHCNetworks/phc-members/wiki/Critical-Security-Updates)
