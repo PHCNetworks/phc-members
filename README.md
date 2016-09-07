@@ -1,6 +1,6 @@
 [![security](https://hakiri.io/github/PHCNetworks/phc-members/master.svg)](https://hakiri.io/github/PHCNetworks/phc-members/master)
 [![Code Climate](https://codeclimate.com/github/PHCNetworks/phc-members/badges/gpa.svg)](https://codeclimate.com/github/PHCNetworks/phc-members)
-[![Issue Count](https://codeclimate.com/github/PHCNetworks/phc-members/badges/issue_count.svg)](https://codeclimate.com/github/PHCNetworks/phc-members)
+[![Dependency Status](https://gemnasium.com/badges/github.com/PHCNetworks/phc-members.svg)](https://gemnasium.com/github.com/PHCNetworks/phc-members)
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
   
 ### PHCMembers(4) (Membership & Directory Engine) Documentation
@@ -14,7 +14,7 @@ PHCMembers(4) is an open source membership and listing directory engine purpose 
   
 #### Step 1 - Add PHCMembers to your gemfile  
   
-	gem 'phcmembers', '~> 4.2', '>= 4.2.2'
+	gem 'phcmembers', '~> 4.2', '>= 4.2.3'
 	bundle install
   
 #### Step 2 - Add database migration files  
