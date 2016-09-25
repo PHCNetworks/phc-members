@@ -6,15 +6,15 @@
 ### PHCMembers(4) (Membership & Directory Engine) Documentation
 PHCMembers(4) is an open source membership and listing directory engine purpose built for PHCMembers application.  
   
-- Fast setup of membership and web directory modules.
-- Directory and listings manager with a web directory API.
-- Member's list, contact information and listings manager.
-- Easy app integration with views that can be customized.
-- User authentication will activate when Devise is installed.
+* Fast setup of membership and web directory modules.
+* Directory and listings manager with a web directory API.
+* Member's list, contact information and listings manager.
+* Easy app integration with views that can be customized.
+* User authentication will activate when Devise is installed.
   
 #### Step 1 - Add PHCMembers to your gemfile  
   
-	gem 'phcmembers', '~> 4.2', '>= 4.2.5'
+	gem 'phcmembers', '~> 4.2', '>= 4.2.6'
 	bundle install
   
 #### Step 2 - Add database migration files  
