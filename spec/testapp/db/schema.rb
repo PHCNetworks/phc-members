@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20160727042756) do
   end
 
   create_table "phcmembers_directory_categorylistings", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "listing_id"
+    t.integer  "category_id"
+    t.integer  "listing_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_phcmembers_directory_categorylistings_on_category_id"
     t.index ["listing_id"], name: "index_phcmembers_directory_categorylistings_on_listing_id"
   end
