@@ -12,6 +12,7 @@ module Phcmembers
 		require 'country_select'
 
 		# UI Dependencies
+		require 'phcadmin3'
 		require 'jquery-rails'
 		require 'jquery-ui-rails'
 		require 'sass-rails'
