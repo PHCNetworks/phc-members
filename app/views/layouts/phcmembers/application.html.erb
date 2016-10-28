@@ -1,26 +1,37 @@
+
 <!DOCTYPE html>
-<html>
-	<head>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>PHCMembers - Members Manager</title>
+    <title>Gentallela Alela! | </title>
 
-		<%= stylesheet_link_tag    "phcmembers/application", media: "all" %>
-		<%= javascript_include_tag "phcmembers/application" %>
-		<%= csrf_meta_tags %>
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- jQuery custom content scroller -->
+    <link href="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
 
-	</head>
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+  </head>
 
 	<body class="nav-md footer_fixed">
+
 		<div class="container body">
 			<div class="main_container">
 
 				<div class="col-md-3 left_col">
 					<div class="left_col scroll-view">
 						<div class="navbar nav_title" style="border: 0;">
-							<a href="#" class="site_title"> <span>PHCMembers</span></a>
+							<a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
 						</div>
 						<div class="clearfix"></div>
-
 						<div class="profile">
 							<div class="profile_pic">
 								<img src="images/img.jpg" alt="..." class="img-circle profile_img">
@@ -31,14 +42,34 @@
 							</div>
 						</div>
 						</br>
-
 						<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 							<div class="menu_section">
+								<h3>General</h3>
+								<ul class="nav side-menu">
+									<li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+										<ul class="nav child_menu">
+											<li><a href="index.html">Dashboard</a></li>
+											<li><a href="index2.html">Dashboard2</a></li>
+											<li><a href="index3.html">Dashboard3</a></li>
+										</ul>
+									</li>
+								</ul>
 							</div>
 						</div>
-					</div>
-
-					<div class="sidebar-footer hidden-small">
+						<div class="sidebar-footer hidden-small">
+							<a data-toggle="tooltip" data-placement="top" title="Settings">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="FullScreen">
+								<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="Lock">
+								<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="Logout">
+								<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+							</a>
+						</div>
 					</div>
 				</div>
 
@@ -48,19 +79,22 @@
 							<div class="nav toggle">
 								<a id="menu_toggle"><i class="fa fa-bars"></i></a>
 							</div>
-							<ul class="nav navbar-nav navbar-right">
-							</ul>
 						</nav>
 					</div>
 				</div>
 
 				<div class="right_col" role="main">
-					<%= yield %>
+					<div class="">
+						<%= yield %>
+					</div>
 				</div>
 
 				<footer>
 					<div class="pull-right">
-						PHCMembers WebDev
+						<%= link_to "https://phcnetworks.net", target: "_blank", rel: "nofollow" do %>
+							PHCNetworks
+						<% end %>
+						&copy; 2012-<%= Time.now.year %> - v4.2.7 - OCT-27-<%= Date.today.year %>
 					</div>
 					<div class="clearfix"></div>
 				</footer>
@@ -69,5 +103,4 @@
 		</div>
 
 	</body>
-
 </html>
