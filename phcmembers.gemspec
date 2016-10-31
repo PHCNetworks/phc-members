@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 	spec.version     = Phcmembers::VERSION
 	spec.authors     = ["Brad Potts"]
 	spec.email       = ["developers@phcnetworks.net"]
-	spec.homepage    = "https://phcmembers.com/"
+	spec.homepage    = "https://webdev.phcmembers.com/"
 	spec.summary     = "Membership & Directory Manager Engine"
 	spec.description = "PHCMembers(4) is an open source membership managment rails engine."
 	spec.license     = "MIT"
