@@ -24,8 +24,8 @@ Gem::Specification.new do |spec|
 
 	# PHC Engines & Themes
 	spec.add_dependency 'phcadmin3', '~> 0.3.5'
-	spec.add_dependency 'phctitleseo', '~> 3.3', '>= 3.3.4'
-	spec.add_dependency 'phcnotifi', '~> 3.3', '>= 3.3.4'
+	spec.add_dependency 'phctitleseo', '~> 3.3', '>= 3.3.5'
+	spec.add_dependency 'phcnotifi', '~> 3.3', '>= 3.3.5'
 
 	# UI & Frontend Elements
 	spec.add_dependency 'jquery-rails', '~> 4.2', '>= 4.2.1'
