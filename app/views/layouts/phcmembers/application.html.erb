@@ -18,13 +18,24 @@
 
 				<header class="main-header">
 
-					<a href="index2.html" class="logo">
+					<!-- Logo with Link -->
+					<%= link_to member_profile_listings_path do %
 						<span class="logo-mini">PHC</span>
 						<span class="logo-lg"><b>PHC</b>Members</span>
-					</a>
+					<% end %>
+					<!-- Logo with Link -->
 
+					<!-- Top Navbar -->
 					<nav class="navbar navbar-static-top">
+
+						<!-- Mobile Toggle -->
+						<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+							<span class="sr-only">Toggle navigation</span>
+						</a>
+						<!-- Mobile Toggle -->
+
 					</nav>
+					<!-- Top Navbar -->
 
 				</header>
 
@@ -32,20 +43,24 @@
 					<section class="sidebar">
 					</section>
 				</aside>
-				
+
+				<!-- Page Content -->
 				<div class="content-wrapper">
 					<%= yield %>
 				</div>
+				<!-- Page Content -->
 			
 			</div>
 		</div>
 
+		<!-- Footer -->
 		<footer class="main-footer">
 			<div class="pull-right hidden-xs">
-				<b>Version</b> 4.2.7 
+				<b>Version</b> 4.2.7 - OCT-27-<%= Date.today.year %>  
 			</div>
-			<strong>&copy; 2012-<%= Time.now.year %> - OCT-27-<%= Date.today.year %> <%= link_to "https://phcnetworks.net", target: "_blank", rel: "nofollow" do %>PHCNetworks<% end %></strong>
+			<strong>&copy; 2012-<%= Time.now.year %> <%= link_to "https://phcnetworks.net", target: "_blank", rel: "nofollow" do %>PHCNetworks<% end %></strong>
 		</footer>
+		<!-- Footer -->
 
 	</body>
 </html>
