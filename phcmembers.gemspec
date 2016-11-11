@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
 	spec.version     = Phcmembers::VERSION
 	spec.authors     = ["Brad Potts"]
 	spec.email       = ["developers@phcnetworks.net"]
-	spec.homepage    = "https://webdev.phcmembers.com/"
-	spec.summary     = "Membership & Directory Manager Engine"
-	spec.description = "PHCMembers(5) is an open source membership managment rails engine."
+	spec.homepage    = "https://webdev.phcnetworks.net/"
+	spec.summary     = "Membership Rails Engine"
+	spec.description = "PHCMembers(5) is an open source membership management rails engine."
 	spec.license     = "MIT"
 
 	spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 	spec.add_dependency 'paper_trail', '~> 5.2', '>= 5.2.2'
 
 	# PHC Engines & Themes
-	spec.add_dependency 'phcadmin3', '~> 0.5.1'
+	spec.add_dependency 'phcadmin3', '~> 0.5.2'
 	spec.add_dependency 'phctitleseo', '~> 3.3', '>= 3.3.5'
 	spec.add_dependency 'phcnotifi', '~> 3.3', '>= 3.3.5'
 
@@ -52,6 +52,6 @@ Gem::Specification.new do |spec|
 
 	spec.add_development_dependency 'faker', '~> 1.6', '>= 1.6.6'
 	spec.add_development_dependency 'launchy', '~> 2.4', '>= 2.4.3'
-	spec.add_development_dependency 'selenium-webdriver', '~> 3.0'
+	spec.add_development_dependency 'selenium-webdriver', '~> 3.0', '>= 3.0.1'
 
 end
