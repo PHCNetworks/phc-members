@@ -3,7 +3,7 @@
 
 	<head>
 
-		<title>PHCMembers - Members Manager</title>
+		<title>PHCMembers - Membership Management</title>
 
 		<%= stylesheet_link_tag    "phcmembers/application", media: "all" %>
 		<%= javascript_include_tag "phcmembers/application" %>
@@ -27,21 +27,14 @@
 
 					<!-- Top Navbar -->
 					<nav class="navbar navbar-static-top">
-
-						<!-- Mobile Toggle -->
-						<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-							<span class="sr-only">Toggle navigation</span>
-						</a>
-						<!-- Mobile Toggle -->
-
+						<%= render 'layouts/phcmembers/components/backend/topbar/topbar' %>
 					</nav>
 					<!-- Top Navbar -->
 
 				</header>
 
 				<aside class="main-sidebar">
-					<section class="sidebar">
-					</section>
+					<%= render 'layouts/phcmembers/components/backend/navigation/navigation' %>
 				</aside>
 
 				<!-- Page Content -->
@@ -55,10 +48,7 @@
 
 		<!-- Footer -->
 		<footer class="main-footer">
-			<div class="pull-right hidden-xs">
-				<b>Version</b> 4.2.7 - OCT-27-<%= Date.today.year %>  
-			</div>
-			<strong>&copy; 2012-<%= Time.now.year %> <%= link_to "https://phcnetworks.net", target: "_blank", rel: "nofollow" do %>PHCNetworks<% end %></strong>
+			<%= render 'layouts/phcmembers/components/backend/footer/footer' %>
 		</footer>
 		<!-- Footer -->
 
