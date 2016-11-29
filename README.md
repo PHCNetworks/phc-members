@@ -4,13 +4,13 @@
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
   
 ### PHCMembers(6) (Membership & Directory Engine) Documentation
-PHCMembers(6) is an open source membership and listing directory engine purpose built for PHCMembers application.  
+PHCMembers(6) rails engine to manage mebership information and directory listings.  
   
-* Fast setup of membership and web directory modules.
-* Directory and listings manager with a web directory API.
-* Member's list, contact information and listings manager.
-* Easy app integration with views that can be customized.
-* User authentication will activate when Devise is installed.
+- Fast setup of membership and web directory modules.
+- Directory and listings manager with a web directory API.
+- Member's list, contact information and listings manager.
+- Easy app integration with views that can be customized.
+- User authentication will activate when Devise is installed.
   
 #### Step 1 - Add PHCMembers to your gemfile  
   
