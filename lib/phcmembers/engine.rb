@@ -26,7 +26,14 @@ module Phcmembers
 
 		# Isolate Namespace
 		isolate_namespace Phcmembers
-		
+
+		# Auto Mount Plugin
+		initializer "phcmembers", before: :load_config_initializers do |app|
+			Rails.application.routes.append do
+				mount PHCMembers::Engine, at: "/"
+			end
+		end
+
 		# Testing Generator
 		config.generators do |g|
 			g.test_framework :rspec,
