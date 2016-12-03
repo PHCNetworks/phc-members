@@ -1,4 +1,4 @@
-module Phcpress
+module Phcmembers
 	class Engine < ::Rails::Engine
 
 		# Main Dependencies
@@ -25,17 +25,9 @@ module Phcpress
 		require 'oj'
 		require 'multi_json'
 		require 'responders'
-
-		# WYSIWYG Editor Dependencies
-		require 'summernote-rails'
-		require 'codemirror-rails'
-
-		# Upload & Media Dependencies
-		require 'carrierwave'
-		require 'cloudinary'
 	
 		# Isolate Namespace
-		isolate_namespace Phcpress
+		isolate_namespace Phcmembers
 
 		# Testing Generator
 		config.generators do |g|
