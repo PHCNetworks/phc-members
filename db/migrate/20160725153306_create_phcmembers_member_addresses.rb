@@ -1,5 +1,6 @@
 class CreatePhcmembersMemberAddresses < ActiveRecord::Migration[5.0]
 	def change
+
 		create_table :phcmembers_member_addresses do |t|
 
 			t.string :mcaddressl1
@@ -15,5 +16,6 @@ class CreatePhcmembersMemberAddresses < ActiveRecord::Migration[5.0]
 			t.timestamps
 
 		end
+
 	end
 end

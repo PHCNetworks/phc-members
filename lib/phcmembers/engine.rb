@@ -1,38 +1,41 @@
-module Phcmembers
+module Phcpress
 	class Engine < ::Rails::Engine
 
-		# Load Security
+		# Main Dependencies
+		require 'rails'
+		require 'pg'
 		require 'paper_trail'
 
-		# Main Dependencies
+		# PHCEngines & Theme Dependencies
 		require 'phcnotifi'
 		require 'phctitleseo'
-		
-		# Data
-		require 'country_select'
-
-		# UI Dependencies
 		require 'phcadmin3'
+
+		# UI & Frontend Dependencies
 		require 'jquery-rails'
 		require 'jquery-ui-rails'
 		require 'sass-rails'
 		require 'bootstrap-sass'
 		require 'font-awesome-rails'
+		require 'country_select'
 		require 'gravtastic'
 		
 		# API Dependencies
 		require 'rabl'
 		require 'oj'
+		require 'multi_json'
+		require 'responders'
 
+		# WYSIWYG Editor Dependencies
+		require 'summernote-rails'
+		require 'codemirror-rails'
+
+		# Upload & Media Dependencies
+		require 'carrierwave'
+		require 'cloudinary'
+	
 		# Isolate Namespace
-		isolate_namespace Phcmembers
-
-		# Auto Mount Plugin
-		initializer "phcmembers", before: :load_config_initializers do |app|
-			Rails.application.routes.append do
-				mount PHCMembers::Engine, at: "/"
-			end
-		end
+		isolate_namespace Phcpress
 
 		# Testing Generator
 		config.generators do |g|

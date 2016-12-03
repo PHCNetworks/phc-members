@@ -1,5 +1,6 @@
 <section class="sidebar">
 	<ul class="sidebar-menu">
+
 		<li class="<%= is_active_controller('phcmemberspro/member/profiles') %> treeview">
 			<%= link_to "#" do %>
 				<i class="fa fa-users"></i> <span>Member Information</span>
@@ -22,6 +23,7 @@
 				</li>
 			</ul>
 		</li>
+
 		<li class="<%= is_active_controller('phcmemberspro/directory/categories') %> treeview">
 			<%= link_to "#" do %>
 				<i class="fa fa-sitemap"></i> <span>Directories & Listings</span>
@@ -44,5 +46,6 @@
 				</li>
 			</ul>
 		</li>
+
 	</ul>
 </section>
