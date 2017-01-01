@@ -1,3 +1,3 @@
 module Phcmembers
-	VERSION = "6.1.6"
+	VERSION = "6.2.0"
 end
