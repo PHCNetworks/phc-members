@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage    = "https://phcnetworks.net/"
   spec.summary     = "PHCMembers - Rails Membership Management Engine"
   spec.description = "PHCMembers(6) rails engine to manage membership information and directory listings."
-spec.license     = "MIT"
+  spec.license     = "MIT"
   
   # Load Engine Files
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
