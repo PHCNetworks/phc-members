@@ -6,11 +6,11 @@
 ### PHCMembers(6) (Membership & Directory Engine) Documentation
 PHCMembers(6) rails engine to manage membership information and directory listings.  
   
-- Fast setup of membership and web directory modules.
-- Directory and listings manager with a web directory API.
-- Member's list, contact information and listings manager.
-- Easy app integration with views that can be customized.
-- User authentication will activate when Devise is installed.
+* Fast setup of membership and web directory modules.
+* Directory and listings manager with a web directory API.
+* Member's list, contact information, and listings manager.
+* Easy app integration with views that can be customized.
+* User authentication will activate when Devise is installed.
   
 #### Step 1 - Add PHCMembers to your gemfile and run command   
   
@@ -30,7 +30,7 @@ Mount PHCMembers by adding code below to your routes file.
   
 #### Step 4 - Recompile Assets  
 To properly function re-compile your application's assets to copy over required files.
-    
+
 	rails assets:clobber
 	rails assets:precompile  
 
