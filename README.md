@@ -2,6 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/PHCNetworks/phc-members/badges/gpa.svg)](https://codeclimate.com/github/PHCNetworks/phc-members)
 [![Dependency Status](https://gemnasium.com/badges/github.com/PHCNetworks/phc-members.svg)](https://gemnasium.com/github.com/PHCNetworks/phc-members)
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/PHCNetworks/phc-members/blob/master/MIT-LICENSE)  
   
 ### PHCMembers(6) (Membership & Directory Engine) Documentation
 PHCMembers(6) rails engine to manage membership information and directory listings.  
@@ -14,7 +15,7 @@ PHCMembers(6) rails engine to manage membership information and directory listin
   
 #### Step 1 - Add PHCMembers to your gemfile and run command   
   
-	gem 'phcmembers', '~> 6.3', '>= 6.3.5'
+	gem 'phcmembers', '~> 6.5'
 	bundle install
   
 #### Step 2 - Add PHCMembers Database Tables  
