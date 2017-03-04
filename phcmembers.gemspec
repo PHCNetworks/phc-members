@@ -64,4 +64,3 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'selenium-webdriver', '~> 3.2', '>= 3.2.2'
 
 end
-
