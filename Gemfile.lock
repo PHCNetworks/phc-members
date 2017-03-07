@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmembers (6.5.1)
+    phcmembers (6.6.0)
       bootstrap-sass (~> 3.3, >= 3.3.7)
       carrierwave (~> 1.0)
       cloudinary (~> 1.5, >= 1.5.2)
@@ -92,7 +92,7 @@ GEM
       json (~> 1.8)
       rest-client (< 2.0)
     concurrent-ruby (1.0.5)
-    countries (2.0.7)
+    countries (2.0.8)
       i18n_data (~> 0.7.0)
       money (~> 6.7)
       sixarm_ruby_unaccent (~> 1.1)

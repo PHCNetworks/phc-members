@@ -1,6 +1,10 @@
 <!-- Title Variables -->
-<% phc_title "Member Listings Manager" %>
-<% phc_title_tagline "Detailed Listing Information for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
+<% phc_title "Member Address Manager" %>
+<% phc_title_tagline "Detailed Address Information for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmemberspro.modules_dashboards_index_path %>
+<% phc_breadcrumb_two link_to "Members List", phcmemberspro.member_profiles_path %>
+<% phc_breadcrumb_three yield(:phc_title_tagline) %>
+<!-- Title System -->
 
 <!-- Page Header -->
 <div class="row">

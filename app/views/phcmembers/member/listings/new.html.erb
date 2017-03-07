@@ -1,9 +1,12 @@
-<!-- Title System -->
+<!-- Title Variables -->
 <% phc_title "Member Listing Manager" %>
-<% phc_title_tagline "New Listing for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
+<% phc_title_tagline "Create a New Listing for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmemberspro.modules_dashboards_index_path %>
+<% phc_breadcrumb_two link_to "Members List", phcmemberspro.member_profiles_path %>
+<% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 
-<!-- Page Title Bar -->
+<!-- Page Header -->
 <section class="content-header">
 
 	<!-- Page Title and BreadCrumb -->

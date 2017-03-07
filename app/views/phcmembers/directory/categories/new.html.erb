@@ -1,6 +1,10 @@
-<!-- Title Variables -->
+<!-- Title System -->
 <% phc_title "Directory Category Manager" %>
 <% phc_title_tagline "Create a New Directory Category" %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmemberspro.modules_dashboards_index_path %>
+<% phc_breadcrumb_two link_to "Directory Category Index", phcmemberspro.directory_categories_path %>
+<% phc_breadcrumb_three yield(:phc_title_tagline) %>
+<!-- Title System -->
 
 <!-- Page Header -->
 <div class="row">
