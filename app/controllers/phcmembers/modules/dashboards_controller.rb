@@ -2,9 +2,6 @@ require_dependency "phcmembers/application_controller"
 
 module Phcmembers
   class Modules::DashboardsController < ApplicationController
-  
-    # Security & Action Filters
-    before_action :membership_info
     
     def index
       @member_profile = Member::Profile.where(oganization_id: membership_info.org_id)
