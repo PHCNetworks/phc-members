@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.email       = ["info@phcnetworks.net"]
   spec.homepage    = "https://phcnetworks.net/"
   spec.summary     = "PHCMembers - Rails Membership Management Engine"
-  spec.description = "PHCMembers(6) rails engine to manage membership information and directory listings."
+  spec.description = "PHCMembers(7) rails engine to manage membership information and directory listings."
   spec.license     = "MIT"
 
   #Load Engine Files
@@ -44,11 +44,11 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'responders', '~> 2.3'
 
   # WYSIWYG Editor Dependencies
-  spec.add_dependency 'tinymce-rails', '~> 4.5', '>= 4.5.4'
+  spec.add_dependency 'tinymce-rails', '~> 4.5', '>= 4.5.5'
 
   # Upload & Media Dependencies
   spec.add_dependency 'carrierwave', '~> 1.0'
-  spec.add_dependency 'cloudinary', '~> 1.5', '>= 1.5.2'
+  spec.add_dependency 'cloudinary', '~> 1.6'
 
   # Development & Testing Dependencies
   spec.add_development_dependency 'rspec-rails', '~> 3.5', '>= 3.5.2'
@@ -61,6 +61,6 @@ Gem::Specification.new do |spec|
   
   spec.add_development_dependency 'faker', '~> 1.7', '>= 1.7.3'
   spec.add_development_dependency 'launchy', '~> 2.4', '>= 2.4.3'
-  spec.add_development_dependency 'selenium-webdriver', '~> 3.2', '>= 3.2.2'
+  spec.add_development_dependency  'selenium-webdriver', '~> 3.3'
 
 end
