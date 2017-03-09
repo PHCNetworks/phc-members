@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Modules Dashboards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @modules_dashboards.each do |modules_dashboard| %>
+      <tr>
+        <td><%= link_to 'Show', modules_dashboard %></td>
+        <td><%= link_to 'Edit', edit_modules_dashboard_path(modules_dashboard) %></td>
+        <td><%= link_to 'Destroy', modules_dashboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Modules Dashboard', new_modules_dashboard_path %>

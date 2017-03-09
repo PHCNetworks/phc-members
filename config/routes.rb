@@ -1,5 +1,8 @@
 Phcmembers::Engine.routes.draw do
 
+  namespace :modules do
+    resources :dashboards
+  end
   # Dashboard (Engine Root)
   get 'dashboard/mains/index', :path => "dashboard"
   
