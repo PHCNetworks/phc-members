@@ -1,10 +1,7 @@
 Phcmembers::Engine.routes.draw do
 
-  namespace :modules do
-    resources :dashboards
-  end
   # Dashboard (Engine Root)
-  get 'dashboard/mains/index', :path => "dashboard"
+  get 'modules/dashboards/index'
   
   # Application API
   namespace :api do
@@ -37,5 +34,3 @@ Phcmembers::Engine.routes.draw do
   end
 
 end
-
-
