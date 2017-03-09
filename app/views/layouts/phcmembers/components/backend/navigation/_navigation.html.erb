@@ -2,7 +2,7 @@
 	<ul class="sidebar-menu">
 
 		<li class="<%= is_active_controller('phcmemberspro/modules/dashboards') %>">
-			<%= link_to phcmemberspro.modules_dashboards_index_path do %>
+			<%= link_to modules_dashboards_index_path do %>
 				<i class="fa fa-tachometer"></i> <span>Dashboard</span>
 				<span class="pull-right-container">
 					<i class="fa fa-angle-left pull-right"></i>
@@ -10,7 +10,7 @@
 			<% end %>
 		</li>
 
-		<li class="<%= is_active_controller('phcmemberspro/member/profiles') %> treeview">
+		<li class="<%= is_active_controller('phcmembers/member/profiles') %> treeview">
 			<%= link_to "#" do %>
 				<i class="fa fa-users"></i> <span>Member Information</span>
 				<span class="pull-right-container">
@@ -33,7 +33,7 @@
 			</ul>
 		</li>
 
-		<li class="<%= is_active_controller('phcmemberspro/directory/categories') %> treeview">
+		<li class="<%= is_active_controller('phcmembers/directory/categories') %> treeview">
 			<%= link_to "#" do %>
 				<i class="fa fa-sitemap"></i> <span>Directories & Listings</span>
 				<span class="pull-right-container">
