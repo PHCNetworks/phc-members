@@ -1,6 +1,15 @@
 <section class="sidebar">
 	<ul class="sidebar-menu">
 
+		<li class="<%= is_active_controller('phcmemberspro/modules/dashboards') %>">
+			<%= link_to phcmemberspro.modules_dashboards_index_path do %>
+				<i class="fa fa-tachometer"></i> <span>Dashboard</span>
+				<span class="pull-right-container">
+					<i class="fa fa-angle-left pull-right"></i>
+				</span>
+			<% end %>
+		</li>
+
 		<li class="<%= is_active_controller('phcmemberspro/member/profiles') %> treeview">
 			<%= link_to "#" do %>
 				<i class="fa fa-users"></i> <span>Member Information</span>
