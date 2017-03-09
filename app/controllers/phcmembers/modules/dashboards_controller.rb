@@ -4,10 +4,10 @@ module Phcmembers
   class Modules::DashboardsController < ApplicationController
     
     def index
-      @member_profile = Member::Profile.where(oganization_id: membership_info.org_id)
-      @member_listing = Member::Listing.where(oganization_id: membership_info.org_id)
-      @member_address = Member::Address.where(oganization_id: membership_info.org_id)
-      @directory_category = Directory::Category.where(oganization_id: membership_info.org_id)
+      @member_profile = Member::Profile.all
+      @member_listing = Member::Listing.all
+      @member_address = Member::Address.all
+      @directory_category = Directory::Category.all
     end
   
   end
