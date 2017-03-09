@@ -1,68 +1,66 @@
-<div class="row  border-bottom white-bg dashboard-header">
+<!-- Title Variables -->
+<% phc_title "Membership Dashboard" %>
+<% phc_title_tagline "YOur Membership Stats" %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmembers.modules_dashboards_index_path %>
+<% phc_breadcrumb_two yield(:phc_title_tagline) %>
+<!-- Title System -->
 
-</div>
-<div class="row">
-	<div class="col-lg-12">
-		<div class="wrapper wrapper-content">
+<!-- Page Title Bar -->
+<section class="content-header">
+	<!-- Page Title and BreadCrumb -->
+	<h1><%= yield(:phc_title) %> <small><%= yield(:phc_title_tagline) %></small></h1>
+	<ol class="breadcrumb">
+		<li><%= yield(:phc_breadcrumb_one) %></li>
+		<li class="active"><%= yield(:phc_breadcrumb_two) %></li>
+	</ol>
+	<!-- Page Title and BreadCrumb -->
+</section>
+<!-- Page Title Bar -->
 
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="widget style1 navy-bg">
-						<div class="row">
-							<div class="col-xs-4">
-								<i class="fa fa-users fa-5x"></i>
-							</div>
-							<div class="col-xs-8 text-right">
-								<span> <%= "Member".pluralize(2) %> </span>
-								<h2 class="font-bold"><%= @member_profile.count(:all) %></h2>
-							</div>
-						</div>
-					</div>
-				</div>
+<!-- Main Content -->
+<section class="content">
+	<div class="row">
 
-				<div class="col-lg-3">
-					<div class="widget style1 lazur-bg">
-						<div class="row">
-							<div class="col-xs-4">
-								<i class="fa fa-list fa-5x"></i>
-							</div>
-							<div class="col-xs-8 text-right">
-								<span> Member <%= "Listing".pluralize(2) %> </span>
-								<h2 class="font-bold"><%= @member_listing.count(:all) %></h2>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3">
-					<div class="widget style1 yellow-bg">
-						<div class="row">
-							<div class="col-xs-4">
-								<i class="fa fa-envelope fa-5x"></i>
-							</div>
-							<div class="col-xs-8 text-right">
-								<span> Member <%= "Address".pluralize(2) %> </span>
-								<h2 class="font-bold"><%= @member_address.count(:all) %></h2>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3">
-					<div class="widget style1 red-bg">
-						<div class="row">
-							<div class="col-xs-4">
-								<i class="fa fa-sitemap fa-5x"></i>
-							</div>
-							<div class="col-xs-8 text-right">
-								<span> Directory <%= "Category".pluralize(2) %> </span>
-								<h2 class="font-bold"><%= @directory_category.count(:all) %></h2>
-							</div>
-						</div>
-					</div>
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="info-box">
+				<span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+				<div class="info-box-content">
+					<span class="info-box-text"> <%= "Member".pluralize(2) %></span>
+					<span class="info-box-number"><%= @member_profile.count(:all) %></span>
 				</div>
 			</div>
-
 		</div>
+
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="info-box">
+				<span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+				<div class="info-box-content">
+					<span class="info-box-text"><%= "Listing".pluralize(2) %></span>
+					<span class="info-box-number"><%= @member_listing.count(:all) %></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="info-box">
+				<span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+				<div class="info-box-content">
+					<span class="info-box-text"><%= "Address".pluralize(2) %></span>
+					<span class="info-box-number"><%= @member_address.count(:all) %><</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="info-box">
+				<span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+				<div class="info-box-content">
+					<span class="info-box-text"><%= "Category".pluralize(2) %></span>
+					<span class="info-box-number"><%= @directory_category.count(:all) %></span>
+				</div>
+			</div>
+		</div>
+
 	</div>
-</div>
+</section>
+<!-- Main Content -->
