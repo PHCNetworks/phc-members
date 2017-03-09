@@ -66,5 +66,3 @@ module Phcmembers
   
   end
 end
-
-
