@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.authors     = ["BradPotts"]
   spec.email       = ["info@phcnetworks.net"]
   spec.homepage    = "https://phcnetworks.net/"
-  spec.summary     = "PHCMembers - Rails Membership Management Engine"
+  spec.summary     = "PHCMembers(7) - Rails Membership Management Engine"
   spec.description = "PHCMembers(7) rails engine to manage membership information and directory listings."
   spec.license     = "MIT"
 
@@ -24,9 +24,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'paper_trail', '~> 6.0', '>= 6.0.2'
 
   # PHCEngines & Theme Dependencies
-  spec.add_dependency 'phcadmin3', '~> 1.7', '>= 1.7.1'
-  spec.add_dependency 'phctitleseo', '~> 4.3'
-  spec.add_dependency 'phcnotifi', '~> 3.9'
+  spec.add_dependency 'phcadmin3', '~> 1.7', '>= 1.7.2'
+  spec.add_dependency 'phctitleseo', '~> 4.3', '>= 4.3.1'
+  spec.add_dependency 'phcnotifi', '~> 3.9', '>= 3.9.1'
 
   # UI & Frontend Dependencies
   spec.add_dependency 'jquery-rails', '~> 4.2', '>= 4.2.2'

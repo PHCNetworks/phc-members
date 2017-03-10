@@ -78,5 +78,3 @@ class CreateVersions < ActiveRecord::Migration
     end
   end
 end
-
-
