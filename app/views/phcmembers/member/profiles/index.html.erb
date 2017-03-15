@@ -27,33 +27,40 @@
 				</div>
 				<div class="box-body">
 
-					<table class="table table-striped table-bordered table-advance table-hover">
-						<thead>
-							<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Email</th>
-								<th>Phone</th>
-							</tr>
-						</thead>
-						<tbody>
-							<% @member_profiles.each do |member_profile| %>
+					<!-- Index Table -->
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped table-hover">
+							<thead>
 								<tr>
-									<td class="highlight"><%= link_to member_profile.mfirstname, member_profile %></td>
-									<td class="highlight"><%= link_to member_profile.mlastname, member_profile %></td>
-									<td class="highlight"><%= link_to member_profile.memail, member_profile %></td>
-									<td class="highlight"><%= link_to member_profile.mphone, member_profile %></td>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Email</th>
+									<th>Phone</th>
 								</tr>
-							<% end %>
-						</tbody>
-					</table>
-				</div>
-				<div class="box-footer clearfix">
-					<%= link_to new_member_profile_path, class: "btn btn-primary" do %>
-						<i class="fa fa-plus"></i> Create a New Member
-					<% end %>
-				</div>
+							</thead>
+							<tbody>
+								<% @member_profiles.each do |member_profile| %>
+									<tr>
+										<td class="highlight"><%= link_to member_profile.mfirstname, member_profile %></td>
+										<td class="highlight"><%= link_to member_profile.mlastname, member_profile %></td>
+										<td class="highlight"><%= link_to member_profile.memail, member_profile %></td>
+										<td class="highlight"><%= link_to member_profile.mphone, member_profile %></td>
+									</tr>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+					<!-- Index Table -->
 
+					<!-- Panel Footer -->
+					<div class="box-footer clearfix">
+						<%= link_to new_member_profile_path, class: "btn btn-primary" do %>
+							<i class="fa fa-plus"></i> Create a New Member
+						<% end %>
+					</div>
+					<!-- Panel Footer -->
+
+				</div>
 			</div>
 		</div>
 	</div>

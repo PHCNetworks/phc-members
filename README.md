@@ -4,8 +4,8 @@
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PHCNetworks/phc-members/blob/master/MIT-LICENSE)  
   
-### PHCMembers(7) (Membership & Directory Engine) Documentation
-PHCMembers(7) rails engine to manage membership information and directory listings.  
+### PHCMembers(8) (Membership & Directory Engine) Documentation
+PHCMembers(8) rails engine to manage membership information and directory listings.  
   
 * Fast setup of membership and web directory modules.
 * Directory and listings manager with a web directory API.
@@ -15,7 +15,7 @@ PHCMembers(7) rails engine to manage membership information and directory listin
   
 #### Step 1 - Add PHCMembers to your gemfile and run command   
   
-	gem 'phcmembers', '~> 7.0'
+	gem 'phcmembers', '~> 8.0'
 	bundle install
   
 #### Step 2 - Add PHCMembers Database Tables  
