@@ -46,6 +46,11 @@ module Phcmembers
       Phcnotifi::ApplicationController.helper(ApplicationHelper)
       Phctitleseo::ApplicationController.helper(ApplicationHelper)
     end
-
+    
+    # Load Language Files
+    config.before_initialize do                                                      
+      config.i18n.load_path += Dir["#{config.root}/config/locales/**/*.yml"]
+    end
+  
   end
 end

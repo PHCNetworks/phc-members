@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmembers (8.0.2)
+    phcmembers (8.0.3)
       bootstrap-sass (~> 3.3, >= 3.3.7)
       carrierwave (~> 1.0)
       cloudinary (~> 1.6)
