@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+      profiles:
+        mfirstname: "Member First Name"
+        mlastname: "Member Last Name"
+        mtitle: "Member Title"
+        memail: "Member Email"
+        mphone: "Member Phone Number"

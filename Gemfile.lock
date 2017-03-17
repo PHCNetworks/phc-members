@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmembers (8.0.0)
+    phcmembers (8.0.1)
       bootstrap-sass (~> 3.3, >= 3.3.7)
       carrierwave (~> 1.0)
       cloudinary (~> 1.6)
@@ -74,7 +74,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
-    capybara (2.12.1)
+    capybara (2.13.0)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
