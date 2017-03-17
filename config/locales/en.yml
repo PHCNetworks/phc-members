@@ -1,7 +1,7 @@
 en:
   activerecord:
     attributes:
-      profiles:
+      member/profiles:
         mfirstname: "Member First Name"
         mlastname: "Member Last Name"
         mtitle: "Member Title"
