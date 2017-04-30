@@ -1,8 +1,8 @@
 class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.0]
   def change
-  
+
     create_table :phcmembers_member_listings do |t|
-    
+
       t.string :mbcompanyname
       t.string :mbcontactname
       t.string :mbaddressl1
@@ -14,15 +14,15 @@ class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.0]
       t.string :mbphone
       t.string :mbcontactemail
       t.string :mbwebsite
-      
+
       t.references :profile
-      
+
       t.string :user_id
       t.string :user_name
-      
+
       t.timestamps
-    
+
     end
-  
+
   end
 end

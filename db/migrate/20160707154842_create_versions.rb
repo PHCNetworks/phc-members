@@ -8,13 +8,13 @@ class CreateVersions < ActiveRecord::Migration
   "ActiveRecord::ConnectionAdapters::MysqlAdapter",
   "ActiveRecord::ConnectionAdapters::Mysql2Adapter"
   ].freeze
-  
+
   # The largest text column available in all supported RDBMS is
   # 1024^3 - 1 bytes, roughly one gibibyte.  We specify a size
   # so that MySQL will use `longtext` instead of `text`.  Otherwise,
   # when serializing very large objects, `text` might not be big enough.
   TEXT_BYTES = 1_073_741_823
-  
+
   def change
   create_table :versions, versions_table_options do |t|
   t.string   :item_type, item_type_options
@@ -22,7 +22,7 @@ class CreateVersions < ActiveRecord::Migration
   t.string   :event,     null: false
   t.string   :whodunnit
   t.text     :object, limit: TEXT_BYTES
-  
+
   # Known issue in MySQL: fractional second precision
   # -------------------------------------------------
   #
@@ -40,9 +40,9 @@ class CreateVersions < ActiveRecord::Migration
   end
   add_index :versions, [:item_type, :item_id]
   end
-  
+
   private
-  
+
   # MySQL 5.6 utf8mb4 limit is 191 chars for keys used in indexes.
   # See https://github.com/airblade/paper_trail/issues/651
   def item_type_options
@@ -50,11 +50,11 @@ class CreateVersions < ActiveRecord::Migration
   opt[:limit] = 191 if mysql?
   opt
   end
-  
+
   def mysql?
   MYSQL_ADAPTERS.include?(connection.class.name)
   end
-  
+
   # Even modern versions of MySQL still use `latin1` as the default character
   # encoding. Many users are not aware of this, and run into trouble when they
   # try to use PaperTrail in apps that otherwise tend to use UTF-8. Postgres, by

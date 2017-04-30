@@ -2,9 +2,9 @@
 	<ul class="list-group feeds">
 		<% @versions.each do |version| %>
 			<li class="list-group-item">
-				<i class="fa fa-bell-o fa-fw"></i> 
-				<strong>EVENT #<%= version.id %></strong> - 
-				<i> <%= l(version.created_at, format: "%-d/%m/%Y") %> </i> - 
+				<i class="fa fa-bell-o fa-fw"></i>
+				<strong>EVENT #<%= version.id %></strong> -
+				<i> <%= l(version.created_at, format: "%-d/%m/%Y") %> </i> -
 				<%= version.event.capitalize %> - Profile <%= l(version.created_at, format: "%H:%M %Z") %>
 			</li>
 		<% end %>
