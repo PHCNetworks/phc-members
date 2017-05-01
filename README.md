@@ -4,8 +4,8 @@
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PHCNetworks/phc-members/blob/master/MIT-LICENSE)  
 
-### PHCMembers(8) (Membership & Directory Engine) Documentation
-PHCMembers(8) rails engine to manage membership information and directory listings.  
+### PHCMembers(9) (Membership & Directory Engine) Documentation
+PHCMembers(9) rails engine to manage membership information and directory listings.  
 
 * Fast setup of membership and web directory modules.
 * Directory and listings manager with a web directory API.
