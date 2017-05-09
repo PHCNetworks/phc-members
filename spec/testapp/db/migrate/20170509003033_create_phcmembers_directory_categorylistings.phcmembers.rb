@@ -1,3 +1,4 @@
+# This migration comes from phcmembers (originally 20160727042756)
 class CreatePhcmembersDirectoryCategorylistings < ActiveRecord::Migration[5.1]
   def change
 

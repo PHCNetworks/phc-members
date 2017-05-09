@@ -10,72 +10,99 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727042756) do
+ActiveRecord::Schema.define(version: 20170509003034) do
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
 
   create_table "phcmembers_directory_categories", force: :cascade do |t|
-    t.string   "catname"
+    t.string "catname"
+    t.string "slug"
+    t.string "user_id"
+    t.string "user_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "phcmembers_directory_categorylistings", force: :cascade do |t|
-    t.integer  "category_id"
-    t.integer  "listing_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer "category_id"
+    t.integer "listing_id"
+    t.string "slug"
+    t.string "user_id"
+    t.string "user_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_phcmembers_directory_categorylistings_on_category_id"
     t.index ["listing_id"], name: "index_phcmembers_directory_categorylistings_on_listing_id"
   end
 
   create_table "phcmembers_member_addresses", force: :cascade do |t|
-    t.string   "mcaddressl1"
-    t.string   "mcaddressl2"
-    t.string   "mccity"
-    t.string   "mcprovince"
-    t.string   "mccountry"
-    t.string   "mcpostalcode"
-    t.string   "mctype"
-    t.integer  "profile_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string "mcaddressl1"
+    t.string "mcaddressl2"
+    t.string "mccity"
+    t.string "mcprovince"
+    t.string "mccountry"
+    t.string "mcpostalcode"
+    t.string "mctype"
+    t.integer "profile_id"
+    t.string "slug"
+    t.string "user_id"
+    t.string "user_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_phcmembers_member_addresses_on_profile_id"
   end
 
   create_table "phcmembers_member_listings", force: :cascade do |t|
-    t.string   "mbcompanyname"
-    t.string   "mbcontactname"
-    t.string   "mbaddressl1"
-    t.string   "mbaddressl2"
-    t.string   "mbcity"
-    t.string   "mbprovince"
-    t.string   "mbcountry"
-    t.string   "mbpostalcode"
-    t.string   "mbphone"
-    t.string   "mbcontactemail"
-    t.string   "mbwebsite"
-    t.integer  "profile_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string "mbcompanyname"
+    t.string "mbcontactname"
+    t.string "mbaddressl1"
+    t.string "mbaddressl2"
+    t.string "mbcity"
+    t.string "mbprovince"
+    t.string "mbcountry"
+    t.string "mbpostalcode"
+    t.string "mbphone"
+    t.string "mbcontactemail"
+    t.string "mbwebsite"
+    t.integer "profile_id"
+    t.string "slug"
+    t.string "user_id"
+    t.string "user_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_phcmembers_member_listings_on_profile_id"
   end
 
   create_table "phcmembers_member_profiles", force: :cascade do |t|
-    t.string   "mfirstname"
-    t.string   "mlastname"
-    t.string   "mtitle"
-    t.string   "memail"
-    t.string   "mphone"
-    t.string   "mnotes"
+    t.string "mfirstname"
+    t.string "mlastname"
+    t.string "mtitle"
+    t.string "memail"
+    t.string "mphone"
+    t.string "mnotes"
+    t.string "slug"
+    t.string "user_id"
+    t.string "user_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "versions", force: :cascade do |t|
-    t.string   "item_type",                     null: false
-    t.integer  "item_id",                       null: false
-    t.string   "event",                         null: false
-    t.string   "whodunnit"
-    t.text     "object",     limit: 1073741823
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
     t.datetime "created_at"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end

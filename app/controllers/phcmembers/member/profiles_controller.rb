@@ -14,7 +14,7 @@ module Phcmembers
 
     # DETAILED PROFILE - Member Profile
     def show
-      @member_profile = Member::Profile.find(params[:id])
+      @member_profile = Member::Profile.friendly.find(params[:id])
       @versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Member::Profile')
     end
 
@@ -56,12 +56,12 @@ module Phcmembers
 
     # Common Callbacks
     def set_member_profile
-      @member_profile = Member::Profile.find(params[:id])
+      @member_profile = Member::Profile.friendly.find(params[:id])
     end
 
     # Whitelist
     def member_profile_params
-      params.require(:member_profile).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes)
+      params.require(:member_profile).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes, :slug, :user_id, :user_name)
     end
 
   end

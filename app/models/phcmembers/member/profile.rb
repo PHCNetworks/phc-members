@@ -1,6 +1,9 @@
 module Phcmembers
 	class Member::Profile < ApplicationRecord
 
+    # Clean URL Initialize
+    extend FriendlyId
+
 		# Add Paper Trail
 		has_paper_trail
 
@@ -31,6 +34,16 @@ module Phcmembers
 		validates :mphone,
 			presence: true,
 			format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Number Format: xxx-xxx-xxxx" }
+
+			# Clean URL Define
+	    friendly_id :memberfullname, use: :slugged
+
+	    # Define for Multiple Records
+	    def memberfullname
+	      [
+	        [:mfirstname, :mlastname]
+	      ]
+	    end
 
 	end
 end

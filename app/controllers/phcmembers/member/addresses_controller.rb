@@ -17,7 +17,7 @@ module Phcmembers
     # LISTINGS DETAILS - Directory Listings
     def show
       profile = Member::Profile.find(params[:profile_id])
-      @member_address = profile.addresses.find(params[:id])
+      @member_address = profile.addresses.friendly.find(params[:id])
       @versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Member::Address')
     end
 
@@ -63,12 +63,12 @@ module Phcmembers
 
     # Common Callbacks
     def set_member_address
-      @member_address = Member::Address.find(params[:id])
+      @member_address = Member::Address.friendly.find(params[:id])
     end
 
     # Whitelist
     def member_address_params
-      params.require(:member_address).permit(:mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mctype, :profile_id)
+      params.require(:member_address).permit(:mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mctype, :slug, :user_id, :user_name, :profile_id)
     end
 
   end

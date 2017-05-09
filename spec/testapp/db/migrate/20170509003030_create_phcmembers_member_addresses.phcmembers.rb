@@ -1,3 +1,4 @@
+# This migration comes from phcmembers (originally 20160725153306)
 class CreatePhcmembersMemberAddresses < ActiveRecord::Migration[5.1]
   def change
 
