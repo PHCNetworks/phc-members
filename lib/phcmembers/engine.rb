@@ -2,8 +2,6 @@ module Phcmembers
   class Engine < ::Rails::Engine
 
     # Main Dependencies
-    require 'rails'
-    require 'pg'
     require 'paper_trail'
 
     # UI & Frontend Dependencies
@@ -14,37 +12,38 @@ module Phcmembers
     require 'font-awesome-rails'
     require 'country_select'
     require 'gravtastic'
+    require 'webpacker'
 
-  	# WYSIWYG Editor Dependencies
+    # WYSIWYG Editor Dependencies
     require 'tinymce-rails'
 
-  	# API Dependencies
-		require 'rabl'
+    # API Dependencies
+    require 'rabl'
     require 'oj'
     require 'multi_json'
     require 'responders'
 
-  	# Upload & Media Dependencies
-		require 'carrierwave'
+    # Upload & Media Dependencies
+    require 'carrierwave'
     require 'cloudinary'
 
-  	# Clean URLS
-		require 'friendly_id'
+    # Clean URLS
+    require 'friendly_id'
 
-  	# PHCEngine Dependencies
-		require 'phcnotifi'
+    # PHCEngine Dependencies
+    require 'phcnotifi'
     require 'phctitleseo'
 
-  	# PHCTheme Dependencies
+    # PHCTheme Dependencies
     require 'phctheme1'
     require 'phctheme2'
 
-		# PHCAdmin Dependencies
+    # PHCAdmin Dependencies
     require 'phcadmin1'
     require 'phcadmin2'
     require 'phcadmin3'
 
-		# Isolate Namespace
+    # Isolate Namespace
     isolate_namespace Phcmembers
 
     # Testing Generator
