@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509003034) do
-
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string "slug", null: false
-    t.integer "sluggable_id", null: false
-    t.string "sluggable_type", limit: 50
-    t.string "scope"
-    t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
-  end
+ActiveRecord::Schema.define(version: 20170517064427) do
 
   create_table "phcmembers_directory_categories", force: :cascade do |t|
     t.string "catname"
@@ -43,6 +31,18 @@ ActiveRecord::Schema.define(version: 20170509003034) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_phcmembers_directory_categorylistings_on_category_id"
     t.index ["listing_id"], name: "index_phcmembers_directory_categorylistings_on_listing_id"
+  end
+
+  create_table "phcmembers_friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "fri_id_slugable_scope_type", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_phcmembers_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_phcmembers_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_phcmembers_friendly_id_slugs_on_sluggable_type"
   end
 
   create_table "phcmembers_member_addresses", force: :cascade do |t|
@@ -97,14 +97,49 @@ ActiveRecord::Schema.define(version: 20170509003034) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "versions", force: :cascade do |t|
+  create_table "phcmembers_versions_addresses", force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
-    t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+    t.index ["item_type", "item_id"], name: "phcmembers_version_address"
+  end
+
+  create_table "phcmembers_versions_category", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "phcmembers_version_category"
+  end
+
+  create_table "phcmembers_versions_categorylistings", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "phcmembers_version_catlist"
+  end
+
+  create_table "phcmembers_versions_listings", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "phcmembers_version_listing"
+  end
+
+  create_table "phcmembers_versions_profiles", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "phcmembers_version_profiles"
   end
 
 end

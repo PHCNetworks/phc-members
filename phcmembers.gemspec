@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'webpacker', '~> 1.2'
 
   # WYSIWYG Editor Dependencies
-  spec.add_dependency 'tinymce-rails', '~> 4.6'
+  spec.add_dependency 'tinymce-rails', '~> 4.6', '>= 4.6.1'
 
   # API Dependencies
   spec.add_dependency 'oj', '~> 3.0', '>= 3.0.7'
@@ -44,7 +44,7 @@ Gem::Specification.new do |spec|
 
   # Upload & Media Dependencies
   spec.add_dependency 'carrierwave', '~> 1.1'
-  spec.add_dependency 'cloudinary', '~> 1.8'
+  spec.add_dependency 'cloudinary', '~> 1.8', '>= 1.8.1'
 
   # URL Dependencies
   spec.add_dependency 'friendly_id', '~> 5.2', '>= 5.2.1'

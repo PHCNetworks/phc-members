@@ -1,10 +1,10 @@
 PATH
   remote: .
   specs:
-    phcmembers (11.0.0)
+    phcmembers (11.1.0)
       bootstrap-sass (~> 3.3, >= 3.3.7)
       carrierwave (~> 1.1)
-      cloudinary (~> 1.8)
+      cloudinary (~> 1.8, >= 1.8.1)
       country_select (~> 3.0)
       font-awesome-rails (~> 4.7, >= 4.7.0.2)
       friendly_id (~> 5.2, >= 5.2.1)
@@ -26,7 +26,7 @@ PATH
       rails (~> 5.1, >= 5.1.1)
       responders (~> 2.4)
       sass-rails (~> 5.0, >= 5.0.6)
-      tinymce-rails (~> 4.6)
+      tinymce-rails (~> 4.6, >= 4.6.1)
       webpacker (~> 1.2)
 
 GEM
@@ -93,7 +93,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
-    cloudinary (1.8.0)
+    cloudinary (1.8.1)
       aws_cf_signer
       rest-client
     concurrent-ruby (1.0.5)
@@ -325,7 +325,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
-    tinymce-rails (4.6.0)
+    tinymce-rails (4.6.1)
       railties (>= 3.1.1)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)

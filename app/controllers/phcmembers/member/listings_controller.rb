@@ -16,8 +16,8 @@ module Phcmembers
 
     # LISTINGS DETAILS - Directory Listings
     def show
-      profile = Member::Profile.friendly.find(params[:profile_id])
-      @meber_listing = profile.listings.friendly.find(params[:id])
+      profile = Member::Profile.find(params[:profile_id])
+      @meber_listing = profile.listings.find(params[:id])
       @versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Member::Listing')
     end
 
@@ -65,7 +65,7 @@ module Phcmembers
 
     # Common Callbacks
     def set_member_listing
-      @member_listing = Member::Listing.friendly.find(params[:id])
+      @member_listing = Member::Listing.find(params[:id])
     end
 
     # Whitelist

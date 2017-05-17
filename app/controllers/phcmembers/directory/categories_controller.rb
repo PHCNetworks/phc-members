@@ -14,7 +14,7 @@ module Phcmembers
 
     # DETAILED - Directory Category
     def show
-      @directory_category = Directory::Category.friendly.find(params[:id])
+      @directory_category = Directory::Category.find(params[:id])
       @versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Directory::Category')
     end
 
@@ -56,7 +56,7 @@ module Phcmembers
 
     # Common Callbacks
     def set_directory_category
-      @directory_category = Directory::Category.friendly.find(params[:id])
+      @directory_category = Directory::Category.find(params[:id])
     end
 
     # Whitelist

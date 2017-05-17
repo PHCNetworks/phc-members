@@ -14,7 +14,7 @@ module Phcmembers
 
     # DETAILED - Directory Category/Listings
     def show
-      @directory_categorylistings = Directory::Categorylisting.friendly.find(params[:id])
+      @directory_categorylistings = Directory::Categorylisting.find(params[:id])
     end
 
   end
