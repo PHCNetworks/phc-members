@@ -1,4 +1,4 @@
-class CreatePhcmembersVersionsAddress < ActiveRecord::Migration[5.1]
+class CreatePhcmembersVersionsAddresses < ActiveRecord::Migration[5.1]
   def change
     create_table :phcmembers_versions_addresses do |t|
       t.string   :item_type, {:null=>false}

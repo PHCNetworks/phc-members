@@ -1,4 +1,4 @@
-class CreatePhcmembersVersionsCategory < ActiveRecord::Migration[5.1]
+class CreatePhcmembersVersionsCategories < ActiveRecord::Migration[5.1]
   def change
     create_table :phcmembers_versions_category do |t|
       t.string   :item_type, {:null=>false}
