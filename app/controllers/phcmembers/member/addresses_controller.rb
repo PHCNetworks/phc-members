@@ -18,7 +18,7 @@ module Phcmembers
     def show
       profile = Member::Profile.find(params[:profile_id])
       @member_address = profile.addresses.find(params[:id])
-      @versions = PaperTrail::Version.where(item_id: params[:id], item_type: 'Phcmembers::Member::Address')
+      @versions = Phcmembers::VersionsAddress.where(item_id: params[:id], item_type: 'Phcmembers::Member::Address')
     end
 
     # NEW - Directory Listings
