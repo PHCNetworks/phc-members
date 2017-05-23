@@ -11,8 +11,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["BradPotts"]
   spec.email       = ["info@phcnetworks.net"]
   spec.homepage    = "https://phcnetworks.net/"
-  spec.summary     = "Rails 5.1 Engine - PHCMembers(9)"
-  spec.description = "PHCMembers(9Beta) Rails 5.1 engine to manage membership information and directory listings."
+  spec.summary     = "Rails 5.1 Engine - PHCMembers(2017)"
+  spec.description = "PHCMembers(2017) Rails 5.1 engine to manage membership information and directory listings."
   spec.license     = "MIT"
 
   #Load Engine Files
