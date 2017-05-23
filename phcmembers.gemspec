@@ -54,13 +54,13 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'phcnotifi', '~> 6.0'
 
   # PHCTheme Dependencies
-  spec.add_dependency 'phctheme1', '~> 14.0', '>= 14.0.1'
-  spec.add_dependency 'phctheme2', '~> 5.0', '>= 5.0.1'
+  spec.add_dependency 'phctheme1', '~> 14.1'
+  spec.add_dependency 'phctheme2', '~> 5.1'
 
   # PHCAdmin Dependencies
-  spec.add_dependency 'phcadmin1', '~> 10.0', '>= 10.0.1'
-  spec.add_dependency 'phcadmin2', '~> 8.0', '>= 8.0.1'
-  spec.add_dependency 'phcadmin3', '~> 5.0', '>= 5.0.1'
+  spec.add_dependency 'phcadmin1', '~> 10.1'
+  spec.add_dependency 'phcadmin2', '~> 8.1'
+  spec.add_dependency 'phcadmin3', '~> 5.1'
 
   # Development & Testing Dependencies
   spec.add_development_dependency 'rspec-rails', '~> 3.6'
