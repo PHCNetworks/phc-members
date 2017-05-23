@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'webpacker', '~> 1.2'
 
   # WYSIWYG Editor Dependencies
-  spec.add_dependency 'tinymce-rails', '~> 4.6', '>= 4.6.1'
+  spec.add_dependency 'tinymce-rails', '~> 4.6', '>= 4.6.2'
 
   # API Dependencies
   spec.add_dependency 'oj', '~> 3.0', '>= 3.0.9'
