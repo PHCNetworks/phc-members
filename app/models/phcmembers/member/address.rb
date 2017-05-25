@@ -5,7 +5,7 @@ module Phcmembers
 		extend FriendlyId
 
 		# Add Paper Trail
-		has_paper_trail :class_name => 'Phcmembers::VersionsAddress'
+		has_paper_trail :class_name => 'Phcmembers::AddressVersions'
 
 		# Validation for Form Fields
 		validates :mcaddressl1,

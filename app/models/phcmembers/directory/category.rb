@@ -5,7 +5,7 @@ module Phcmembers
 		extend FriendlyId
 
 		# Paper_tail Initialize
-		has_paper_trail :class_name => 'Phcmembers::VersionsCategory'
+		has_paper_trail :class_name => 'Phcmembers::CategoryVersions'
 
 		# Relationships
 		has_many :categorylistings, class_name: 'Phcmembers::Directory::Categorylisting', dependent: :destroy

@@ -12,6 +12,33 @@
 
 ActiveRecord::Schema.define(version: 20170517064427) do
 
+  create_table "phcmembers_address_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "phcmem_address_versions"
+  end
+
+  create_table "phcmembers_category_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "phcmem_category_versions"
+  end
+
+  create_table "phcmembers_categorylisting_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "phcmem_catlist_versions"
+  end
+
   create_table "phcmembers_directory_categories", force: :cascade do |t|
     t.string "catname"
     t.string "slug"
@@ -43,6 +70,15 @@ ActiveRecord::Schema.define(version: 20170517064427) do
     t.index ["slug", "sluggable_type"], name: "index_phcmembers_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_phcmembers_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_phcmembers_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "phcmembers_listing_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "phcmem_listing_versions"
   end
 
   create_table "phcmembers_member_addresses", force: :cascade do |t|
@@ -97,49 +133,13 @@ ActiveRecord::Schema.define(version: 20170517064427) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "phcmembers_versions_addresses", force: :cascade do |t|
+  create_table "phcmembers_profile_versions", force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmembers_version_address"
-  end
-
-  create_table "phcmembers_versions_categories", force: :cascade do |t|
-    t.string "item_type", null: false
-    t.integer "item_id", null: false
-    t.string "event", null: false
-    t.string "whodunnit"
-    t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmembers_version_category"
-  end
-
-  create_table "phcmembers_versions_categorylistings", force: :cascade do |t|
-    t.string "item_type", null: false
-    t.integer "item_id", null: false
-    t.string "event", null: false
-    t.string "whodunnit"
-    t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmembers_version_catlist"
-  end
-
-  create_table "phcmembers_versions_listings", force: :cascade do |t|
-    t.string "item_type", null: false
-    t.integer "item_id", null: false
-    t.string "event", null: false
-    t.string "whodunnit"
-    t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmembers_version_listing"
-  end
-
-  create_table "phcmembers_versions_profiles", force: :cascade do |t|
-    t.string "item_type", null: false
-    t.integer "item_id", null: false
-    t.string "event", null: false
-    t.string "whodunnit"
-    t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmembers_version_profiles"
+    t.index ["item_type", "item_id"], name: "phcmem_profile_versions"
   end
 
 end

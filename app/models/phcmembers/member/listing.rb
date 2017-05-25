@@ -5,7 +5,7 @@ module Phcmembers
     extend FriendlyId
 
     # Add Paper Trail
-    has_paper_trail :class_name => 'Phcmembers::VersionsListing'
+    has_paper_trail :class_name => 'Phcmembers::ListingVersions'
 
     # Model Relationships
 		belongs_to :profile, class_name: 'Phcmembers::Member::Profile'

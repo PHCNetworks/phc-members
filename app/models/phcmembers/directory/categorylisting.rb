@@ -2,7 +2,7 @@ module Phcmembers
 	class Directory::Categorylisting < ApplicationRecord
 
 		# Add Paper Trail
-		has_paper_trail :class_name => 'Phcmembers::VersionsCategoryListing'
+		has_paper_trail :class_name => 'Phcmembers::CategoryListingVersions'
 
 		# Model Relationships
 		belongs_to :listing, class_name: 'Phcmembers::Member::Listing'
