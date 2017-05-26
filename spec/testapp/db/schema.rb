@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 20170517064427) do
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
+    t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmem_address_versions"
+    t.index ["item_type", "item_id"], name: "mem_address_versions"
   end
 
   create_table "phcmembers_category_versions", force: :cascade do |t|
@@ -26,8 +27,9 @@ ActiveRecord::Schema.define(version: 20170517064427) do
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
+    t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmem_category_versions"
+    t.index ["item_type", "item_id"], name: "mem_category_versions"
   end
 
   create_table "phcmembers_categorylisting_versions", force: :cascade do |t|
@@ -35,8 +37,9 @@ ActiveRecord::Schema.define(version: 20170517064427) do
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
+    t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmem_catlist_versions"
+    t.index ["item_type", "item_id"], name: "mem_catlisting_versions"
   end
 
   create_table "phcmembers_directory_categories", force: :cascade do |t|
@@ -77,8 +80,9 @@ ActiveRecord::Schema.define(version: 20170517064427) do
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
+    t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmem_listing_versions"
+    t.index ["item_type", "item_id"], name: "mem_listing_versions"
   end
 
   create_table "phcmembers_member_addresses", force: :cascade do |t|
@@ -138,8 +142,9 @@ ActiveRecord::Schema.define(version: 20170517064427) do
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
+    t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "phcmem_profile_versions"
+    t.index ["item_type", "item_id"], name: "mem_profile_versions"
   end
 
 end

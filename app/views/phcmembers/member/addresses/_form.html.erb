@@ -1,4 +1,4 @@
-<%= form_for([@member_address.profile, @member_address], url: form_url) do |f| %>
+<%= form_for([@member_address.slug, @member_address], url: form_url) do |f| %>
 
 	<!-- PHC-Notifi Render Validation -->
 	<%= render 'phcnotifi/validations', :object => @member_address %>

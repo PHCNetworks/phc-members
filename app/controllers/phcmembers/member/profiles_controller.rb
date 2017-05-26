@@ -39,8 +39,6 @@ module Phcmembers
 
     # PATCH/PUT - Member Profile
     def update
-      @member_profile = Member::Profile.find(params[:id])
-      @versions = Phcmembers::ProfileVersions.where(item_id: params[:id], item_type: 'Phcmembers::Member::Profile')
       if @member_profile.update(member_profile_params)
         redirect_to member_profiles_url, notice: 'Profile was successfully updated.'
         else

@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sass-rails', '~> 5.0', '>= 5.0.6'
   spec.add_dependency 'country_select', '~> 3.0'
   spec.add_dependency 'gravtastic', '~> 3.2', '>= 3.2.6'
-  spec.add_dependency 'webpacker', '~> 1.2'
+  spec.add_dependency 'webpacker', '~> 2.0'
 
   # WYSIWYG Editor Dependencies
   spec.add_dependency 'tinymce-rails', '~> 4.6', '>= 4.6.2'
@@ -54,13 +54,13 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'phcnotifi', '~> 6.0'
 
   # PHCTheme Dependencies
-  spec.add_dependency 'phctheme1', '~> 14.1'
-  spec.add_dependency 'phctheme2', '~> 5.1'
+  spec.add_dependency 'phctheme1', '~> 14.2'
+  spec.add_dependency 'phctheme2', '~> 5.2'
 
   # PHCAdmin Dependencies
-  spec.add_dependency 'phcadmin1', '~> 10.1'
-  spec.add_dependency 'phcadmin2', '~> 8.1'
-  spec.add_dependency 'phcadmin3', '~> 5.1'
+  spec.add_dependency 'phcadmin1', '~> 10.2'
+  spec.add_dependency 'phcadmin2', '~> 8.2'
+  spec.add_dependency 'phcadmin3', '~> 5.2'
 
   # Development & Testing Dependencies
   spec.add_development_dependency 'rspec-rails', '~> 3.6'

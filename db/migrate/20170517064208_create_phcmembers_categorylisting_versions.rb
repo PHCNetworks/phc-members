@@ -9,6 +9,6 @@ class CreatePhcmembersCategorylistingVersions < ActiveRecord::Migration[5.1]
       t.text     :object, limit: TEXT_BYTES
       t.datetime :created_at
     end
-    add_index :phcmembers_categorylisting_versions, %i(item_type item_id)
+    add_index :phcmembers_categorylisting_versions, %i(item_type item_id), :name => 'mem_catlisting_versions'
   end
 end

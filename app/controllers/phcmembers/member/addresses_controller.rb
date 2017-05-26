@@ -10,7 +10,7 @@ module Phcmembers
 
     # INDEX - Directory Listings
     def index
-      profile = Member::Profile.find(params[:profile_id])
+      profile = Member::Profile.find(params[:slugged])
       @member_addresses = profile.addresses
     end
 
@@ -18,7 +18,7 @@ module Phcmembers
     def show
       profile = Member::Profile.find(params[:profile_id])
       @member_address = profile.addresses.find(params[:id])
-      @versions = Phcmembers::VersionsAddress.where(item_id: params[:id], item_type: 'Phcmembers::Member::Address')
+      @versions = Phcmembers::AddressVersions.where(item_id: params[:id], item_type: 'Phcmembers::Member::Address')
     end
 
     # NEW - Directory Listings

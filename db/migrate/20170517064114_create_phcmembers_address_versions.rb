@@ -9,6 +9,6 @@ class CreatePhcmembersAddressVersions < ActiveRecord::Migration[5.1]
       t.text     :object, limit: TEXT_BYTES
       t.datetime :created_at
     end
-    add_index :phcmembers_address_versions, %i(item_type item_id)
+    add_index :phcmembers_address_versions, %i(item_type item_id), :name => 'mem_address_versions'
   end
 end
