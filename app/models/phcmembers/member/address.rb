@@ -7,6 +7,9 @@ module Phcmembers
 		# Add Paper Trail
 		has_paper_trail :class_name => 'Phcmembers::AddressVersions'
 
+		# Model Relationships
+		belongs_to :profile, class_name: 'Phcmembers::Member::Profile'
+
 		# Validation for Form Fields
 		validates :mcaddressl1,
 		presence: true,

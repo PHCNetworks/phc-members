@@ -10,7 +10,7 @@ module Phcmembers
 
     # INDEX - Directory Listings
     def index
-      profile = Member::Profile.find(params[:slugged])
+      profile = Member::Profile.find(params[:profile_id])
       @member_addresses = profile.addresses
     end
 
