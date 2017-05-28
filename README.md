@@ -15,7 +15,7 @@ PHCMembers(2017) rails engine to manage membership information and directory lis
 
 #### Step 1 - Add PHCMembers to your gemfile and run command   
 
-	gem 'phcmembers', '~> 12.2'
+	gem 'phcmembers', '~> 13.0'
 	bundle install
 
 #### Step 2 - Add PHCMembers Database Tables  
