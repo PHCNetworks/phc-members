@@ -66,7 +66,7 @@ module Phcmembers
 
     # Load Language Files
     config.before_initialize do
-      config.i18n.load_path += Dir["#{config.root}/config/locales/**/*.yml"]
+      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     end
 
   end
