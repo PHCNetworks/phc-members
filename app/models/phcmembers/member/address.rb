@@ -12,37 +12,37 @@ module Phcmembers
 
 		# Validation for Form Fields
 		validates :mcaddressl1,
-		presence: true,
-		length: { minimum: 2 }
+			presence: true,
+			length: { minimum: 2 }
 
 		validates :mccity,
-		length: { minimum: 3 }
+			length: { minimum: 3 }
 
 		validates :mcprovince,
-		presence: true,
-		length: { minimum: 2 }
+			presence: true,
+			length: { minimum: 2 }
 
 		validates :mccountry,
-		presence: true,
-		length: { minimum: 2 }
+			presence: true,
+			length: { minimum: 2 }
 
 		validates :mcpostalcode,
-		presence: true,
-		length: { minimum: 3 }
+			presence: true,
+			length: { minimum: 3 }
 
 		validates :mctype,
-		presence: true,
-		length: { minimum: 2 }
+			presence: true,
+			length: { minimum: 2 }
 
 		# Clean URL Define
-    friendly_id :phcmembers_address_slug, use: [:slugged, :finders]
+		friendly_id :phcmembers_address_slug, use: [:slugged, :finders]
 
-    # Define for Multiple Records
-    def phcmembers_address_slug
-    [
-      [:mcaddressl1, :mccity, :mcprovince]
-    ]
-    end
+		# Define for Multiple Records
+		def phcmembers_address_slug
+			[
+				[:mcaddressl1, :mccity, :mcprovince]
+			]
+		end
 
 	end
 end

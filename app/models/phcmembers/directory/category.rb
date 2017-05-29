@@ -12,18 +12,17 @@ module Phcmembers
 		has_many :listings, class_name: 'Phcmembers::Member::Listing', :through => :categorylistings
 
 		validates :catname,
-    length: { minimum: 3 }
+			length: { minimum: 3 }
 
-    # Clean URL Define
-    friendly_id :phcmembers_category_slug, use: [:slugged, :finders]
+		# Clean URL Define
+		friendly_id :phcmembers_category_slug, use: [:slugged, :finders]
 
-    # Define for Multiple Records
-    def phcmembers_category_slug
-    [
-      :catname,
-      [:catname, :id]
-    ]
-    end
+		# Define for Multiple Records
+		def phcmembers_category_slug
+			[
+				:catname
+			]
+		end
 
 	end
 end
