@@ -11,13 +11,10 @@ Phcmembers::Engine.routes.draw do
     end
   end
 
-  # Application Client Backend
-
   # Members Section
   namespace :member do
     # Members Main Index
     root 'profiles#index'
-
     # Member Routes
     resources :profiles, class_name: 'Phcmembers::Member::Profile' do
       resources :listings, class_name: 'Phcmembers::Member::Listing'
