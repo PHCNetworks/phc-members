@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmembers (15.0.0)
+    phcmembers (15.1.0)
       bootstrap-sass (~> 3.3, >= 3.3.7)
       carrierwave (~> 1.1)
       cloudinary (~> 1.8, >= 1.8.1)
@@ -26,7 +26,7 @@ PATH
       rails (~> 5.1, >= 5.1.1)
       responders (~> 2.4)
       sass-rails (~> 5.0, >= 5.0.6)
-      tinymce-rails (~> 4.6, >= 4.6.2)
+      tinymce-rails (~> 4.6, >= 4.6.3)
       webpacker (~> 2.0)
 
 GEM
@@ -327,7 +327,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
-    tinymce-rails (4.6.2)
+    tinymce-rails (4.6.3)
       railties (>= 3.1.1)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)

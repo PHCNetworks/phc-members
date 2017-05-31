@@ -48,4 +48,4 @@
 </p>
 
 <%= link_to 'Update ' + @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' Listing', edit_member_profile_listing_path, class: "btn btn-primary" %>
-<%= link_to 'Delete ' + @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' Listing', member_profile_listing_path(@member_listing), method: :delete, data: { confirm: 'Are you sure? This will remove the listing from all directory categories. This action cannot be undone.' }, class: "btn btn-danger" %>
+<%= link_to 'Delete ' + @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' Listing', member_profile_listing_path, method: :delete, data: { confirm: 'Are you sure? This will remove the listing from all directory categories. This action cannot be undone.' }, class: "btn btn-danger" %>
