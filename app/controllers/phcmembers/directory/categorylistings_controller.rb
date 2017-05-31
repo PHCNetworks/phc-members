@@ -5,7 +5,7 @@ module Phcmembers
 
     # Security & Action Filters
     before_action :set_paper_trail_whodunnit
-    before_action :set_directory_category, only: [:show]
+    before_action :set_directory_category_listing, only: [:show]
 
     # INDEX - Directory Category/Listings
     def index
@@ -14,7 +14,15 @@ module Phcmembers
 
     # DETAILED - Directory Category/Listings
     def show
-      @directory_categorylistings = Directory::Categorylisting.find(params[:id])
+      @directory_categorylisting = Directory::Categorylisting.find(params[:id])
+      @directory_categorylistings_versions = Phcmembers::CategoryListingVersions.where(item_id: @directory_category, item_type: 'Phcmembers::Directory::Category')
+    end
+
+    private
+
+    # Common Callbacks
+    def set_directory_category_listing
+      @directory_categorylisting = Directory::Categorylisting.find(params[:id])
     end
 
   end

@@ -1,12 +1,9 @@
 <div class="scroller" style="height: 320px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
 
 	<ul class="list-group feeds">
-		<% @versions.each do |version| %>
+		<% @member_listing_versions.each do |member_listing_version| %>
 			<li class="list-group-item">
-				<i class="fa fa-bell-o fa-fw"></i>
-				<strong>EVENT #<%= version.id %></strong> -
-				<i> <%= l(version.created_at, format: "%-d/%m/%Y") %> </i> -
-				<%= version.event.capitalize %> - Profile <%= l(version.created_at, format: "%H:%M %Z") %>
+				<i class="fa fa-bell-o fa-fw"></i> Member Listing Event #<%= member_listing_version.id %> - <strong><%= member_listing_version.event.capitalize + ' ' + @member_listing.mbcompanyname %> Listing</strong> - on <i><%= l(member_listing_version.created_at, format: "%-d/%m/%Y") %></i> at <i><%= l(member_listing_version.created_at, format: "%H:%M %Z") %></i>
 			</li>
 		<% end %>
 	</ul>

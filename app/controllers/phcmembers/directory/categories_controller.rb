@@ -15,7 +15,7 @@ module Phcmembers
     # DETAILED - Directory Category
     def show
       @directory_category = Directory::Category.find(params[:id])
-      @versions = Phcmembers::CategoryVersions.where(item_id: params[:id], item_type: 'Phcmembers::Directory::Category')
+      @directory_category_versions = Phcmembers::CategoryVersions.where(item_id: @directory_category, item_type: 'Phcmembers::Directory::Category')
     end
 
     # NEW - Directory Category

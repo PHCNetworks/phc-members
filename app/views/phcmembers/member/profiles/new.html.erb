@@ -1,4 +1,4 @@
-<!-- Title System -->
+	<!-- Title System -->
 <% phc_title "Members Manager" %>
 <% phc_title_tagline "Create a New Member" %>
 <% phc_breadcrumb_one link_to "Dashboard", phcmembers.modules_dashboards_index_path %>
@@ -26,11 +26,9 @@
 					<h3 class="box-title"><%= yield(:phc_title) %></h3>
 				</div>
 				<div class="box-body">
-
 					<!-- Page Form (New) -->
-					<%= render 'form', member_profile: @member_profile %>
+						<%= render 'form', member_profile: @member_profile %>
 					<!-- Page Form (New) -->
-
 				</div>
 			</div>
 		</div>

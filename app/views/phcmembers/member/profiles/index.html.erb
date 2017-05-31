@@ -46,23 +46,24 @@
 										<td class="highlight"><%= link_to member_profile.memail, member_profile %></td>
 										<td class="highlight"><%= link_to member_profile.mphone, member_profile %></td>
 									</tr>
-								<% end %>
-							</tbody>
-						</table>
-					</div>
-					<!-- Index Table -->
-
-					<!-- Panel Footer -->
-					<div class="box-footer clearfix">
-						<%= link_to new_member_profile_path, class: "btn btn-primary" do %>
-							<i class="fa fa-plus"></i> Create a New Member
-						<% end %>
-					</div>
-					<!-- Panel Footer -->
-
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
 				</div>
+				<!-- Index Table -->
+
+				<!-- Panel Footer -->
+				<div class="box-footer clearfix">
+					<%= link_to new_member_profile_path, class: "btn btn-primary" do %>
+						<i class="fa fa-plus"></i> Create a New Member
+					<% end %>
+				</div>
+				<!-- Panel Footer -->
+
 			</div>
 		</div>
 	</div>
+</div>
 </section>
 <!-- Main Content -->

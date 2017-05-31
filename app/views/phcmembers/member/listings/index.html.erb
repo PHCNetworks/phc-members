@@ -52,7 +52,7 @@
 										<td class="highlight"><%= link_to member_listing.mbphone, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 										<td class="highlight"><%= link_to member_listing.mbcontactemail, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 										<td class="highlight"><%= link_to member_listing.mbwebsite, member_profile_listing_path(member_listing.profile, member_listing) %></td>
-										<td><%= link_to 'Remove', member_profile_listing_path(member_listing.profile, member_listing), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure? This will remove address information and cannot be reversed.' } %></td>
+										<td><%= link_to 'Remove', member_profile_listing_path(member_listing.profile, member_listing), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure? This will remove the listing from all directory categories. This action cannot be undone.' } %></td>
 									</tr>
 								<% end %>
 							</tbody>

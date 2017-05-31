@@ -1,31 +1,22 @@
-<div class="col-md-6">
-
-	<div class="panel panel-default">
-
-		<div class="panel-heading">
-			Category List
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Category List
+			</div>
+			<div class="panel-body">
+				<%= render 'phcmembers/directory/categories/components/category_list' %>
+			</div>
 		</div>
-
-		<div class="panel-body">
-			<%= render 'phcmembers/directory/categories/components/category_list' %>
-		</div>
-
 	</div>
-
-</div>
-
-<div class="col-md-6">
-
-	<div class="panel panel-default">
-
-		<div class="panel-heading">
-			Category Change Logs
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Category Change Logs
+			</div>
+			<div class="panel-body">
+				<%= render 'phcmembers/directory/categories/components/category_audits' %>
+			</div>
 		</div>
-
-		<div class="panel-body">
-			<%= render 'phcmembers/directory/categories/components/category_audits' %>
-		</div>
-
 	</div>
-
 </div>

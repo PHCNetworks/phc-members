@@ -15,7 +15,7 @@ module Phcmembers
     # DETAILED PROFILE - Member Profile
     def show
       @member_profile = Member::Profile.find(params[:id])
-      @versions = Phcmembers::ProfileVersions.where(item_id: params[:id], item_type: 'Phcmembers::Member::Profile')
+      @member_profile_versions = Phcmembers::ProfileVersions.where(item_id: @member_profile, item_type: 'Phcmembers::Member::Profile')
     end
 
     # NEW FORM - Member Profile

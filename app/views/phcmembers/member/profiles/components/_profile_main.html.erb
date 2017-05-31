@@ -1,44 +1,22 @@
 <div class="row">
-
 	<div class="col-md-6">
-
 		<div class="panel panel-default">
-
 			<div class="panel-heading">
 				<%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Member Stats
 			</div>
-
 			<div class="panel-body">
+				<%= render 'phcmembers/member/profiles/components/profile_sidebar' %>
 			</div>
-
 		</div>
-
 	</div>
 	<div class="col-md-6">
-
 		<div class="panel panel-default">
-
 			<div class="panel-heading">
 				<%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Information Change Log
 			</div>
-
 			<div class="panel-body">
-				<div class="scroller" style="height: 320px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
-					<ul class="list-group feeds">
-						<% @versions.each do |version| %>
-							<li class="list-group-item">
-								<i class="fa fa-bell-o fa-fw"></i>
-								<strong>EVENT #<%= version.id %></strong> -
-								<i> <%= l(version.created_at, format: "%-d/%m/%Y") %> </i> -
-								<%= version.event.capitalize %> - Profile <%= l(version.created_at, format: "%H:%M %Z") %>
-							</li>
-						<% end %>
-					</ul>
-				</div>
+				<%= render 'phcmembers/member/profiles/components/profile_audits' %>
 			</div>
-
 		</div>
-
 	</div>
-
 </div>

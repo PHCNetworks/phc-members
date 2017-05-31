@@ -17,8 +17,8 @@ module Phcmembers
     # LISTINGS DETAILS - Directory Listings
     def show
       profile = Member::Profile.find(params[:profile_id])
-      @meber_listing = profile.listings.find(params[:id])
-      @versions = Phcmembers::ListingVersions.where(item_id: params[:id], item_type: 'Phcmembers::Member::Listing')
+      @member_listing = profile.listings.find(params[:id])
+      @member_listing_versions = Phcmembers::ListingVersions.where(item_id: @member_listing, item_type: 'Phcmembers::Member::Listing')
     end
 
     # NEW - Directory Listings

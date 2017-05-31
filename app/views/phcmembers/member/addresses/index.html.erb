@@ -52,23 +52,24 @@
 										<td class="highlight"><%= link_to member_address.mcpostalcode, member_profile_address_path(member_address.profile, member_address) %></td>
 										<td class="highlight"><%= link_to member_address.mctype, member_profile_address_path(member_address.profile, member_address) %></td>
 									</tr>
-								<% end %>
-							</tbody>
-						</table>
-					</div>
-					<!-- Index Table -->
-
-					<!-- Panel Footer -->
-					<div class="box-footer clearfix">
-						<%= link_to new_member_profile_address_path, class: "btn btn-primary" do %>
-							<i class="fa fa-plus"></i> <%= "Add a New Address for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
-						<% end %>
-					</div>
-					<!-- Panel Footer -->
-
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
 				</div>
+				<!-- Index Table -->
+
+				<!-- Panel Footer -->
+				<div class="box-footer clearfix">
+					<%= link_to new_member_profile_address_path, class: "btn btn-primary" do %>
+						<i class="fa fa-plus"></i> <%= "Add a New Address for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
+					<% end %>
+				</div>
+				<!-- Panel Footer -->
+
 			</div>
 		</div>
 	</div>
+</div>
 </section>
 <!-- Main Content -->
