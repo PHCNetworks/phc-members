@@ -3,25 +3,5 @@
 	<div class="card-block">
 		<h4 class="card-title"><%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %></h4>
 		<h4 class="card-title"><%= @member_profile.mtitle %></h4>
-		<%= link_to 'Update Member', edit_member_profile_path(@member_profile), class: "btn btn-primary" %>
-		<%= link_to 'Delete Member', @member_profile, method: :delete, data: { confirm: 'Are you sure? Removing a member will delete all records, including business information and any member directory connections.' }, class: "btn btn-danger" %>
-	</div>
-</div>
-
-<div class="card">
-	<div class="card-block">
-		<ul class="nav">
-		</ul>
-	</div>
-</div>
-
-<div class="card">
-	<div class="card-block">
-		<!-- STATS -->
-		<div class="row list-separated profile-stat">
-		</div>
-		<!-- STATS -->
-		<div>
-		</div>
 	</div>
 </div>

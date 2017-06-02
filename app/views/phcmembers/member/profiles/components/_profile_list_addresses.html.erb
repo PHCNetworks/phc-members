@@ -1,0 +1,22 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Address Line 1</th>
+				<th>City</th>
+				<th>Province</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @member_profile.addresses.each do |members_main_address| %>
+				<tr>
+					<td class="highlight"><%= members_main_address.mcaddressl1 %></td>
+					<td class="highlight"><%= members_main_address.mccity %></td>
+					<td class="highlight"><%= members_main_address.mcprovince %></td>
+					<td class="highlight"><%= members_main_address.mctype %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

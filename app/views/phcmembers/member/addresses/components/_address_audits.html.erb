@@ -3,7 +3,7 @@
 	<ul class="list-group feeds">
 		<% @member_address_versions.each do |member_address_version| %>
 			<li class="list-group-item">
-				<i class="fa fa-bell-o fa-fw"></i> Member Listing Event #<%= member_address_version.id %> - <strong><%= member_address_version.event.capitalize + ' ' + @member_address.mcaddressl1 %> Listing</strong> - on <i><%= l(member_address_version.created_at, format: "%-d/%m/%Y") %></i> at <i><%= l(member_address_version.created_at, format: "%H:%M %Z") %></i>
+				<i class="fa fa-bell-o fa-fw"></i> <strong><%= member_address_version.event.capitalize %></strong> - <%= @member_address.mcaddressl1 + ' ' + @member_address.mccity  + ' ' + @member_address.mcprovince %> Listing on <i><%= l(member_address_version.created_at, format: "%-d/%m/%Y") %></i> at <i><%= l(member_address_version.created_at, format: "%H:%M %Z") %></i>
 			</li>
 		<% end %>
 	</ul>

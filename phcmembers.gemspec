@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   # Main Dependencies
   spec.add_dependency 'rails', '~> 5.1', '>= 5.1.1'
   spec.add_dependency 'pg', '~> 0.20.0'
-  spec.add_dependency 'paper_trail', '~> 7.0', '>= 7.0.2'
+  spec.add_dependency 'paper_trail', '~> 7.0', '>= 7.0.3'
 
   # UI & Frontend Dependencies
   spec.add_dependency 'jquery-rails', '~> 4.3', '>= 4.3.1'
@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'tinymce-rails', '~> 4.6', '>= 4.6.3'
 
   # API Dependencies
-  spec.add_dependency 'oj', '~> 3.0', '>= 3.0.10'
+  spec.add_dependency 'oj', '~> 3.0', '>= 3.0.11'
   spec.add_dependency 'rabl', '~> 0.13.1'
   spec.add_dependency 'multi_json', '~> 1.12', '>= 1.12.1'
   spec.add_dependency 'responders', '~> 2.4'

@@ -3,7 +3,7 @@
 	<ul class="list-group feeds">
 		<% @directory_category_versions.each do |directory_category_version| %>
 			<li class="list-group-item">
-				<i class="fa fa-bell-o fa-fw"></i> Category Event #<%= directory_category_version.id %> - <strong><%= directory_category_version.event.capitalize + ' ' + @directory_category.catname %> Category</strong> - on <i><%= l(directory_category_version.created_at, format: "%-d/%m/%Y") %></i> at <i><%= l(directory_category_version.created_at, format: "%H:%M %Z") %></i>
+				<i class="fa fa-bell-o fa-fw"></i> <strong><%= directory_category_version.event.capitalize %></strong> - <%= @directory_category.catname + ' Category' %> on <i><%= l(directory_category_version.created_at, format: "%-d/%m/%Y") %></i> at <i><%= l(directory_category_version.created_at, format: "%H:%M %Z") %></i>
 			</li>
 		<% end %>
 	</ul>

@@ -7,6 +7,9 @@
 			<div class="panel-body">
 				<%= render 'phcmembers/directory/categories/components/category_list' %>
 			</div>
+			<div class="panel-footer">
+				<%= link_to 'Update Category Name', edit_directory_category_path(@directory_category), class: "btn btn-primary btn-sm" %>
+			</div>
 		</div>
 	</div>
 	<div class="col-md-6">
