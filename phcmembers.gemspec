@@ -50,17 +50,17 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'friendly_id', '~> 5.2', '>= 5.2.1'
 
   # PHCEngine Dependencies
-  spec.add_dependency 'phctitleseo', '~> 7.1'
-  spec.add_dependency 'phcnotifi', '~> 6.1'
+  spec.add_dependency 'phctitleseo', '~> 7.1', '>= 7.1.1'
+  spec.add_dependency 'phcnotifi', '~> 6.1', '>= 6.1.1'
 
   # PHCTheme Dependencies
-  spec.add_dependency 'phctheme1', '~> 14.2'
-  spec.add_dependency 'phctheme2', '~> 5.2'
+  spec.add_dependency 'phctheme1', '~> 14.3'
+  spec.add_dependency 'phctheme2', '~> 5.3'
 
   # PHCAdmin Dependencies
-  spec.add_dependency 'phcadmin1', '~> 10.2'
-  spec.add_dependency 'phcadmin2', '~> 8.2'
-  spec.add_dependency 'phcadmin3', '~> 5.2'
+  spec.add_dependency 'phcadmin1', '~> 10.3'
+  spec.add_dependency 'phcadmin2', '~> 8.3'
+  spec.add_dependency 'phcadmin3', '~> 5.3'
 
   # Development & Testing Dependencies
   spec.add_development_dependency 'rspec-rails', '~> 3.6'
