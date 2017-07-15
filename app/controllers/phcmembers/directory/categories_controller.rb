@@ -31,6 +31,7 @@ module Phcmembers
     # POST - Directory Category
     def create
       @directory_category = Directory::Category.new(directory_category_params)
+      @directory_category.user_name = current_user.username
       if @directory_category.save
         redirect_to directory_categories_url, notice: 'Category was successfully created.'
         else
@@ -40,6 +41,7 @@ module Phcmembers
 
     # PATCH/PUT - Directory Category
     def update
+      @directory_category.user_name = current_user.username
       if @directory_category.update(directory_category_params)
         redirect_to directory_categories_url, notice: 'Category was successfully updated.'
         else

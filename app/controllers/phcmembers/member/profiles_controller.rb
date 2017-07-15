@@ -31,6 +31,7 @@ module Phcmembers
     # POST - Member Profile
     def create
       @member_profile = Member::Profile.new(member_profile_params)
+      @member_profile.user_name = current_user.username
       if @member_profile.save
         redirect_to member_profiles_url, notice: 'Profile was successfully created.'
         else
@@ -40,6 +41,7 @@ module Phcmembers
 
     # PATCH/PUT - Member Profile
     def update
+      @member_profile.user_name = current_user.username
       if @member_profile.update(member_profile_params)
         redirect_to member_profiles_url, notice: 'Profile was successfully updated.'
         else

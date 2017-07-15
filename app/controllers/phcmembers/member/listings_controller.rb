@@ -36,6 +36,7 @@ module Phcmembers
     def create
       @profile = Member::Profile.find(params[:profile_id])
       @member_listing = @profile.listings.create(member_listing_params)
+      @member_listing.user_name = current_user.username
       if @member_listing.save
         @member_listing.categorylistings.build
         redirect_to member_profile_listings_url, notice: 'Listing was successfully created.'
@@ -46,6 +47,7 @@ module Phcmembers
 
     # PATCH/PUT - Directory Listings
     def update
+      @member_listing.user_name = current_user.username
       if @member_listing.update(member_listing_params)
         @member_listing.categorylistings.build
         redirect_to member_profile_listings_url, notice: 'Listing was successfully updated.'
