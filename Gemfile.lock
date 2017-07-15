@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmembers (17.1.0)
+    phcmembers (18.0.0)
       bootstrap-sass (~> 3.3, >= 3.3.7)
       carrierwave (~> 1.1)
       cloudinary (~> 1.8, >= 1.8.1)
@@ -304,11 +304,11 @@ GEM
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
     rubyzip (1.2.1)
-    sass (3.5.0)
-      sass-listen (~> 3.0.7)
-    sass-listen (3.0.7)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9.7)
+    sass (3.5.1)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)

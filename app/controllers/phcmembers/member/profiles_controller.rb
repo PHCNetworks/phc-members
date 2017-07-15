@@ -4,6 +4,7 @@ module Phcmembers
   class Member::ProfilesController < ApplicationController
 
     # Security & Action Filters
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_member_profile, only: [:show, :edit, :update, :destroy]
 

@@ -4,6 +4,7 @@ module Phcmembers
   class Member::AddressesController < ApplicationController
 
     # Security & Action Filters
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :get_member_profile_info
     before_action :set_member_address, only: [:show, :edit, :update, :destroy]

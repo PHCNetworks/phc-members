@@ -4,6 +4,7 @@ module Phcmembers
   class Directory::CategoriesController < ApplicationController
 
     # Security & Action Filters
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_directory_category, only: [:show, :edit, :update, :destroy]
 
