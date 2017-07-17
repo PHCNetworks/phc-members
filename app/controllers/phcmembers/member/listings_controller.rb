@@ -73,7 +73,7 @@ module Phcmembers
 
     # Whitelist
     def member_listing_params
-      params.require(:member_listing).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :slug, :user_id, :user_name, :profile_id, category_ids: [])
+      params.require(:member_listing).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :slug, :user_id, :username, :profile_id, category_ids: [])
     end
 
   end

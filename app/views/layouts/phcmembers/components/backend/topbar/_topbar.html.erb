@@ -1,5 +1,15 @@
 <!-- Mobile Toggle -->
 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-	<span class="sr-only">Toggle navigation</span>
+<span class="sr-only">Toggle navigation</span>
 </a>
 <!-- Mobile Toggle -->
+
+<% if user_signed_in? %>
+	<!-- User Right Menu Bar -->
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<%= render 'layouts/components/backend/topbar/topbar_user_menu' %>
+		</ul>
+	<div>
+	<!-- User Right Menu Bar -->
+<% end %>

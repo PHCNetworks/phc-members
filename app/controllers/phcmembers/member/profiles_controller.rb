@@ -64,7 +64,7 @@ module Phcmembers
 
     # Whitelist
     def member_profile_params
-      params.require(:member_profile).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes, :slug, :user_id, :user_name)
+      params.require(:member_profile).permit(:mfirstname, :mlastname, :mtitle, :memail, :mphone, :mnotes, :slug, :user_id, :username)
     end
 
   end
