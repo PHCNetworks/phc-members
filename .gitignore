@@ -12,5 +12,4 @@ spec/testapp/tmp/
 
 node_modules/
 
-
 .DS_Store
