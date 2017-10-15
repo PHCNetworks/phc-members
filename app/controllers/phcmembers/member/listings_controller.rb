@@ -26,6 +26,7 @@ module Phcmembers
     def new
       profile = Member::Profile.find(params[:profile_id])
       @member_listing = profile.listings.build
+      @member_listing.user_id = current_user.id
     end
 
     # EDIT - Directory Listings
@@ -36,7 +37,7 @@ module Phcmembers
     def create
       @profile = Member::Profile.find(params[:profile_id])
       @member_listing = @profile.listings.create(member_listing_params)
-      @member_listing.user_name = current_user.username
+      @member_listing.user_id = current_user.id
       if @member_listing.save
         @member_listing.categorylistings.build
         redirect_to member_profile_listings_url, notice: 'Listing was successfully created.'
@@ -47,7 +48,7 @@ module Phcmembers
 
     # PATCH/PUT - Directory Listings
     def update
-      @member_listing.user_name = current_user.username
+      @member_listing.user_id = current_user.id
       if @member_listing.update(member_listing_params)
         @member_listing.categorylistings.build
         redirect_to member_profile_listings_url, notice: 'Listing was successfully updated.'
@@ -73,7 +74,7 @@ module Phcmembers
 
     # Whitelist
     def member_listing_params
-      params.require(:member_listing).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :slug, :user_id, :username, :profile_id, category_ids: [])
+      params.require(:member_listing).permit(:mbcompanyname, :mbcontactname, :mbaddressl1, :mbaddressl2, :mbcity, :mbcountry, :mbprovince, :mbpostalcode, :mbphone, :mbcontactemail, :mbwebsite, :slug, :user_id, :profile_id, category_ids: [])
     end
 
   end
