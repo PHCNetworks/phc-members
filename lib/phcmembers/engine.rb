@@ -4,18 +4,23 @@ module Phcmembers
     # Main Dependencies
     require 'paper_trail'
 
+		# PHCEngines & Theme Dependencies
+    require 'phcnotifi'
+    require 'phctitleseo'
+
+    require 'phctheme1'
+    require 'phctheme2'
+    require 'phcadmin1'
+    require 'phcadmin2'
+    require 'phcadmin3'
+
     # UI & Frontend Dependencies
+    require 'country_select'
+    require 'gravtastic'
     require 'jquery-rails'
     require 'jquery-ui-rails'
     require 'sass-rails'
-    require 'bootstrap-sass'
-    require 'font-awesome-rails'
-    require 'country_select'
-    require 'gravtastic'
     require 'webpacker'
-
-    # WYSIWYG Editor Dependencies
-    require 'tinymce-rails'
 
     # API Dependencies
     require 'rabl'
@@ -23,25 +28,15 @@ module Phcmembers
     require 'multi_json'
     require 'responders'
 
+    # Clean URLS
+    require 'friendly_id'
+  
+    # WYSIWYG Editor Dependencies
+    require 'tinymce-rails'
+
     # Upload & Media Dependencies
     require 'carrierwave'
     require 'cloudinary'
-
-    # Clean URLS
-    require 'friendly_id'
-
-    # PHCEngine Dependencies
-    require 'phcnotifi'
-    require 'phctitleseo'
-
-    # PHCTheme Dependencies
-    require 'phctheme1'
-    require 'phctheme2'
-
-    # PHCAdmin Dependencies
-    require 'phcadmin1'
-    require 'phcadmin2'
-    require 'phcadmin3'
 
     # Isolate Namespace
     isolate_namespace Phcmembers
