@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcmembers (34.0.0)
+    phcmembers (33.1.0)
       carrierwave (~> 1.2)
       cloudinary (~> 1.9)
       country_select (~> 3.1)
