@@ -3,17 +3,17 @@
 [![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PHCNetworks/phc-members/blob/master/MIT-LICENSE)  
 
-### PHCMembers(2017) (Membership & Directory Engine) Documentation
-PHCMembers(2017) rails engine to manage membership information and directory listings.  
+### PHCMembers(2018) (Membership & Directory Engine) Documentation
+PHCMembers(2018) rails engine to manage membership information and directory listings.  
 
 * Fast setup of membership and web directory modules.
 * Directory and listings manager with a web directory API.
 * Member's list, contact information, and listings manager.
 * Easy app integration with views that can be customized.
 
-#### Step 1 - Add PHCMembers to your gemfile and run command   
+#### Step 1 - Add PHCMembers to your gemfile and run the commands below.   
 
-	gem 'phcmembers', '~> 34.0'
+	gem 'phcmembers', '~> 35.0'
 	bundle install
 
 #### Step 2 - Add PHCMembers Database Tables  
@@ -23,7 +23,7 @@ To copy PHCMembers' required database migrations, copy each command individually
 	rails db:migrate
 
 #### Step 3 - Mount PHCMembers & Add Routes
-Mount PHCMembers by adding code below to your routes file.  
+Mount PHCMembers by adding the code below to your routes file.  
 
 	mount Phcmembers::Engine, :at => '/'
 
