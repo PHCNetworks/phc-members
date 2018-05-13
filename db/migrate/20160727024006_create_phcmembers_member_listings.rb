@@ -1,4 +1,4 @@
-class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.1]
+class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.2]
   def change
 
     create_table :phcmembers_member_listings do |t|

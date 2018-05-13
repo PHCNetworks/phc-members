@@ -1,4 +1,4 @@
-class CreatePhcmembersDirectoryCategories < ActiveRecord::Migration[5.1]
+class CreatePhcmembersDirectoryCategories < ActiveRecord::Migration[5.2]
   def change
 
     create_table :phcmembers_directory_categories do |t|
