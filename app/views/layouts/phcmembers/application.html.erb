@@ -1,56 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Phcmembers</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-	<head>
+  <%= stylesheet_link_tag    "phcmembers/application", media: "all" %>
+  <%= javascript_include_tag "phcmembers/application" %>
+</head>
+<body>
 
-		<title>PHCMembers 2017</title>
+<%= yield %>
 
-		<%= stylesheet_link_tag    "phcmembers/application", media: "all" %>
-		<%= javascript_include_tag "phcmembers/application" %>
-		<%= csrf_meta_tags %>
-
-	</head>
-
-	<body class="hold-transition skin-blue sidebar-mini">
-
-		<div class="wrapper">
-			<div class="main_container">
-
-				<header class="main-header">
-
-					<!-- Logo with Link -->
-					<%= link_to phcmembers.member_profiles_path, class: "logo" do %>
-						<span class="logo-mini">PHC</span>
-						<span class="logo-lg"><b>PHC</b>Members</span>
-					<% end %>
-					<!-- Logo with Link -->
-
-					<!-- Top Navbar -->
-					<nav class="navbar navbar-static-top">
-						<%= render 'layouts/phcmembers/components/backend/topbar/topbar' %>
-					</nav>
-					<!-- Top Navbar -->
-
-				</header>
-
-				<aside class="main-sidebar">
-					<%= render 'layouts/phcmembers/components/backend/navigation/navigation' %>
-				</aside>
-
-				<!-- Page Content -->
-				<div class="content-wrapper">
-					<%= yield %>
-				</div>
-				<!-- Page Content -->
-
-			</div>
-		</div>
-
-		<!-- Footer -->
-		<footer class="main-footer">
-			<%= render 'layouts/phcmembers/components/backend/footer/footer' %>
-		</footer>
-		<!-- Footer -->
-
-	</body>
+</body>
 </html>

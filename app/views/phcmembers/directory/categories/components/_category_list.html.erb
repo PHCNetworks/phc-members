@@ -1,7 +1,0 @@
-<ul class="list-group">
-	<% @directory_category.listings.each do |member_listing| %>
-		<li class="list-group-item">
-			<%= link_to member_listing.mbcompanyname, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %>
-		</li>
-	<% end %>
-</ul>
