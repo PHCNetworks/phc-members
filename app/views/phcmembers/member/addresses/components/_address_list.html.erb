@@ -1,0 +1,32 @@
+<p>
+    <strong>Address Line 1:</strong>
+    <%= @member_address.mcaddressl1 %>
+</p>
+
+<p>
+    <strong>Address Line 2:</strong>
+    <%= @member_address.mcaddressl2 %>
+</p>
+
+<p>
+    <strong>City:</strong>
+    <%= @member_address.mccity %>
+</p>
+
+<p>
+    <strong>Province:</strong>
+    <%= @member_address.mcprovince %>
+</p>
+
+<p>
+    <strong>Country:</strong>
+    <%= @member_address.mccountry %>
+</p>
+
+<p>
+    <strong>PostalCode:</strong>
+    <%= @member_address.mcpostalcode %>
+</p>
+
+<%= link_to 'Update ' + @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' ' + @member_address.mctype + ' Address', edit_member_profile_address_path, class: "btn btn-primary" %>
+<%= link_to 'Delete ' + @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' ' + @member_address.mctype + ' Address', member_profile_address_path, method: :delete, data: { confirm: 'Are you sure? This will remove the adress infromation. This action cannot be undone.' }, class: "btn btn-danger" %>

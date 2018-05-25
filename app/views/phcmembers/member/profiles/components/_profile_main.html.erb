@@ -1,0 +1,48 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Member Stats
+			</div>
+			<div class="panel-body">
+				<%= render 'phcmembers/member/profiles/components/profile_sidebar' %>
+			</div>
+			<div class="panel-footer">
+				<%= link_to 'Update Member', edit_member_profile_path(@member_profile), class: "btn btn-primary" %>
+				<%= link_to 'Delete Member', @member_profile, method: :delete, data: { confirm: 'Are you sure? Removing a member will delete all records, including business information and any member directory connections.' }, class: "btn btn-danger" %>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Information Change Log
+			</div>
+			<div class="panel-body">
+				<%= render 'phcmembers/member/profiles/components/profile_audits' %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Address List
+			</div>
+			<div class="panel-body">
+				<%= render 'phcmembers/member/profiles/components/profile_list_addresses' %>
+			</div>
+			<div class="panel-footer">
+				<%= link_to 'All ' + @member_profile.mfirstname + ' ' + @member_profile.mlastname + ' Addresses', member_profile_addresses_path(@member_profile), class: "btn btn-primary btn-sm" %>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Listings
+			</div>
+			<div class="panel-body">
+				<%= render 'phcmembers/member/profiles/components/profile_list_listings' %>
+			</div>
+			<div class="panel-footer">
+				<%= link_to 'All ' + @member_profile.mfirstname + ' ' + @member_profile.mlastname + ' Listings', member_profile_listings_path(@member_profile), class: "btn btn-primary btn-sm" %>
+			</div>
+		</div>
+	</div>
+</div>

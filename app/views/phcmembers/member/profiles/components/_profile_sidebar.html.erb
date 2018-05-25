@@ -1,0 +1,7 @@
+<div class="card">
+	<%= image_tag @member_profile.gravatar_url, :class => 'card-img-top' %>
+	<div class="card-block">
+		<h4 class="card-title"><%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %></h4>
+		<h4 class="card-title"><%= @member_profile.mtitle %></h4>
+	</div>
+</div>

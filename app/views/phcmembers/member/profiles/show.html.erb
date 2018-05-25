@@ -1,0 +1,24 @@
+<!-- Title System -->
+<% phc_title "Members Manager" %>
+<% phc_title_tagline "Create a New Member" %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmembers.modules_dashboards_index_path %>
+<% phc_breadcrumb_two yield(:phc_title_tagline) %>
+<!-- Title System -->
+
+<!-- Page Title Bar -->
+<section class="content-header">
+	<!-- Page Title and BreadCrumb -->
+	<h1><%= yield(:phc_title) %> <small><%= yield(:phc_title_tagline) %></small></h1>
+	<ol class="breadcrumb">
+		<li><%= yield(:phc_breadcrumb_one) %></li>
+		<li class="active"><%= yield(:phc_breadcrumb_two) %></li>
+	</ol>
+	<!-- Page Title and BreadCrumb -->
+</section>
+<!-- Page Title Bar -->
+
+<!-- Main Content -->
+<section class="content">
+		<%= render 'phcmembers/member/profiles/components/profile_main' %>
+</section>
+<!-- Main Content -->

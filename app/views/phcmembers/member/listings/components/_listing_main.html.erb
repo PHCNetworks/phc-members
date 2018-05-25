@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%= @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' ' + @member_listing.mbcompanyname %>
+			</div>
+			<div class="panel-body">
+				<%= render 'phcmembers/member/listings/components/listing_list' %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%= @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname + ' ' + @member_listing.mbcompanyname %> Business Change Logs
+			</div>
+			<div class="panel-body">
+				<%= render 'phcmembers/member/listings/components/listing_audits' %>
+			</div>
+		</div>
+	</div>
+</div>

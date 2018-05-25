@@ -1,0 +1,36 @@
+<%= form_for(member_profile) do |f| %>
+
+	<!-- PHC-Notifi Render Validation -->
+	<%= render 'phcnotifi/validations', :object => @member_profile %>
+	<!-- PHC-Notifi Render Validation -->
+
+	<!-- Form Fields -->
+	<div class="form-group field_with_errors">
+		<%= f.label :mfirstname, "Members First Name" %>
+		<%= f.text_field :mfirstname, class: 'form-control', placeholder: 'First Name' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= f.label :mlastname, "Members Last Name" %>
+		<%= f.text_field :mlastname, class: 'form-control', placeholder: 'Last Name' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= f.label :mtitle, "Job Title" %>
+		<%= f.text_field :mtitle, class: 'form-control', placeholder: 'Job Title/Salutation' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= f.label :memail, "Contact Email Address*" %>
+		<%= f.text_field :memail, class: 'form-control', placeholder: 'Contact Email (Will Remain Private)' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= f.label :mphone, "Contact Phone Number*" %>
+		<%= f.text_field :mphone, class: 'form-control masked', placeholder: 'Contact Phone Number (Will Remain Private)', data: {format: '(999) 999-9999', placeholder: 'x'} %>
+	</div>
+	<!-- Form Fields -->
+
+	<!-- Form Button -->
+	<div class="actions">
+		<%= f.submit class: "btn btn-primary" %>
+	</div>
+	<!-- Form Button -->
+
+<% end %>
