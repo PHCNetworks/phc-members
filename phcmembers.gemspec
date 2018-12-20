@@ -60,10 +60,7 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.add_dependency 'pg', '~> 1.1'
   
   # Security Dependencies
-  phc_gem_spec.add_dependency 'phcaccountspro', '~> 52.0'
-  
-  # Payments & Payment Gateways
-  phc_gem_spec.add_dependency 'activemerchant', '~> 1.89'
+  phc_gem_spec.add_dependency 'phcaccounts', '~> 22.0'
   
   # Development Dependencies
   phc_gem_spec.add_development_dependency 'sqlite3', '~> 1.3'
