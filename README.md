@@ -1,8 +1,3 @@
-[![security](https://hakiri.io/github/PHCNetworks/phc-members/master.svg)](https://hakiri.io/github/PHCNetworks/phc-members/master)
-[![Code Climate](https://codeclimate.com/github/PHCNetworks/phc-members/badges/gpa.svg)](https://codeclimate.com/github/PHCNetworks/phc-members)
-[![Gem Version](https://badge.fury.io/rb/phcmembers.svg)](https://badge.fury.io/rb/phcmembers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PHCNetworks/phc-members/blob/master/MIT-LICENSE)  
-
 ### PHCMembers(2018) (Membership & Directory Engine) Documentation
 PHCMembers(2018) rails engine to manage membership information and directory listings.  
 
@@ -13,7 +8,7 @@ PHCMembers(2018) rails engine to manage membership information and directory lis
 
 #### Step 1 - Add PHCMembers to your gemfile and run the commands below.   
 
-	gem 'phcmembers', '~> 48.0'
+	gem 'phcmembers'
 	bundle install
 
 #### Step 2 - Add PHCMembers Database Tables  
@@ -39,5 +34,3 @@ Generate views for customization and app integration.
 	rails generate phcmembers:views
 
 #### Additional Information
-
-- [Past Security Patch Notes](https://github.com/PHCNetworks/phc-members/wiki/Critical-Security-Updates)
