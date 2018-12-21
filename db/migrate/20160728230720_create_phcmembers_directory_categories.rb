@@ -4,6 +4,7 @@ class CreatePhcmembersDirectoryCategories < ActiveRecord::Migration[5.2]
 
       t.string :catname
 
+      t.string :user_id
       t.string :slug
 
       t.timestamps

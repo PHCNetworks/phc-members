@@ -6,6 +6,7 @@ module Phcmembers
     # Security & Action Filters
     before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
+    before_action :phcmembers_get_member_profile_info
     before_action :set_member_listing, only: [:show, :edit, :update, :destroy]
 
     # INDEX - Directory Listings
@@ -25,7 +26,6 @@ module Phcmembers
     def new
       profile = Member::Profile.find(params[:profile_id])
       @member_listing = profile.listings.build
-      @member_listing.user_id = current_user.id
     end
 
     # EDIT - Directory Listings

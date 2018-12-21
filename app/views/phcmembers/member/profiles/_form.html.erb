@@ -1,36 +1,37 @@
-<%= form_for(member_profile) do |f| %>
+<!-- PHCMembers Form - Profiles -->
+<%= form_with(model: @member_profile, local: true) do |phc_members_member_profile| %>
 
-	<!-- PHC-Notifi Render Validation -->
+	<!-- PHCNotifi Render Validation -->
 	<%= render 'phcnotifi/validations', :object => @member_profile %>
-	<!-- PHC-Notifi Render Validation -->
+	<!-- PHCNotifi Render Validation -->
 
-	<!-- Form Fields -->
+	<!-- PHCMembers Fields - Profiles -->
 	<div class="form-group field_with_errors">
-		<%= f.label :mfirstname, "Members First Name" %>
-		<%= f.text_field :mfirstname, class: 'form-control', placeholder: 'First Name' %>
+		<%= phc_members_member_profile.label :mfirstname, "First Name*" %>
+		<%= phc_members_member_profile.text_field :mfirstname, class: 'form-control', placeholder: 'First Name' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= f.label :mlastname, "Members Last Name" %>
-		<%= f.text_field :mlastname, class: 'form-control', placeholder: 'Last Name' %>
+		<%= phc_members_member_profile.label :mlastname, "Last Name*" %>
+		<%= phc_members_member_profile.text_field :mlastname, class: 'form-control', placeholder: 'Last Name' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= f.label :mtitle, "Job Title" %>
-		<%= f.text_field :mtitle, class: 'form-control', placeholder: 'Job Title/Salutation' %>
+		<%= phc_members_member_profile.label :mtitle, "Job Title" %>
+		<%= phc_members_member_profile.text_field :mtitle, class: 'form-control', placeholder: 'Job Title/Salutation' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= f.label :memail, "Contact Email Address*" %>
-		<%= f.text_field :memail, class: 'form-control', placeholder: 'Contact Email (Will Remain Private)' %>
+		<%= phc_members_member_profile.label :memail, "Contact Email Address*" %>
+		<%= phc_members_member_profile.text_field :memail, class: 'form-control', placeholder: 'Contact Email (Will Remain Private)' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= f.label :mphone, "Contact Phone Number*" %>
-		<%= f.text_field :mphone, class: 'form-control masked', placeholder: 'Contact Phone Number (Will Remain Private)', data: {format: '(999) 999-9999', placeholder: 'x'} %>
+		<%= phc_members_member_profile.label :mphone, "Contact Phone Number*" %>
+		<%= phc_members_member_profile.text_field :mphone, class: 'form-control masked', placeholder: 'Contact Phone Number (Will Remain Private)', data: {format: '(999) 999-9999', placeholder: 'x'} %>
 	</div>
-	<!-- Form Fields -->
-
-	<!-- Form Button -->
+	<br>
 	<div class="actions">
-		<%= f.submit class: "btn btn-primary" %>
+		<%= phc_members_member_profile.submit class: "btn btn-primary btn-gradient waves-effect waves-light btn-md" %>
 	</div>
-	<!-- Form Button -->
+	<br>
+	<!-- PHCMembers Fields - Profiles -->
 
 <% end %>
+<!-- PHCMembers Form - Profiles -->

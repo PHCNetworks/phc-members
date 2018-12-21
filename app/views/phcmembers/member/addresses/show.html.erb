@@ -6,20 +6,38 @@
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 
-<!-- Page Title Bar -->
-<section class="content-header">
-	<!-- Page Title and BreadCrumb -->
-	<h1><%= yield(:phc_title) %> <small><%= yield(:phc_title_tagline) %></small></h1>
-	<ol class="breadcrumb">
-		<li><%= yield(:phc_breadcrumb_one) %></li>
-		<li class="active"><%= yield(:phc_breadcrumb_two) %></li>
-	</ol>
-	<!-- Page Title and BreadCrumb -->
-</section>
-<!-- Page Title Bar -->
+<!-- Page Content -->
+<div class="panel panel-inverse">
+	<div class="panel-heading">
+		<div class="panel-heading-btn">
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+		</div>
+		<h4 class="panel-title"><%= @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %> Address Details</h4>
+	</div>
+	<div class="panel-body">
+		<!-- Table - Members Listings -->
+		<%= render 'phcmembers/member/addresses/components/address_table' %>
+		<!-- Table - Members Listings -->
+	</div>
+</div>
+<!-- Page Content -->
 
-<!-- Main Content -->
-<section class="content">
-		<%= render 'phcmembers/member/addresses/components/address_main' %>
-</section>
-<!-- Main Content -->
+<!-- Page Content -->
+<div class="panel panel-inverse">
+	<div class="panel-heading">
+		<div class="panel-heading-btn">
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+		</div>
+		<h4 class="panel-title"><%= @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %> Address Change Log</h4>
+	</div>
+	<div class="panel-body">
+		<!-- Table - Members Listing Audit -->
+		<%= render 'phcmembers/member/addresses/components/address_audits_table' %>
+		<!-- Table - Members Listing Audit -->
+	</div>
+</div>
+<!-- Page Content -->

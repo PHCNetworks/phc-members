@@ -1,56 +1,82 @@
 <!DOCTYPE html>
 <html>
+<head>
 
-	<head>
+  <% phc_seo_title "PHCMembers" %>
+  <% phc_seo_description "Secure Membership and Web Directory Management Software" %>
 
-		<title>PHCMembers 2017</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= yield(:phc_seo_title) %></title>
+  <meta name="description" content="<%= yield(:phc_seo_description) %>">
 
-		<%= stylesheet_link_tag    "phcmembers/application", media: "all" %>
-		<%= javascript_include_tag "phcmembers/application" %>
-		<%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <link rel="canonical" href="http://phcmembers.com">
 
-	</head>
+  <!-- Font -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"/>
 
-	<body class="hold-transition skin-blue sidebar-mini">
+  <!-- Requried Style Sheets -->
+  <%= stylesheet_link_tag "phcmembers/application", media: "all", 'data-turbolinks-track': 'reload' %>
 
-		<div class="wrapper">
-			<div class="main_container">
+  <!-- Security -->
+  <%= csrf_meta_tags %>
 
-				<header class="main-header">
+</head>
+<body>
 
-					<!-- Logo with Link -->
-					<%= link_to phcmembers.member_profiles_path, class: "logo" do %>
-						<span class="logo-mini">PHC</span>
-						<span class="logo-lg"><b>PHC</b>Members</span>
-					<% end %>
-					<!-- Logo with Link -->
+  <!-- Page Container -->
+  <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+    <!-- Page Header -->
+    <div id="header" class="header navbar-default">
+      <%= render 'layouts/phcmembers/components/backend/navigation/top_menu' %>
+    </div>
+    <!-- Page Header -->
 
-					<!-- Top Navbar -->
-					<nav class="navbar navbar-static-top">
-						<%= render 'layouts/phcmembers/components/backend/topbar/topbar' %>
-					</nav>
-					<!-- Top Navbar -->
+    <!-- Page Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <%= render 'layouts/phcmembers/components/backend/sidebars/side_menu' %>
+    </div>
+    <div class="sidebar-bg"></div>
+    <!-- Page Sidebar -->
 
-				</header>
+    <!-- Page Content -->
+    <div id="content" class="content">
+      <%= yield %>
+    </div>
+    <!-- Page Content -->
 
-				<aside class="main-sidebar">
-					<%= render 'layouts/phcmembers/components/backend/navigation/navigation' %>
-				</aside>
+    <!-- Footer Content -->
+    <div id="footer" class="footer">
+      <%= render 'layouts/phcmembers/components/backend/footer/footer' %>
+    </div>
+    <!-- Footer Content -->
 
-				<!-- Page Content -->
-				<div class="content-wrapper">
-					<%= yield %>
-				</div>
-				<!-- Page Content -->
+    <!-- Scroll to Top -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Scroll to Top -->
 
-			</div>
-		</div>
+  </div>
+  <!-- Page Container -->
 
-		<!-- Footer -->
-		<footer class="main-footer">
-			<%= render 'layouts/phcmembers/components/backend/footer/footer' %>
-		</footer>
-		<!-- Footer -->
+  <!-- Requried JavaScripts -->
+  <%= javascript_include_tag "phcmembers/application", 'data-turbolinks-track': 'reload' %>
 
-	</body>
+  <!-- WTF Slowing Down my Site. Nothing Nice to Say. Keep Bad Comments to Myself -->
+  <!--[if lt IE 9]>
+		<script src="https://frmwrks.phcnetworks.net/coloradmin/version-latest/admin/template/assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="https://frmwrks.phcnetworks.net/coloradmin/version-latest/admin/template/assets/crossbrowserjs/respond.min.js"></script>
+		<script src="https://frmwrks.phcnetworks.net/coloradmin/version-latest/admin/template/assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+  <!-- WTF Slowing Down my Site. Nothing Nice to Say. Keep Bad Comments to Myself -->
+
+  <script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
+  <!-- Requried JavaScripts -->
+
+</body>
 </html>

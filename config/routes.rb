@@ -2,6 +2,7 @@ Phcmembers::Engine.routes.draw do
 
   # Dashboard (Engine Root)
   get 'modules/dashboards/index'
+  root 'modules/dashboards#index'
 
   # Application API
   namespace :api do
@@ -29,5 +30,8 @@ Phcmembers::Engine.routes.draw do
     resources :categories, class_name: 'Phcmembers::Directory::Category'
     resources :categorylistings, class_name: 'Phcmembers::Directory::Categorylisting'
   end
+  
+  # Add Security Features
+  mount Phcaccounts::Engine => "/"
 
 end

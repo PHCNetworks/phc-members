@@ -12,9 +12,9 @@ PHCMembers(2018) rails engine to manage membership information and directory lis
 	bundle install
 
 #### Step 2 - Add PHCMembers Database Tables  
-To copy PHCMembers' required database migrations, copy each command individually to your terminal's command line.  
+To copy required database migrations, copy each command individually to your terminal's command line.  
 
-	rails phcmembers:install:migrations
+	rails railties:install:migrations
 	rails db:migrate
 
 #### Step 3 - Mount PHCMembers & Add Routes

@@ -16,6 +16,7 @@ class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.2]
 
       t.references :profile
 
+      t.string :user_id
       t.string :slug
 
       t.timestamps

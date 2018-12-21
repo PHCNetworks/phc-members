@@ -1,0 +1,15 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover">
+		<tbody>
+			<% @member_address_versions.each do |member_address_version| %>
+			<tr>
+				<td><span class="label label-primary"><%= member_address_version.event.humanize %></span></td>
+				<td><small>ADDRESS EVENT ID#<%= member_address_version.id %></small></td>
+				<td><%= member_address_version.event.humanize + ' ' + @members_profile_info.mfirstname + ' ' + @members_profile_info.mlastname %> Address Information</td>
+				<td><%= member_address_version.whodunnit %></td>
+				<td><%= l(member_address_version.created_at, format: "%-d/%m/%Y") %> - <%= l(member_address_version.created_at, format: "%H:%M %Z") %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

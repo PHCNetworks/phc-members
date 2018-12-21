@@ -1,0 +1,29 @@
+<div class="profile-header">
+  <!-- Member Profiles - Header - Cover -->
+  <div class="profile-header-cover"></div>
+  <!-- Member Profiles - Header - Cover -->
+
+  <!-- Member Profiles - Header - Content -->
+  <div class="profile-header-content">
+    <div class="profile-header-img">
+      <%= image_tag current_user.gravatar_url :secure => true, :filetype => :png, :size => 128 %>
+    </div>
+    <div class="profile-header-info">
+      <h4 class="m-t-10 m-b-5"><%= current_user.firstname %> <%= current_user.lastname  %></h4>
+      <p class="m-b-10"><%= current_user.username %></p>
+      <%= link_to edit_member_profile_path(@member_profile), class: "btn btn-xs btn-yellow" do %>
+        <i class="fal fa-pencil"></i> Edit Member
+      <% end %>
+    </div>
+  </div>
+  <!-- Member Profiles - Header - Content -->
+
+  <!-- Member Profiles - Header - Tab Bar -->
+  <ul class="profile-header-tab nav nav-tabs">
+    <li class="nav-item"><a href="#profile-addresses" class="nav-link active" data-toggle="tab">MEMBER ADDRESSES</a></li>
+    <li class="nav-item"><a href="#profile-listings" class="nav-link" data-toggle="tab">MEMBER LISTINGS</a></li>
+    <li class="nav-item"><a href="#profile-logs" class="nav-link" data-toggle="tab">MEMBER CHANGE LOG</a></li>
+  </ul>
+  <!-- Member Profiles - Header - Tab Bar -->
+
+</div>

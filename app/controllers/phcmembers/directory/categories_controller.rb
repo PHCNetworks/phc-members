@@ -21,7 +21,6 @@ module Phcmembers
 
     # NEW - Directory Category
     def new
-      @directory_category.user_id = current_user.id
       @directory_category = Directory::Category.new
     end
 

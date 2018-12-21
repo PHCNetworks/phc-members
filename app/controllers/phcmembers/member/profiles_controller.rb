@@ -7,6 +7,7 @@ module Phcmembers
     before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_member_profile, only: [:show, :edit, :update, :destroy]
+    layout "phcmembers/application_full_width", :only => [ :show ]
 
     # INDEX - Member Profile
     def index
@@ -15,15 +16,13 @@ module Phcmembers
 
     # DETAILED PROFILE - Member Profile
     def show
-      @member_profile = Member::Profile.find(params[:id])
+
       @member_profile_versions = Phcmembers::ProfileVersions.where(item_id: @member_profile, item_type: 'Phcmembers::Member::Profile')
     end
 
     # NEW FORM - Member Profile
     def new
       @member_profile = Member::Profile.new
-      @member_profile.user_id = current_user.id
-
     end
 
     # EDIT FORM - Member Profile

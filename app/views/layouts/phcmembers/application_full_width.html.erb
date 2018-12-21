@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <% phc_seo_title "PHCAccounts - Accounts System" %>
+  <% phc_seo_description "PHCNetworks - User Accounts Management System" %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= yield(:phc_seo_title) %></title>
+  <meta name="description" content="<%= yield(:phc_seo_description) %>">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <link rel="canonical" href="http://phcmembers.com">
+
+  <!-- Font -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"/>
+
+  <!-- Requried Style Sheets -->
+  <%= stylesheet_link_tag "phcmembers/application", media: "all", 'data-turbolinks-track': 'reload' %>
+
+  <!-- Security -->
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+  <!-- Page Container -->
+  <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+    <!-- Page Header -->
+    <div id="header" class="header navbar-default">
+      <%= render 'layouts/phcmembers/components/backend/navigation/top_menu' %>
+    </div>
+    <!-- Page Header -->
+
+    <!-- Page Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <%= render 'layouts/phcmembers/components/backend/sidebars/side_menu' %>
+    </div>
+    <div class="sidebar-bg"></div>
+    <!-- Page Sidebar -->
+
+    <!-- Page Content -->
+    <div id="content" class="content content-full-width">
+      <%= yield %>
+    </div>
+    <!-- Page Content -->
+
+    <!-- Footer Content -->
+    <div id="footer" class="footer">
+      <%= render 'layouts/phcmembers/components/backend/footer/footer' %>
+    </div>
+    <!-- Footer Content -->
+
+    <!-- Scroll to Top -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Scroll to Top -->
+
+  </div>
+  <!-- Page Container -->
+
+  <!-- Requried JavaScripts -->
+  <%= javascript_include_tag "phcmembers/application", 'data-turbolinks-track': 'reload' %>
+
+  <!-- WTF Slowing Down my Site. Nothing Nice to Say. Keep Bad Comments to Myself -->
+  <!--[if lt IE 9]>
+		<script src="https://frmwrks.phcnetworks.net/coloradmin/version-latest/admin/template/assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="https://frmwrks.phcnetworks.net/coloradmin/version-latest/admin/template/assets/crossbrowserjs/respond.min.js"></script>
+		<script src="https://frmwrks.phcnetworks.net/coloradmin/version-latest/admin/template/assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+  <!-- WTF Slowing Down my Site. Nothing Nice to Say. Keep Bad Comments to Myself -->
+
+  <script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
+  <!-- Requried JavaScripts -->
+
+</body>
+</html>

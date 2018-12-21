@@ -9,6 +9,7 @@ class CreatePhcmembersMemberProfiles < ActiveRecord::Migration[5.2]
       t.string :mphone
       t.string :mnotes
 
+      t.string :user_id
       t.string :slug
 
       t.timestamps

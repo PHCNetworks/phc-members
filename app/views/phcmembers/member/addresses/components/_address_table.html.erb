@@ -1,0 +1,26 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Street Address</th>
+				<th>Address Line 2</th>
+				<th>City</th>
+				<th>Province</th>
+				<th>Country</th>
+				<th>Postal Code</th>
+				<th>Address Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="highlight"><%= link_to @member_address.mcaddressl1, phcmembers.edit_member_profile_address_path %></td>
+				<td class="highlight"><%= link_to @member_address.mcaddressl2, phcmembers.edit_member_profile_address_path %></td>
+				<td class="highlight"><%= link_to @member_address.mccity, phcmembers.edit_member_profile_address_path %></td>
+				<td class="highlight"><%= link_to @member_address.mcprovince, phcmembers.edit_member_profile_address_path %></td>
+				<td class="highlight"><%= link_to @member_address.mccountry, phcmembers.edit_member_profile_address_path %></td>
+				<td class="highlight"><%= link_to @member_address.mcpostalcode, phcmembers.edit_member_profile_address_path %></td>
+				<td class="highlight"><%= link_to @member_address.mctype, phcmembers.edit_member_profile_address_path %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

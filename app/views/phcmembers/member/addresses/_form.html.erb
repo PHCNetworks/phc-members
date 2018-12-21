@@ -1,44 +1,45 @@
-<%= form_for([@member_address.profile, @member_address], url: form_url) do |f| %>
+<!-- PHCMembers Form - Address -->
+<%= form_for([@member_address.profile, @member_address], url: form_url) do |phc_members_member_address| %>
 
-	<!-- PHC-Notifi Render Validation -->
+	<!-- PHCNotifi Render Validation -->
 	<%= render 'phcnotifi/validations', :object => @member_address %>
-	<!-- PHC-Notifi Render Validation -->
+	<!-- PHCNotifi Render Validation -->
 
-	<!-- Form Fields -->
+	<!-- PHCMembers Fields - Address -->
 	<div class="form-group field_with_errors">
-		<label><%= f.label :mcaddressl1, "Address Line1" %></label>
-		<%= f.text_field :mcaddressl1, class: "form-control", placeholder: "Address Line 1 - Street Address" %>
+		<%= phc_members_member_address.label :mcaddressl1, "Address Line1" %>
+		<%= phc_members_member_address.text_field :mcaddressl1, class: "form-control", placeholder: "Address Line 1 - Street Address" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<label><%= f.label :mcaddressl2, "Address Line2" %></label>
-		<%= f.text_field :mcaddressl2, class: "form-control", placeholder: "Address Line 2 - Box - Suite - Floor" %>
+		<%= phc_members_member_address.label :mcaddressl2, "Address Line2" %>
+		<%= phc_members_member_address.text_field :mcaddressl2, class: "form-control", placeholder: "Address Line 2 - Box - Suite - Floor" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<label><%= f.label :mccity, "City" %></label>
-		<%= f.text_field :mccity, class: "form-control", placeholder: "City" %>
+		<%= phc_members_member_address.label :mccity, "City" %>
+		<%= phc_members_member_address.text_field :mccity, class: "form-control", placeholder: "City" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<label><%= f.label :mcprovince, "Province/State" %></label>
-		<%= f.text_field :mcprovince, class: "form-control", placeholder: "Province/State" %>
+		<%= phc_members_member_address.label :mcprovince, "Province/State" %>
+		<%= phc_members_member_address.text_field :mcprovince, class: "form-control", placeholder: "Province/State" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<label><%= f.label :mccountry, "Country" %></label>
+		<%= phc_members_member_address.label :mccountry, "Country" %>
 		<%= country_select("member_address", "mccountry", { priority_countries: ["CA", "GB", "FR", "US"], selected: "CA" }, { class: 'form-control', data: { attribute: "value" } }) %>
 	</div>
 	<div class="form-group field_with_errors">
-		<label><%= f.label :mcpostalcode, "PostalCode" %></label>
-		<%= f.text_field :mcpostalcode, class: "form-control", placeholder: "PostalCode" %>
+		<%= phc_members_member_address.label :mcpostalcode, "PostalCode" %>
+		<%= phc_members_member_address.text_field :mcpostalcode, class: "form-control", placeholder: "PostalCode" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<label><%= f.label :mctype, "Address Type" %></label>
-		<%= f.select :mctype, [['Billing Address','Billing'],['Street Address','Street'],['Mailing Address','Mailing'],['Home Address','Home'],['Business Address','Business']], {}, class: "form-control" %>
+		<%= phc_members_member_address.label :mctype, "Address Type" %>
+		<%= phc_members_member_address.select :mctype, [['Billing Address','Billing'],['Street Address','Street'],['Mailing Address','Mailing'],['Home Address','Home'],['Business Address','Business']], {}, class: "form-control" %>
 	</div>
-	<!-- Form Fields -->
-
-	<!-- Form Button -->
+	<br>
 	<div class="actions">
-	<%= f.submit class: "btn btn-primary" %>
+		<%= phc_members_member_address.submit class: "btn btn-primary btn-gradient waves-effect waves-light btn-md" %>
 	</div>
-	<!-- Form Button -->
+	<br>
+	<!-- PHCMembers Fields - Address -->
 
 <% end %>
+<!-- PHCMembers Form - Address -->

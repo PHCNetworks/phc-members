@@ -1,0 +1,34 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Company Name</th>
+				<th>Conact Name</th>
+				<th>Street Address</th>
+				<th>Address Line 2</th>
+				<th>City</th>
+				<th>Province</th>
+				<th>Country</th>
+				<th>Postal Code</th>
+				<th>Listing Phone</th>
+				<th>Listing Email</th>
+				<th>Listing Website</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="highlight"><%= link_to @member_listing.mbcompanyname, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbcontactname, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbaddressl1, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbaddressl2, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbcity, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbprovince, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbcountry, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbpostalcode, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbphone, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbcontactemail, phcmembers.edit_member_profile_listing_path %></td>
+				<td class="highlight"><%= link_to @member_listing.mbwebsite, phcmembers.edit_member_profile_listing_path %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
