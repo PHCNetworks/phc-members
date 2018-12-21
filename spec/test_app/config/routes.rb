@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Phcmembers::Engine => "/phcmembers"
+  mount Phcmembers::Engine => "/"
 end
