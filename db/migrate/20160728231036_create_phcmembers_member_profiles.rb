@@ -1,5 +1,6 @@
 class CreatePhcmembersMemberProfiles < ActiveRecord::Migration[5.2]
   def change
+
     create_table :phcmembers_member_profiles do |t|
 
       t.string :mfirstname
@@ -9,11 +10,14 @@ class CreatePhcmembersMemberProfiles < ActiveRecord::Migration[5.2]
       t.string :mphone
       t.string :mnotes
 
-      t.string :user_id
       t.string :slug
+
+      t.string :user_id
+      t.string :org_id
 
       t.timestamps
 
     end
+
   end
 end
