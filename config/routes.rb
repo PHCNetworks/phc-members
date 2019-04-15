@@ -1,21 +1,23 @@
 Phcmembers::Engine.routes.draw do
 
-  # Dashboard (Engine Root)
-  get 'modules/dashboards/index'
-  root 'modules/dashboards#index'
+  # Mount Accounts Engine
+  mount Phcaccounts::Engine, :at => '/'
 
   # Application API
   namespace :api do
-    # Routes for API
-    resources :catsapi, defaults: {format: 'json'} do
-      resources :listapi
+    namespace :v1 do
+      # Routes for API
+      resources :categories, defaults: {format: 'json'} do
+        resources :listings, defaults: {format: 'json'}
+      end
     end
   end
 
-  # Members Section
+  # Application Dashboard
+  get 'dashboard', to: 'member/dashboards#index'
+
+  # Application Members Management
   namespace :member do
-    # Members Main Index
-    root 'profiles#index'
     # Member Routes
     resources :profiles, class_name: 'Phcmembers::Member::Profile' do
       resources :listings, class_name: 'Phcmembers::Member::Listing'
@@ -23,15 +25,10 @@ Phcmembers::Engine.routes.draw do
     end
   end
 
-  # Directory Section
+  # Application Directory Management
   namespace :directory do
     # Members Main Index
-    root 'categories#index'
     resources :categories, class_name: 'Phcmembers::Directory::Category'
-    resources :categorylistings, class_name: 'Phcmembers::Directory::Categorylisting'
   end
-  
-  # Add Security Features
-  mount Phcaccounts::Engine => "/"
 
 end

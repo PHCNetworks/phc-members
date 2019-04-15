@@ -1,15 +1,21 @@
-<%= form_for(directory_category) do |f| %>
+<!-- PHCMembers Form - Directory Categories -->
+<%= form_with(model: @directory_category, local: true) do |phc_members_pro_member_directory_categories| %>
 
-	<!-- PHC-Notifi Render Validation -->
+	<!-- PHCNotifi Render Validation -->
 	<%= render 'phcnotifi/validations', :object => @directory_category %>
+	<!-- PHCNotifi Render Validation -->
 
+	<!-- PHCMembers Field - Directory Categories -->
 	<div class="form-group field_with_errors">
-		<label><%= f.label :catname, "Category Name" %></label>
-		<%= f.text_field :catname, class: "form-control", placeholder: "Directory Category" %>
+		<%= phc_members_pro_member_directory_categories.label :catname, "Category Name" %>
+		<%= phc_members_pro_member_directory_categories.text_field :catname, class: "form-control", placeholder: "Directory Category" %>
 	</div>
-
+	<br>
 	<div class="actions">
-		<%= f.submit class: "btn btn-primary" %>
+		<%= phc_members_pro_member_directory_categories.submit class: "btn btn-primary btn-gradient waves-effect waves-light btn-md" %>
 	</div>
+	<br>
+	<!-- PHCMembers Field - Directory Categories -->
 
 <% end %>
+<!-- PHCMembers Form - Directory Categories -->

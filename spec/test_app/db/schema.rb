@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_21_061347) do
+ActiveRecord::Schema.define(version: 2019_04_15_113545) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,31 +42,6 @@ ActiveRecord::Schema.define(version: 2018_12_21_061347) do
     t.index ["listing_id"], name: "index_categories_listings_on_listing_id"
   end
 
-  create_table "phcaccounts_admins", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "firstname"
-    t.string "lastname"
-    t.string "username"
-    t.string "org_id"
-    t.index ["email"], name: "index_phcaccounts_admins_on_email", unique: true
-    t.index ["firstname"], name: "index_phcaccounts_admins_on_firstname"
-    t.index ["lastname"], name: "index_phcaccounts_admins_on_lastname"
-    t.index ["org_id"], name: "index_phcaccounts_admins_on_org_id", unique: true
-    t.index ["reset_password_token"], name: "index_phcaccounts_admins_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_phcaccounts_admins_on_username", unique: true
-  end
-
   create_table "phcaccounts_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -84,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_12_21_061347) do
     t.string "lastname"
     t.string "username"
     t.string "org_id"
+    t.integer "role"
     t.index ["email"], name: "index_phcaccounts_users_on_email", unique: true
     t.index ["firstname"], name: "index_phcaccounts_users_on_firstname"
     t.index ["lastname"], name: "index_phcaccounts_users_on_lastname"

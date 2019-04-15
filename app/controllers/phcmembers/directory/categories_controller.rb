@@ -10,7 +10,7 @@ module Phcmembers
 
     # INDEX - Directory Category
     def index
-      @directory_categories = Directory::Category.all
+      @directory_categories = Directory::Category
     end
 
     # DETAILED - Directory Category
@@ -21,7 +21,7 @@ module Phcmembers
 
     # NEW - Directory Category
     def new
-      @directory_category = Directory::Category.new
+    	@directory_category = Directory::Category.new
     end
 
     # EDIT - Directory Category
@@ -31,20 +31,18 @@ module Phcmembers
     # POST - Directory Category
     def create
       @directory_category = Directory::Category.new(directory_category_params)
-      @directory_category.user_id = current_user.id
       if @directory_category.save
         redirect_to directory_categories_url, notice: 'Category was successfully created.'
-        else
+      else
           render :new
       end
     end
 
     # PATCH/PUT - Directory Category
     def update
-      @directory_category.user_id = current_user.id
       if @directory_category.update(directory_category_params)
         redirect_to directory_categories_url, notice: 'Category was successfully updated.'
-        else
+      else
           render :edit
       end
     end
@@ -64,7 +62,7 @@ module Phcmembers
 
     # Whitelist
     def directory_category_params
-      params.require(:directory_category).permit(:catname, :slug, :user_id, :username)
+      params.require(:directory_category).permit(:catname, :slug, :user_id, :org_id)
     end
 
   end

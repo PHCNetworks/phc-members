@@ -32,7 +32,7 @@
 	</div>
 	<div class="form-group field_with_errors">
 		<%= phc_members_member_listings.label :mbcountry, "Country" %>
-		<%= country_select("member_listing", "mbcountry", { priority_countries: ["CA", "GB", "FR", "US"], selected: "CA" }, { class: 'form-control', data: { attribute: "value" } }) %>
+		<%= phc_members_member_listings.text_field :mbcountry, class: "form-control", placeholder: "Country" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= phc_members_member_listings.label :mbpostalcode, "Postal Code" %><br>

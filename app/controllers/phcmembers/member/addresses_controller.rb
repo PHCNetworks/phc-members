@@ -2,11 +2,12 @@ require_dependency "phcmembers/application_controller"
 
 module Phcmembers
   class Member::AddressesController < ApplicationController
-
-    # Security & Filters
+    
+    # Include Core Helpers, Security & Action Filters
+    include Phccorehelpers::ApplicationHelper
+    before_action :phcmembers_get_member_profile_info
     before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
-    before_action :phcmembers_get_member_profile_info
     before_action :set_member_address, only: [:show, :edit, :update, :destroy]
 
     # INDEX - Directory Listings
@@ -36,7 +37,6 @@ module Phcmembers
     def create
       @profile = Member::Profile.find(params[:profile_id])
       @member_address = @profile.addresses.create(member_address_params)
-      @member_address.user_id = current_user.id
       if @member_address.save
         redirect_to member_profile_addresses_url, notice: 'Listing was successfully created.'
         else
@@ -46,7 +46,6 @@ module Phcmembers
 
     # PATCH/PUT - Directory Listings
     def update
-      @member_address.user_id = current_user.id
       if @member_address.update(member_address_params)
         redirect_to member_profile_addresses_url, notice: 'Listing was successfully updated.'
         else
@@ -71,7 +70,7 @@ module Phcmembers
 
     # Whitelist
     def member_address_params
-      params.require(:member_address).permit(:mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mctype, :slug, :user_id, :profile_id)
+      params.require(:member_address).permit(:mcaddressl1, :mcaddressl2, :mccity, :mcprovince, :mccountry, :mcpostalcode, :mctype, :user_name, :profile_id, :slug, :user_id, :org_id)
     end
 
   end
