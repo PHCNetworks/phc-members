@@ -4,7 +4,7 @@ module Phcmembers
   class Member::ListingsController < ApplicationController
 
     # Include Core Helpers, Security & Action Filters
-    include Phccorehelpers::ApplicationHelper
+    include Phccorehelpers::PhcpluginsHelper
     before_action :phcmembers_get_member_profile_info
     before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
@@ -39,21 +39,20 @@ module Phcmembers
       @member_listing = @profile.listings.create(member_listing_params)
       @member_listing.user_id = current_user.id
       if @member_listing.save
-        @member_listing.categorylistings.build
         redirect_to member_profile_listings_url, notice: 'Listing was Successfully Created.'
-        else
-          render :new
+      else
+        render :new
       end
     end
 
     # PATCH/PUT - Directory Listings
     def update
+      @profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_listing.user_id = current_user.id
       if @member_listing.update(member_listing_params)
-        @member_listing.categorylistings.build
         redirect_to member_profile_listings_url, notice: 'Listing was Successfully Updated.'
-        else
-          render :edit
+      else
+        render :edit
       end
     end
 

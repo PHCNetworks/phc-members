@@ -375,7 +375,7 @@ GEM
       turbolinks (~> 5.2)
       uglifier (~> 4.1)
       webpacker (~> 4.0)
-    phccorehelpers (3.3.2)
+    phccorehelpers (3.3.4)
       phcadmin1 (~> 48.3)
       phcadmin2 (~> 50.3)
       phcadmin3 (~> 43.3)

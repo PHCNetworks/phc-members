@@ -4,8 +4,7 @@ module Phcmembers
   class Member::ProfilesController < ApplicationController
 
     # Include Core Helpers, Security & Action Filters
-    include Phccorehelpers::ApplicationHelper
-    before_action :phcmembers_get_member_profile_info
+    include Phccorehelpers::PhcpluginsHelper
     before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_member_profile, only: [:show, :edit, :update, :destroy]
@@ -36,8 +35,8 @@ module Phcmembers
       @member_profile = Phcmembers::Member::Profile.new(member_profile_params)
       if @member_profile.save
         redirect_to member_profiles_url, notice: 'Member Profile was Successfully Created.'
-        else
-          render :new
+      else
+        render :new
       end
     end
 
@@ -45,8 +44,8 @@ module Phcmembers
     def update
       if @member_profile.update(member_profile_params)
         redirect_to member_profiles_url, notice: 'Member Profile was Successfully Updated.'
-        else
-          render :edit
+      else
+        render :edit
       end
     end
 

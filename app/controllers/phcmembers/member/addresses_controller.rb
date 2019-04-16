@@ -4,63 +4,64 @@ module Phcmembers
   class Member::AddressesController < ApplicationController
     
     # Include Core Helpers, Security & Action Filters
-    include Phccorehelpers::ApplicationHelper
+    include Phccorehelpers::PhcpluginsHelper
     before_action :phcmembers_get_member_profile_info
     before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_member_address, only: [:show, :edit, :update, :destroy]
 
-    # INDEX - Directory Listings
+    # INDEX - Directory Addresses
     def index
       profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_addresses = profile.addresses
     end
 
-    # LISTINGS DETAILS - Directory Listings
+    # ADDRESSEs DETAILS - Directory Addresses
     def show
       profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_address = profile.addresses.find(params[:id])
-      @member_address_versions = Phcmembers::AddressVersions.where(item_id: @member_address, item_type: 'Phcmembers::Member::Address')
+      @member_address_versions = Phcmembers::ListingVersions.where(item_id: @member_address, item_type: 'Phcmembers::Member::Listing')
     end
 
-    # NEW - Directory Listings
+    # NEW - Directory Addresses
     def new
       profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_address = profile.addresses.build
     end
 
-    # EDIT - Directory Listings
+    # EDIT - Directory Addresses
     def edit
     end
 
-    # POST - Directory Listings
+    # POST - Directory Addresses
     def create
       @profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_address = @profile.addresses.create(member_address_params)
       @member_address.user_id = current_user.id
       if @member_address.save
-        redirect_to member_profile_addresses_url, notice: 'Address was Successfully Created.'
-        else
-          render :new
+        redirect_to member_profile_addresses_url, notice: 'Listing was Successfully Created.'
+      else
+        render :new
       end
     end
 
-    # PATCH/PUT - Directory Listings
+    # PATCH/PUT - Directory Addresses
     def update
+      @profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_address.user_id = current_user.id
       if @member_address.update(member_address_params)
-        redirect_to member_profile_addresses_url, notice: 'Address was Successfully Updated.'
-        else
-          render :edit
+        redirect_to member_profile_addresses_url, notice: 'Listing was Successfully Updated.'
+      else
+        render :edit
       end
     end
 
-    # DELETE - Directory Listings
+    # DELETE - Directory Addresses
     def destroy
       @profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_address = @profile.addresses.find(params[:id])
       @member_address.destroy
-      redirect_to member_profile_addresses_url, notice: 'Address was Successfully Destroyed.'
+      redirect_to member_profile_addresses_url, notice: 'Listing was Successfully Destroyed.'
     end
 
     private
