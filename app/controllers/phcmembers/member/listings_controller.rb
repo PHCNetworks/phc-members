@@ -20,7 +20,7 @@ module Phcmembers
     def show
       profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_listing = profile.listings.find(params[:id])
-      @member_listing_versions = Phcmembers::ListingVersions.where(item_id: @member_listing, item_type: 'Phcmembers::Member::Listing')
+      @member_listing_versions = ListingVersions.where(item_id: @member_listing, item_type: 'Phcmembers::Member::Listing')
     end
 
     # NEW - Directory Listings
@@ -47,7 +47,6 @@ module Phcmembers
 
     # PATCH/PUT - Directory Listings
     def update
-      @profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_listing.user_id = current_user.id
       if @member_listing.update(member_listing_params)
         redirect_to member_profile_listings_url, notice: 'Listing was Successfully Updated.'
