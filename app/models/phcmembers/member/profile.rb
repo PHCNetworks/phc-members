@@ -42,7 +42,7 @@ module Phcmembers
     # Define for Multiple Records
     def phcmembers_profiles_slug
       [
-        [:org_id, :mfirstname, :mlastname]
+        [:mfirstname, :mlastname]
       ]
     end
 

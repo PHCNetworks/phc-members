@@ -47,8 +47,8 @@
           <span>Article Posts</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= is_active_controller('phcpress/article/posts') %>"><%= link_to('Article Index', phcpress.article_posts_path) %></li>
-          <li class="<%= is_active_controller('phcpress/article/posts#new') %>"><%= link_to('New Aritcle', phcpress.new_article_post_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcpress/article/posts') %>"><%= link_to('Article Index', phcpress.article_posts_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcpress/article/posts#new') %>"><%= link_to('New Aritcle', phcpress.new_article_post_path) %></li>
         </ul>
       </li>
       <li class="has-sub">
@@ -58,8 +58,8 @@
           <span>Article Categories</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= is_active_controller('phcpress/article/categories') %>"><%= link_to('Category Index', phcpress.article_categories_path) %></li>
-          <li class="<%= is_active_controller('phcpress/article/categories#new') %>"><%= link_to('New Category', phcpress.new_article_category_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcpress/article/categories') %>"><%= link_to('Category Index', phcpress.article_categories_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcpress/article/categories#new') %>"><%= link_to('New Category', phcpress.new_article_category_path) %></li>
         </ul>
       </li>
       <!-- Sidebar - Sidebar Navigation - PHCPress(Pro) -->
@@ -75,8 +75,8 @@
           <span>Member's Data</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= is_active_controller('phcmembers/member/profiles') %>"><%= link_to('Profile Index', phcmembers.member_profiles_path) %></li>
-          <li class="<%= is_active_controller('phcmembers/member/profiles#new') %>"><%= link_to('New Member Profile', phcmembers.new_member_profile_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcmembers/member/profiles') %>"><%= link_to('Profile Index', phcmembers.member_profiles_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcmembers/member/profiles#new') %>"><%= link_to('New Member Profile', phcmembers.new_member_profile_path) %></li>
         </ul>
       </li>
       <li class="has-sub">
@@ -86,8 +86,8 @@
           <span>Member's Directory</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= is_active_controller('phcmembers/directory/categories') %>"><%= link_to('Directory Index', phcmembers.directory_categories_path) %></li>
-          <li class="<%= is_active_controller('phcmembers/directory/categories#new') %>"><%= link_to('New Directory Listing', phcmembers.new_directory_category_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcmembers/directory/categories') %>"><%= link_to('Directory Index', phcmembers.directory_categories_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcmembers/directory/categories#new') %>"><%= link_to('New Directory Listing', phcmembers.new_directory_category_path) %></li>
         </ul>
       </li>
       <!-- Sidebar - Sidebar Navigation - PHCPress(Pro) -->
@@ -103,8 +103,8 @@
           <span>Script Posts</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= is_active_controller('phcscriptcdn/script/listings') %>"><%= link_to "All Script Listings", phcscriptcdn.script_listings_path %></li>
-      		<li class="<%= is_active_controller('phcscriptcdn/script/listings#new') %>"><%= link_to "Add a New Listing", phcscriptcdn.new_script_listing_path %></li>
+          <li class="<%= phc_menus_active_controller('phcscriptcdn/script/listings') %>"><%= link_to "All Script Listings", phcscriptcdn.script_listings_path %></li>
+      		<li class="<%= phc_menus_active_controller('phcscriptcdn/script/listings#new') %>"><%= link_to "Add a New Listing", phcscriptcdn.new_script_listing_path %></li>
         </ul>
       </li>
       <li class="has-sub">
@@ -114,10 +114,10 @@
           <span>Script Extras</span>
         </a>
         <ul class="sub-menu">
-      		<li class="<%= is_active_controller('phcscriptcdn/script/authors') %>"><%= link_to "Script Authors", phcscriptcdn.script_authors_path %></li>
-      		<li class="<%= is_active_controller('phcscriptcdn/script/licences') %>"><%= link_to "Script Licences", phcscriptcdn.script_licences_path %></li>
-      		<li class="<%= is_active_controller('phcscriptcdn/script/extensions') %>"><%= link_to "Script Extensions", phcscriptcdn.script_extensions_path %></li>
-          <li class="<%= is_active_controller('phcscriptcdn/script/versions') %>"><%= link_to "Script Versions", phcscriptcdn.script_versions_path %></li>
+      		<li class="<%= phc_menus_active_controller('phcscriptcdn/script/authors') %>"><%= link_to "Script Authors", phcscriptcdn.script_authors_path %></li>
+      		<li class="<%= phc_menus_active_controller('phcscriptcdn/script/licences') %>"><%= link_to "Script Licences", phcscriptcdn.script_licences_path %></li>
+      		<li class="<%= phc_menus_active_controller('phcscriptcdn/script/extensions') %>"><%= link_to "Script Extensions", phcscriptcdn.script_extensions_path %></li>
+          <li class="<%= phc_menus_active_controller('phcscriptcdn/script/versions') %>"><%= link_to "Script Versions", phcscriptcdn.script_versions_path %></li>
         </ul>
       </li>
       <!-- Sidebar - Sidebar Navigation - PHCScriptCDN(Pro) -->
@@ -133,8 +133,8 @@
           <span>Accounts Dashboard</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= is_active_controller('phcaccounts/admin/edit') %>"><%= link_to('Settings', phcaccounts.edit_user_registration_path) %></li>
-          <li class="<%= is_active_controller('phcaccounts/admin/new') %>"><%= link_to('Logout', phcaccounts.destroy_user_session_path, method: :delete) %></li>
+          <li class="<%= phc_menus_active_controller('phcaccounts/admin/edit') %>"><%= link_to('Settings', phcaccounts.edit_user_registration_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcaccounts/admin/new') %>"><%= link_to('Logout', phcaccounts.destroy_user_session_path, method: :delete) %></li>
         </ul>
       </li>
       <!-- Sidebar - Sidebar Navigation - PHCAccounts -->

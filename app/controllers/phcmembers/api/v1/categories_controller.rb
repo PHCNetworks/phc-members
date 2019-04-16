@@ -3,8 +3,7 @@ require_dependency "phcmembers/application_controller"
 module Phcmembers
   class Api::V1::CategoriesController < ApplicationController
 
-    # Only Responds to API Requests & Skips Member Profile Info
-    skip_before_action :phcmembers_get_member_profile_info
+    # Only Responds to API Requests
     respond_to :json
 
     # Directory Category API
