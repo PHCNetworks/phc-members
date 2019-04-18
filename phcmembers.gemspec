@@ -63,7 +63,7 @@ Gem::Specification.new do |phc_gem_spec|
   phc_gem_spec.add_dependency 'pg', '~> 1.1'
 
   # Security Dependencies
-  phc_gem_spec.add_dependency 'phcaccounts', '~> 35.0'
+  phc_gem_spec.add_dependency 'phcaccounts', '~> 36.0'
 
   # Development Dependencies
   phc_gem_spec.add_development_dependency 'sqlite3', '~> 1.3', '< 1.4'

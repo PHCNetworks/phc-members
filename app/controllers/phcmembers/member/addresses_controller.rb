@@ -16,7 +16,7 @@ module Phcmembers
       @member_addresses = profile.addresses
     end
 
-    # ADDRESSEs DETAILS - Directory Addresses
+    # ADDRESS DETAILS - Directory Addresses
     def show
       profile = Phcmembers::Member::Profile.find(params[:profile_id])
       @member_address = profile.addresses.find(params[:id])
@@ -35,18 +35,17 @@ module Phcmembers
 
     # POST - Directory Listings
     def create
+      @profile = Member::Profile.find(params[:profile_id])
       @member_address = @profile.addresses.create(member_address_params)
-      @member_address.user_id = current_user.id
       if @member_address.save
-        redirect_to member_profile_addresses_url, notice: 'Address was successfully created.'
-      else
-        render :new
+        redirect_to member_profile_addresses_url, notice: 'Listing was successfully created.'
+        else
+          render :new
       end
     end
 
     # PATCH/PUT - Directory Listings
     def update
-      @member_address.user_id = current_user.id
       if @member_address.update(member_address_params)
         redirect_to member_profile_addresses_url, notice: 'Address was successfully updated.'
       else
