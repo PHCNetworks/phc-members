@@ -40,7 +40,7 @@ module Phcmembers
 		# Define for Multiple Records
 		def phcmembers_address_slug
 			[
-				[:org_id, :address_addressl1, :address_city, :address_province]
+				[:address_addressl1, :address_city, :address_province]
 			]
 		end
 

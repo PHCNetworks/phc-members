@@ -10,7 +10,7 @@ module Phcmembers
 		# Relationships
 		has_and_belongs_to_many :listings, class_name: 'Phcmembers::Member::Listing', :join_table => 'categories_listings'
 		
-		validates :catname,
+		validates :category_name,
 		  length: { minimum: 3 }
 		
 		# Clean URL Define
@@ -19,7 +19,7 @@ module Phcmembers
 		# Define for Multiple Records
 		def phcmembers_category_slug
 			[
-				:org_id, :catname
+				:category_name
 			]
 		end
 	

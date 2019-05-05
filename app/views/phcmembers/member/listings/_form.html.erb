@@ -51,7 +51,7 @@
 		<%= phc_members_member_listings.text_field :listing_website, class: "form-control", placeholder: "Business/Organization: Website (Public)" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.collection_check_boxes :category_ids, Phcmembers::Directory::Category.where(org_id: current_user.org_id), :id, :catname do |listing_category| %>
+		<%= phc_members_member_listings.collection_check_boxes :category_ids, Phcmembers::Directory::Category.where(org_id: current_user.org_id), :id, :category_name do |listing_category| %>
 			<%= listing_category.check_box %>
 			<%= listing_category.label %></br>
 		<% end %>

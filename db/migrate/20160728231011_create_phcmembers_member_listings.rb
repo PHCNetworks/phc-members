@@ -20,8 +20,6 @@ class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.2]
       t.string :slug
 
       t.string :user_id
-      t.string :org_id
-
       t.timestamps
 
     end

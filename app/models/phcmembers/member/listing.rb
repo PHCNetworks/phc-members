@@ -58,7 +58,7 @@ module Phcmembers
     # Define for Multiple Records
     def phcmelisting_erspro_listings_slug
     	[
-    		[:org_id, :listing_companyname, :listing_contactname]
+    		[:listing_companyname, :listing_contactname, :listing_addressl1]
     	]
     end
 

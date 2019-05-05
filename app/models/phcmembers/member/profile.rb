@@ -12,8 +12,8 @@ module Phcmembers
     gravtastic :member_email
 
     # Model Relationships
-    has_many :addresses, class_name: 'Phcmembers::Member::Address'
-    has_many :listings, class_name: 'Phcmembers::Member::Listing'
+    has_many :addresses, class_name: 'Phcmembers::Member::Address', :dependent => :destroy
+    has_many :listings, class_name: 'Phcmembers::Member::Listing', :dependent => :destroy
 
     # Validation for Form Fields
     validates :member_firstname,
@@ -42,7 +42,7 @@ module Phcmembers
     # Define for Multiple Records
     def phcmembers_profiles_slug
       [
-        [:org_id, :member_firstname, :member_lastname]
+        [:member_firstname, :member_lastname]
       ]
     end
 

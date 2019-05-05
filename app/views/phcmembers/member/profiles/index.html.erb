@@ -50,7 +50,7 @@
 								<div class="btn-group d-flex" role="group">
 									<%= link_to 'Details', member_profile, class: "btn btn-primary btn-xs" %>
 									<%= link_to 'Update', edit_member_profile_path(member_profile), class: "btn btn-purple btn-xs" %>
-									<%= link_to 'Remove', member_profile, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+									<%= link_to 'Remove', member_profile, method: :delete, data: { confirm: 'Are you sure? This will also remove the Members addresses and listings. This action cannot be reversed.' }, class: "btn btn-danger btn-xs" %>
 								</div>
 							</td>
 						</tr>
