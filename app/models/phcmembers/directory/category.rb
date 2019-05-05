@@ -8,7 +8,7 @@ module Phcmembers
 		has_paper_trail :class_name => 'Phcmembers::CategoryVersions'
 		
 		# Relationships
-		has_and_belongs_to_many :listings, class_name: 'Phcmembers::Member::Listing', :join_table => 'categories_listings'
+		has_and_belongs_to_many :listings, class_name: 'Phcmembers::Member::Listing', :join_table => 'categories_listings', :dependent => :destroy
 		
 		validates :category_name,
 		  length: { minimum: 3 }
