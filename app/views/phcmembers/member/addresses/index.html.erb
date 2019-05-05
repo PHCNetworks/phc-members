@@ -52,6 +52,7 @@
 							<td><%= link_to member_address.address_type, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
 							<td>
 								<div class="btn-group d-flex" role="group">
+									<%= link_to 'Details', member_profile_address_path(member_address.profile, member_address), class: "btn btn-primary btn-xs" %>
 									<%= link_to 'Update', edit_member_profile_address_path(member_address.profile, member_address), class: "btn btn-purple btn-xs" %>
 									<%= link_to 'Remove', member_profile_address_path(member_address.profile, member_address), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure? This will remove listing information and cannot be reversed.' } %>
 								</div>

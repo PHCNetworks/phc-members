@@ -1,13 +1,13 @@
 <!-- Title System -->
 <% phc_title "Members Manager" %>
 <% phc_title_tagline "Detailed Information" %>
-<% phc_breadcrumb_one link_to "Dashboard", phcmemberspro.dashboard_path %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
 <% phc_breadcrumb_two yield(:phc_title_tagline) %>
 <!-- Title System -->
 
 <!-- Member Profiles - Header -->
 <div class="profile">
-	<%= render 'phcmemberspro/member/profiles/components/profile_header' %>
+	<%= render 'phcmembers/member/profiles/components/profile_header' %>
 </div>
 <!-- Member Profiles - Header -->
 
@@ -28,7 +28,7 @@
 					<h4 class="panel-title"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Information</h4>
 				</div>
 				<div class="panel-body">
-					<%= render 'phcmemberspro/member/profiles/components/profile_information_table' %>
+					<%= render 'phcmembers/member/profiles/components/profile_information_table' %>
 				</div>
 			</div>
 			<!-- Member Profiles - Content - Information -->
@@ -48,7 +48,7 @@
 					<h4 class="panel-title"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Addresses</h4>
 				</div>
 				<div class="panel-body">
-					<%= render 'phcmemberspro/member/profiles/components/profile_addresses_table' %>
+					<%= render 'phcmembers/member/profiles/components/profile_addresses_table' %>
 				</div>
 			</div>
 			<!-- Member Profiles - Content - Addresses -->
@@ -68,7 +68,7 @@
 					<h4 class="panel-title"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Listings</h4>
 				</div>
 				<div class="panel-body">
-					<%= render 'phcmemberspro/member/profiles/components/profile_listings_table' %>
+					<%= render 'phcmembers/member/profiles/components/profile_listings_table' %>
 				</div>
 			</div>
 			<!-- Member Profiles - Content - Listings -->
@@ -88,7 +88,7 @@
 					<h4 class="panel-title"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Change Log</h4>
 				</div>
 				<div class="panel-body">
-					<%= render 'phcmemberspro/member/profiles/components/profile_audits_table' %>
+					<%= render 'phcmembers/member/profiles/components/profile_audits_table' %>
 				</div>
 			</div>
 			<!-- Member Profiles - Content - Audit Log -->

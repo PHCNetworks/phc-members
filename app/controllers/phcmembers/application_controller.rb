@@ -9,7 +9,7 @@ module Phcmembers
         helper Phcmenus::Engine.helpers
         helper Phctitleseo::Engine.helpers
         helper Phcnotifi::Engine.helpers
-        helper Phcaccountspro::Engine.helpers
+        helper Phcaccounts::Engine.helpers
     
         # Papertrail Whodunnit Username
         def user_for_paper_trail

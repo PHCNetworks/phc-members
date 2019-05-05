@@ -1,8 +1,8 @@
 <!-- Title Variables -->
 <% phc_title "Member Listing Manager" %>
-<% phc_title_tagline "Update Listing for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname %>
+<% phc_title_tagline "Update Listing for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname %>
 <% phc_breadcrumb_one link_to "Members List", phcmembers.member_profiles_path %>
-<% phc_breadcrumb_two link_to "Listings for " + @members_profile_info.mfirstname + " " + @members_profile_info.mlastname, phcmembers.member_profile_listings_path %>
+<% phc_breadcrumb_two link_to "Listings for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname, phcmembers.member_profile_listings_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 

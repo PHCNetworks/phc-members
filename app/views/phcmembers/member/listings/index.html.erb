@@ -56,6 +56,7 @@
 							<td class="highlight"><%= link_to member_listing.listing_website, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 							<td>
 								<div class="btn-group d-flex" role="group">
+									<%= link_to 'Details', member_profile_listing_path(member_listing.profile, member_listing), class: "btn btn-primary btn-xs" %>
 									<%= link_to 'Update', edit_member_profile_listing_path(member_listing.profile, member_listing), class: "btn btn-purple btn-xs" %>
 									<%= link_to 'Remove', member_profile_listing_path(member_listing.profile, member_listing), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure? This will remove listing information and cannot be reversed.' } %>
 								</div>

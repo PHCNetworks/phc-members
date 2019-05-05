@@ -1,7 +1,7 @@
 <!-- Title System -->
 <% phc_title "Members Manager" %>
 <% phc_title_tagline "Members List" %>
-<% phc_breadcrumb_one link_to "Dashboard", phcmemberspro.dashboard_path %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
 <% phc_breadcrumb_two yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -58,7 +58,7 @@
 				</tbody>
 			</table>
 			<!-- Button - Members Profile -->
-			<%= link_to phcmemberspro.new_member_profile_path, class: "btn btn-primary btn-sm" do %>
+			<%= link_to phcmembers.new_member_profile_path, class: "btn btn-primary btn-sm" do %>
 				<i class="fas fa-plus-circle"></i>
 				<%= "Add a New Member" %>
 			<% end %>

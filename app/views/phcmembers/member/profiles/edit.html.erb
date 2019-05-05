@@ -1,8 +1,8 @@
 <!-- Title System -->
 <% phc_title "Members Manager" %>
 <% phc_title_tagline "Update Member Information for " + @member_profile.member_firstname + " " + @member_profile.member_lastname %>
-<% phc_breadcrumb_one link_to "Dashboard", phcmemberspro.dashboard_path %>
-<% phc_breadcrumb_two link_to "Member Profiles", phcmemberspro.member_profiles_path %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
+<% phc_breadcrumb_two link_to "Member Profiles", phcmembers.member_profiles_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 

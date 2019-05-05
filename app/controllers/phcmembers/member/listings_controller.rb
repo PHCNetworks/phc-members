@@ -4,7 +4,7 @@ module Phcmembers
   class Member::ListingsController < ApplicationController
 
     # Include Core Helpers, Security & Action Filters
-    include Phccorehelpers::PhcpluginsproHelper
+    include Phccorehelpers::PhcpluginsHelper
     before_action :phcmembers_get_member_profile_info
     before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit

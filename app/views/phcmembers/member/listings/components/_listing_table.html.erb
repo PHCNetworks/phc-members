@@ -4,30 +4,29 @@
 			<tr>
 				<th>Company Name</th>
 				<th>Conact Name</th>
-				<th>Street Address</th>
-				<th>Address Line 2</th>
 				<th>City</th>
 				<th>Province</th>
 				<th>Country</th>
-				<th>Postal Code</th>
 				<th>Listing Phone</th>
-				<th>Listing Email</th>
 				<th>Listing Website</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td class="highlight"><%= link_to @member_listing.mbcompanyname, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbcontactname, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbaddressl1, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbaddressl2, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbcity, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbprovince, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbcountry, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbpostalcode, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbphone, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbcontactemail, phcmembers.edit_member_profile_listing_path %></td>
-				<td class="highlight"><%= link_to @member_listing.mbwebsite, phcmembers.edit_member_profile_listing_path %></td>
+				<td><%= link_to @member_listing.listing_companyname, phcmembers.edit_member_profile_listing_path %></td>
+				<td><%= link_to @member_listing.listing_contactname, phcmembers.edit_member_profile_listing_path %></td>
+				<td><%= link_to @member_listing.listing_city, phcmembers.edit_member_profile_listing_path %></td>
+				<td><%= link_to @member_listing.listing_province, phcmembers.edit_member_profile_listing_path %></td>
+				<td><%= link_to @member_listing.listing_country, phcmembers.edit_member_profile_listing_path %></td>
+				<td><%= link_to @member_listing.listing_phone, phcmembers.edit_member_profile_listing_path %></td>
+				<td><%= link_to @member_listing.listing_website, phcmembers.edit_member_profile_listing_path %></td>
+				<td>
+					<div class="btn-group d-flex" role="group">
+						<%= link_to 'Update', edit_member_profile_listing_path, class: "btn btn-purple btn-xs" %>
+						<%= link_to 'Remove', member_profile_listing_path, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure? This will remove listing information and cannot be reversed.' } %>
+					</div>
+				</td>
 			</tr>
 		</tbody>
 	</table>
