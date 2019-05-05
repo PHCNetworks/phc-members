@@ -1,22 +1,42 @@
 <!-- Title System -->
 <% phc_title "Members Manager" %>
 <% phc_title_tagline "Detailed Information" %>
-<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmemberspro.dashboard_path %>
 <% phc_breadcrumb_two yield(:phc_title_tagline) %>
 <!-- Title System -->
 
 <!-- Member Profiles - Header -->
 <div class="profile">
-	<%= render 'phcmembers/member/profiles/components/profile_header' %>
+	<%= render 'phcmemberspro/member/profiles/components/profile_header' %>
 </div>
 <!-- Member Profiles - Header -->
 
 <!-- Member Profiles - Remove Full Page Width -->
 <div class="profile-content">
-
-	<!-- Member Profiles - Content - Addresses Tab -->
 	<div class="tab-content p-0">
-		<div class="tab-pane fade show active" id="profile-addresses">
+
+		<!-- Member Profiles - Content - Information Tab -->
+		<div class="tab-pane active" id="profile-information">
+			<!-- Member Profiles - Content - Information -->
+			<div class="panel panel-inverse">
+				<div class="panel-heading">
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+					</div>
+					<h4 class="panel-title"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Information</h4>
+				</div>
+				<div class="panel-body">
+					<%= render 'phcmemberspro/member/profiles/components/profile_information_table' %>
+				</div>
+			</div>
+			<!-- Member Profiles - Content - Information -->
+		</div>
+		<!-- Member Profiles - Content - Information Tab -->
+
+		<!-- Member Profiles - Content - Addresses Tab -->
+		<div class="tab-pane" id="profile-addresses">
 			<!-- Member Profiles - Content - Addresses -->
 			<div class="panel panel-inverse">
 				<div class="panel-heading">
@@ -25,19 +45,17 @@
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 					</div>
-					<h4 class="panel-title"><%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Addresses</h4>
+					<h4 class="panel-title"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Addresses</h4>
 				</div>
 				<div class="panel-body">
-					<%= render 'phcmembers/member/profiles/components/profile_addresses_table' %>
+					<%= render 'phcmemberspro/member/profiles/components/profile_addresses_table' %>
 				</div>
 			</div>
 			<!-- Member Profiles - Content - Addresses -->
 		</div>
-	</div>
-	<!-- Member Profiles - Content - Addresses Tab -->
-
-	<!-- Member Profiles - Content - Listings Tab -->
-	<div class="tab-content p-0">
+		<!-- Member Profiles - Content - Addresses Tab -->
+	
+		<!-- Member Profiles - Content - Listings Tab -->
 		<div class="tab-pane fade in" id="profile-listings">
 			<!-- Member Profiles - Content - Listings -->
 			<div class="panel panel-inverse">
@@ -47,19 +65,17 @@
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 					</div>
-					<h4 class="panel-title"><%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Listings</h4>
+					<h4 class="panel-title"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Listings</h4>
 				</div>
 				<div class="panel-body">
-					<%= render 'phcmembers/member/profiles/components/profile_listings_table' %>
+					<%= render 'phcmemberspro/member/profiles/components/profile_listings_table' %>
 				</div>
 			</div>
 			<!-- Member Profiles - Content - Listings -->
 		</div>
-	</div>
-	<!-- Member Profiles - Content - Listings Tab -->
-
-	<!-- Member Profiles - Content - Audit Log Tab -->
-	<div class="tab-content p-0">
+		<!-- Member Profiles - Content - Listings Tab -->
+	
+		<!-- Member Profiles - Content - Audit Log Tab -->
 		<div class="tab-pane fade in" id="profile-logs">
 			<!-- Member Profiles - Content - Audit Log -->
 			<div class="panel panel-inverse">
@@ -69,16 +85,16 @@
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 					</div>
-					<h4 class="panel-title"><%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %> Change Log</h4>
+					<h4 class="panel-title"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Change Log</h4>
 				</div>
 				<div class="panel-body">
-					<%= render 'phcmembers/member/profiles/components/profile_audits_table' %>
+					<%= render 'phcmemberspro/member/profiles/components/profile_audits_table' %>
 				</div>
 			</div>
 			<!-- Member Profiles - Content - Audit Log -->
 		</div>
-	</div>
-	<!-- Member Profiles - Content - Audit Log Tab -->
+		<!-- Member Profiles - Content - Audit Log Tab -->
 
+	</div>
 </div>
 <!-- Member Profiles - Remove Full Page Width -->

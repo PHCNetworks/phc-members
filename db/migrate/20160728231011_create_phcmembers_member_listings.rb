@@ -1,26 +1,30 @@
 class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.2]
   def change
+
     create_table :phcmembers_member_listings do |t|
 
-      t.string :mbcompanyname
-      t.string :mbcontactname
-      t.string :mbaddressl1
-      t.string :mbaddressl2
-      t.string :mbcity
-      t.string :mbprovince
-      t.string :mbcountry
-      t.string :mbpostalcode
-      t.string :mbphone
-      t.string :mbcontactemail
-      t.string :mbwebsite
+      t.string :listing_companyname
+      t.string :listing_contactname
+      t.string :listing_addressl1
+      t.string :listing_addressl2
+      t.string :listing_city
+      t.string :listing_province
+      t.string :listing_country
+      t.string :listing_postalcode
+      t.string :listing_phone
+      t.string :listing_contactemail
+      t.string :listing_website
 
       t.references :profile
 
-      t.string :user_id
       t.string :slug
+
+      t.string :user_id
+      t.string :org_id
 
       t.timestamps
 
     end
+
   end
 end

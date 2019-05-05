@@ -1,6 +1,6 @@
 <!-- Title System -->
 <% phc_title "Directory Category Manager" %>
-<% phc_title_tagline "Edit " + @directory_category.catname + " Category Name" %>
+<% phc_title_tagline "Edit " + @directory_category.category_name + " Category Name" %>
 <% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
 <% phc_breadcrumb_two link_to "Directory Category Index", phcmembers.directory_categories_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>

@@ -1,0 +1,27 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Title</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= @member_profile.member_firstname %></td>
+				<td><%= @member_profile.member_lastname %></td>
+				<td><%= @member_profile.member_title %></td>
+				<td><%= @member_profile.member_email %></td>
+				<td><%= @member_profile.member_phone %></td>
+			</tr>
+			<tr>
+				<td><strong>Note:</strong></td>
+				<td colspan="4"><%= @member_profile.member_notes %></td>	
+			</tr>
+		</tbody>
+	</table>
+	<%= link_to "Update " + @member_profile.member_firstname + " " + @member_profile.member_lastname + " Information", phcmembers.edit_member_profile_path(@member_profile), class: "btn btn-primary btn-xs" %>
+</div>

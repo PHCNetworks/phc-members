@@ -7,24 +7,24 @@
 
 	<!-- PHCMembers Fields - Profiles -->
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :mfirstname, "First Name*" %>
-		<%= phc_members_member_profile.text_field :mfirstname, class: 'form-control', placeholder: 'First Name' %>
+		<%= phc_members_member_profile.label :member_firstname, "First Name*" %>
+		<%= phc_members_member_profile.text_field :member_firstname, class: 'form-control', placeholder: 'First Name' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :mlastname, "Last Name*" %>
-		<%= phc_members_member_profile.text_field :mlastname, class: 'form-control', placeholder: 'Last Name' %>
+		<%= phc_members_member_profile.label :member_lastname, "Last Name*" %>
+		<%= phc_members_member_profile.text_field :member_lastname, class: 'form-control', placeholder: 'Last Name' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :mtitle, "Job Title" %>
-		<%= phc_members_member_profile.text_field :mtitle, class: 'form-control', placeholder: 'Job Title/Salutation' %>
+		<%= phc_members_member_profile.label :member_title, "Job Title" %>
+		<%= phc_members_member_profile.text_field :member_title, class: 'form-control', placeholder: 'Job Title/Salutation' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :memail, "Contact Email Address*" %>
-		<%= phc_members_member_profile.text_field :memail, class: 'form-control', placeholder: 'Contact Email (Will Remain Private)' %>
+		<%= phc_members_member_profile.label :member_email, "Contact Email Address*" %>
+		<%= phc_members_member_profile.text_field :member_email, class: 'form-control', placeholder: 'Contact Email (Will Remain Private)' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :mphone, "Contact Phone Number*" %>
-		<%= phc_members_member_profile.text_field :mphone, class: 'form-control masked', placeholder: 'Contact Phone Number (Will Remain Private)', data: {format: '(999) 999-9999', placeholder: 'x'} %>
+		<%= phc_members_member_profile.label :member_phone, "Contact Phone Number*" %>
+		<%= phc_members_member_profile.text_field :member_phone, class: 'form-control masked', placeholder: 'Contact Phone Number (Will Remain Private)', data: {format: '(999) 999-9999', placeholder: 'x'} %>
 	</div>
 	<br>
 	<div class="actions">

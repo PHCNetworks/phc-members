@@ -1,8 +1,9 @@
-<div class="ibox">
-	<div class="ibox-content text-center">
-
-		<h1><%= @directory_category.catname %></h1>
-
+<div class="panel panel-inverse">
+	<div class="panel-heading">
+		<h4 class="panel-title text-center">Directory Category Options</h4>
+	</div>
+	<div class="panel-body">
+		<h1 class="text-center"><%= @directory_category.category_name %></h1>
 		<div class="text-center">
 			<%= link_to edit_directory_category_path(@directory_category), class: "btn btn-sm btn-primary" do %>
 				<i class="fa fa-pencil-square-o"></i> Update
@@ -11,6 +12,5 @@
 				<i class="fa fa-trash-o"></i> Delete
 			<% end %>
 		</div>
-
 	</div>
 </div>

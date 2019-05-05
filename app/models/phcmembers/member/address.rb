@@ -11,26 +11,26 @@ module Phcmembers
     belongs_to :profile, class_name: 'Phcmembers::Member::Profile'
 
     # Validation for Form Fields
-    validates :mcaddressl1,
+    validates :address_addressl1,
       presence: true,
       length: { minimum: 2 }
 
-    validates :mccity,
+    validates :address_city,
       length: { minimum: 3 }
 
-    validates :mcprovince,
+    validates :address_province,
       presence: true,
       length: { minimum: 2 }
 
-    validates :mccountry,
+    validates :address_country,
       presence: true,
       length: { minimum: 2 }
 
-    validates :mcpostalcode,
+    validates :address_postalcode,
       presence: true,
       length: { minimum: 3 }
 
-    validates :mctype,
+    validates :address_type,
       presence: true,
       length: { minimum: 2 }
 
@@ -40,14 +40,9 @@ module Phcmembers
 		# Define for Multiple Records
 		def phcmembers_address_slug
 			[
-				[:mcaddressl1, :mccity, :mcprovince]
+				[:org_id, :address_addressl1, :address_city, :address_province]
 			]
 		end
-
-    def country_name
-      country = ISO3166::Country[country_code]
-      country.translations[I18n.locale.to_s] || country.mccountry
-    end
 
   end
 end

@@ -1,7 +1,7 @@
 <!-- Title System -->
 <% phc_title "Members Manager" %>
 <% phc_title_tagline "Members List" %>
-<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmemberspro.dashboard_path %>
 <% phc_breadcrumb_two yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -36,19 +36,33 @@
 						<th>Last Name</th>
 						<th>Email</th>
 						<th>Phone</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<% @member_profiles.each do |member_profile| %>
 						<tr>
-							<td><%= link_to member_profile.mfirstname, member_profile %></td>
-							<td><%= link_to member_profile.mlastname, member_profile %></td>
-							<td><%= link_to member_profile.memail, member_profile %></td>
-							<td><%= link_to member_profile.mphone, member_profile %></td>
+							<td><%= link_to member_profile.member_firstname, member_profile %></td>
+							<td><%= link_to member_profile.member_lastname, member_profile %></td>
+							<td><%= link_to member_profile.member_email, member_profile %></td>
+							<td><%= link_to member_profile.member_phone, member_profile %></td>
+							<td>
+								<div class="btn-group d-flex" role="group">
+									<%= link_to 'Details', member_profile, class: "btn btn-primary btn-xs" %>
+									<%= link_to 'Update', edit_member_profile_path(member_profile), class: "btn btn-purple btn-xs" %>
+									<%= link_to 'Remove', member_profile, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+								</div>
+							</td>
 						</tr>
 					<% end %>
 				</tbody>
 			</table>
+			<!-- Button - Members Profile -->
+			<%= link_to phcmemberspro.new_member_profile_path, class: "btn btn-primary btn-sm" do %>
+				<i class="fas fa-plus-circle"></i>
+				<%= "Add a New Member" %>
+			<% end %>
+			<!-- Button - Members Profile -->
 		</div>
 		<!-- Table - Members Profile -->
 	</div>

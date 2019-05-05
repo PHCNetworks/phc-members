@@ -9,30 +9,30 @@ module Phcmembers
 
     # Gravatar
     include Gravtastic
-    gravtastic :memail
+    gravtastic :member_email
 
     # Model Relationships
     has_many :addresses, class_name: 'Phcmembers::Member::Address'
     has_many :listings, class_name: 'Phcmembers::Member::Listing'
 
     # Validation for Form Fields
-    validates :mfirstname,
+    validates :member_firstname,
       presence: true,
       length: { minimum: 1 }
 
-    validates :mlastname,
+    validates :member_lastname,
       presence: true,
       length: { minimum: 1 }
 
-    validates :mtitle,
+    validates :member_title,
       length: { minimum: 2 }
 
-    validates :memail,
+    validates :member_email,
       presence: true,
       length: { minimum: 6 },
       format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Please follow this Email format: *****@********.***" }
 
-    validates :mphone,
+    validates :member_phone,
       presence: true,
       format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Number Format: ***-***-****" }
 
@@ -42,7 +42,7 @@ module Phcmembers
     # Define for Multiple Records
     def phcmembers_profiles_slug
       [
-        [:mfirstname, :mlastname]
+        [:org_id, :member_firstname, :member_lastname]
       ]
     end
 

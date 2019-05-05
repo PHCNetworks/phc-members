@@ -1,2 +1,2 @@
 object @directory_categories
-	attributes :id, :catname
+	attributes :id, :category_name

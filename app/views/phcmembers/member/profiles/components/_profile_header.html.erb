@@ -6,13 +6,13 @@
   <!-- Member Profiles - Header - Content -->
   <div class="profile-header-content">
     <div class="profile-header-img">
-      <%= image_tag @member_profile.gravatar_url :secure => true, :filetype => :png, :size => 128 %>
+      <%= image_tag current_user.gravatar_url :secure => true, :filetype => :png, :size => 128 %>
     </div>
     <div class="profile-header-info">
-      <h4 class="m-t-10 m-b-5"><%= @member_profile.mfirstname + ' ' + @member_profile.mlastname  %></h4>
-      <p class="m-b-10"><%= @member_profile.memail %></p>
+      <h4 class="m-t-10 m-b-5"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname  %></h4>
+      <p class="m-b-10"><%= @member_profile.member_phone %></p>
       <%= link_to edit_member_profile_path(@member_profile), class: "btn btn-xs btn-yellow" do %>
-        <i class="far fa-pencil-alt"></i> Edit Member
+        <i class="far fa-pencil-alt"></i> Update Member Information
       <% end %>
     </div>
   </div>
@@ -20,7 +20,8 @@
 
   <!-- Member Profiles - Header - Tab Bar -->
   <ul class="profile-header-tab nav nav-tabs">
-    <li class="nav-item"><a href="#profile-addresses" class="nav-link active" data-toggle="tab">MEMBER ADDRESSES</a></li>
+    <li class="nav-item"><a href="#profile-information" class="nav-link" data-toggle="tab">MEMBER INFORMATION</a></li>
+    <li class="nav-item"><a href="#profile-addresses" class="nav-link" data-toggle="tab">MEMBER ADDRESSES</a></li>
     <li class="nav-item"><a href="#profile-listings" class="nav-link" data-toggle="tab">MEMBER LISTINGS</a></li>
     <li class="nav-item"><a href="#profile-logs" class="nav-link" data-toggle="tab">MEMBER CHANGE LOG</a></li>
   </ul>
