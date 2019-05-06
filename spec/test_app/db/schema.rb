@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_111146) do
+ActiveRecord::Schema.define(version: 2019_05_06_104861) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 2019_05_05_111146) do
     t.string "category_name"
     t.string "slug"
     t.string "user_id"
-    t.string "org_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -116,53 +115,50 @@ ActiveRecord::Schema.define(version: 2019_05_05_111146) do
   end
 
   create_table "phcmembers_member_addresses", force: :cascade do |t|
-    t.string "address_addressl1"
-    t.string "address_addressl2"
+    t.string "address_address_line_1"
+    t.string "address_address_line_2"
     t.string "address_city"
     t.string "address_province"
     t.string "address_country"
-    t.string "address_postalcode"
+    t.string "address_postal_code"
     t.string "address_type"
     t.integer "profile_id"
     t.string "slug"
     t.string "user_id"
-    t.string "org_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_phcmembers_member_addresses_on_profile_id"
   end
 
   create_table "phcmembers_member_listings", force: :cascade do |t|
-    t.string "listing_companyname"
-    t.string "listing_contactname"
-    t.string "listing_addressl1"
-    t.string "listing_addressl2"
+    t.string "listing_company_name"
+    t.string "listing_contact_name"
+    t.string "listing_address_line_1"
+    t.string "listing_address_line_2"
     t.string "listing_city"
     t.string "listing_province"
     t.string "listing_country"
-    t.string "listing_postalcode"
+    t.string "listing_postal_code"
     t.string "listing_phone"
-    t.string "listing_contactemail"
+    t.string "listing_contact_email"
     t.string "listing_website"
     t.integer "profile_id"
     t.string "slug"
     t.string "user_id"
-    t.string "org_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_phcmembers_member_listings_on_profile_id"
   end
 
   create_table "phcmembers_member_profiles", force: :cascade do |t|
-    t.string "member_firstname"
-    t.string "member_lastname"
+    t.string "member_first_name"
+    t.string "member_last_name"
     t.string "member_title"
     t.string "member_email"
     t.string "member_phone"
     t.string "member_notes"
     t.string "slug"
     t.string "user_id"
-    t.string "org_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,8 +1,8 @@
 <!-- Title Variables -->
 <% phc_title "Member Address Manager" %>
-<% phc_title_tagline "Update Address for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname %>
+<% phc_title_tagline "Update Address for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %>
 <% phc_breadcrumb_one link_to "Members List", phcmembers.member_profiles_path %>
-<% phc_breadcrumb_two link_to "Addresses for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname, phcmembers.member_profile_addresses_path %>
+<% phc_breadcrumb_two link_to "Addresses for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name, phcmembers.member_profile_addresses_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 

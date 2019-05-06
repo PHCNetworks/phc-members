@@ -1,8 +1,8 @@
 <!-- Title Variables -->
 <% phc_title "Member Listing Manager" %>
-<% phc_title_tagline "Detailed Listing Information for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname %>
+<% phc_title_tagline "Detailed Listing Information for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %>
 <% phc_breadcrumb_one link_to "Members List", phcmembers.member_profiles_path %>
-<% phc_breadcrumb_two link_to "Listings for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname, phcmembers.member_profile_listings_path %>
+<% phc_breadcrumb_two link_to "Listings for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name, phcmembers.member_profile_listings_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -26,7 +26,7 @@
 			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
 			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 		</div>
-		<h4 class="panel-title"><%= @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname %> Listing Details</h4>
+		<h4 class="panel-title"><%= @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %> Listing Details</h4>
 	</div>
 	<div class="panel-body">
 		<!-- Table - Members Listings -->
@@ -44,7 +44,7 @@
 			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
 			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 		</div>
-		<h4 class="panel-title"><%= @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname %> Listing Change Log</h4>
+		<h4 class="panel-title"><%= @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %> Listing Change Log</h4>
 	</div>
 	<div class="panel-body">
 		<!-- Table - Members Listing Audit -->

@@ -7,10 +7,10 @@ module Phcmembers
     before_action :authenticate_user!
 
     def index
-      @member_profile = Phcmembers::Member::Profile.where(org_id: current_user.org_id)
-      @member_listing = Phcmembers::Member::Listing.where(org_id: current_user.org_id)
-      @member_address = Phcmembers::Member::Address.where(org_id: current_user.org_id)
-      @directory_category = Phcmembers::Directory::Category.where(org_id: current_user.org_id)
+      @member_profile = Phcmembers::Member::Profile.all
+      @member_listing = Phcmembers::Member::Listing.all
+      @member_address = Phcmembers::Member::Address.all
+      @directory_category = Phcmembers::Directory::Category.all
     end
 
   end

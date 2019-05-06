@@ -7,20 +7,20 @@
 
 	<!-- PHCMembers Fields - Web Directory Listings -->
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_companyname, "Company Name" %>
-		<%= phc_members_member_listings.text_field :listing_companyname, class: "form-control", placeholder: "Business/Organization: Name" %>
+		<%= phc_members_member_listings.label :listing_company_name, "Company Name" %>
+		<%= phc_members_member_listings.text_field :listing_company_name, class: "form-control", placeholder: "Business/Organization: Name" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_contactname, "Contact Name" %>
-		<%= phc_members_member_listings.text_field :listing_contactname, class: "form-control", placeholder: "Business/Organization: Contact Person" %>
+		<%= phc_members_member_listings.label :listing_contact_name, "Contact Name" %>
+		<%= phc_members_member_listings.text_field :listing_contact_name, class: "form-control", placeholder: "Business/Organization: Contact Person" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_addressl1, "Address Line 1" %>
-		<%= phc_members_member_listings.text_field :listing_addressl1, class: "form-control", placeholder: "Location: Street Address" %>
+		<%= phc_members_member_listings.label :listing_address_line_1, "Address Line 1" %>
+		<%= phc_members_member_listings.text_field :listing_address_line_1, class: "form-control", placeholder: "Location: Street Address" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_addressl2, "Address Line 2" %>
-		<%= phc_members_member_listings.text_field :listing_addressl2, class: "form-control", placeholder: "Location: Box - Suite - Floor" %>
+		<%= phc_members_member_listings.label :listing_address_line_2, "Address Line 2" %>
+		<%= phc_members_member_listings.text_field :listing_address_line_2, class: "form-control", placeholder: "Location: Box - Suite - Floor" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= phc_members_member_listings.label :listing_city, "City" %>
@@ -35,23 +35,23 @@
 		<%= phc_members_member_listings.text_field :listing_country, class: "form-control", placeholder: "Country" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_postalcode, "Postal Code" %><br>
-		<%= phc_members_member_listings.text_field :listing_postalcode, class: "form-control", placeholder: "Location: PostalCode" %>
+		<%= phc_members_member_listings.label :listing_postal_code, "Postal Code" %><br>
+		<%= phc_members_member_listings.text_field :listing_postal_code, class: "form-control", placeholder: "Location: PostalCode" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= phc_members_member_listings.label :listing_phone, "Business Phone Number" %>
 		<%= phc_members_member_listings.text_field :listing_phone, class: "form-control", placeholder: "Business/Organization: PhoneNumber (Public)" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_contactemail, "Business General Email" %>
-		<%= phc_members_member_listings.text_field :listing_contactemail, class: "form-control", placeholder: "Business/Organization: Email Address (Public)" %>
+		<%= phc_members_member_listings.label :listing_contact_email, "Business General Email" %>
+		<%= phc_members_member_listings.text_field :listing_contact_email, class: "form-control", placeholder: "Business/Organization: Email Address (Public)" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= phc_members_member_listings.label :listing_website, "Business Website" %>
 		<%= phc_members_member_listings.text_field :listing_website, class: "form-control", placeholder: "Business/Organization: Website (Public)" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.collection_check_boxes :category_ids, Phcmembers::Directory::Category.where(org_id: current_user.org_id), :id, :category_name do |listing_category| %>
+		<%= phc_members_member_listings.collection_check_boxes :category_ids, Phcmembers::Directory::Category.all, :id, :category_name do |listing_category| %>
 			<%= listing_category.check_box %>
 			<%= listing_category.label %></br>
 		<% end %>

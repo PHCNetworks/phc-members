@@ -11,7 +11,7 @@
 		<tbody>
 			<% @member_profile.addresses.each do |members_main_address| %>
 			<tr>
-				<td><%= members_main_address.address_addressl1 %></td>
+				<td><%= members_main_address.address_address_line_1 %></td>
 				<td><%= members_main_address.address_city %></td>
 				<td><%= members_main_address.address_province %></td>
 				<td><%= members_main_address.address_type %></td>
@@ -19,6 +19,6 @@
 			<% end %>
 		</tbody>
 	</table>
-	<%= link_to "See All of " + @member_profile.member_firstname + " " + @member_profile.member_lastname + " Addresses", phcmembers.member_profile_addresses_path(@member_profile), class: "btn btn-primary btn-xs" %>
-	<%= link_to "Add a New Address for " + @member_profile.member_firstname + " " + @member_profile.member_lastname, phcmembers.new_member_profile_address_path(@member_profile), class: "btn btn-purple btn-xs" %>
+	<%= link_to "See All of " + @member_profile.member_first_name + " " + @member_profile.member_last_name + " Addresses", phcmembers.member_profile_addresses_path(@member_profile), class: "btn btn-primary btn-xs" %>
+	<%= link_to "Add a New Address for " + @member_profile.member_first_name + " " + @member_profile.member_last_name, phcmembers.new_member_profile_address_path(@member_profile), class: "btn btn-purple btn-xs" %>
 </div>

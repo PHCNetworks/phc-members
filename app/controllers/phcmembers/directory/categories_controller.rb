@@ -11,7 +11,7 @@ module Phcmembers
 
     # INDEX - Directory Category
     def index
-      @directory_categories = Directory::Category.where(org_id: current_user.org_id)
+      @directory_categories = Directory::Category.all
     end
 
     # DETAILED - Directory Category
@@ -33,7 +33,6 @@ module Phcmembers
     def create
       @directory_category = Directory::Category.new(directory_category_params)
       @directory_category.user_id = current_user.id
-      @directory_category.org_id = current_user.org_id
       if @directory_category.save
         redirect_to directory_categories_url, notice: 'Category was successfully created.'
       else
@@ -65,7 +64,7 @@ module Phcmembers
 
     # Whitelist
     def directory_category_params
-      params.require(:directory_category).permit(:category_name, :slug, :user_id, :org_id)
+      params.require(:directory_category).permit(:category_name, :slug, :user_id)
     end
 
   end

@@ -4,8 +4,8 @@ class CreatePhcmembersMemberProfiles < ActiveRecord::Migration[5.2]
 
     create_table :phcmembers_member_profiles do |t|
 
-      t.string :member_firstname
-      t.string :member_lastname
+      t.string :member_first_name
+      t.string :member_last_name
       t.string :member_title
       t.string :member_email
       t.string :member_phone
@@ -14,8 +14,6 @@ class CreatePhcmembersMemberProfiles < ActiveRecord::Migration[5.2]
       t.string :slug
 
       t.string :user_id
-      t.string :org_id
-
       t.timestamps
 
     end

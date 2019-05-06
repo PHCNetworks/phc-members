@@ -12,7 +12,7 @@ module Phcmembers
 
     # INDEX - Member Profile
     def index
-      @member_profiles = Member::Profile.where(org_id: current_user.org_id)
+      @member_profiles = Member::Profile.all
     end
 
     # DETAILED PROFILE - Member Profile
@@ -34,7 +34,6 @@ module Phcmembers
     def create
       @member_profile = Member::Profile.new(member_profile_params)
       @member_profile.user_id = current_user.id
-      @member_profile.org_id = current_user.org_id
       if @member_profile.save
         redirect_to member_profiles_url, notice: 'Profile was successfully created.'
       else
@@ -66,7 +65,7 @@ module Phcmembers
 
     # Whitelist
     def member_profile_params
-      params.require(:member_profile).permit(:member_firstname, :member_lastname, :member_title, :member_email, :member_phone, :member_notes, :slug, :user_id, :org_id)
+      params.require(:member_profile).permit(:member_first_name, :member_last_name, :member_title, :member_email, :member_phone, :member_notes, :slug, :user_id)
     end
 
   end

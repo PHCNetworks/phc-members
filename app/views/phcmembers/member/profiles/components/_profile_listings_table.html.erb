@@ -11,14 +11,14 @@
 		<tbody>
 			<% @member_profile.listings.each do |member_profile_listing| %>
 			<tr>
-				<td><%= member_profile_listing.listing_companyname %></td>
-				<td><%= member_profile_listing.listing_contactname %></td>
+				<td><%= member_profile_listing.listing_company_name %></td>
+				<td><%= member_profile_listing.listing_contact_name %></td>
 				<td><%= member_profile_listing.listing_city %></td>
 				<td><%= member_profile_listing.listing_phone %></td>
 			</tr>
 			<% end %>
 		</tbody>
 	</table>
-	<%= link_to "See All of " + @member_profile.member_firstname + " " + @member_profile.member_lastname + " Listings", phcmembers.member_profile_listings_path(@member_profile), class: "btn btn-primary btn-xs" %>
-	<%= link_to "Add a New Listing for " + @member_profile.member_firstname + " " + @member_profile.member_lastname, phcmembers.new_member_profile_listing_path(@member_profile), class: "btn btn-purple btn-xs" %>
+	<%= link_to "See All of " + @member_profile.member_first_name + " " + @member_profile.member_last_name + " Listings", phcmembers.member_profile_listings_path(@member_profile), class: "btn btn-primary btn-xs" %>
+	<%= link_to "Add a New Listing for " + @member_profile.member_first_name + " " + @member_profile.member_last_name, phcmembers.new_member_profile_listing_path(@member_profile), class: "btn btn-purple btn-xs" %>
 </div>

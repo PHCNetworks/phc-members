@@ -13,7 +13,7 @@ module Phcmembers
     # INDEX - Directory Listings
     def index
       profile = Member::Profile.find(params[:profile_id])
-      @member_listings = profile.listings.where(org_id: current_user.org_id)
+      @member_listings = profile.listings.all
     end
 
     # LISTINGS DETAILS - Directory Listings
@@ -38,7 +38,6 @@ module Phcmembers
       @profile = Member::Profile.find(params[:profile_id])
       @member_listing = @profile.listings.create(member_listing_params)
       @member_listing.user_id = current_user.id
-      @member_listing.org_id = current_user.org_id
       if @member_listing.save
         redirect_to member_profile_listings_url, notice: 'Listing was successfully created.'
       else
@@ -73,7 +72,7 @@ module Phcmembers
 
     # Whitelist
     def member_listing_params
-      params.require(:member_listing).permit(:listing_companyname, :listing_contactname, :listing_addressl1, :listing_addressl2, :listing_city, :listing_country, :listing_province, :listing_postalcode, :listing_phone, :listing_contactemail, :listing_website, :profile_id, :slug, :user_id, :org_id, category_ids: [])
+      params.require(:member_listing).permit(:listing_company_name, :listing_contact_name, :listing_address_line_1, :listing_address_line_2, :listing_city, :listing_country, :listing_province, :listing_postal_code, :listing_phone, :listing_contact_email, :listing_website, :profile_id, :slug, :user_id, category_ids: [])
     end
 
   end

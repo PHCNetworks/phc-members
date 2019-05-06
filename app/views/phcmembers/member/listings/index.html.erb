@@ -1,6 +1,6 @@
 <!-- Title Variables -->
 <% phc_title "Member Listings Manager" %>
-<% phc_title_tagline "Listings for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname %>
+<% phc_title_tagline "Listings for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %>
 <% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
 <% phc_breadcrumb_two link_to "Members List", phcmembers.member_profiles_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
@@ -47,12 +47,12 @@
 				<tbody>
 					<% @member_listings.each do |member_listing| %>
 						<tr>
-							<td class="highlight"><%= link_to member_listing.listing_companyname, member_profile_listing_path(member_listing.profile, member_listing) %></td>
-							<td class="highlight"><%= link_to member_listing.listing_contactname, member_profile_listing_path(member_listing.profile, member_listing) %></td>
+							<td class="highlight"><%= link_to member_listing.listing_company_name, member_profile_listing_path(member_listing.profile, member_listing) %></td>
+							<td class="highlight"><%= link_to member_listing.listing_contact_name, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 							<td class="highlight"><%= link_to member_listing.listing_city, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 							<td class="highlight"><%= link_to member_listing.listing_province, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 							<td class="highlight"><%= link_to member_listing.listing_phone, member_profile_listing_path(member_listing.profile, member_listing) %></td>
-							<td class="highlight"><%= link_to member_listing.listing_contactemail, member_profile_listing_path(member_listing.profile, member_listing) %></td>
+							<td class="highlight"><%= link_to member_listing.listing_contact_email, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 							<td class="highlight"><%= link_to member_listing.listing_website, member_profile_listing_path(member_listing.profile, member_listing) %></td>
 							<td>
 								<div class="btn-group d-flex" role="group">
@@ -67,7 +67,7 @@
 			</table>
 			<%= link_to phcmembers.new_member_profile_listing_path, class: "btn btn-primary btn-sm" do %>
 				<i class="fas fa-plus-circle"></i> 
-				<%= "Add a New Listing for " + @members_profile_info .member_firstname + " " + @members_profile_info .member_lastname %>
+				<%= "Add a New Listing for " + @members_profile_info .member_first_name + " " + @members_profile_info .member_last_name %>
 			<% end %>
 		</div>
 		<!-- Table - Members Listings -->

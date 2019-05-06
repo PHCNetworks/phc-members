@@ -9,7 +9,7 @@
       <%= image_tag current_user.gravatar_url :secure => true, :filetype => :png, :size => 128 %>
     </div>
     <div class="profile-header-info">
-      <h4 class="m-t-10 m-b-5"><%= @member_profile.member_firstname + ' ' + @member_profile.member_lastname  %></h4>
+      <h4 class="m-t-10 m-b-5"><%= @member_profile.member_first_name + ' ' + @member_profile.member_last_name  %></h4>
       <p class="m-b-10"><%= @member_profile.member_phone %></p>
       <%= link_to edit_member_profile_path(@member_profile), class: "btn btn-xs btn-yellow" do %>
         <i class="far fa-pencil-alt"></i> Update Member Information

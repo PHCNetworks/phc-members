@@ -16,11 +16,11 @@ module Phcmembers
     has_many :listings, class_name: 'Phcmembers::Member::Listing', :dependent => :destroy
 
     # Validation for Form Fields
-    validates :member_firstname,
+    validates :member_first_name,
       presence: true,
       length: { minimum: 1 }
 
-    validates :member_lastname,
+    validates :member_last_name,
       presence: true,
       length: { minimum: 1 }
 
@@ -42,7 +42,7 @@ module Phcmembers
     # Define for Multiple Records
     def phcmembers_profiles_slug
       [
-        [:member_firstname, :member_lastname]
+        [:member_first_name, :member_last_name]
       ]
     end
 

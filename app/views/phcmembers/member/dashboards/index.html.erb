@@ -1,62 +1,54 @@
 <div class="row  border-bottom white-bg dashboard-header">
-
 </div>
+
 <div class="row">
-	<div class="col-lg-12">
-		<div class="wrapper wrapper-content">
 
-			<div class="row">
-
-				<div class="col-lg-3 col-md-6">
-					<div class="widget widget-stats bg-gradient-teal">
-						<div class="stats-icon stats-icon-lg">
-							<i class="fas fa-users fa-fw"></i>
-						</div>
-						<div class="stats-content">
-							<div class="stats-title">Total <%= "Member".pluralize(2) %></div>
-							<div class="stats-number"><%= @member_profile.count(:all) %></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-					<div class="widget widget-stats bg-gradient-blue">
-						<div class="stats-icon stats-icon-lg">
-							<i class="fas fa-globe-asia fa-fw"></i>
-						</div>
-						<div class="stats-content">
-							<div class="stats-title">Total <%= "Address".pluralize(2) %></div>
-							<div class="stats-number"><%= @member_address.count(:all) %></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-					<div class="widget widget-stats bg-gradient-purple">
-						<div class="stats-icon stats-icon-lg">
-							<i class="fas fa-address-card fa-fw"></i>
-						</div>
-						<div class="stats-content">
-							<div class="stats-title">Total <%= "Listing".pluralize(2) %></div>
-							<div class="stats-number"><%= @member_listing.count(:all) %></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-					<div class="widget widget-stats bg-gradient-pink">
-						<div class="stats-icon stats-icon-lg">
-							<i class="fas fa-sitemap fa-fw"></i>
-						</div>
-						<div class="stats-content">
-							<div class="stats-title">Total <%= "Category".pluralize(2) %></div>
-							<div class="stats-number"><%= @directory_category.count(:all) %></div>
-						</div>
-					</div>
-				</div>
-
+	<div class="col-lg-3 col-md-6">
+		<div class="widget widget-stats bg-gradient-teal">
+			<div class="stats-icon stats-icon-lg">
+				<i class="fas fa-users fa-fw"></i>
 			</div>
-
+			<div class="stats-content">
+				<div class="stats-title">Total <%= "Member".pluralize(2) %></div>
+				<div class="stats-number"><%= @member_profile.count(:all) %></div>
+			</div>
 		</div>
 	</div>
+
+	<div class="col-lg-3 col-md-6">
+		<div class="widget widget-stats bg-gradient-blue">
+			<div class="stats-icon stats-icon-lg">
+				<i class="fas fa-globe-asia fa-fw"></i>
+			</div>
+			<div class="stats-content">
+				<div class="stats-title">Total <%= "Address".pluralize(2) %></div>
+				<div class="stats-number"><%= @member_address.count(:all) %></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6">
+		<div class="widget widget-stats bg-gradient-purple">
+			<div class="stats-icon stats-icon-lg">
+				<i class="fas fa-address-card fa-fw"></i>
+			</div>
+			<div class="stats-content">
+				<div class="stats-title">Total <%= "Listing".pluralize(2) %></div>
+				<div class="stats-number"><%= @member_listing.count(:all) %></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6">
+		<div class="widget widget-stats bg-gradient-pink">
+			<div class="stats-icon stats-icon-lg">
+				<i class="fas fa-sitemap fa-fw"></i>
+			</div>
+			<div class="stats-content">
+				<div class="stats-title">Total <%= "Category".pluralize(2) %></div>
+				<div class="stats-number"><%= @directory_category.count(:all) %></div>
+			</div>
+		</div>
+	</div>
+
 </div>

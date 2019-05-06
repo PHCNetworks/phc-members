@@ -12,15 +12,15 @@ module Phcmembers
     has_and_belongs_to_many :categories, class_name: 'Phcmembers::Directory::Category', :join_table => 'categories_listings'
     
     # Validation for Form Fields
-    validates :listing_companyname,
+    validates :listing_company_name,
       presence: true,
       length: { minimum: 2 }
     
-    validates :listing_contactname,
+    validates :listing_contact_name,
       presence: true,
       length: { minimum: 2 }
     
-    validates :listing_addressl1,
+    validates :listing_address_line_1,
       length: { minimum: 3 }
     
     validates :listing_city,
@@ -35,11 +35,11 @@ module Phcmembers
       presence: true,
       length: { minimum: 2 }
     
-    validates :listing_postalcode,
+    validates :listing_postal_code,
       presence: true,
       length: { minimum: 3 }
     
-    validates :listing_contactemail,
+    validates :listing_contact_email,
     	presence: true,
     	length: { minimum: 3 },
     	format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Please follow this Email format: *****@********.***" }
@@ -53,12 +53,12 @@ module Phcmembers
     	format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Member Format: ***-***-****" }
     
     # Clean URL Define
-    friendly_id :phcmelisting_erspro_listings_slug, use: [:slugged, :finders]
+    friendly_id :phcmembers_listings_slug, use: [:slugged, :finders]
     
     # Define for Multiple Records
-    def phcmelisting_erspro_listings_slug
+    def phcmembers_listings_slug
     	[
-    		[:listing_companyname, :listing_contactname, :listing_addressl1]
+    		[:listing_company_name, :listing_contact_name]
     	]
     end
 

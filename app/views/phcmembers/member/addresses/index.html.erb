@@ -1,6 +1,6 @@
 <!-- Title Variables -->
 <% phc_title "Member Address Manager" %>
-<% phc_title_tagline "Addresses for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname %>
+<% phc_title_tagline "Addresses for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %>
 <% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
 <% phc_breadcrumb_two link_to "Members List", phcmembers.member_profiles_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
@@ -45,10 +45,10 @@
 				<tbody>
 					<% @member_addresses.each do |member_address| %>
 						<tr>
-							<td><%= link_to member_address.address_addressl1, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
+							<td><%= link_to member_address.address_address_line_1, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
 							<td><%= link_to member_address.address_city, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
 							<td><%= link_to member_address.address_country, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
-							<td><%= link_to member_address.address_postalcode, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
+							<td><%= link_to member_address.address_postal_code, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
 							<td><%= link_to member_address.address_type, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
 							<td>
 								<div class="btn-group d-flex" role="group">
@@ -63,7 +63,7 @@
 			</table>
 			<%= link_to phcmembers.new_member_profile_address_path, class: "btn btn-primary btn-sm" do %>
 				<i class="fas fa-plus-circle"></i> 
-				<%= "Add a New Address for " + @members_profile_info.member_firstname + " " + @members_profile_info.member_lastname %>
+				<%= "Add a New Address for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %>
 			<% end %>
 		</div>
 		<!-- Table - Members Address -->

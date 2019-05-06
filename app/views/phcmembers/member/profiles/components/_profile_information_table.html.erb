@@ -11,8 +11,8 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td><%= @member_profile.member_firstname %></td>
-				<td><%= @member_profile.member_lastname %></td>
+				<td><%= @member_profile.member_first_name %></td>
+				<td><%= @member_profile.member_last_name %></td>
 				<td><%= @member_profile.member_title %></td>
 				<td><%= @member_profile.member_email %></td>
 				<td><%= @member_profile.member_phone %></td>
@@ -23,5 +23,5 @@
 			</tr>
 		</tbody>
 	</table>
-	<%= link_to "Update " + @member_profile.member_firstname + " " + @member_profile.member_lastname + " Information", phcmembers.edit_member_profile_path(@member_profile), class: "btn btn-primary btn-xs" %>
+	<%= link_to "Update " + @member_profile.member_first_name + " " + @member_profile.member_last_name + " Information", phcmembers.edit_member_profile_path(@member_profile), class: "btn btn-primary btn-xs" %>
 </div>

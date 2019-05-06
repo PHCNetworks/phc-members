@@ -4,16 +4,16 @@ class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.2]
 
     create_table :phcmembers_member_listings do |t|
 
-      t.string :listing_companyname
-      t.string :listing_contactname
-      t.string :listing_addressl1
-      t.string :listing_addressl2
+      t.string :listing_company_name
+      t.string :listing_contact_name
+      t.string :listing_address_line_1
+      t.string :listing_address_line_2
       t.string :listing_city
       t.string :listing_province
       t.string :listing_country
-      t.string :listing_postalcode
+      t.string :listing_postal_code
       t.string :listing_phone
-      t.string :listing_contactemail
+      t.string :listing_contact_email
       t.string :listing_website
 
       t.references :profile
@@ -21,8 +21,6 @@ class CreatePhcmembersMemberListings < ActiveRecord::Migration[5.2]
       t.string :slug
 
       t.string :user_id
-      t.string :org_id
-
       t.timestamps
 
     end

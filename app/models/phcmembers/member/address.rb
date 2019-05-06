@@ -11,7 +11,7 @@ module Phcmembers
     belongs_to :profile, class_name: 'Phcmembers::Member::Profile'
 
     # Validation for Form Fields
-    validates :address_addressl1,
+    validates :address_address_line_1,
       presence: true,
       length: { minimum: 2 }
 
@@ -26,7 +26,7 @@ module Phcmembers
       presence: true,
       length: { minimum: 2 }
 
-    validates :address_postalcode,
+    validates :address_postal_code,
       presence: true,
       length: { minimum: 3 }
 
@@ -40,7 +40,7 @@ module Phcmembers
 		# Define for Multiple Records
 		def phcmembers_address_slug
 			[
-				[:address_addressl1, :address_city, :address_province]
+				[:address_city, :address_province, :address_type]
 			]
 		end
 

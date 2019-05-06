@@ -5,7 +5,7 @@
 			<tr>
 				<td><span class="label label-primary"><%= member_listing_version.event.humanize %></span></td>
 				<td><small>LISTING EVENT ID#<%= member_listing_version.id %></small></td>
-				<td><%= member_listing_version.event.humanize + ' ' + @members_profile_info.member_firstname + ' ' + @members_profile_info.member_lastname %> Listing Information</td>
+				<td><%= member_listing_version.event.humanize + ' ' + @members_profile_info.member_first_name + ' ' + @members_profile_info.member_last_name %> Listing Information</td>
 				<td><%= member_listing_version.whodunnit %></td>
 				<td><%= l(member_listing_version.created_at, format: "%-d/%m/%Y") %> - <%= l(member_listing_version.created_at, format: "%H:%M %Z") %></td>
 			</tr>

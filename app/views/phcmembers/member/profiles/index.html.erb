@@ -42,8 +42,8 @@
 				<tbody>
 					<% @member_profiles.each do |member_profile| %>
 						<tr>
-							<td><%= link_to member_profile.member_firstname, member_profile %></td>
-							<td><%= link_to member_profile.member_lastname, member_profile %></td>
+							<td><%= link_to member_profile.member_first_name, member_profile %></td>
+							<td><%= link_to member_profile.member_last_name, member_profile %></td>
 							<td><%= link_to member_profile.member_email, member_profile %></td>
 							<td><%= link_to member_profile.member_phone, member_profile %></td>
 							<td>

@@ -5,7 +5,7 @@
 			<tr>
 				<td><span class="label label-primary"><%= member_profile_version.event.humanize %></span></td>
 				<td><small>PROFILE EVENT ID#<%= member_profile_version.id %></small></td>
-				<td><%= member_profile_version.event.humanize + ' ' + @member_profile.member_firstname + ' ' + @member_profile.member_lastname %> Profile Information</td>
+				<td><%= member_profile_version.event.humanize + ' ' + @member_profile.member_first_name + ' ' + @member_profile.member_last_name %> Profile Information</td>
 				<td><%= member_profile_version.whodunnit %></td>
 				<td><%= l(member_profile_version.created_at, format: "%-d/%m/%Y") %> - <%= l(member_profile_version.created_at, format: "%H:%M %Z") %></td>
 			</tr>

@@ -3,10 +3,10 @@
 		<tbody>
 			<% @directory_category.listings.each do |member_listing| %>
 				<tr>
-					<td><%= link_to member_listing.listing_companyname, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %></td>
-					<td><%= link_to member_listing.listing_contactname, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %></td>
+					<td><%= link_to member_listing.listing_company_name, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %></td>
+					<td><%= link_to member_listing.listing_contact_name, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %></td>
 					<td><%= link_to member_listing.listing_phone, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %></td>
-					<td><%= link_to member_listing.listing_contactemail, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %></td>
+					<td><%= link_to member_listing.listing_contact_email, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %></td>
 					<td><%= link_to member_listing.listing_website, phcmembers.member_profile_listing_path(member_listing.profile, member_listing) %></td>
 				</tr>
 			<% end %>
