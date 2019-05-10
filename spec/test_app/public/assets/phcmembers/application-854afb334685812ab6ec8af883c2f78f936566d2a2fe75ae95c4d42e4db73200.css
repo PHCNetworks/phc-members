@@ -4,7 +4,7 @@
 @import url("https://cdn.phcnetworks.net/css/animations/animate-css/version-3.7.0/animate.css");
 @import url("https://frmwrks.phcnetworks.net/coloradmin/version-4.3.0/admin/template/assets/css/default/style.css");
 @import url("https://frmwrks.phcnetworks.net/coloradmin/version-4.3.0/admin/template/assets/css/default/style-responsive.css");
-/* line 2, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_fonts.scss */
+/* line 2, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_fonts.scss */
 .phc_logo_light {
   font-family: Arial,Helvetica,sans-serif;
   font-weight: 600;
@@ -14,12 +14,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 10, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_fonts.scss */
+/* line 10, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_fonts.scss */
 .phc_logo_light a:link, .phc_logo_light a:visited, .phc_logo_light a:hover, .phc_logo_light a:active {
   color: #FFFFFF;
 }
 
-/* line 14, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_fonts.scss */
+/* line 14, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_fonts.scss */
 .phc_logo_dark {
   font-family: Arial,Helvetica,sans-serif;
   font-weight: 600;
@@ -29,12 +29,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 22, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_fonts.scss */
+/* line 22, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_fonts.scss */
 .phc_logo_dark a:link, .phc_logo_dark a:visited, .phc_logo_dark a:hover, .phc_logo_dark a:active {
   color: #111111;
 }
 
-/* line 26, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_fonts.scss */
+/* line 26, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_fonts.scss */
 .phc_logo_blue {
   font-family: Arial,Helvetica,sans-serif;
   font-weight: 600;
@@ -44,12 +44,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 34, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_fonts.scss */
+/* line 34, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_fonts.scss */
 .phc_logo_blue a:link, .phc_logo_blue a:visited, .phc_logo_blue a:hover, .phc_logo_blue a:active {
   color: #111111;
 }
 
-/* line 39, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_fonts.scss */
+/* line 39, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_fonts.scss */
 .hanna_hearts {
   color: #E23636;
   animation: pulse 1s ease infinite;
@@ -67,13 +67,13 @@
   }
 }
 
-/* line 50, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_fonts.scss */
+/* line 50, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_fonts.scss */
 h1.phc_headings_one_fix {
   font-size: 36px;
   margin: 0px 0px 0px 0px;
 }
 
-/* line 2, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_hanna_hearts.scss */
+/* line 2, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_hanna_hearts.scss */
 .hanna_hearts {
   color: #E23636;
   animation: pulse 1s ease infinite;
@@ -119,11 +119,11 @@ h1.phc_headings_one_fix {
 }
 
 @-ms-keyframes move-twink-back {
-  /* line 14, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_space_one.scss */
+  /* line 14, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_space_one.scss */
   from {
     background-position: 0 0;
   }
-  /* line 15, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_space_one.scss */
+  /* line 15, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_space_one.scss */
   to {
     background-position: -10000px 5000px;
   }
@@ -157,23 +157,23 @@ h1.phc_headings_one_fix {
 }
 
 @-ms-keyframes move-clouds-back {
-  /* line 31, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_space_one.scss */
+  /* line 31, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_space_one.scss */
   from {
     background-position: 0;
   }
-  /* line 32, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_space_one.scss */
+  /* line 32, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_space_one.scss */
   to {
     background-position: 10000px 0;
   }
 }
 
-/* line 35, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_space_one.scss */
+/* line 35, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_space_one.scss */
 .phc_space_one_stars {
   background: #000 url(https://static.phcnetworks.net/images/phcnetworksnet/components/phc_space_one/images/stars.png) repeat top center;
   z-index: 0;
 }
 
-/* line 40, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_space_one.scss */
+/* line 40, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_space_one.scss */
 .phc_space_one_twinkling {
   background: transparent url(https://static.phcnetworks.net/images/phcnetworksnet/components/phc_space_one/images/twinkling.png) repeat top center;
   z-index: 1;
@@ -184,7 +184,7 @@ h1.phc_headings_one_fix {
   animation: move-twink-back 200s linear infinite;
 }
 
-/* line 50, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_space_one.scss */
+/* line 50, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_space_one.scss */
 .phc_space_one_stars, .phc_space_one_twinkling, .phc_space_one_clouds {
   position: absolute;
   top: 0px;
@@ -196,7 +196,7 @@ h1.phc_headings_one_fix {
   display: block;
 }
 
-/* line 61, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/phcnet/_phc_space_one.scss */
+/* line 61, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/phcnet/_phc_space_one.scss */
 .phc_space_one_clouds {
   background: transparent url(https://static.phcnetworks.net/images/phcnetworksnet/components/phc_space_one/images/clouds.png) repeat top center;
   z-index: 3;
@@ -207,17 +207,22 @@ h1.phc_headings_one_fix {
   animation: move-clouds-back 200s linear infinite;
 }
 
-/* line 2, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/custom/_links.scss */
+/* line 2, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/custom/_links.scss */
 a.phcnet_copyright:link {
   color: #707478;
 }
 
-/* line 5, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/custom/_links.scss */
+/* line 5, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/custom/_links.scss */
 a.phcnet_copyright:visited {
   color: #707478;
 }
 
-/* line 8, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-25.3.2/app/assets/stylesheets/custom/_links.scss */
+/* line 8, ../../../../.rvm/gems/ruby-2.6.0/gems/phcadmin4-26.0.0/app/assets/stylesheets/custom/_links.scss */
 a.phcnet_copyright:hover {
   color: #707478;
+}
+
+/* line 4, ../../app/assets/stylesheets/phcmembers/application.scss */
+div:empty {
+  display: none;
 }

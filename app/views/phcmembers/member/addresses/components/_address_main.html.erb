@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-6">
+		<address class="m-t-5 m-b-5">
+			<div><strong class="text-inverse"><%= @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name  %></strong></div>
+			<div><strong class="text-inverse"><%= @member_address.address_type + " Address" %></strong></div>
+			<div><%= @member_address.address_address_line_1 %></div>
+			<div><%= @member_address.address_address_line_2 %></div>
+			<div><%= @member_address.address_city %> <%= @member_address.address_province %></div>
+			<div><%= @member_address.address_country %> <%= @member_address.address_postal_code %></div>
+		</address>
+	</div>
+</div>
+<br>
+<div class="btn-group d-flex" role="group">
+	<%= link_to 'Update', edit_member_profile_address_path, class: "btn btn-purple btn-xs" %>
+	<%= link_to 'Remove', member_profile_address_path, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure? This will remove listing information and cannot be reversed.' } %>
+</div>

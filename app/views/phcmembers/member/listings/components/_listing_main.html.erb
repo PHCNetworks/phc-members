@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-6">
+		<address class="m-t-5 m-b-5">
+			<div><strong class="text-inverse"><%= @member_listing.listing_company_name %></strong></div>
+			<div><strong class="text-inverse"><%= @member_listing.listing_contact_name %></strong></div>
+			<div><%= @member_listing.listing_address_line_1 %></div>
+			<div><%= @member_listing.listing_address_line_2 %></div>
+			<div><%= @member_listing.listing_city %> <%= @member_listing.listing_province %></div>
+			<div><%= @member_listing.listing_country %> <%= @member_listing.listing_postal_code %></div>
+		</address>
+	</div>
+	<div class="col-6">
+		
+			Phone: <%= @member_listing.listing_phone %><br>
+			Email: <%= @member_listing.listing_contact_email %><br>
+			Website: <%= @member_listing.listing_website %><br>
+	</div>
+</div>
+<br>
+<div class="btn-group d-flex" role="group">
+	<%= link_to 'Update', edit_member_profile_listing_path, class: "btn btn-purple btn-xs" %>
+	<%= link_to 'Remove', member_profile_listing_path, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure? This will remove listing information and cannot be reversed.' } %>
+</div>
