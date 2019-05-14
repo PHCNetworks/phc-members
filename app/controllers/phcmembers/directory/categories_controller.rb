@@ -34,7 +34,7 @@ module Phcmembers
       @directory_category = Directory::Category.new(directory_category_params)
       @directory_category.user_id = current_user.id
       if @directory_category.save
-        redirect_to directory_categories_url, notice: 'Category was successfully created.'
+        redirect_to directory_categories_url, :flash => { :success => 'Category was successfully created.' }
       else
           render :new
       end
@@ -43,7 +43,7 @@ module Phcmembers
     # PATCH/PUT - Directory Category
     def update
       if @directory_category.update(directory_category_params)
-        redirect_to directory_categories_url, notice: 'Category was successfully updated.'
+        redirect_to directory_categories_url, :flash => { :success => 'Category was successfully updated.' }
       else
           render :edit
       end
@@ -52,7 +52,7 @@ module Phcmembers
     # DELETE - Directory Category
     def destroy
       @directory_category.destroy
-      redirect_to directory_categories_url, notice: 'Category was successfully destroyed.'
+      redirect_to directory_categories_url, :flash => { :error => 'Category was successfully destroyed.' }
     end
 
     private

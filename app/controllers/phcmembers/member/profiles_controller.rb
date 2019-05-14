@@ -35,7 +35,7 @@ module Phcmembers
       @member_profile = Member::Profile.new(member_profile_params)
       @member_profile.user_id = current_user.id
       if @member_profile.save
-        redirect_to member_profiles_url, notice: 'Profile was successfully created.'
+        redirect_to member_profiles_url, :flash => { :success => 'Profile was successfully created.' }
       else
         render :new
       end
@@ -44,7 +44,7 @@ module Phcmembers
     # PATCH/PUT - Member Profile
     def update
       if @member_profile.update(member_profile_params)
-        redirect_to member_profiles_url, notice: 'Profile was successfully updated.'
+        redirect_to member_profiles_url, :flash => { :success => 'Profile was successfully updated.' }
       else
         render :edit
       end
@@ -53,7 +53,7 @@ module Phcmembers
     # DELETE - Member Profile
     def destroy
       @member_profile.destroy
-      redirect_to member_profiles_url, notice: 'Profile was successfully destroyed.'
+      redirect_to member_profiles_url, :flash => { :error => 'Profile was successfully destroyed.' }
     end
 
     private

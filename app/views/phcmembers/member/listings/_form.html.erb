@@ -2,7 +2,7 @@
 <%= form_for([@member_listing.profile, @member_listing], url: form_url) do |phc_members_member_listings| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render 'phcnotifi/validations', :object => @member_listing %>
+	<%= render 'phcnotifi/default/validations', :object => @member_listing %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- PHCMembers Fields - Web Directory Listings -->

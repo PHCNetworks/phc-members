@@ -39,7 +39,7 @@ module Phcmembers
       @member_listing = @profile.listings.create(member_listing_params)
       @member_listing.user_id = current_user.id
       if @member_listing.save
-        redirect_to member_profile_listings_url, notice: 'Listing was successfully created.'
+        redirect_to member_profile_listings_url, :flash => { :success => 'Listing was successfully created.' }
       else
           render :new
       end
@@ -49,7 +49,7 @@ module Phcmembers
     def update
       @profile = Member::Profile.find(params[:profile_id])
       if @member_listing.update(member_listing_params)
-        redirect_to member_profile_listings_url, notice: 'Listing was successfully updated.'
+        redirect_to member_profile_listings_url, :flash => { :success => 'Listing was successfully updated.' }
       else
           render :edit
       end
@@ -60,7 +60,7 @@ module Phcmembers
       @profile = Member::Profile.find(params[:profile_id])
       @member_listing = @profile.listings.find(params[:id])
       @member_listing.destroy
-      redirect_to member_profile_listings_url, notice: 'Listing was successfully destroyed.'
+      redirect_to member_profile_listings_url, :flash => { :error => 'Listing was successfully destroyed.' }
     end
 
     private

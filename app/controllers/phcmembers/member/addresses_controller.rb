@@ -39,7 +39,7 @@ module Phcmembers
       @member_address = @profile.addresses.create(member_address_params)
       @member_address.user_id = current_user.id
       if @member_address.save
-        redirect_to member_profile_addresses_url, notice: 'Address was successfully created.'
+        redirect_to member_profile_addresses_url, :flash => { :success => 'Address was successfully created.' }
       else
         render :new
       end
@@ -49,7 +49,7 @@ module Phcmembers
     def update
       @profile = Member::Profile.find(params[:profile_id])
       if @member_address.update(member_address_params)
-        redirect_to member_profile_addresses_url, notice: 'Address was successfully updated.'
+        redirect_to member_profile_addresses_url, :flash => { :success => 'Address was successfully updated.' }
       else
         render :edit
       end
@@ -60,7 +60,7 @@ module Phcmembers
       @profile = Member::Profile.find(params[:profile_id])
       @member_address = @profile.addresses.find(params[:id])
       @member_address.destroy
-      redirect_to member_profile_addresses_url, notice: 'Listing was successfully destroyed.'
+      redirect_to member_profile_addresses_url, :flash => { :error => 'Listing was successfully destroyed.' }
     end
 
     private

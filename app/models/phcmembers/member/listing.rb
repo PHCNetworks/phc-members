@@ -46,7 +46,8 @@ module Phcmembers
     
     validates :listing_website,
     	presence: true,
-    	length: { minimum: 6 }
+    	length: { minimum: 6 },
+    	format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
     
     validates :listing_phone,
     	presence: true,
