@@ -10,12 +10,12 @@
 		</thead>
 		<tbody>
 			<% @member_profile.addresses.each do |members_main_address| %>
-			<tr>
-				<td><%= members_main_address.address_address_line_1 %></td>
-				<td><%= members_main_address.address_city %></td>
-				<td><%= members_main_address.address_province %></td>
-				<td><%= members_main_address.address_type %></td>
-			</tr>
+				<tr>
+					<td><%= members_main_address.address_address_line_1 %></td>
+					<td><%= members_main_address.address_city %></td>
+					<td><%= members_main_address.address_province %></td>
+					<td><%= members_main_address.address_type %></td>
+				</tr>
 			<% end %>
 		</tbody>
 	</table>

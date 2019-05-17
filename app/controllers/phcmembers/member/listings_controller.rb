@@ -10,30 +10,30 @@ module Phcmembers
     before_action :set_paper_trail_whodunnit
     before_action :set_member_listing, only: [:show, :edit, :update, :destroy]
 
-    # INDEX - Directory Listings
+    # INDEX
     def index
       profile = Member::Profile.find(params[:profile_id])
       @member_listings = profile.listings.all
     end
 
-    # LISTINGS DETAILS - Directory Listings
+    # SHOW
     def show
       profile = Member::Profile.find(params[:profile_id])
       @meber_listing = profile.listings.find(params[:id])
       @member_listing_versions = Phcmembers::ListingVersions.where(item_id: @member_listing, item_type: 'Phcmembers::Member::Listing')
     end
 
-    # NEW - Directory Listings
+    # NEW
     def new
       profile = Member::Profile.find(params[:profile_id])
       @member_listing = profile.listings.build
     end
 
-    # EDIT - Directory Listings
+    # EDIT
     def edit
     end
 
-    # POST - Directory Listings
+    # CREATE
     def create
       @profile = Member::Profile.find(params[:profile_id])
       @member_listing = @profile.listings.create(member_listing_params)
@@ -41,21 +41,21 @@ module Phcmembers
       if @member_listing.save
         redirect_to member_profile_listings_url, :flash => { :success => 'Listing was successfully created.' }
       else
-          render :new
+        render :new
       end
     end
 
-    # PATCH/PUT - Directory Listings
+    # UPDATE
     def update
       @profile = Member::Profile.find(params[:profile_id])
       if @member_listing.update(member_listing_params)
         redirect_to member_profile_listings_url, :flash => { :success => 'Listing was successfully updated.' }
       else
-          render :edit
+        render :edit
       end
     end
 
-    # DELETE - Directory Listings
+    # DELETE
     def destroy
       @profile = Member::Profile.find(params[:profile_id])
       @member_listing = @profile.listings.find(params[:id])

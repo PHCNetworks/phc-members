@@ -9,47 +9,47 @@ module Phcmembers
     before_action :set_paper_trail_whodunnit
     before_action :set_directory_category, only: [:show, :edit, :update, :destroy]
 
-    # INDEX - Directory Category
+    # INDEX
     def index
       @directory_categories = Directory::Category.all
     end
 
-    # DETAILED - Directory Category
+    # SHOW
     def show
       @directory_category = Directory::Category.find(params[:id])
       @directory_category_versions = Phcmembers::CategoryVersions.where(item_id: @directory_category, item_type: 'Phcmembers::Directory::Category')
     end
 
-    # NEW - Directory Category
+    # NEW
     def new
-    	@directory_category = Directory::Category.new
+      @directory_category = Directory::Category.new
     end
 
-    # EDIT - Directory Category
+    # EDIT
     def edit
     end
 
-    # POST - Directory Category
+    # CREATE
     def create
       @directory_category = Directory::Category.new(directory_category_params)
       @directory_category.user_id = current_user.id
       if @directory_category.save
         redirect_to directory_categories_url, :flash => { :success => 'Category was successfully created.' }
       else
-          render :new
+        render :new
       end
     end
 
-    # PATCH/PUT - Directory Category
+    # UPDATE
     def update
       if @directory_category.update(directory_category_params)
         redirect_to directory_categories_url, :flash => { :success => 'Category was successfully updated.' }
       else
-          render :edit
+        render :edit
       end
     end
 
-    # DELETE - Directory Category
+    # DELETE
     def destroy
       @directory_category.destroy
       redirect_to directory_categories_url, :flash => { :error => 'Category was successfully destroyed.' }

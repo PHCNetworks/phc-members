@@ -1,20 +1,20 @@
 <div class="ibox">
-	<div class="ibox-content text-center">
+<div class="ibox-content text-center">
 
-		<h1><%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %></h1>
-		<div class="m-b-sm">
-			<%= image_tag @member_profile.gravatar_url, class: 'img-circle' %>
-		</div>
-		<p class="font-bold"><%= @member_profile.mtitle %></p>
+<h1><%= @member_profile.mfirstname + ' ' + @member_profile.mlastname %></h1>
+<div class="m-b-sm">
+<%= image_tag @member_profile.gravatar_url, class: 'img-circle' %>
+</div>
+<p class="font-bold"><%= @member_profile.mtitle %></p>
 
-		<div class="text-center">
-			<%= link_to edit_member_profile_path(@member_profile), class: "btn btn-sm btn-primary" do %>
-				<i class="fa fa-pencil-square-o"></i> Update
-			<% end %>
-			<%= link_to @member_profile, method: :delete, data: { confirm: 'Are you sure? Removing a member will delete all records, including listings information and any member directory connections.' }, class: "btn btn-sm btn-danger" do %>
-				<i class="fa fa-trash-o"></i> Delete
-			<% end %>
-		</div>
+<div class="text-center">
+<%= link_to edit_member_profile_path(@member_profile), class: "btn btn-sm btn-primary" do %>
+<i class="fa fa-pencil-square-o"></i> Update
+<% end %>
+<%= link_to @member_profile, method: :delete, data: { confirm: 'Are you sure? Removing a member will delete all records, including listings information and any member directory connections.' }, class: "btn btn-sm btn-danger" do %>
+<i class="fa fa-trash-o"></i> Delete
+<% end %>
+</div>
 
-	</div>
+</div>
 </div>

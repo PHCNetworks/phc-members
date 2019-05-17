@@ -7,29 +7,32 @@
 
 <!-- Page Bradcrumbs -->
 <ol class="breadcrumb pull-right">
-	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
-	<li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+  <li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+  <li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
 </ol>
 <!-- Page Bradcrumbs -->
 
 <!-- Page Header -->
 <h1 class="page-header"><%= yield(:phc_title) %></h1>
 <!-- Page Header -->
-			
-<!-- Page Content -->
+
+<!-- Page & Panel Content -->
 <div class="panel panel-inverse">
-	<div class="panel-heading">
-		<div class="panel-heading-btn">
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-		</div>
-		<h4 class="panel-title"><%= yield(:phc_title) %></h4>
-	</div>
-	<div class="panel-body">
-		<!-- Table - Members Profile -->
+  <!-- Panel Heading -->
+  <div class="panel-heading">
+    <div class="panel-heading-btn">
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+    </div>
+    <h4 class="panel-title"><%= yield(:phc_title_tagline) %></h4>
+  </div>
+  <!-- Panel Heading -->
+  <!-- Panel Body -->
+  <div class="panel-body">
+		<!-- Table - Member - Profiles - Index -->
 		<div class="table-responsive">
-			<table class="table table-striped table-bordered table-hover">
+			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
 						<th>First Name</th>
@@ -57,14 +60,13 @@
 					<% end %>
 				</tbody>
 			</table>
-			<!-- Button - Members Profile -->
 			<%= link_to phcmembers.new_member_profile_path, class: "btn btn-primary btn-sm" do %>
 				<i class="fas fa-plus-circle"></i>
-				<%= "Add a New Member" %>
+				Add a New Member
 			<% end %>
-			<!-- Button - Members Profile -->
 		</div>
-		<!-- Table - Members Profile -->
-	</div>
+		<!-- Table - Member - Profiles - Index -->
+  </div>
+  <!-- Panel Body -->
 </div>
-<!-- Page Content -->
+<!-- Page & Panel Content -->

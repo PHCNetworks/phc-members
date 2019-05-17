@@ -8,7 +8,7 @@
   <!-- SEO System -->
 
   <!-- SEO and Site Description -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title><%= yield(:phc_seo_title) %></title>
   <meta name="description" content="<%= yield(:phc_seo_description) %>">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
@@ -32,7 +32,7 @@
 <body>
 
   <!-- Page Container -->
-  <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+  <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
 
     <!-- Page Header -->
     <div id="header" class="header navbar-default">
@@ -49,6 +49,7 @@
 
     <!-- Page Content -->
     <div id="content" class="content content-full-width">
+      <%= render 'phcnotifi/default/notifications' %>
       <%= yield %>
     </div>
     <!-- Page Content -->
@@ -68,10 +69,10 @@
 
   <!-- JavaScript Loader -->
   <script>
-		$(document).ready(function() {
-			App.init();
-		});
-	</script>
+    $(document).ready(function() {
+      App.init();
+    });
+  </script>
   <!-- JavaScript Loader -->
 
 </body>

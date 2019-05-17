@@ -17,7 +17,7 @@
 <!-- Page Header -->
 <h1 class="page-header"><%= yield(:phc_title) %></h1>
 <!-- Page Header -->
-			
+
 <!-- Page Content -->
 <div class="panel panel-inverse">
 	<div class="panel-heading">
@@ -29,7 +29,9 @@
 		<h4 class="panel-title"><%= yield(:phc_title) %></h4>
 	</div>
 	<div class="panel-body">
+		<!-- Form to Edit Member Listing -->
 		<%= render 'form', { form_url: member_profile_listing_path } %>
+		<!-- Form to Edit Member Listing -->
 	</div>
 </div>
 <!-- Page Content -->

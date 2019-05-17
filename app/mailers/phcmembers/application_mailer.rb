@@ -1,6 +1,6 @@
 module Phcmembers
   class ApplicationMailer < ActionMailer::Base
-    default from: ENV['PHC_MEMBERS_PRO_EMAIL_ADDRESS']
+    default from: 'from@example.com'
     layout 'mailer'
   end
 end

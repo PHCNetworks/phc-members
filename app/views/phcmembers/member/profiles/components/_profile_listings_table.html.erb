@@ -10,12 +10,12 @@
 		</thead>
 		<tbody>
 			<% @member_profile.listings.each do |member_profile_listing| %>
-			<tr>
-				<td><%= member_profile_listing.listing_company_name %></td>
-				<td><%= member_profile_listing.listing_contact_name %></td>
-				<td><%= member_profile_listing.listing_city %></td>
-				<td><%= member_profile_listing.listing_phone %></td>
-			</tr>
+				<tr>
+					<td><%= member_profile_listing.listing_company_name %></td>
+					<td><%= member_profile_listing.listing_contact_name %></td>
+					<td><%= member_profile_listing.listing_city %></td>
+					<td><%= member_profile_listing.listing_phone %></td>
+				</tr>
 			<% end %>
 		</tbody>
 	</table>

@@ -1,67 +1,68 @@
-<!-- PHCMembers Form - Web Directory Listings -->
-<%= form_for([@member_listing.profile, @member_listing], url: form_url) do |phc_members_member_listings| %>
+<!-- Form - Member - Listing -->
+<%= form_with(model: [ @member_profile, @member_listing], url: form_url, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
 	<%= render 'phcnotifi/default/validations', :object => @member_listing %>
 	<!-- PHCNotifi Render Validation -->
 
-	<!-- PHCMembers Fields - Web Directory Listings -->
+	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_company_name, "Company Name" %>
-		<%= phc_members_member_listings.text_field :listing_company_name, class: "form-control", placeholder: "Business/Organization: Name" %>
+		<%= form.label :listing_company_name, "Company Name" %>
+		<%= form.text_field :listing_company_name, class: "form-control", placeholder: "Business/Organization: Name" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_contact_name, "Contact Name" %>
-		<%= phc_members_member_listings.text_field :listing_contact_name, class: "form-control", placeholder: "Business/Organization: Contact Person" %>
+		<%= form.label :listing_contact_name, "Contact Name" %>
+		<%= form.text_field :listing_contact_name, class: "form-control", placeholder: "Business/Organization: Contact Person" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_address_line_1, "Address Line 1" %>
-		<%= phc_members_member_listings.text_field :listing_address_line_1, class: "form-control", placeholder: "Location: Street Address" %>
+		<%= form.label :listing_address_line_1, "Address Line 1" %>
+		<%= form.text_field :listing_address_line_1, class: "form-control", placeholder: "Location: Street Address" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_address_line_2, "Address Line 2" %>
-		<%= phc_members_member_listings.text_field :listing_address_line_2, class: "form-control", placeholder: "Location: Box - Suite - Floor" %>
+		<%= form.label :listing_address_line_2, "Address Line 2" %>
+		<%= form.text_field :listing_address_line_2, class: "form-control", placeholder: "Location: Box - Suite - Floor" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_city, "City" %>
-		<%= phc_members_member_listings.text_field :listing_city, class: "form-control", placeholder: "Location: City" %>
+		<%= form.label :listing_city, "City" %>
+		<%= form.text_field :listing_city, class: "form-control", placeholder: "Location: City" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_province, "Province/State" %>
-		<%= phc_members_member_listings.text_field :listing_province, class: "form-control", placeholder: "Location: Province/State" %>
+		<%= form.label :listing_province, "Province/State" %>
+		<%= form.text_field :listing_province, class: "form-control", placeholder: "Location: Province/State" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_country, "Country" %>
-		<%= phc_members_member_listings.text_field :listing_country, class: "form-control", placeholder: "Country" %>
+		<%= form.label :listing_country, "Country" %>
+		<%= form.text_field :listing_country, class: "form-control", placeholder: "Country" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_postal_code, "Postal Code" %><br>
-		<%= phc_members_member_listings.text_field :listing_postal_code, class: "form-control", placeholder: "Location: PostalCode" %>
+		<%= form.label :listing_postal_code, "Postal Code" %><br>
+		<%= form.text_field :listing_postal_code, class: "form-control", placeholder: "Location: PostalCode" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_phone, "Business Phone Number" %>
-		<%= phc_members_member_listings.text_field :listing_phone, class: "form-control", placeholder: "Business/Organization: PhoneNumber (Public)" %>
+		<%= form.label :listing_phone, "Business Phone Number" %>
+		<%= form.text_field :listing_phone, class: "form-control", placeholder: "Business/Organization: PhoneNumber (Public)" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_contact_email, "Business General Email" %>
-		<%= phc_members_member_listings.text_field :listing_contact_email, class: "form-control", placeholder: "Business/Organization: Email Address (Public)" %>
+		<%= form.label :listing_contact_email, "Business General Email" %>
+		<%= form.text_field :listing_contact_email, class: "form-control", placeholder: "Business/Organization: Email Address (Public)" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.label :listing_website, "Business Website" %>
-		<%= phc_members_member_listings.text_field :listing_website, class: "form-control", placeholder: "Business/Organization: Website (Public)" %>
+		<%= form.label :listing_website, "Business Website" %>
+		<%= form.text_field :listing_website, class: "form-control", placeholder: "Business/Organization: Website (Public)" %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_listings.collection_check_boxes :category_ids, Phcmembers::Directory::Category.all, :id, :category_name do |listing_category| %>
+		<%= form.collection_check_boxes :category_ids, Phcmembers::Directory::Category.all, :id, :category_name do |listing_category| %>
 			<%= listing_category.check_box %>
-			<%= listing_category.label %></br>
+			<%= listing_category.label %><br>
 		<% end %>
 	</div>
-	<br>
+	<!-- Form Input Fields -->
+
+	<!-- Form Submition Button -->
 	<div class="actions">
-		<%= phc_members_member_listings.submit class: "btn btn-primary btn-gradient waves-effect waves-light btn-md" %>
+		<%= form.submit class: "btn btn-primary btn-md" %>
 	</div>
-	<br>
-	<!-- PHCMembers Fields - Web Directory Listings -->
+	<!-- For Submition Button -->
 
 <% end %>
-<!-- PHCMembers Form - Web Directory Listings -->
+<!-- Form - Member - Listing -->

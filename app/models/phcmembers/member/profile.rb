@@ -4,32 +4,29 @@ module Phcmembers
     # Clean URL Initialize
     extend FriendlyId
 
-    # Add Paper Trail
+		# Paper Trail Initialize
     has_paper_trail :class_name => 'Phcmembers::ProfileVersions'
 
-    # Gravatar
+    # Profile Gravatar
     include Gravtastic
     gravtastic :member_email
 
-    # Model Relationships
+    # Relationships
     has_many :addresses, class_name: 'Phcmembers::Member::Address', :dependent => :destroy
     has_many :listings, class_name: 'Phcmembers::Member::Listing', :dependent => :destroy
 
-    # Validation for Form Fields
+    # Form Fields Validation
     validates :member_first_name,
-      presence: true,
-      length: { minimum: 1 }
+      presence: true
 
     validates :member_last_name,
-      presence: true,
-      length: { minimum: 1 }
+      presence: true
 
     validates :member_title,
-      length: { minimum: 2 }
+      presence: true
 
     validates :member_email,
       presence: true,
-      length: { minimum: 6 },
       format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Please follow this Email format: *****@********.***" }
 
     validates :member_phone,
@@ -37,10 +34,9 @@ module Phcmembers
       format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Number Format: ***-***-****" }
 
     # Clean URL Define
-    friendly_id :phcmembers_profiles_slug, use: [:slugged, :finders]
+    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
 
-    # Define for Multiple Records
-    def phcmembers_profiles_slug
+    def phc_nice_url_slug
       [
         [:member_first_name, :member_last_name]
       ]

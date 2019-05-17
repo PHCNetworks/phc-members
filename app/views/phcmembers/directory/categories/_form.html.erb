@@ -1,21 +1,22 @@
-<!-- PHCMembers Form - Directory Categories -->
+<!-- Form - Directory - Category -->
 <%= form_with(model: @directory_category, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
 	<%= render 'phcnotifi/default/validations', :object => @directory_category %>
 	<!-- PHCNotifi Render Validation -->
 
-	<!-- PHCMembers Field - Directory Categories -->
+	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
 		<%= form.label :category_name, "Category Name" %>
 		<%= form.text_field :category_name, class: "form-control", placeholder: "Directory Category" %>
 	</div>
-	<br>
+	<!-- Form Input Fields -->
+
+	<!-- Form Submition Button -->
 	<div class="actions">
-		<%= form.submit class: "btn btn-primary btn-gradient waves-effect waves-light btn-md" %>
+		<%= form.submit class: "btn btn-primary btn-md" %>
 	</div>
-	<br>
-	<!-- PHCMembers Field - Directory Categories -->
+	<!-- For Submition Button -->
 
 <% end %>
-<!-- PHCMembers Form - Directory Categories -->
+<!-- Form - Directory - Category -->

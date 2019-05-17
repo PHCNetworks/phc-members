@@ -1,48 +1,39 @@
 module Phcmembers
   class Member::Address < ApplicationRecord
 
-		# Clean URL Initialize
-		extend FriendlyId
+    # Clean URL Initialize
+    extend FriendlyId
 
-		# Add Paper Trail
-		has_paper_trail :class_name => 'Phcmembers::AddressVersions'
+		# Paper Trail Initialize
+    has_paper_trail :class_name => 'Phcmembers::AddressVersions'
 
-		# Model Relationships
+    # Relationships
     belongs_to :profile, class_name: 'Phcmembers::Member::Profile'
 
-    # Validation for Form Fields
+    # Form Fields Validation
     validates :address_address_line_1,
-      presence: true,
-      length: { minimum: 2 }
+      presence: true
 
     validates :address_city,
-      length: { minimum: 3 }
+      presence: true
 
     validates :address_province,
-      presence: true,
-      length: { minimum: 2 }
+      presence: true
 
     validates :address_country,
-      presence: true,
-      length: { minimum: 2 }
+      presence: true
 
     validates :address_postal_code,
-      presence: true,
-      length: { minimum: 3 }
-
-    validates :address_type,
-      presence: true,
-      length: { minimum: 2 }
+      presence: true
 
     # Clean URL Define
-		friendly_id :phcmembers_address_slug, use: [:slugged, :finders]
+    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
 
-		# Define for Multiple Records
-		def phcmembers_address_slug
-			[
-				[:address_city, :address_province, :address_type]
-			]
-		end
+    def phc_nice_url_slug
+      [
+        [:address_city, :address_province, :address_type]
+      ]
+    end
 
   end
 end

@@ -6,6 +6,7 @@ module Phcmembers
     # Security & Action Filters
     before_action :authenticate_user!
 
+    # INDEX
     def index
       @member_profile = Phcmembers::Member::Profile.all
       @member_listing = Phcmembers::Member::Listing.all

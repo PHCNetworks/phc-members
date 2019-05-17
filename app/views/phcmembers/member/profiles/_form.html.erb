@@ -1,41 +1,42 @@
-<!-- PHCMembers Form - Profiles -->
-<%= form_with(model: @member_profile, local: true) do |phc_members_member_profile| %>
+<!-- Form - Member - Profile -->
+<%= form_with(model: @member_profile, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
 	<%= render 'phcnotifi/default/validations', :object => @member_profile %>
 	<!-- PHCNotifi Render Validation -->
 
-	<!-- PHCMembers Fields - Profiles -->
+	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :member_first_name, "First Name*" %>
-		<%= phc_members_member_profile.text_field :member_first_name, class: 'form-control', placeholder: 'First Name' %>
+		<%= form.label :member_first_name, "First Name*" %>
+		<%= form.text_field :member_first_name, class: 'form-control', placeholder: 'First Name' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :member_last_name, "Last Name*" %>
-		<%= phc_members_member_profile.text_field :member_last_name, class: 'form-control', placeholder: 'Last Name' %>
+		<%= form.label :member_last_name, "Last Name*" %>
+		<%= form.text_field :member_last_name, class: 'form-control', placeholder: 'Last Name' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :member_title, "Job Title" %>
-		<%= phc_members_member_profile.text_field :member_title, class: 'form-control', placeholder: 'Job Title/Salutation' %>
+		<%= form.label :member_title, "Job Title" %>
+		<%= form.text_field :member_title, class: 'form-control', placeholder: 'Job Title/Salutation' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :member_email, "Contact Email Address*" %>
-		<%= phc_members_member_profile.text_field :member_email, class: 'form-control', placeholder: 'Contact Email (Will Remain Private)' %>
+		<%= form.label :member_email, "Contact Email Address*" %>
+		<%= form.text_field :member_email, class: 'form-control', placeholder: 'Contact Email (Will Remain Private)' %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :member_phone, "Contact Phone Number*" %>
-		<%= phc_members_member_profile.text_field :member_phone, class: 'form-control masked', placeholder: 'Contact Phone Number (Will Remain Private)', data: {format: '(999) 999-9999', placeholder: 'x'} %>
+		<%= form.label :member_phone, "Contact Phone Number*" %>
+		<%= form.text_field :member_phone, class: 'form-control masked', placeholder: 'Contact Phone Number (Will Remain Private)', data: {format: '(999) 999-9999', placeholder: 'x'} %>
 	</div>
 	<div class="form-group field_with_errors">
-		<%= phc_members_member_profile.label :member_notes, "Member" %>
-		<%= phc_members_member_profile.text_area :member_notes, class: 'form-control masked', placeholder: 'Member Notes' %>
+		<%= form.label :member_notes, "Member" %>
+		<%= form.text_area :member_notes, class: 'form-control masked', placeholder: 'Member Notes' %>
 	</div>
-	<br>
+	<!-- Form Input Fields -->
+
+	<!-- Form Submition Button -->
 	<div class="actions">
-		<%= phc_members_member_profile.submit class: "btn btn-primary btn-gradient waves-effect waves-light btn-md" %>
+		<%= form.submit class: "btn btn-primary btn-md" %>
 	</div>
-	<br>
-	<!-- PHCMembers Fields - Profiles -->
+	<!-- For Submition Button -->
 
 <% end %>
-<!-- PHCMembers Form - Profiles -->
+<!-- Form - Member - Profile -->

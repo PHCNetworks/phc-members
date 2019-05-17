@@ -17,39 +17,49 @@
 <!-- Page Header -->
 <h1 class="page-header"><%= yield(:phc_title) %></h1>
 <!-- Page Header -->
-			
-<!-- Page Content -->
-<div class="panel panel-inverse">
-	<div class="panel-heading">
-		<div class="panel-heading-btn">
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-		</div>
-		<h4 class="panel-title"><%= @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %> Address Details</h4>
-	</div>
-	<div class="panel-body">
-		<!-- Table - Members Listings -->
-		<%= render 'phcmembers/member/addresses/components/address_main' %>
-		<!-- Table - Members Listings -->
-	</div>
-</div>
-<!-- Page Content -->
 
 <!-- Page Content -->
-<div class="panel panel-inverse">
-	<div class="panel-heading">
-		<div class="panel-heading-btn">
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+<div class="row">
+
+	<!-- Address Information -->
+	<div class="col-12">
+		<div class="panel panel-inverse">
+			<div class="panel-heading">
+				<div class="panel-heading-btn">
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+				</div>
+				<h4 class="panel-title"><%= @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %> Address Details</h4>
+			</div>
+			<div class="panel-body">
+				<!-- Table - Members Address -->
+				<%= render 'phcmembers/member/addresses/components/address_main' %>
+				<!-- Table - Members Address -->
+			</div>
 		</div>
-		<h4 class="panel-title"><%= @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %> Address Change Log</h4>
 	</div>
-	<div class="panel-body">
-		<!-- Table - Members Listing Audit -->
-		<%= render 'phcmembers/member/addresses/components/address_audits_table' %>
-		<!-- Table - Members Listing Audit -->
+	<!-- Address Information -->
+
+	<!-- Address Information -->
+	<div class="col-12">
+		<div class="panel panel-inverse">
+			<div class="panel-heading">
+				<div class="panel-heading-btn">
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+				</div>
+				<h4 class="panel-title"><%= @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %> Address Change Log</h4>
+			</div>
+			<div class="panel-body">
+				<!-- Table - Members Address Audit -->
+				<%= render 'phcmembers/member/addresses/components/address_audits_table' %>
+				<!-- Table - Members Address Audit -->
+			</div>
+		</div>
 	</div>
+	<!-- Address Information -->
+
 </div>
 <!-- Page Content -->

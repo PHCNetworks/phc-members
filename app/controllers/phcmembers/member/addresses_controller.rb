@@ -10,30 +10,30 @@ module Phcmembers
     before_action :set_paper_trail_whodunnit
     before_action :set_member_address, only: [:show, :edit, :update, :destroy]
 
-    # INDEX - Directory Listings
+    # INDEX
     def index
       profile = Member::Profile.find(params[:profile_id])
       @member_addresses = profile.addresses.all
     end
 
-    # LISTINGS DETAILS - Directory Listings
+    # SHOW
     def show
       profile = Member::Profile.find(params[:profile_id])
       @member_address = profile.addresses.find(params[:id])
       @member_address_versions = Phcmembers::AddressVersions.where(item_id: @member_address, item_type: 'Phcmembers::Member::Address')
     end
 
-    # NEW - Directory Listings
+    # NEW
     def new
       profile = Member::Profile.find(params[:profile_id])
       @member_address = profile.addresses.build
     end
 
-    # EDIT - Directory Listings
+    # EDIT
     def edit
     end
 
-    # POST - Directory Listings
+    # CREATE
     def create
       @profile = Member::Profile.find(params[:profile_id])
       @member_address = @profile.addresses.create(member_address_params)
@@ -45,7 +45,7 @@ module Phcmembers
       end
     end
 
-    # PATCH/PUT - Directory Listings
+    # UPDATE
     def update
       @profile = Member::Profile.find(params[:profile_id])
       if @member_address.update(member_address_params)
@@ -55,7 +55,7 @@ module Phcmembers
       end
     end
 
-    # DELETE - Directory Listings
+    # DELETE
     def destroy
       @profile = Member::Profile.find(params[:profile_id])
       @member_address = @profile.addresses.find(params[:id])

@@ -1,11 +1,11 @@
-<!-- PHCMembers Form - Address -->
+<!-- Form - Member - Address -->
 <%= form_with(model: [ @member_profile, @member_address], url: form_url, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
 	<%= render 'phcnotifi/default/validations', :object => @member_address %>
 	<!-- PHCNotifi Render Validation -->
 
-	<!-- PHCMembers Fields - Address -->
+	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
 		<%= form.label :address_address_line_1, "Address Line1" %>
 		<%= form.text_field :address_address_line_1, class: "form-control", placeholder: "Address Line 1 - Street Address" %>
@@ -34,12 +34,13 @@
 		<%= form.label :address_type, "Address Type" %>
 		<%= form.select :address_type, [['Billing Address','Billing'],['Street Address','Street'],['Mailing Address','Mailing'],['Home Address','Home'],['Business Address','Business']], {}, class: "form-control" %>
 	</div>
-	<br>
+	<!-- Form Input Fields -->
+
+	<!-- Form Submition Button -->
 	<div class="actions">
-		<%= form.submit class: "btn btn-primary btn-gradient waves-effect waves-light btn-md" %>
+		<%= form.submit class: "btn btn-primary btn-md" %>
 	</div>
-	<br>
-	<!-- PHCMembers Fields - Address -->
+	<!-- For Submition Button -->
 
 <% end %>
-<!-- PHCMembers Form - Address -->
+<!-- Form - Member - Address -->

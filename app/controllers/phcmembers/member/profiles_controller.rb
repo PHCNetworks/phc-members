@@ -10,27 +10,27 @@ module Phcmembers
     before_action :set_member_profile, only: [:show, :edit, :update, :destroy]
     layout "phcmembers/member_profile", :only => [ :show ]
 
-    # INDEX - Member Profile
+    # INDEX
     def index
       @member_profiles = Member::Profile.all
     end
 
-    # DETAILED PROFILE - Member Profile
+    # SHOW
     def show
       @member_profile = Member::Profile.find(params[:id])
       @member_profile_versions = Phcmembers::ProfileVersions.where(item_id: @member_profile, item_type: 'Phcmembers::Member::Profile')
     end
 
-    # NEW FORM - Member Profile
+    # NEW
     def new
       @member_profile = Member::Profile.new
     end
 
-    # EDIT FORM - Member Profile
+    # EDIT
     def edit
     end
 
-    # POST - Member Profile
+    # CREATE
     def create
       @member_profile = Member::Profile.new(member_profile_params)
       @member_profile.user_id = current_user.id
@@ -41,7 +41,7 @@ module Phcmembers
       end
     end
 
-    # PATCH/PUT - Member Profile
+    # UPDATE
     def update
       if @member_profile.update(member_profile_params)
         redirect_to member_profiles_url, :flash => { :success => 'Profile was successfully updated.' }
@@ -50,7 +50,7 @@ module Phcmembers
       end
     end
 
-    # DELETE - Member Profile
+    # DELETE
     def destroy
       @member_profile.destroy
       redirect_to member_profiles_url, :flash => { :error => 'Profile was successfully destroyed.' }

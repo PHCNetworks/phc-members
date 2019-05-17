@@ -3,64 +3,55 @@ module Phcmembers
 
     # Clean URL Initialize
     extend FriendlyId
-    
-    # Add Paper Trail
+
+		# Paper Trail Initialize
     has_paper_trail :class_name => 'Phcmembers::ListingVersions'
-    
-    # Model Relationships
+
+    # Relationships
     belongs_to :profile, class_name: 'Phcmembers::Member::Profile'
     has_and_belongs_to_many :categories, class_name: 'Phcmembers::Directory::Category', :join_table => 'categories_listings'
-    
-    # Validation for Form Fields
+
+    # Form Fields Validation
     validates :listing_company_name,
-      presence: true,
-      length: { minimum: 2 }
-    
+      presence: true
+
     validates :listing_contact_name,
-      presence: true,
-      length: { minimum: 2 }
-    
+      presence: true
+
     validates :listing_address_line_1,
-      length: { minimum: 3 }
-    
+      presence: true
+
     validates :listing_city,
-      presence: true,
-      length: { minimum: 3 }
-    
+      presence: true
+
     validates :listing_country,
-      presence: true,
-      length: { minimum: 2 }
-    
+      presence: true
+
     validates :listing_province,
-      presence: true,
-      length: { minimum: 2 }
-    
+      presence: true
+
     validates :listing_postal_code,
-      presence: true,
-      length: { minimum: 3 }
-    
+      presence: true
+
     validates :listing_contact_email,
-    	presence: true,
-    	length: { minimum: 3 },
-    	format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Please follow this Email format: *****@********.***" }
-    
+      presence: true,
+      format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Please follow this Email format: *****@********.***" }
+
     validates :listing_website,
-    	presence: true,
-    	length: { minimum: 6 },
-    	format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
-    
+      presence: true,
+      format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
+
     validates :listing_phone,
-    	presence: true,
-    	format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Member Format: ***-***-****" }
-    
+      presence: true,
+      format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Member Format: ***-***-****" }
+
     # Clean URL Define
-    friendly_id :phcmembers_listings_slug, use: [:slugged, :finders]
-    
-    # Define for Multiple Records
-    def phcmembers_listings_slug
-    	[
-    		[:listing_company_name, :listing_contact_name]
-    	]
+    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
+
+    def phc_nice_url_slug
+      [
+        [:listing_company_name, :listing_contact_name]
+      ]
     end
 
   end
